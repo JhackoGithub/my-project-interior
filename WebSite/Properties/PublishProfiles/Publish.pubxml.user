@@ -1,0 +1,1366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\Work\InteriorDesign\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="1product-desc.aspx">
+      <publishTime>07/24/2014 17:06:46</publishTime>
+    </File>
+    <File Include="1product-doc.aspx">
+      <publishTime>07/24/2014 16:59:39</publishTime>
+    </File>
+    <File Include="1product-info.aspx">
+      <publishTime>07/24/2014 16:09:31</publishTime>
+    </File>
+    <File Include="1product-question.aspx">
+      <publishTime>07/16/2014 10:55:45</publishTime>
+    </File>
+    <File Include="About.aspx">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Account/Login.aspx">
+      <publishTime>07/09/2014 11:35:02</publishTime>
+    </File>
+    <File Include="Account/Manage.aspx">
+      <publishTime>07/09/2014 11:35:02</publishTime>
+    </File>
+    <File Include="Account/OpenAuthProviders.ascx">
+      <publishTime>07/09/2014 11:35:02</publishTime>
+    </File>
+    <File Include="Account/Register.aspx">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Account/RegisterExternalLogin.aspx">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Account/Web.config">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Admin/AddNews.aspx">
+      <publishTime>07/27/2014 13:11:09</publishTime>
+    </File>
+    <File Include="Admin/News.aspx">
+      <publishTime>07/27/2014 00:30:11</publishTime>
+    </File>
+    <File Include="AdminMasterPage.Master">
+      <publishTime>07/27/2014 12:58:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Button.Metro.css">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Button/ButtonSprites.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Button/Metro.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Button/ToggleSprite.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Calendar.Metro.css">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Calendar/Metro.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Calendar/sprite.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ComboBox.Metro.css">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ComboBox/Metro.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/DataPager.Metro.css">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/DataPager/Metro.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/DataPager/sprite.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/DatePicker/Metro.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/DateTimePicker/Metro.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/DropDownList.Metro.css">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/DropDownList/Metro.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/DropDownTree.Metro.css">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/DropDownTree/Metro.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Editor.Metro.css">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Editor/CommonIcons.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Editor/LoadingSpell.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Editor/Metro.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Editor/ToolBarSprites.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Editor/ToolbarVerticalSprites.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid.Metro.css">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/AddRecord.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/Cancel.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/Delete.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/Edit.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/export.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/Filter.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/loading_small.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/Metro.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/MoveDown.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/MoveUp.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/PagingFirst.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/PagingLast.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/PagingNext.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/PagingPrev.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/Refresh.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/rgDrag.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/SingleMinus.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/SinglePlus.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/SortAsc.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/SortDesc.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/sprite.gif">
+      <publishTime>07/27/2014 00:09:37</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Grid/Update.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Input.Metro.css">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Input/Metro.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Input/ResizeEdge.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Input/sprite.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/LightBox.Metro.css">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ListBox.Metro.css">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ListBox/Metro.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ListBox/rlbDropClue.png">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ListBox/rlbSprite.png">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ListView/CheckBoxSprites.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ListView/drag.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ListView/Metro.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ListView/sprite.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Menu.Metro.css">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Menu/Metro.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Menu/rmExpandArrows.png">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Spell/Metro.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ToolBar.Metro.css">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ToolBar/Metro.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ToolBar/rtbClickedDropArrows.png">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ToolBar/rtbClickedUpArrows.png">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ToolBar/rtbDropArrows.png">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/ToolBar/rtbUpArrows.png">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeList.Metro.css">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeList/Metro.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeList/rtlBottom.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeList/rtlBottomRTL.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeList/rtlMiddle.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeList/rtlMiddleRTL.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeList/rtlSingle.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeList/rtlTop.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeList/rtlTopRTL.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeList/sprite.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeView.Metro.css">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeView/LoadingIcon.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeView/Metro.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeView/PlusMinus.png">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeView/TriState.png">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Upload.Metro.css">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Upload/Metro.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Upload/ruProgress.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Upload/ruSprite.png">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Window.Metro.css">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Window/CommandButtonSprites.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Window/Icon.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Window/Metro.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/Window/rwResize.gif">
+      <publishTime>07/27/2014 00:09:38</publishTime>
+    </File>
+    <File Include="Architecture.aspx">
+      <publishTime>07/26/2014 14:57:56</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.jQuery.dll">
+      <publishTime>06/26/2014 14:23:42</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.jQuery.UI.Combined.dll">
+      <publishTime>06/26/2014 14:23:42</publishTime>
+    </File>
+    <File Include="bin/BLL.dll">
+      <publishTime>07/27/2014 15:30:14</publishTime>
+    </File>
+    <File Include="bin/DAL.dll">
+      <publishTime>07/27/2014 15:30:14</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.AspNet.dll">
+      <publishTime>06/26/2014 14:23:44</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.Core.dll">
+      <publishTime>06/26/2014 14:23:42</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
+      <publishTime>06/26/2014 14:23:44</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.dll">
+      <publishTime>06/26/2014 14:23:42</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.dll">
+      <publishTime>06/26/2014 14:23:44</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
+      <publishTime>06/26/2014 14:23:44</publishTime>
+    </File>
+    <File Include="bin/Entities.dll">
+      <publishTime>07/26/2014 15:19:14</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>06/26/2014 14:23:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
+      <publishTime>06/26/2014 14:23:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Membership.OpenAuth.dll">
+      <publishTime>06/26/2014 14:23:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>06/26/2014 14:23:42</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>07/10/2012 21:52:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Providers.dll">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="bin/Telerik.Web.Design.dll">
+      <publishTime>05/14/2014 14:18:04</publishTime>
+    </File>
+    <File Include="bin/Telerik.Web.UI.dll">
+      <publishTime>05/14/2014 14:18:04</publishTime>
+    </File>
+    <File Include="bin/Telerik.Web.UI.Skins.dll">
+      <publishTime>05/14/2014 14:18:04</publishTime>
+    </File>
+    <File Include="bin/WebSite.dll">
+      <publishTime>07/27/2014 17:09:54</publishTime>
+    </File>
+    <File Include="commingsoon.aspx">
+      <publishTime>07/16/2014 11:04:52</publishTime>
+    </File>
+    <File Include="Consultant-1-1.aspx">
+      <publishTime>07/23/2014 11:12:44</publishTime>
+    </File>
+    <File Include="Consultant-1-2.aspx">
+      <publishTime>07/23/2014 11:03:18</publishTime>
+    </File>
+    <File Include="Consultant-1-3.aspx">
+      <publishTime>07/23/2014 11:04:36</publishTime>
+    </File>
+    <File Include="Consultant-1-4.aspx">
+      <publishTime>07/23/2014 11:05:34</publishTime>
+    </File>
+    <File Include="Consultant-2-0.aspx">
+      <publishTime>07/22/2014 17:13:16</publishTime>
+    </File>
+    <File Include="Consultant-2-1.aspx">
+      <publishTime>07/18/2014 10:29:58</publishTime>
+    </File>
+    <File Include="Consultant.aspx">
+      <publishTime>07/23/2014 10:57:48</publishTime>
+    </File>
+    <File Include="Contact.aspx">
+      <publishTime>07/11/2014 17:23:36</publishTime>
+    </File>
+    <File Include="Content/camera.css">
+      <publishTime>07/09/2014 11:35:02</publishTime>
+    </File>
+    <File Include="Content/grid.css">
+      <publishTime>07/27/2014 16:58:14</publishTime>
+    </File>
+    <File Include="Content/ion.zoom.css">
+      <publishTime>07/23/2014 16:13:36</publishTime>
+    </File>
+    <File Include="Content/normalize.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>07/27/2014 13:03:39</publishTime>
+    </File>
+    <File Include="Content/StyleSheet.css">
+      <publishTime>07/27/2014 17:07:30</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.accordion.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.all.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.autocomplete.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.base.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.button.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.core.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.datepicker.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.dialog.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.progressbar.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.resizable.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.selectable.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.slider.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.tabs.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.theme.css">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_222222_256x240.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_454545_256x240.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_888888_256x240.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery-ui.min.css">
+      <publishTime>06/26/2014 14:23:38</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.accordion.min.css">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.autocomplete.min.css">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.button.min.css">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.core.min.css">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.datepicker.min.css">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.dialog.min.css">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.progressbar.min.css">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.resizable.min.css">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.selectable.min.css">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.slider.min.css">
+      <publishTime>06/26/2014 14:23:40</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.tabs.min.css">
+      <publishTime>06/26/2014 14:23:38</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
+      <publishTime>06/26/2014 14:23:38</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>07/24/2014 09:47:20</publishTime>
+    </File>
+    <File Include="DetailMasterPage.master">
+      <publishTime>07/26/2014 14:37:04</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Images/accent.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/blank.gif">
+      <publishTime>03/24/2012 19:00:04</publishTime>
+    </File>
+    <File Include="Images/box-shadow.png">
+      <publishTime>06/28/2014 10:58:46</publishTime>
+    </File>
+    <File Include="Images/bullet.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/button-search.png">
+      <publishTime>06/26/2014 15:56:08</publishTime>
+    </File>
+    <File Include="Images/camera-loader.gif">
+      <publishTime>03/24/2012 19:00:04</publishTime>
+    </File>
+    <File Include="Images/camera_skins.png">
+      <publishTime>03/24/2012 19:00:04</publishTime>
+    </File>
+    <File Include="Images/comingsoon.jpg">
+      <publishTime>07/16/2014 11:03:00</publishTime>
+    </File>
+    <File Include="Images/copyright-tail.png">
+      <publishTime>06/26/2014 15:56:04</publishTime>
+    </File>
+    <File Include="Images/digg.png">
+      <publishTime>06/26/2014 15:56:00</publishTime>
+    </File>
+    <File Include="Images/direction_nav.png">
+      <publishTime>06/27/2014 10:50:46</publishTime>
+    </File>
+    <File Include="Images/facebook.png">
+      <publishTime>06/26/2014 15:55:56</publishTime>
+    </File>
+    <File Include="Images/footer-splash.png">
+      <publishTime>06/26/2014 15:55:52</publishTime>
+    </File>
+    <File Include="Images/heroAccent.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/home_img01.png">
+      <publishTime>06/27/2014 10:02:46</publishTime>
+    </File>
+    <File Include="Images/home_img02.png">
+      <publishTime>07/16/2014 14:41:46</publishTime>
+    </File>
+    <File Include="Images/home_img03.png">
+      <publishTime>06/27/2014 10:05:10</publishTime>
+    </File>
+    <File Include="Images/home_img04.png">
+      <publishTime>06/27/2014 10:05:30</publishTime>
+    </File>
+    <File Include="Images/home_img05.png">
+      <publishTime>06/27/2014 10:05:52</publishTime>
+    </File>
+    <File Include="Images/hr.png">
+      <publishTime>06/26/2014 15:55:46</publishTime>
+    </File>
+    <File Include="Images/icon1.png">
+      <publishTime>06/26/2014 16:38:26</publishTime>
+    </File>
+    <File Include="Images/icon2.png">
+      <publishTime>06/26/2014 16:38:20</publishTime>
+    </File>
+    <File Include="Images/icon3.png">
+      <publishTime>06/26/2014 16:38:16</publishTime>
+    </File>
+    <File Include="Images/iDelete.png">
+      <publishTime>07/27/2014 00:08:07</publishTime>
+    </File>
+    <File Include="Images/iEdit.png">
+      <publishTime>07/27/2014 00:08:07</publishTime>
+    </File>
+    <File Include="Images/iView.png">
+      <publishTime>07/27/2014 00:08:07</publishTime>
+    </File>
+    <File Include="Images/large/slide01.jpg">
+      <publishTime>06/27/2014 14:52:36</publishTime>
+    </File>
+    <File Include="Images/large/slide02.jpg">
+      <publishTime>06/27/2014 14:55:02</publishTime>
+    </File>
+    <File Include="Images/large/slide03.jpg">
+      <publishTime>06/27/2014 14:55:18</publishTime>
+    </File>
+    <File Include="Images/large/slide04.jpg">
+      <publishTime>06/27/2014 14:55:26</publishTime>
+    </File>
+    <File Include="Images/large/slide05.jpg">
+      <publishTime>06/27/2014 14:55:30</publishTime>
+    </File>
+    <File Include="Images/large/slide06.jpg">
+      <publishTime>06/27/2014 14:55:32</publishTime>
+    </File>
+    <File Include="Images/large/slide07.jpg">
+      <publishTime>06/27/2014 14:55:34</publishTime>
+    </File>
+    <File Include="Images/large/slide08.jpg">
+      <publishTime>06/27/2014 14:55:38</publishTime>
+    </File>
+    <File Include="Images/loading-map.gif">
+      <publishTime>07/11/2014 16:58:32</publishTime>
+    </File>
+    <File Include="Images/logo.png">
+      <publishTime>07/11/2014 15:08:38</publishTime>
+    </File>
+    <File Include="Images/marker.png">
+      <publishTime>07/09/2014 14:37:04</publishTime>
+    </File>
+    <File Include="Images/no-image.png">
+      <publishTime>07/27/2014 13:11:03</publishTime>
+    </File>
+    <File Include="Images/orderedList0.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/orderedList1.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/orderedList2.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/orderedList3.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/orderedList4.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/orderedList5.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/orderedList6.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/orderedList7.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/orderedList8.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/orderedList9.png">
+      <publishTime>06/26/2014 14:23:30</publishTime>
+    </File>
+    <File Include="Images/pattern.gif">
+      <publishTime>06/26/2014 14:43:42</publishTime>
+    </File>
+    <File Include="Images/products/00.jpg">
+      <publishTime>07/16/2014 10:01:40</publishTime>
+    </File>
+    <File Include="Images/products/1.jpg">
+      <publishTime>07/16/2014 00:15:34</publishTime>
+    </File>
+    <File Include="Images/products/10.jpg">
+      <publishTime>07/17/2014 11:36:18</publishTime>
+    </File>
+    <File Include="Images/products/11.jpg">
+      <publishTime>07/17/2014 11:37:04</publishTime>
+    </File>
+    <File Include="Images/products/12.jpg">
+      <publishTime>07/17/2014 11:36:56</publishTime>
+    </File>
+    <File Include="Images/products/13.jpg">
+      <publishTime>07/17/2014 11:36:42</publishTime>
+    </File>
+    <File Include="Images/products/14.jpg">
+      <publishTime>07/17/2014 11:36:36</publishTime>
+    </File>
+    <File Include="Images/products/15.jpg">
+      <publishTime>07/17/2014 11:37:10</publishTime>
+    </File>
+    <File Include="Images/products/16.jpg">
+      <publishTime>07/17/2014 14:53:06</publishTime>
+    </File>
+    <File Include="Images/products/2.jpg">
+      <publishTime>07/16/2014 00:27:42</publishTime>
+    </File>
+    <File Include="Images/products/3.jpg">
+      <publishTime>07/16/2014 00:27:42</publishTime>
+    </File>
+    <File Include="Images/products/4.jpg">
+      <publishTime>07/16/2014 00:27:42</publishTime>
+    </File>
+    <File Include="Images/products/5.jpg">
+      <publishTime>07/16/2014 00:27:42</publishTime>
+    </File>
+    <File Include="Images/products/6.jpg">
+      <publishTime>07/16/2014 00:27:42</publishTime>
+    </File>
+    <File Include="Images/products/7.jpg">
+      <publishTime>07/16/2014 00:27:42</publishTime>
+    </File>
+    <File Include="Images/products/8.jpg">
+      <publishTime>07/16/2014 00:27:42</publishTime>
+    </File>
+    <File Include="Images/products/9.jpg">
+      <publishTime>07/16/2014 00:27:42</publishTime>
+    </File>
+    <File Include="Images/products/ion.zoom.preloader.gif">
+      <publishTime>02/11/2013 12:37:48</publishTime>
+    </File>
+    <File Include="Images/products/project-thumb01-200x176.jpg">
+      <publishTime>07/18/2014 10:36:24</publishTime>
+    </File>
+    <File Include="Images/products/project-thumb02-200x176.jpg">
+      <publishTime>07/18/2014 10:36:08</publishTime>
+    </File>
+    <File Include="Images/products/project-thumb03-200x176.jpg">
+      <publishTime>07/18/2014 10:35:56</publishTime>
+    </File>
+    <File Include="Images/products/project-thumb04-200x176.jpg">
+      <publishTime>07/18/2014 10:35:40</publishTime>
+    </File>
+    <File Include="Images/products/project-thumb05-200x176.jpg">
+      <publishTime>07/18/2014 10:35:28</publishTime>
+    </File>
+    <File Include="Images/products/project-thumb06-200x176.jpg">
+      <publishTime>07/18/2014 10:35:16</publishTime>
+    </File>
+    <File Include="Images/products/project-thumb07-200x176.jpg">
+      <publishTime>07/18/2014 10:35:02</publishTime>
+    </File>
+    <File Include="Images/products/project-thumb08-200x176.jpg">
+      <publishTime>07/18/2014 10:34:50</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/1/1.jpg">
+      <publishTime>07/15/2014 15:49:16</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/1/2.jpg">
+      <publishTime>07/15/2014 15:50:38</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/1/3.jpg">
+      <publishTime>07/15/2014 15:51:32</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/1/4.jpg">
+      <publishTime>07/15/2014 15:52:14</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/1/project-main.jpg">
+      <publishTime>07/15/2014 15:50:38</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/1/project-view.jpg">
+      <publishTime>07/24/2014 10:29:46</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/2/1.jpg">
+      <publishTime>07/15/2014 15:56:20</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/2/2.jpg">
+      <publishTime>07/15/2014 15:57:52</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/2/3.jpg">
+      <publishTime>07/15/2014 15:58:40</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/2/project-main.jpg">
+      <publishTime>07/15/2014 15:56:20</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/2/project-view.jpg">
+      <publishTime>07/24/2014 10:30:16</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/3/1.jpg">
+      <publishTime>07/15/2014 16:19:32</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/3/2.jpg">
+      <publishTime>07/15/2014 16:20:56</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/3/project-main.jpg">
+      <publishTime>07/15/2014 16:19:32</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/3/project-view.jpg">
+      <publishTime>07/24/2014 10:30:40</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/4/1.jpg">
+      <publishTime>07/17/2014 15:28:16</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/4/2.jpg">
+      <publishTime>07/17/2014 15:27:08</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/4/3.jpg">
+      <publishTime>07/17/2014 15:29:20</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/4/4.jpg">
+      <publishTime>07/17/2014 15:30:20</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/4/project-main.jpg">
+      <publishTime>07/17/2014 15:30:20</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/4/project-view.jpg">
+      <publishTime>07/24/2014 10:31:08</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/5/1.jpg">
+      <publishTime>07/17/2014 15:32:38</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/5/2.jpg">
+      <publishTime>07/17/2014 15:33:48</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/5/3.jpg">
+      <publishTime>07/17/2014 15:35:22</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/5/4.jpg">
+      <publishTime>07/17/2014 15:36:26</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/5/5.jpg">
+      <publishTime>07/17/2014 15:38:36</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/5/6.jpg">
+      <publishTime>07/17/2014 15:39:34</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/5/project-main.jpg">
+      <publishTime>07/17/2014 15:38:36</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/5/project-view.jpg">
+      <publishTime>07/24/2014 10:31:36</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/NHA CO THUY/1.jpg">
+      <publishTime>07/17/2014 15:54:16</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/NHA CO THUY/2.jpg">
+      <publishTime>07/17/2014 15:55:12</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/NHA CO THUY/3.jpg">
+      <publishTime>07/17/2014 15:58:34</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/NHA CO THUY/4.jpg">
+      <publishTime>07/17/2014 15:59:24</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/NHA CO THUY/5.jpg">
+      <publishTime>07/17/2014 16:00:40</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/NHA CO THUY/6.jpg">
+      <publishTime>07/17/2014 16:01:44</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/NHA CO THUY/7.jpg">
+      <publishTime>07/17/2014 16:04:10</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/NHA CO THUY/project-main.jpg">
+      <publishTime>07/17/2014 16:04:10</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/batch/modern/NHA CO THUY/project-view.jpg">
+      <publishTime>07/24/2014 10:32:14</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/1/1.jpg">
+      <publishTime>07/15/2014 14:30:46</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/1/2.jpg">
+      <publishTime>07/15/2014 14:36:00</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/1/3.jpg">
+      <publishTime>07/15/2014 14:37:24</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/1/4.jpg">
+      <publishTime>07/15/2014 14:38:46</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/1/5.jpg">
+      <publishTime>07/15/2014 14:40:04</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/1/6.jpg">
+      <publishTime>07/15/2014 14:42:18</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/1/project-main.jpg">
+      <publishTime>07/15/2014 14:38:46</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/1/project-view.jpg">
+      <publishTime>07/24/2014 10:15:54</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/2/1.jpg">
+      <publishTime>07/15/2014 15:09:04</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/2/2.jpg">
+      <publishTime>07/15/2014 15:11:30</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/2/3.jpg">
+      <publishTime>07/15/2014 15:14:24</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/2/4.jpg">
+      <publishTime>07/15/2014 15:19:28</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/2/5.jpg">
+      <publishTime>07/15/2014 15:22:42</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/2/6.jpg">
+      <publishTime>07/15/2014 15:23:26</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/2/7.jpg">
+      <publishTime>07/15/2014 15:24:08</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/2/8.jpg">
+      <publishTime>07/15/2014 15:24:56</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/2/project-main.jpg">
+      <publishTime>07/15/2014 15:19:28</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/2/project-view.jpg">
+      <publishTime>07/24/2014 10:17:34</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/1.jpg">
+      <publishTime>07/16/2014 15:00:10</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/10.jpg">
+      <publishTime>07/16/2014 15:13:42</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/11.jpg">
+      <publishTime>07/16/2014 15:14:22</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/12.jpg">
+      <publishTime>07/16/2014 15:15:10</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/13.jpg">
+      <publishTime>07/16/2014 15:15:46</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/14.jpg">
+      <publishTime>07/16/2014 15:16:36</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/15.jpg">
+      <publishTime>07/16/2014 15:17:56</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/16.jpg">
+      <publishTime>07/16/2014 15:29:06</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/2.jpg">
+      <publishTime>07/16/2014 15:00:42</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/3.jpg">
+      <publishTime>07/16/2014 15:01:42</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/4.jpg">
+      <publishTime>07/16/2014 15:02:38</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/5.jpg">
+      <publishTime>07/16/2014 15:04:44</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/6.jpg">
+      <publishTime>07/16/2014 15:05:16</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/7.jpg">
+      <publishTime>07/16/2014 15:08:36</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/8.jpg">
+      <publishTime>07/16/2014 15:10:10</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/9.jpg">
+      <publishTime>07/16/2014 15:12:02</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/project-main.jpg">
+      <publishTime>07/16/2014 15:02:38</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/3/project-view.jpg">
+      <publishTime>07/24/2014 10:28:04</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/4. BT Ba Vi/1.jpg">
+      <publishTime>07/10/2014 23:05:18</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/4. BT Ba Vi/2.jpg">
+      <publishTime>07/10/2014 20:20:22</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/4. BT Ba Vi/3.jpg">
+      <publishTime>07/10/2014 20:26:20</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/4. BT Ba Vi/4.jpg">
+      <publishTime>07/10/2014 20:30:56</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/4. BT Ba Vi/5.jpg">
+      <publishTime>07/10/2014 20:30:30</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/4. BT Ba Vi/6.jpg">
+      <publishTime>07/10/2014 20:48:48</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/4. BT Ba Vi/7.jpg">
+      <publishTime>07/10/2014 20:36:28</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/4. BT Ba Vi/8.jpg">
+      <publishTime>07/10/2014 20:39:34</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/4. BT Ba Vi/9.jpg">
+      <publishTime>07/10/2014 20:40:46</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/4. BT Ba Vi/project-main.jpg">
+      <publishTime>07/10/2014 20:39:34</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/4. BT Ba Vi/project-view.jpg">
+      <publishTime>07/24/2014 10:28:40</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/5. Nha Vuon Thai Nguyen/1.jpg">
+      <publishTime>07/15/2014 14:44:40</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/5. Nha Vuon Thai Nguyen/2.jpg">
+      <publishTime>07/15/2014 14:45:32</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/5. Nha Vuon Thai Nguyen/3.jpg">
+      <publishTime>07/15/2014 14:46:22</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/5. Nha Vuon Thai Nguyen/4.jpg">
+      <publishTime>07/15/2014 14:47:18</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/5. Nha Vuon Thai Nguyen/5.jpg">
+      <publishTime>07/15/2014 14:48:08</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/5. Nha Vuon Thai Nguyen/project-main.jpg">
+      <publishTime>07/15/2014 14:44:40</publishTime>
+    </File>
+    <File Include="Images/projects/architecture/villa/modern/5. Nha Vuon Thai Nguyen/project-view.jpg">
+      <publishTime>07/24/2014 10:29:12</publishTime>
+    </File>
+    <File Include="Images/slider-caption.png">
+      <publishTime>06/26/2014 15:55:28</publishTime>
+    </File>
+    <File Include="Images/slider-shadow.png">
+      <publishTime>06/28/2014 10:26:02</publishTime>
+    </File>
+    <File Include="Images/slides/slide01.jpg">
+      <publishTime>07/23/2014 14:06:28</publishTime>
+    </File>
+    <File Include="Images/slides/slide02.jpg">
+      <publishTime>07/23/2014 14:06:50</publishTime>
+    </File>
+    <File Include="Images/slides/slide03.jpg">
+      <publishTime>07/23/2014 14:07:18</publishTime>
+    </File>
+    <File Include="Images/slides/slide04.jpg">
+      <publishTime>07/23/2014 14:07:40</publishTime>
+    </File>
+    <File Include="Images/slides/slide05.jpg">
+      <publishTime>07/23/2014 14:07:54</publishTime>
+    </File>
+    <File Include="Images/slides/slide06.jpg">
+      <publishTime>07/23/2014 14:08:14</publishTime>
+    </File>
+    <File Include="Images/slides/slide07.jpg">
+      <publishTime>07/23/2014 14:08:34</publishTime>
+    </File>
+    <File Include="Images/slides/slide08.jpg">
+      <publishTime>07/23/2014 14:08:48</publishTime>
+    </File>
+    <File Include="Images/slides/slide09.jpg">
+      <publishTime>07/23/2014 14:09:08</publishTime>
+    </File>
+    <File Include="Images/slides/thumbs/header_bg.png">
+      <publishTime>03/24/2012 19:00:04</publishTime>
+    </File>
+    <File Include="Images/slides/thumbs/slide01.jpg">
+      <publishTime>07/23/2014 14:10:20</publishTime>
+    </File>
+    <File Include="Images/slides/thumbs/slide02.jpg">
+      <publishTime>07/23/2014 14:10:36</publishTime>
+    </File>
+    <File Include="Images/slides/thumbs/slide03.jpg">
+      <publishTime>07/23/2014 14:10:56</publishTime>
+    </File>
+    <File Include="Images/slides/thumbs/slide04.jpg">
+      <publishTime>07/23/2014 14:11:10</publishTime>
+    </File>
+    <File Include="Images/slides/thumbs/slide05.jpg">
+      <publishTime>07/23/2014 14:11:28</publishTime>
+    </File>
+    <File Include="Images/slides/thumbs/slide06.jpg">
+      <publishTime>07/23/2014 14:11:42</publishTime>
+    </File>
+    <File Include="Images/slides/thumbs/slide07.jpg">
+      <publishTime>07/23/2014 14:11:52</publishTime>
+    </File>
+    <File Include="Images/slides/thumbs/slide08.jpg">
+      <publishTime>07/23/2014 14:12:04</publishTime>
+    </File>
+    <File Include="Images/slides/thumbs/slide09.jpg">
+      <publishTime>07/23/2014 14:12:18</publishTime>
+    </File>
+    <File Include="Images/slides/thumbs/_notes/dwsync.xml">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Images/small/slide01.jpg">
+      <publishTime>06/27/2014 14:52:10</publishTime>
+    </File>
+    <File Include="Images/small/slide02.jpg">
+      <publishTime>06/27/2014 14:53:30</publishTime>
+    </File>
+    <File Include="Images/small/slide03.jpg">
+      <publishTime>06/27/2014 14:53:38</publishTime>
+    </File>
+    <File Include="Images/small/slide04.jpg">
+      <publishTime>06/27/2014 14:53:46</publishTime>
+    </File>
+    <File Include="Images/small/slide05.jpg">
+      <publishTime>06/27/2014 14:53:52</publishTime>
+    </File>
+    <File Include="Images/small/slide06.jpg">
+      <publishTime>06/27/2014 14:54:00</publishTime>
+    </File>
+    <File Include="Images/small/slide07.jpg">
+      <publishTime>06/27/2014 14:54:06</publishTime>
+    </File>
+    <File Include="Images/small/slide08.jpg">
+      <publishTime>06/27/2014 14:54:14</publishTime>
+    </File>
+    <File Include="Images/splash.png">
+      <publishTime>06/26/2014 14:45:38</publishTime>
+    </File>
+    <File Include="Images/sub-item-hover.png">
+      <publishTime>06/26/2014 15:55:22</publishTime>
+    </File>
+    <File Include="Images/sub-nav-tail.png">
+      <publishTime>06/26/2014 15:55:18</publishTime>
+    </File>
+    <File Include="Images/tail-bottom-home.png">
+      <publishTime>06/26/2014 15:55:14</publishTime>
+    </File>
+    <File Include="Images/tail-top.png">
+      <publishTime>07/05/2014 11:33:16</publishTime>
+    </File>
+    <File Include="Images/top-search-bg.png">
+      <publishTime>06/26/2014 15:55:00</publishTime>
+    </File>
+    <File Include="Images/up-arrow.png">
+      <publishTime>06/27/2014 10:43:16</publishTime>
+    </File>
+    <File Include="Images/Uploads/News/201407271320021418253-80775645.jpg">
+      <publishTime>07/27/2014 13:20:02</publishTime>
+    </File>
+    <File Include="Images/Uploads/News/20140727132845xanh2.jpg">
+      <publishTime>07/27/2014 13:28:45</publishTime>
+    </File>
+    <File Include="Index.aspx">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Interior.aspx">
+      <publishTime>07/24/2014 09:30:32</publishTime>
+    </File>
+    <File Include="Lesson.aspx">
+      <publishTime>07/23/2014 11:14:36</publishTime>
+    </File>
+    <File Include="lesson1.aspx">
+      <publishTime>07/21/2014 14:38:40</publishTime>
+    </File>
+    <File Include="lesson2.aspx">
+      <publishTime>07/21/2014 13:45:25</publishTime>
+    </File>
+    <File Include="lesson3.aspx">
+      <publishTime>07/21/2014 13:45:24</publishTime>
+    </File>
+    <File Include="lesson4.aspx">
+      <publishTime>07/21/2014 14:34:27</publishTime>
+    </File>
+    <File Include="lesson5.aspx">
+      <publishTime>07/21/2014 14:35:54</publishTime>
+    </File>
+    <File Include="lesson6.aspx">
+      <publishTime>07/21/2014 14:36:31</publishTime>
+    </File>
+    <File Include="lesson7.aspx">
+      <publishTime>07/21/2014 14:37:11</publishTime>
+    </File>
+    <File Include="lesson8.aspx">
+      <publishTime>07/21/2014 14:37:36</publishTime>
+    </File>
+    <File Include="LessonMasterPage.master">
+      <publishTime>07/22/2014 11:22:46</publishTime>
+    </File>
+    <File Include="NestedMasterPage.master">
+      <publishTime>07/22/2014 10:21:30</publishTime>
+    </File>
+    <File Include="News.aspx">
+      <publishTime>07/27/2014 15:28:23</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Project-Info.aspx">
+      <publishTime>07/26/2014 14:40:48</publishTime>
+    </File>
+    <File Include="Question.aspx">
+      <publishTime>07/22/2014 16:55:48</publishTime>
+    </File>
+    <File Include="Refer.aspx">
+      <publishTime>07/22/2014 15:52:16</publishTime>
+    </File>
+    <File Include="Scripts/camera.js">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Scripts/camera.min.js">
+      <publishTime>06/28/2014 13:18:54</publishTime>
+    </File>
+    <File Include="Scripts/ion.zoom.min.js">
+      <publishTime>07/23/2014 15:59:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.js">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.min.js">
+      <publishTime>06/26/2014 14:23:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.24.js">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.24.min.js">
+      <publishTime>06/26/2014 14:23:38</publishTime>
+    </File>
+    <File Include="Scripts/jquery.carouFredSel-6.0.4-packed.js">
+      <publishTime>10/04/2012 20:57:40</publishTime>
+    </File>
+    <File Include="Scripts/jquery.carouFredSel-6.1.0-packed.js">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery.easing.1.3.js">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery.min.js">
+      <publishTime>06/28/2014 13:31:54</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="Scripts/Script.js">
+      <publishTime>07/22/2014 14:03:00</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>07/24/2014 09:47:24</publishTime>
+    </File>
+    <File Include="Site.Mobile.Master">
+      <publishTime>07/09/2014 11:35:00</publishTime>
+    </File>
+    <File Include="UserControls/Footer.ascx">
+      <publishTime>07/27/2014 17:03:50</publishTime>
+    </File>
+    <File Include="UserControls/Menu.ascx">
+      <publishTime>07/23/2014 16:52:14</publishTime>
+    </File>
+    <File Include="UserControls/MenuLeft.ascx">
+      <publishTime>07/24/2014 15:05:20</publishTime>
+    </File>
+    <File Include="UserControls/MenuSubTop.ascx">
+      <publishTime>07/23/2014 14:45:22</publishTime>
+    </File>
+    <File Include="UserControls/MenuTop.ascx">
+      <publishTime>07/22/2014 15:35:10</publishTime>
+    </File>
+    <File Include="UserControls/SameProject.ascx">
+      <publishTime>07/27/2014 15:16:43</publishTime>
+    </File>
+    <File Include="ViewSwitcher.ascx">
+      <publishTime>06/26/2014 14:23:46</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/27/2014 15:30:18</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

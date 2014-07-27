@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{61F2FBF9-5710-4C89-B4DF-092D35F01DB9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebSite</RootNamespace>
+    <AssemblyName>WebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.8.2\lib\net40\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.24\lib\net40\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.1\lib\net40\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.0\lib\net40\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.Design, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Web.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Admin\AddNews.aspx" />
+    <Content Include="Admin\News.aspx" />
+    <Content Include="App_Themes\BocaTheme\Button.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\Button\ButtonSprites.gif" />
+    <Content Include="App_Themes\BocaTheme\Button\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\Button\ToggleSprite.gif" />
+    <Content Include="App_Themes\BocaTheme\Calendar.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\Calendar\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\Calendar\sprite.gif" />
+    <Content Include="App_Themes\BocaTheme\ComboBox.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\ComboBox\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\DataPager.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\DataPager\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\DataPager\sprite.gif" />
+    <Content Include="App_Themes\BocaTheme\DatePicker\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\DateTimePicker\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\DropDownList.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\DropDownList\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\DropDownTree.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\DropDownTree\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\Editor.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\Editor\CommonIcons.gif" />
+    <Content Include="App_Themes\BocaTheme\Editor\LoadingSpell.gif" />
+    <Content Include="App_Themes\BocaTheme\Editor\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\Editor\ToolBarSprites.gif" />
+    <Content Include="App_Themes\BocaTheme\Editor\ToolbarVerticalSprites.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\Grid\AddRecord.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\Cancel.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\Delete.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\Edit.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\export.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\Filter.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\loading_small.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\MoveDown.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\MoveUp.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\PagingFirst.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\PagingLast.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\PagingNext.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\PagingPrev.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\Refresh.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\rgDrag.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\SingleMinus.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\SinglePlus.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\SortAsc.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\SortDesc.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\sprite.gif" />
+    <Content Include="App_Themes\BocaTheme\Grid\Update.gif" />
+    <Content Include="App_Themes\BocaTheme\Input.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\Input\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\Input\ResizeEdge.gif" />
+    <Content Include="App_Themes\BocaTheme\Input\sprite.gif" />
+    <Content Include="App_Themes\BocaTheme\LightBox.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\ListBox.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\ListBox\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\ListBox\rlbDropClue.png" />
+    <Content Include="App_Themes\BocaTheme\ListBox\rlbSprite.png" />
+    <Content Include="App_Themes\BocaTheme\ListView\CheckBoxSprites.gif" />
+    <Content Include="App_Themes\BocaTheme\ListView\drag.gif" />
+    <Content Include="App_Themes\BocaTheme\ListView\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\ListView\sprite.gif" />
+    <Content Include="App_Themes\BocaTheme\Menu.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\Menu\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\Menu\rmExpandArrows.png" />
+    <Content Include="App_Themes\BocaTheme\Spell\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\ToolBar.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\ToolBar\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\ToolBar\rtbClickedDropArrows.png" />
+    <Content Include="App_Themes\BocaTheme\ToolBar\rtbClickedUpArrows.png" />
+    <Content Include="App_Themes\BocaTheme\ToolBar\rtbDropArrows.png" />
+    <Content Include="App_Themes\BocaTheme\ToolBar\rtbUpArrows.png" />
+    <Content Include="App_Themes\BocaTheme\TreeList.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\TreeList\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\TreeList\rtlBottom.gif" />
+    <Content Include="App_Themes\BocaTheme\TreeList\rtlBottomRTL.gif" />
+    <Content Include="App_Themes\BocaTheme\TreeList\rtlMiddle.gif" />
+    <Content Include="App_Themes\BocaTheme\TreeList\rtlMiddleRTL.gif" />
+    <Content Include="App_Themes\BocaTheme\TreeList\rtlSingle.gif" />
+    <Content Include="App_Themes\BocaTheme\TreeList\rtlTop.gif" />
+    <Content Include="App_Themes\BocaTheme\TreeList\rtlTopRTL.gif" />
+    <Content Include="App_Themes\BocaTheme\TreeList\sprite.gif" />
+    <Content Include="App_Themes\BocaTheme\TreeView.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\TreeView\LoadingIcon.gif" />
+    <Content Include="App_Themes\BocaTheme\TreeView\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\TreeView\PlusMinus.png" />
+    <Content Include="App_Themes\BocaTheme\TreeView\TriState.png" />
+    <Content Include="App_Themes\BocaTheme\Upload.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\Upload\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\Upload\ruProgress.gif" />
+    <Content Include="App_Themes\BocaTheme\Upload\ruSprite.png" />
+    <Content Include="App_Themes\BocaTheme\Window.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\Window\CommandButtonSprites.gif" />
+    <Content Include="App_Themes\BocaTheme\Window\Icon.gif" />
+    <Content Include="App_Themes\BocaTheme\Window\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\Window\rwResize.gif" />
+    <Content Include="Architecture.aspx" />
+    <Content Include="commingsoon.aspx" />
+    <Content Include="Consultant-1-1.aspx" />
+    <Content Include="Consultant-1-2.aspx" />
+    <Content Include="Consultant-1-3.aspx" />
+    <Content Include="Consultant-1-4.aspx" />
+    <Content Include="Consultant-2-0.aspx" />
+    <Content Include="Consultant-2-1.aspx" />
+    <Content Include="Consultant.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\camera.css" />
+    <Content Include="Content\grid.css" />
+    <Content Include="Content\ion.zoom.css" />
+    <Content Include="Content\normalize.css" />
+    <Content Include="Content\prettyPhoto.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\StyleSheet.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\blank.gif" />
+    <Content Include="Images\box-shadow.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\button-search.png" />
+    <Content Include="Images\camera-loader.gif" />
+    <Content Include="Images\camera_skins.png" />
+    <Content Include="Images\comingsoon.jpg" />
+    <Content Include="Images\copyright-tail.png" />
+    <Content Include="Images\digg.png" />
+    <Content Include="Images\direction_nav.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\footer-splash.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\home_img01.png" />
+    <Content Include="Images\home_img02.png" />
+    <Content Include="Images\home_img03.png" />
+    <Content Include="Images\home_img04.png" />
+    <Content Include="Images\home_img05.png" />
+    <Content Include="Images\hr.png" />
+    <Content Include="Images\icon1.png" />
+    <Content Include="Images\icon2.png" />
+    <Content Include="Images\icon3.png" />
+    <Content Include="Images\iDelete.png" />
+    <Content Include="Images\iEdit.png" />
+    <Content Include="Images\iView.png" />
+    <Content Include="Images\loading-map.gif" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\marker.png" />
+    <Content Include="Images\no-image.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\pattern.gif" />
+    <Content Include="Images\products\00.jpg" />
+    <Content Include="Images\products\1.jpg" />
+    <Content Include="Images\products\10.jpg" />
+    <Content Include="Images\products\11.jpg" />
+    <Content Include="Images\products\12.jpg" />
+    <Content Include="Images\products\13.jpg" />
+    <Content Include="Images\products\14.jpg" />
+    <Content Include="Images\products\15.jpg" />
+    <Content Include="Images\products\16.jpg" />
+    <Content Include="Images\products\2.jpg" />
+    <Content Include="Images\products\3.jpg" />
+    <Content Include="Images\products\4.jpg" />
+    <Content Include="Images\products\5.jpg" />
+    <Content Include="Images\products\6.jpg" />
+    <Content Include="Images\products\7.jpg" />
+    <Content Include="Images\products\8.jpg" />
+    <Content Include="Images\products\9.jpg" />
+    <Content Include="Images\products\ion.zoom.preloader.gif" />
+    <Content Include="Images\products\project-thumb01-200x176.jpg" />
+    <Content Include="Images\products\project-thumb02-200x176.jpg" />
+    <Content Include="Images\products\project-thumb03-200x176.jpg" />
+    <Content Include="Images\products\project-thumb04-200x176.jpg" />
+    <Content Include="Images\products\project-thumb05-200x176.jpg" />
+    <Content Include="Images\products\project-thumb06-200x176.jpg" />
+    <Content Include="Images\products\project-thumb07-200x176.jpg" />
+    <Content Include="Images\products\project-thumb08-200x176.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\1\1.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\1\2.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\1\3.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\1\4.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\1\project-main.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\1\project-view.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\2\1.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\2\2.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\2\3.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\2\project-main.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\2\project-view.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\3\1.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\3\2.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\3\project-main.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\3\project-view.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\4\1.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\4\2.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\4\3.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\4\4.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\4\project-main.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\4\project-view.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\5\1.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\5\2.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\5\3.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\5\4.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\5\5.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\5\6.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\5\project-main.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\5\project-view.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\NHA CO THUY\1.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\NHA CO THUY\2.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\NHA CO THUY\3.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\NHA CO THUY\4.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\NHA CO THUY\5.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\NHA CO THUY\6.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\NHA CO THUY\7.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\NHA CO THUY\project-main.jpg" />
+    <Content Include="Images\projects\architecture\batch\modern\NHA CO THUY\project-view.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\1\1.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\1\2.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\1\3.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\1\4.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\1\5.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\1\6.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\1\project-main.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\1\project-view.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\2\1.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\2\2.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\2\3.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\2\4.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\2\5.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\2\6.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\2\7.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\2\8.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\2\project-main.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\2\project-view.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\1.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\10.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\11.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\12.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\13.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\14.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\15.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\16.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\2.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\3.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\4.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\5.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\6.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\7.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\8.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\9.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\project-main.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\3\project-view.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\4. BT Ba Vi\1.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\4. BT Ba Vi\2.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\4. BT Ba Vi\3.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\4. BT Ba Vi\4.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\4. BT Ba Vi\5.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\4. BT Ba Vi\6.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\4. BT Ba Vi\7.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\4. BT Ba Vi\8.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\4. BT Ba Vi\9.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\4. BT Ba Vi\project-main.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\4. BT Ba Vi\project-view.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\5. Nha Vuon Thai Nguyen\1.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\5. Nha Vuon Thai Nguyen\2.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\5. Nha Vuon Thai Nguyen\3.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\5. Nha Vuon Thai Nguyen\4.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\5. Nha Vuon Thai Nguyen\5.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\5. Nha Vuon Thai Nguyen\project-main.jpg" />
+    <Content Include="Images\projects\architecture\villa\modern\5. Nha Vuon Thai Nguyen\project-view.jpg" />
+    <Content Include="Images\slider-caption.png" />
+    <Content Include="Images\slider-shadow.png" />
+    <Content Include="Images\slides\slide01.jpg" />
+    <Content Include="Images\slides\slide02.jpg" />
+    <Content Include="Images\slides\slide03.jpg" />
+    <Content Include="Images\slides\slide04.jpg" />
+    <Content Include="Images\slides\slide05.jpg" />
+    <Content Include="Images\slides\slide06.jpg" />
+    <Content Include="Images\slides\slide07.jpg" />
+    <Content Include="Images\slides\slide08.jpg" />
+    <Content Include="Images\slides\slide09.jpg" />
+    <Content Include="Images\slides\thumbs\header_bg.png" />
+    <Content Include="Images\slides\thumbs\slide01.jpg" />
+    <Content Include="Images\slides\thumbs\slide02.jpg" />
+    <Content Include="Images\slides\thumbs\slide03.jpg" />
+    <Content Include="Images\slides\thumbs\slide04.jpg" />
+    <Content Include="Images\slides\thumbs\slide05.jpg" />
+    <Content Include="Images\slides\thumbs\slide06.jpg" />
+    <Content Include="Images\slides\thumbs\slide07.jpg" />
+    <Content Include="Images\slides\thumbs\slide08.jpg" />
+    <Content Include="Images\slides\thumbs\slide09.jpg" />
+    <Content Include="Images\slides\thumbs\_notes\dwsync.xml" />
+    <Content Include="Images\splash.png" />
+    <Content Include="Images\sub-item-hover.png" />
+    <Content Include="Images\sub-nav-tail.png" />
+    <Content Include="Images\tail-bottom-home.png" />
+    <Content Include="Images\tail-top.png" />
+    <Content Include="Images\top-search-bg.png" />
+    <Content Include="Images\up-arrow.png" />
+    <Content Include="Images\Uploads\News\201407271320021418253-80775645.jpg" />
+    <Content Include="Images\Uploads\News\20140727132845xanh2.jpg" />
+    <Content Include="Interior.aspx" />
+    <Content Include="Lesson.aspx" />
+    <Content Include="News.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="NestedMasterPage.master" />
+    <Content Include="DetailMasterPage.master" />
+    <Content Include="LessonMasterPage.master" />
+    <Content Include="AdminMasterPage.Master" />
+    <None Include="Properties\PublishProfiles\Publish.pubxml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Project-Info.aspx" />
+    <Content Include="Question.aspx" />
+    <Content Include="Refer.aspx" />
+    <Content Include="Scripts\camera.js" />
+    <Content Include="Scripts\camera.min.js" />
+    <Content Include="Scripts\ion.zoom.min.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.carouFredSel-6.0.4-packed.js" />
+    <Content Include="Scripts\jquery.carouFredSel-6.1.0-packed.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Script.js" />
+    <Content Include="UserControls\SameProject.ascx" />
+    <Content Include="UserControls\Footer.ascx" />
+    <Content Include="UserControls\Menu.ascx" />
+    <Content Include="UserControls\MenuLeft.ascx" />
+    <Content Include="UserControls\MenuSubTop.ascx" />
+    <Content Include="UserControls\MenuTop.ascx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\_references.js" />
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminMasterPage.Master.cs">
+      <DependentUpon>AdminMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMasterPage.Master.designer.cs">
+      <DependentUpon>AdminMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddNews.aspx.cs">
+      <DependentUpon>AddNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddNews.aspx.designer.cs">
+      <DependentUpon>AddNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Architecture.aspx.cs">
+      <DependentUpon>Architecture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Architecture.aspx.designer.cs">
+      <DependentUpon>Architecture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="commingsoon.aspx.cs">
+      <DependentUpon>commingsoon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commingsoon.aspx.designer.cs">
+      <DependentUpon>commingsoon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultant-1-1.aspx.cs">
+      <DependentUpon>Consultant-1-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultant-1-1.aspx.designer.cs">
+      <DependentUpon>Consultant-1-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultant-1-2.aspx.cs">
+      <DependentUpon>Consultant-1-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultant-1-2.aspx.designer.cs">
+      <DependentUpon>Consultant-1-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultant-1-3.aspx.cs">
+      <DependentUpon>Consultant-1-3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultant-1-3.aspx.designer.cs">
+      <DependentUpon>Consultant-1-3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultant-1-4.aspx.cs">
+      <DependentUpon>Consultant-1-4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultant-1-4.aspx.designer.cs">
+      <DependentUpon>Consultant-1-4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultant-2-0.aspx.cs">
+      <DependentUpon>Consultant-2-0.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultant-2-0.aspx.designer.cs">
+      <DependentUpon>Consultant-2-0.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultant-2-1.aspx.cs">
+      <DependentUpon>Consultant-2-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultant-2-1.aspx.designer.cs">
+      <DependentUpon>Consultant-2-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultant.aspx.cs">
+      <DependentUpon>Consultant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultant.aspx.designer.cs">
+      <DependentUpon>Consultant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailMasterPage.master.cs">
+      <DependentUpon>DetailMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailMasterPage.master.designer.cs">
+      <DependentUpon>DetailMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Interior.aspx.cs">
+      <DependentUpon>Interior.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interior.aspx.designer.cs">
+      <DependentUpon>Interior.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson.aspx.cs">
+      <DependentUpon>Lesson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lesson.aspx.designer.cs">
+      <DependentUpon>Lesson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LessonMasterPage.master.cs">
+      <DependentUpon>LessonMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LessonMasterPage.master.designer.cs">
+      <DependentUpon>LessonMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="NestedMasterPage.master.cs">
+      <DependentUpon>NestedMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NestedMasterPage.master.designer.cs">
+      <DependentUpon>NestedMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Project-Info.aspx.cs">
+      <DependentUpon>Project-Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project-Info.aspx.designer.cs">
+      <DependentUpon>Project-Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.aspx.cs">
+      <DependentUpon>Question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Question.aspx.designer.cs">
+      <DependentUpon>Question.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Refer.aspx.cs">
+      <DependentUpon>Refer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Refer.aspx.designer.cs">
+      <DependentUpon>Refer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SameProject.ascx.cs">
+      <DependentUpon>SameProject.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SameProject.ascx.designer.cs">
+      <DependentUpon>SameProject.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MenuLeft.ascx.cs">
+      <DependentUpon>MenuLeft.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MenuLeft.ascx.designer.cs">
+      <DependentUpon>MenuLeft.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MenuSubTop.ascx.cs">
+      <DependentUpon>MenuSubTop.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MenuSubTop.ascx.designer.cs">
+      <DependentUpon>MenuSubTop.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MenuTop.ascx.cs">
+      <DependentUpon>MenuTop.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MenuTop.ascx.designer.cs">
+      <DependentUpon>MenuTop.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Images\projects\architecture\batch\classic\" />
+    <Folder Include="Images\projects\architecture\other\" />
+    <Folder Include="Images\projects\architecture\villa\classic\" />
+    <Folder Include="Images\projects\interior\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{887ebc5a-3d4b-4229-878d-beafaf27acf7}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{06c3b2f8-4558-40ee-b1b9-3c57e257f00d}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8529/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

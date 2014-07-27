@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LessonMasterPage.master.cs" Inherits="WebSite.LessonMasterPage" %>
+
+<%@ Register Src="~/UserControls/MenuTop.ascx" TagPrefix="ucMenuTop" TagName="MenuTop" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContainer" runat="server">
+    <div class="container_12 primary_content_wrap clearfix">
+        <div id="content">
+            <div id="post-502" class="page">
+                <div class="grid_12 ">
+                    <div class="tabs">
+                        <ucMenuTop:MenuTop ID="menuTop" runat="server" />
+                        <div class="tab-wrapper">
+                            <div id="tab1" class="Consultant-info" style="display: block; margin: 10px; float: left; width: 650px;">
+                                <asp:ContentPlaceHolder runat="server" ID="SubContent"></asp:ContentPlaceHolder>
+                            </div>
+                            <div id='cssmenu' style="float: left; width: 265px;">
+                                <ul>
+                                    <li class='has-sub'><a href='#'><span>Các bài liên quan</span></a>
+                                        <ul>
+                                            <li><a href='../lesson1.aspx'><span>Bài 1 | Kế hoạch tài chính</span></a></li>
+                                            <li><a href='../lesson2.aspx'><span>Bài 2 | Các bước chuẩn bị đầu tiên</span></a></li>
+                                            <li><a href='../lesson3.aspx'><span>Bài 3 | Làm việc với kiến trúc sư</span></a></li>
+                                            <li><a href='../lesson4.aspx'><span>Bài 4 | Chọn nhà thầu thi công</span></a></li>
+                                            <li><a href='../lesson5.aspx'><span>Bài 5 | Chọn vật liệu xây dựng</span></a></li>
+                                            <li><a href='../lesson6.aspx'><span>Bài 6 | Công tác giám sát</span></a></li>
+                                            <li><a href='../lesson7.aspx'><span>Bài 7 | Tiến hành thi công</span></a></li>
+                                            <li class='last'><a href='../lesson8.aspx'><span>Bài 8 | Kiểm tra, nghiệm thu và hoàn công</span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style="clear: both;"></div>
+                        <div class="img-bottom-info">
+                            <img src="Images/products/8.jpg" />
+                            <img src="Images/products/2.jpg" />
+                            <img src="Images/products/3.jpg" />
+                            <img src="Images/products/4.jpg" />
+                            <img src="Images/products/5.jpg" />
+                            <img src="Images/products/6.jpg" />
+                            <img src="Images/products/7.jpg" />
+                            <img src="Images/products/9.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            var page = window.location.pathname;
+
+            $('#cssmenu ul li ul li a').each(function () {
+                var link = $(this).attr('href');
+                if (link.indexOf(page) >= 0) {
+                    $(this).children().addClass('active');
+                }
+            });
+        });
+    </script>
+</asp:Content>
