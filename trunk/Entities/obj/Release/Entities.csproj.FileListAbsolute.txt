@@ -1,0 +1,4 @@
+E:\Work\Vinh Thanh\InteriorDesign\Entities\bin\Release\Entities.dll
+E:\Work\Vinh Thanh\InteriorDesign\Entities\bin\Release\Entities.pdb
+E:\Work\Vinh Thanh\InteriorDesign\Entities\obj\Release\Entities.dll
+E:\Work\Vinh Thanh\InteriorDesign\Entities\obj\Release\Entities.pdb
