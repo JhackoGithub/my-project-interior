@@ -1,0 +1,14 @@
+E:\Work\Vinh Thanh\InteriorDesign\DAL\bin\Debug\DAL.dll
+E:\Work\Vinh Thanh\InteriorDesign\DAL\bin\Debug\DAL.pdb
+E:\Work\Vinh Thanh\InteriorDesign\DAL\bin\Debug\Entities.dll
+E:\Work\Vinh Thanh\InteriorDesign\DAL\bin\Debug\Entities.pdb
+E:\Work\Vinh Thanh\InteriorDesign\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\Work\Vinh Thanh\InteriorDesign\DAL\obj\Debug\DAL.dll
+E:\Work\Vinh Thanh\InteriorDesign\DAL\obj\Debug\DAL.pdb
+E:\Work\InteriorDesign\Source code\DAL\bin\Debug\DAL.dll
+E:\Work\InteriorDesign\Source code\DAL\bin\Debug\DAL.pdb
+E:\Work\InteriorDesign\Source code\DAL\bin\Debug\Entities.dll
+E:\Work\InteriorDesign\Source code\DAL\bin\Debug\Entities.pdb
+E:\Work\InteriorDesign\Source code\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\Work\InteriorDesign\Source code\DAL\obj\Debug\DAL.dll
+E:\Work\InteriorDesign\Source code\DAL\obj\Debug\DAL.pdb
