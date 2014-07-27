@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DetailMasterPage.master.cs" Inherits="WebSite.DetailMasterPage" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContainer" runat="server">
+    <div class="container_12 primary_content_wrap clearfix">
+        <div id="content">
+            <div class="page">
+                <div class="grid_12 ">
+                    <div class="tabs">
+                        <asp:ContentPlaceHolder runat="server" ID="MenuTopContent"></asp:ContentPlaceHolder>
+                        <div class="tab-wrapper">
+                            <div class="tab" style="display: block; width: 900px; margin: 20px;">
+                                <asp:ContentPlaceHolder runat="server" ID="SlideProjectContent"></asp:ContentPlaceHolder>
+                            </div>
+                            <div class="tab" style="display: block; float: left; margin-top: 70px; width: 700px; background-image: url(/Images/tail-bottom-home.png); background-repeat: repeat-x;">
+                                <asp:ContentPlaceHolder runat="server" ID="SubContent"></asp:ContentPlaceHolder>
+                            </div>
+                            <div style="float: right; width: 230px; margin-top: 52px;">
+                                <asp:ContentPlaceHolder runat="server" ID="ContentRight"></asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>
