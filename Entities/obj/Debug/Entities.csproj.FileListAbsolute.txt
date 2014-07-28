@@ -1,9 +1,0 @@
-E:\Work\Vinh Thanh\InteriorDesign\Entities\bin\Debug\Entities.dll
-E:\Work\Vinh Thanh\InteriorDesign\Entities\bin\Debug\Entities.pdb
-E:\Work\Vinh Thanh\InteriorDesign\Entities\obj\Debug\Entities.dll
-E:\Work\Vinh Thanh\InteriorDesign\Entities\obj\Debug\Entities.pdb
-E:\Work\InteriorDesign\Source code\Entities\bin\Debug\Entities.dll
-E:\Work\InteriorDesign\Source code\Entities\bin\Debug\Entities.pdb
-E:\Work\InteriorDesign\Source code\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
-E:\Work\InteriorDesign\Source code\Entities\obj\Debug\Entities.dll
-E:\Work\InteriorDesign\Source code\Entities\obj\Debug\Entities.pdb
