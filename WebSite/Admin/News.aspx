@@ -19,10 +19,10 @@
             <HeaderStyle HorizontalAlign="Left" Height="30" Font-Bold="True" />
             <MasterTableView AllowMultiColumnSorting="False" AllowFilteringByColumn="False">
                 <Columns>
-                    <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Title" AndCurrentFilterFunction="Contains" HtmlEncode="True"
+                    <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Tiêu đề" AndCurrentFilterFunction="Contains" HtmlEncode="True"
                         AllowSorting="true" ShowFilterIcon="false">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="CreatedOn" UniqueName="CreatedOn" HeaderText="Created On" AutoPostBackOnFilter="true"
+                    <telerik:GridBoundColumn DataField="CreatedOn" UniqueName="CreatedOn" HeaderText="Ngày đăng" AutoPostBackOnFilter="true"
                         AllowSorting="true" SortExpression="CreatedOn" AllowFiltering="False" ShowFilterIcon="False" DataFormatString="{0:g}">
                         <HeaderStyle Width="130px"></HeaderStyle>
                     </telerik:GridBoundColumn>
@@ -30,9 +30,9 @@
                         <HeaderStyle HorizontalAlign="Right" Width="130px" />
                         <ItemStyle HorizontalAlign="Right" Width="130px" />
                         <ItemTemplate>
-                            <asp:LinkButton runat="server" ID="hlkView" CssClass="Grid-View"></asp:LinkButton>
+                            <a href="../News.aspx?type=2&id=<%# Eval("Id") %>" target="_blank" class="Grid-View"></a>
                             <a href="AddNews.aspx?id=<%#Eval("Id") %>" class="Grid-Edit"></a>
-                            <asp:LinkButton runat="server" ID="lkbDelete" CssClass="Grid-Delete" CommandName="delete" CommandArgument='<%#Eval("Id") %>'></asp:LinkButton>
+                            <asp:LinkButton runat="server" ID="lkbDelete" CssClass="Grid-Delete" CommandName="delete" CommandArgument='<%# Eval("Id") %>'></asp:LinkButton>
                         </ItemTemplate>
                     </telerik:GridTemplateColumn>
                 </Columns>

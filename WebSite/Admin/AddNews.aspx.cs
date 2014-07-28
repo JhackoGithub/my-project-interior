@@ -11,11 +11,14 @@ namespace WebSite.Admin
             get { return Request.QueryString["id"] == null ? 0 : Convert.ToInt32(Request.QueryString["id"]); }
         }
 
-        private string ImageState
+        private string Filename
         {
-            set { ViewState["img"] = value; }
-            get { return (string)ViewState["img"]; }
+            get { return (string) ViewState["FILE_NAME"]; }
+            set { ViewState["FILE_NAME"] = value; }
         }
+
+        public string ImageUrl = "/Images/no-image.png";
+        private const string Path = "/Images/Uploads/News/";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,8 +37,9 @@ namespace WebSite.Admin
             var newBo = new NewsBO();
             news.Id = Id;
             var res = Id == 0 ? newBo.AddNews(news) : newBo.UpdateNews(news);
-            var msg = string.Format("{0} bản tin {1}", Id == 0 ? "Tạo mới" : "Cập nhật", res > 0 ? "thành công" : "bị lỗi");
-            ltScript.Text = string.Format("<script>alert('{0}');</script>", msg);
+            var confirmMsg = string.Format("<script>confirmDialog('{0} bản tin thành công, bạn trở về trang quản lý bản tin?');</script>", Id == 0 ? "Tạo mới" : "Cập nhật");
+            var alertMsg = string.Format("<script>alert('{0} bản tin không thành công');</script>", Id == 0 ? "Tạo mới" : "Cập nhật");
+            ltScript.Text = string.Format("{0}", res > 0 ? confirmMsg : alertMsg);
         }
 
         private void BindEntityToControl()
@@ -45,26 +49,27 @@ namespace WebSite.Admin
             tbTitle.Text = news.Title;
             tbSubcontent.Text = news.SubContent;
             radContent.Content = news.Contents;
+            if (string.IsNullOrEmpty(news.ImageUrl)) return;
+            Filename = news.ImageUrl;
+            ImageUrl = string.Format("{0}{1}", Path, news.ImageUrl);
         }
 
         private void BindControlToEntity(Entities.News news)
         {
             news.Title = tbTitle.Text.Trim();
-            news.ImageUrl = ImageState;
             news.SubContent = tbSubcontent.Text.Trim();
             news.Contents = radContent.Content;
-        }
+            news.ImageUrl = Filename;
 
-        protected void btnUpload_Click(object sender, EventArgs e)
-        {
-            const string path = "/Images/Uploads/News/";
-            if (fileUpload.HasFile)
+            var postedFile = uploadFile.PostedFile;
+            if (postedFile == null || postedFile.ContentLength <= 0) return;
+            if (string.IsNullOrEmpty(Filename) || (!string.IsNullOrEmpty(Filename) && !Filename.Equals(postedFile.FileName)))
             {
-                var fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + fileUpload.FileName.Replace(' ', '-').Replace('_', '-');
-                fileUpload.PostedFile.SaveAs(Server.MapPath(string.Format("{0}{1}", path, fileName)));
-                ImageState = fileName;
+                var fileName = string.Format("{0}-{1}", DateTime.Now.ToString("yyyyMMddHHmmss"),
+                                             postedFile.FileName.Replace(' ', '-').Replace('_', '-'));
+                postedFile.SaveAs(Server.MapPath(string.Format("{0}{1}", Path, fileName)));
+                news.ImageUrl = fileName;    
             }
-            imgNews.ImageUrl = !string.IsNullOrEmpty(ImageState) ? string.Format("{0}{1}", path, ImageState) : "/Images/no-image.png";
         }
     }
 }

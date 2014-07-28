@@ -64,6 +64,7 @@
 
         .tab .mt3 {
             margin-top: 15px;
+            margin-bottom: 10px;
         }
 
         .tab .img130 {
@@ -130,7 +131,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div style="float: left; width: 265px;">
+                            <div style="float: left; width: 265px; margin-left: 15px;">
                                 <ucSameProject:SameProject runat="server" ID="sameProject" />
                             </div>
                         </div>

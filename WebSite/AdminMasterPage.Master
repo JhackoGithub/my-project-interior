@@ -5,15 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script src="../Scripts/jquery-1.8.2.min.js"></script>
     <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body class="home page" style="color: #878786;">
     <form id="form1" runat="server">
     <header>
         <div class="content-wrapper">
-<%--            <div class="float-left">
-                <p class="site-title"><a runat="server" href="~/">your logo here</a></p>
-            </div>--%>
             <div class="float-right">
                 <section id="login">
                     <asp:LoginView ID="LoginView1" runat="server" ViewStateMode="Disabled">
