@@ -15,7 +15,7 @@
                         <li id="menu-item-533"><a href="../Architecture.aspx?type=0&tab=1">Kiến trúc</a></li>
                         <li id="menu-item-532"><a href="../Interior.aspx?type=1&tab=1">Nội thất</a></li>
                         <li id="menu-item-243"><a href="../News.aspx?type=2">Tin tức</a></li>
-                        <li id="menu-item-241"><a href="http://www.xemngay.com/Default.aspx?blog=huongnha2">Phong thủy</a></li>
+                        <li id="menu-item-241"><a href="http://www.xemngay.com/Default.aspx?blog=huongnha2" target="_blank">Phong thủy</a></li>
                         <li id="menu-item-242"><a href="../Contact.aspx?type=4">Liên hệ</a></li>
                     </ul>
                 </nav>

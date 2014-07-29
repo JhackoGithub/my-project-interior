@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Web.UI;
 using BLL;
+using WebSite.Core;
 
 namespace WebSite.Admin
 {
-    public partial class News : Page
+    public partial class News : AuthenPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
