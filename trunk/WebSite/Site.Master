@@ -10,6 +10,7 @@
     <title><%: Page.Title %> - noithatviet.net.vn</title>
     <link href="~/Content/normalize.css" rel="stylesheet" />
     <link href="~/Content/StyleSheet.css" rel="stylesheet" />
+    <link href="~/Content/Menu.css" rel="stylesheet" />
     <link href="~/Content/prettyPhoto.css" rel="stylesheet" />
     <link href="~/Content/grid.css" rel="stylesheet" />
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />

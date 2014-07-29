@@ -14,11 +14,6 @@ namespace WebSite.UserControls
         {
             get { return Request.QueryString["type"] == null ? 0 : Convert.ToInt32(Request.QueryString["type"]); }
         }
-        
-        private string Category
-        {
-            get { return Request.QueryString["cate"] ?? "all"; }
-        }
 
         protected void Page_Load(object sender, EventArgs e)
         {

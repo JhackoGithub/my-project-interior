@@ -92,7 +92,7 @@
                                         <div data-thumb="/Images/slides/thumbs/slide06.jpg" data-src="/Images/slides/slide06.jpg"></div>
                                         <div data-thumb="/Images/slides/thumbs/slide07.jpg" data-src="/Images/slides/slide07.jpg"></div>
                                         <div data-thumb="/Images/slides/thumbs/slide08.jpg" data-src="/Images/slides/slide08.jpg"></div>
-                                        <div data-thumb="/Images/slides/thumbs/slide08.jpg" data-src="/Images/slides/slide09.jpg"></div>
+                                        <div data-thumb="/Images/slides/thumbs/slide09.jpg" data-src="/Images/slides/slide09.jpg"></div>
                                     </div>
                                 </div>
                             </div>

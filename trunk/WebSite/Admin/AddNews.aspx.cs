@@ -1,10 +1,11 @@
 ﻿using System;
 using System.IO;
 using BLL;
+using WebSite.Core;
 
 namespace WebSite.Admin
 {
-    public partial class AddNews : System.Web.UI.Page
+    public partial class AddNews : AuthenPage
     {
         private int Id
         {

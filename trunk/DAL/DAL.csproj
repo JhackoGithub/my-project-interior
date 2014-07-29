@@ -45,6 +45,7 @@
     <Compile Include="Core\Connection.cs" />
     <Compile Include="Core\DynamicBuilder.cs" />
     <Compile Include="Core\Transaction.cs" />
+    <Compile Include="MenuLeftDAO.cs" />
     <Compile Include="NewsDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
