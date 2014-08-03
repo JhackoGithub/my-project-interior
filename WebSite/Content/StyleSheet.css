@@ -11,7 +11,8 @@ body
 {
     background-color: #fff;
     color: #000;
-    font: 100%/1.125em Arial, Helvetica, sans-serif;
+    font-family: Sans-Serif;
+    font-size: 10pt;
     position: relative;
 }
 
@@ -45,7 +46,7 @@ body
 
 #main
 {
-    font-size: .75em;
+    font-size: 10pt;
     min-height: 100%;
 }
 
@@ -421,7 +422,7 @@ body.home #header-master
 
 .top-box h2
 {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: sans-serif;
     font-size: 23px;
     color: black;
     font-weight: normal;
@@ -556,7 +557,7 @@ body.home #header-master
     overflow: hidden;
     z-index: 89;
     font-size: 21px;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: sans-serif;
 }
 
     .nivo-caption .nivo-caption-inner
@@ -1104,7 +1105,7 @@ body.home .primary_content_wrap
 
     #before-content-area h3
     {
-        font-family: 'Open Sans Condensed', sans-serif;
+        font-family: sans-serif;
         font-size: 21px;
         color: #201f1f;
         font-weight: normal;
@@ -1315,13 +1316,13 @@ p#no-comments
     background: #eee;
     padding: 15px;
     font-size: 11px;
-    font-family: "Courier New", Courier, monospace;
+    font-family: sans-serif;
     color: #666;
 }
 
     .allowed_tags strong
     {
-        font-family: Tahoma, Geneva, sans-serif;
+        font-family: sans-serif;
     }
 
 #respond
@@ -2160,7 +2161,7 @@ nav.oldernewer
     position: absolute;
     width: 100%;
     color: #fff;
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     text-align: center;
     bottom: -15px;
     left: 0;
@@ -2336,7 +2337,7 @@ nav.oldernewer
         color: #000;
         font-weight: bold;
         padding: 4px 0;
-        font-family: 'Open Sans Condensed', sans-serif;
+        font-family: sans-serif;
         margin-bottom: 5px;
     }
 
@@ -3091,7 +3092,7 @@ article.testimonial
     font-style: normal;
     color: #222c36;
     font-size: 11px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     line-height: 1.5em;
 }
 
@@ -4259,7 +4260,7 @@ nav.footer
     font-size: .91em;
     line-height: 1.4em;
     border: 1px solid #dbdbdb;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     margin-bottom: 15px;
 }
 
@@ -4300,7 +4301,7 @@ nav.footer
 
 input, select, textarea
 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     font-size: 1em;
     vertical-align: middle;
     font-weight: normal;

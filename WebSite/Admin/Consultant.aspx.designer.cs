@@ -10,7 +10,7 @@
 namespace WebSite.Admin {
     
     
-    public partial class AddNews {
+    public partial class Consultant {
         
         /// <summary>
         /// ucNews control.
@@ -20,23 +20,5 @@ namespace WebSite.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::WebSite.UserControls.NewsManagement ucNews;
-        
-        /// <summary>
-        /// btnSave control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSave;
-        
-        /// <summary>
-        /// ltScript control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltScript;
     }
 }

@@ -116,11 +116,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Admin\Consultant.aspx" />
-    <Content Include="Admin\MenuConsultant.aspx" />
-    <Content Include="Content\Menu.css" />
-    <Content Include="Login.aspx" />
     <Content Include="Admin\AddNews.aspx" />
+    <Content Include="Admin\Consultant.aspx" />
     <Content Include="Admin\News.aspx" />
     <Content Include="App_Themes\BocaTheme\Button.Metro.css" />
     <Content Include="App_Themes\BocaTheme\Button\ButtonSprites.gif" />
@@ -226,9 +223,13 @@
     <Content Include="Consultant-2-1.aspx" />
     <Content Include="Consultant.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Contents\Investigate.aspx" />
+    <Content Include="Contents\Process.html" />
+    <Content Include="Contents\Quote.html" />
     <Content Include="Content\camera.css" />
     <Content Include="Content\grid.css" />
     <Content Include="Content\ion.zoom.css" />
+    <Content Include="Content\Menu.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\prettyPhoto.css" />
     <Content Include="Content\Site.css" />
@@ -507,6 +508,7 @@
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Script.js" />
+    <Content Include="UserControls\NewsManagement.ascx" />
     <Content Include="UserControls\SameProject.ascx" />
     <Content Include="UserControls\Footer.ascx" />
     <Content Include="UserControls\Menu.ascx" />
@@ -550,13 +552,6 @@
     <Compile Include="Admin\Consultant.aspx.designer.cs">
       <DependentUpon>Consultant.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\MenuConsultant.aspx.cs">
-      <DependentUpon>MenuConsultant.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\MenuConsultant.aspx.designer.cs">
-      <DependentUpon>MenuConsultant.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -571,13 +566,6 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Architecture.aspx.cs">
@@ -594,7 +582,6 @@
     <Compile Include="commingsoon.aspx.designer.cs">
       <DependentUpon>commingsoon.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Common\UIProcess.cs" />
     <Compile Include="Consultant-1-1.aspx.cs">
       <DependentUpon>Consultant-1-1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -651,11 +638,12 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Core\AuthenPage.cs">
+    <Compile Include="Contents\Investigate.aspx.cs">
+      <DependentUpon>Investigate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Core\BasePage.cs">
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="Contents\Investigate.aspx.designer.cs">
+      <DependentUpon>Investigate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -745,6 +733,13 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\NewsManagement.ascx.cs">
+      <DependentUpon>NewsManagement.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NewsManagement.ascx.designer.cs">
+      <DependentUpon>NewsManagement.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SameProject.ascx.cs">
       <DependentUpon>SameProject.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -797,6 +792,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Common\" />
+    <Folder Include="Core\" />
     <Folder Include="Images\projects\architecture\batch\classic\" />
     <Folder Include="Images\projects\architecture\other\" />
     <Folder Include="Images\projects\architecture\villa\classic\" />

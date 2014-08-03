@@ -146,6 +146,9 @@
                 scroll: {
                     items: 1,
                     duration: 400,
+                    timeoutDuration: 2500,
+                    easing: 'swing',
+                    pauseOnHover: 'immediate',
                     onBefore: function (data) {
                         data.items.old.eq(0).animate(_outLeft);
                         data.items.visible.eq(0).animate(_left);
@@ -180,8 +183,16 @@
                     }
                 }
             });
-
+          
+            $("#carousel").mouseover(function () {
+                $("#carousel").trigger('pause', true);
+            });
+            //$("#carousel").mouseout(function () {
+            //    $("#carousel").trigger('pause', false);
+            //});
         });
+        
+        
 		</script>
 </asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="SlideProjectContent">
