@@ -26,7 +26,7 @@
                         <li><a id="A2" href="../">Tranh chủ</a></li>
                         <li><a id="A3" href="#">Kiến trúc</a></li>
                         <li><a id="A4" href="#">Nội thât</a></li>
-                        <li><a id="A1" href="../Admin/MenuConsultant.aspx">Menu Tư vấn</a></li>
+                        <li><a id="A1" href="../Admin/Consultant.aspx">Tư vấn</a></li>
                         <li><a id="A5" href="../Admin/News.aspx">Tin tức</a></li>
                         <li><a id="A6" href="#">Liên hệ</a></li>
                     </ul>

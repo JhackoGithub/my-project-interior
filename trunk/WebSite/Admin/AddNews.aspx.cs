@@ -1,11 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.Web.UI;
 using BLL;
-using WebSite.Core;
+
 
 namespace WebSite.Admin
 {
-    public partial class AddNews : AuthenPage
+    public partial class AddNews : Page
     {
         private int Id
         {
@@ -17,8 +18,7 @@ namespace WebSite.Admin
             get { return (string) ViewState["FILE_NAME"]; }
             set { ViewState["FILE_NAME"] = value; }
         }
-
-        public string ImageUrl = "/Images/no-image.png";
+        
         private const string Path = "/Images/Uploads/News/";
 
         protected void Page_Load(object sender, EventArgs e)
@@ -47,22 +47,22 @@ namespace WebSite.Admin
         {
             var newsBo = new NewsBO();
             var news = newsBo.GetNewsById(Id);
-            tbTitle.Text = news.Title;
-            tbSubcontent.Text = news.SubContent;
-            radContent.Content = news.Contents;
+            ucNews.tbTitle.Text = news.Title;
+            ucNews.tbSubcontent.Text = news.SubContent;
+            ucNews.radContent.Content = news.Contents;
             if (string.IsNullOrEmpty(news.ImageUrl)) return;
             Filename = news.ImageUrl;
-            ImageUrl = string.Format("{0}{1}", Path, news.ImageUrl);
+            ucNews.ImageUrl = string.Format("{0}{1}", Path, news.ImageUrl);
         }
 
         private void BindControlToEntity(Entities.News news)
         {
-            news.Title = tbTitle.Text.Trim();
-            news.SubContent = tbSubcontent.Text.Trim();
-            news.Contents = radContent.Content;
+            news.Title = ucNews.tbTitle.Text.Trim();
+            news.SubContent = ucNews.tbSubcontent.Text.Trim();
+            news.Contents = ucNews.radContent.Content;
             news.ImageUrl = Filename;
 
-            var postedFile = uploadFile.PostedFile;
+            var postedFile = ucNews.uploadFile.PostedFile;
             if (postedFile == null || postedFile.ContentLength <= 0) return;
             if (string.IsNullOrEmpty(Filename) || (!string.IsNullOrEmpty(Filename) && !Filename.Equals(postedFile.FileName)))
             {

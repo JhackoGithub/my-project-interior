@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebSite.Common;
 
 namespace WebSite
 {
@@ -24,7 +23,7 @@ namespace WebSite
         protected void lbLogout_Click(object sender, EventArgs e)
         {
             Session["CurrentUser"] = null;
-            Response.Redirect(UIProcess.GetLoginLink(""), true);
+            //Response.Redirect(UIProcess.GetLoginLink(""), true);
         }
     }
 }
