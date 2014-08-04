@@ -187,11 +187,7 @@
             $("#carousel").mouseover(function () {
                 $("#carousel").trigger('pause', true);
             });
-            //$("#carousel").mouseout(function () {
-            //    $("#carousel").trigger('pause', false);
-            //});
         });
-        
         
 		</script>
 </asp:Content>

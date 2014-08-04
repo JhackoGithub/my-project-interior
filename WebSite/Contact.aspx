@@ -22,10 +22,10 @@
                     <ul>
                         <li class="has-sub"><a href="#"><span>Khách hàng</span></a>
                             <ul id="menucontact">
-                                <li><a href="#"><span id="0">Địa điểm công ty</span></a></li>
-                                <li><a href="#"><span id="1">Bảng báo giá Tư vấn</span></a></li>
-                                <li><a href="#"><span id="2">Quy trình thiết kế</span></a></li>
-                                <li class="last"><a href="#"><span id="3">Phiếu điều tra</span></a></li>
+                                <li><a href="Contact.aspx?type=4&id=0"><span>Địa điểm công ty</span></a></li>
+                                <li><a href="Contact.aspx?type=4&id=1"><span>Bảng báo giá Tư vấn</span></a></li>
+                                <li><a href="Contact.aspx?type=4&id=2"><span>Quy trình thiết kế</span></a></li>
+                                <li class="last"><a href="Contact.aspx?type=4&id=3"><span>Phiếu điều tra</span></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -46,30 +46,59 @@
         </div>
     </div>
     <script type="text/javascript">
-        $('#menucontact li span').click(function () {
-            debugger;
-            var id = $(this).attr('id');
-            switch (id) {
-                case '1':
-                    $('#divMap').css('display', 'none');
-                    $('#divIframe').css('display', 'block');
-                    sourceIframe("Quote.html");
-                    break;
-                case '2':
-                    $('#divMap').css('display', 'none');
-                    $('#divIframe').css('display', 'block');
-                    sourceIframe("Process.html");
-                    break;
-                case '3':
-                    $('#divMap').css('display', 'none');
-                    $('#divIframe').css('display', 'block');
-                    break;
-                case '0':
-                default:
-                    $('#divMap').css('display', 'block');
-                    $('#divIframe').css('display', 'none');
-                    break;
-            }
+        $(function () {
+            var id = getParameterByName('id');
+            var page = 'Contact.aspx?type=4&id=' + id;
+            $('#cssmenu ul li ul li a').each(function () {
+                var link = $(this).attr('href');
+                if (link.indexOf(page) >= 0) {
+                    $(this).children().addClass('active');
+                    getDirectPage(id);
+                }
+            });
         });
+
+        function getDirectPage(id) {
+            if(id == "0") {
+                $('#divMap').css('display', 'block');
+                $('#divIframe').css('display', 'none');
+            } else {
+                $('#divMap').css('display', 'none');
+                $('#divIframe').css('display', 'block');
+                if (id == "1") {
+                    sourceIframe("Quote.html");
+                } else if(id == "2") {
+                    sourceIframe("Process.html");
+                } else {
+                    sourceIframe("Investigate.aspx");
+                }
+            }
+        }
+        
+        //$('#menucontact li a').click(function () {
+        //    var id = getParameterByName('id');
+        //    switch (id) {
+        //    case '1':
+        //        $('#divMap').css('display', 'none');
+        //        $('#divIframe').css('display', 'block');
+        //        sourceIframe("Quote.html");
+        //        break;
+        //    case '2':
+        //        $('#divMap').css('display', 'none');
+        //        $('#divIframe').css('display', 'block');
+        //        sourceIframe("Process.html");
+        //        break;
+        //    case '3':
+        //        $('#divMap').css('display', 'none');
+        //        $('#divIframe').css('display', 'block');
+        //        sourceIframe("Investigate.aspx");
+        //        break;
+        //    case '0':
+        //    default:
+        //        $('#divMap').css('display', 'block');
+        //        $('#divIframe').css('display', 'none');
+        //        break;
+        //    }
+        //});
     </script>
 </asp:Content>
