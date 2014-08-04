@@ -26,7 +26,41 @@ $(document).ready(function () {
             return false;
         }
     });
- });
+});
+
+function ShowPopupIframe(w, h, title, divContainer, url) {
+    var wnd;
+    var container = "#" + divContainer;
+    h = h > 0 ? h : "auto";
+    //if (wnd) wnd.refresh();
+    wnd = $(container).kendoWindow({
+        modal: true,
+        visible: false,
+        resizable: false,
+        close: function (e) {
+            $(this.element).empty();
+        },
+        actions: ["Close"],
+        width: w,
+        height: h,
+        content: url,
+        iframe: true
+    }).data("kendoWindow");
+    wnd.title(title);
+    wnd.center().open();
+
+    $(".k-window-action").removeClass("k-window-action").addClass("k-link-wnd");
+    $("a.k-link-wnd").click(function () {
+        ClosePopup(wnd);
+    });
+    return wnd;
+}
+
+function ClosePopup(wnd) {
+    if (wnd != null) {
+        wnd.close();
+    }
+}
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

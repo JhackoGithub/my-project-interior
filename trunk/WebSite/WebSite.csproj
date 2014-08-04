@@ -101,9 +101,10 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.0\lib\net40\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Web.Design, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+    <Reference Include="Telerik.Web.Design, Version=2013.3.1324.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Telerik.Web.Design.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Web.UI, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -118,7 +119,9 @@
     <Content Include="About.aspx" />
     <Content Include="Admin\AddNews.aspx" />
     <Content Include="Admin\Consultant.aspx" />
+    <Content Include="Admin\MenuConsultant.aspx" />
     <Content Include="Admin\News.aspx" />
+    <Content Include="Admin\Project.aspx" />
     <Content Include="App_Themes\BocaTheme\Button.Metro.css" />
     <Content Include="App_Themes\BocaTheme\Button\ButtonSprites.gif" />
     <Content Include="App_Themes\BocaTheme\Button\Metro.gif" />
@@ -223,12 +226,167 @@
     <Content Include="Consultant-2-1.aspx" />
     <Content Include="Consultant.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Contents\AddProject.aspx" />
     <Content Include="Contents\Investigate.aspx" />
     <Content Include="Contents\Process.html" />
     <Content Include="Contents\Quote.html" />
     <Content Include="Content\camera.css" />
     <Content Include="Content\grid.css" />
     <Content Include="Content\ion.zoom.css" />
+    <Content Include="Content\Kendo\Black\editor.png" />
+    <Content Include="Content\Kendo\Black\imagebrowser.png" />
+    <Content Include="Content\Kendo\Black\indeterminate.gif" />
+    <Content Include="Content\Kendo\Black\loading-image.gif" />
+    <Content Include="Content\Kendo\Black\loading.gif" />
+    <Content Include="Content\Kendo\Black\loading_2x.gif" />
+    <Content Include="Content\Kendo\Black\slider-h.gif" />
+    <Content Include="Content\Kendo\Black\slider-v.gif" />
+    <Content Include="Content\Kendo\Black\sprite.png" />
+    <Content Include="Content\Kendo\Black\sprite_2x.png" />
+    <Content Include="Content\Kendo\BlueOpal\editor.png" />
+    <Content Include="Content\Kendo\BlueOpal\imagebrowser.png" />
+    <Content Include="Content\Kendo\BlueOpal\indeterminate.gif" />
+    <Content Include="Content\Kendo\BlueOpal\loading-image.gif" />
+    <Content Include="Content\Kendo\BlueOpal\loading.gif" />
+    <Content Include="Content\Kendo\BlueOpal\loading_2x.gif" />
+    <Content Include="Content\Kendo\BlueOpal\slider-h.gif" />
+    <Content Include="Content\Kendo\BlueOpal\slider-v.gif" />
+    <Content Include="Content\Kendo\BlueOpal\sprite.png" />
+    <Content Include="Content\Kendo\BlueOpal\sprite_2x.png" />
+    <Content Include="Content\Kendo\Bootstrap\editor.png" />
+    <Content Include="Content\Kendo\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\Kendo\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\Kendo\Bootstrap\loading-image.gif" />
+    <Content Include="Content\Kendo\Bootstrap\loading.gif" />
+    <Content Include="Content\Kendo\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\Kendo\Bootstrap\slider-h.gif" />
+    <Content Include="Content\Kendo\Bootstrap\slider-v.gif" />
+    <Content Include="Content\Kendo\Bootstrap\sprite.png" />
+    <Content Include="Content\Kendo\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\Kendo\Default\editor.png" />
+    <Content Include="Content\Kendo\Default\imagebrowser.png" />
+    <Content Include="Content\Kendo\Default\indeterminate.gif" />
+    <Content Include="Content\Kendo\Default\loading-image.gif" />
+    <Content Include="Content\Kendo\Default\loading.gif" />
+    <Content Include="Content\Kendo\Default\loading_2x.gif" />
+    <Content Include="Content\Kendo\Default\slider-h.gif" />
+    <Content Include="Content\Kendo\Default\slider-v.gif" />
+    <Content Include="Content\Kendo\Default\sprite.png" />
+    <Content Include="Content\Kendo\Default\sprite_2x.png" />
+    <Content Include="Content\Kendo\Flat\editor.png" />
+    <Content Include="Content\Kendo\Flat\imagebrowser.png" />
+    <Content Include="Content\Kendo\Flat\indeterminate.gif" />
+    <Content Include="Content\Kendo\Flat\loading-image.gif" />
+    <Content Include="Content\Kendo\Flat\loading.gif" />
+    <Content Include="Content\Kendo\Flat\loading_2x.gif" />
+    <Content Include="Content\Kendo\Flat\slider-h.gif" />
+    <Content Include="Content\Kendo\Flat\slider-v.gif" />
+    <Content Include="Content\Kendo\Flat\sprite.png" />
+    <Content Include="Content\Kendo\Flat\sprite_2x.png" />
+    <Content Include="Content\Kendo\HighContrast\editor.png" />
+    <Content Include="Content\Kendo\HighContrast\imagebrowser.png" />
+    <Content Include="Content\Kendo\HighContrast\indeterminate.gif" />
+    <Content Include="Content\Kendo\HighContrast\loading-image.gif" />
+    <Content Include="Content\Kendo\HighContrast\loading.gif" />
+    <Content Include="Content\Kendo\HighContrast\loading_2x.gif" />
+    <Content Include="Content\Kendo\HighContrast\slider-h.gif" />
+    <Content Include="Content\Kendo\HighContrast\slider-v.gif" />
+    <Content Include="Content\Kendo\HighContrast\sprite.png" />
+    <Content Include="Content\Kendo\HighContrast\sprite_2x.png" />
+    <Content Include="Content\Kendo\kendo.black.min.css" />
+    <Content Include="Content\Kendo\kendo.blueopal.min.css" />
+    <Content Include="Content\Kendo\kendo.bootstrap.min.css" />
+    <Content Include="Content\Kendo\kendo.common-bootstrap.min.css" />
+    <Content Include="Content\Kendo\kendo.common.min.css" />
+    <Content Include="Content\Kendo\kendo.default.min.css" />
+    <Content Include="Content\Kendo\kendo.flat.min.css" />
+    <Content Include="Content\Kendo\kendo.highcontrast.min.css" />
+    <Content Include="Content\Kendo\kendo.metro.min.css" />
+    <Content Include="Content\Kendo\kendo.metroblack.min.css" />
+    <Content Include="Content\Kendo\kendo.moonlight.min.css" />
+    <Content Include="Content\Kendo\kendo.rtl.min.css" />
+    <Content Include="Content\Kendo\kendo.silver.min.css" />
+    <Content Include="Content\Kendo\kendo.uniform.min.css" />
+    <Content Include="Content\Kendo\MetroBlack\editor.png" />
+    <Content Include="Content\Kendo\MetroBlack\imagebrowser.png" />
+    <Content Include="Content\Kendo\MetroBlack\indeterminate.gif" />
+    <Content Include="Content\Kendo\MetroBlack\loading-image.gif" />
+    <Content Include="Content\Kendo\MetroBlack\loading.gif" />
+    <Content Include="Content\Kendo\MetroBlack\loading_2x.gif" />
+    <Content Include="Content\Kendo\MetroBlack\slider-h.gif" />
+    <Content Include="Content\Kendo\MetroBlack\slider-v.gif" />
+    <Content Include="Content\Kendo\MetroBlack\sprite.png" />
+    <Content Include="Content\Kendo\MetroBlack\sprite_2x.png" />
+    <Content Include="Content\Kendo\Metro\editor.png" />
+    <Content Include="Content\Kendo\Metro\imagebrowser.png" />
+    <Content Include="Content\Kendo\Metro\indeterminate.gif" />
+    <Content Include="Content\Kendo\Metro\loading-image.gif" />
+    <Content Include="Content\Kendo\Metro\loading.gif" />
+    <Content Include="Content\Kendo\Metro\loading_2x.gif" />
+    <Content Include="Content\Kendo\Metro\slider-h.gif" />
+    <Content Include="Content\Kendo\Metro\slider-v.gif" />
+    <Content Include="Content\Kendo\Metro\sprite.png" />
+    <Content Include="Content\Kendo\Metro\sprite_2x.png" />
+    <Content Include="Content\Kendo\Moonlight\editor.png" />
+    <Content Include="Content\Kendo\Moonlight\imagebrowser.png" />
+    <Content Include="Content\Kendo\Moonlight\indeterminate.gif" />
+    <Content Include="Content\Kendo\Moonlight\loading-image.gif" />
+    <Content Include="Content\Kendo\Moonlight\loading.gif" />
+    <Content Include="Content\Kendo\Moonlight\loading_2x.gif" />
+    <Content Include="Content\Kendo\Moonlight\slider-h.gif" />
+    <Content Include="Content\Kendo\Moonlight\slider-v.gif" />
+    <Content Include="Content\Kendo\Moonlight\sprite.png" />
+    <Content Include="Content\Kendo\Moonlight\sprite_2x.png" />
+    <Content Include="Content\Kendo\Silver\editor.png" />
+    <Content Include="Content\Kendo\Silver\imagebrowser.png" />
+    <Content Include="Content\Kendo\Silver\indeterminate.gif" />
+    <Content Include="Content\Kendo\Silver\loading-image.gif" />
+    <Content Include="Content\Kendo\Silver\loading.gif" />
+    <Content Include="Content\Kendo\Silver\loading_2x.gif" />
+    <Content Include="Content\Kendo\Silver\slider-h.gif" />
+    <Content Include="Content\Kendo\Silver\slider-v.gif" />
+    <Content Include="Content\Kendo\Silver\sprite.png" />
+    <Content Include="Content\Kendo\Silver\sprite_2x.png" />
+    <Content Include="Content\Kendo\textures\brushed-metal.png" />
+    <Content Include="Content\Kendo\textures\dots1.png" />
+    <Content Include="Content\Kendo\textures\dots10.png" />
+    <Content Include="Content\Kendo\textures\dots11.png" />
+    <Content Include="Content\Kendo\textures\dots12.png" />
+    <Content Include="Content\Kendo\textures\dots13.png" />
+    <Content Include="Content\Kendo\textures\dots2.png" />
+    <Content Include="Content\Kendo\textures\dots3.png" />
+    <Content Include="Content\Kendo\textures\dots4.png" />
+    <Content Include="Content\Kendo\textures\dots5.png" />
+    <Content Include="Content\Kendo\textures\dots6.png" />
+    <Content Include="Content\Kendo\textures\dots7.png" />
+    <Content Include="Content\Kendo\textures\dots8.png" />
+    <Content Include="Content\Kendo\textures\dots9.png" />
+    <Content Include="Content\Kendo\textures\glass-lighter.png" />
+    <Content Include="Content\Kendo\textures\glass.png" />
+    <Content Include="Content\Kendo\textures\highlight.png" />
+    <Content Include="Content\Kendo\textures\hsv-gradient.png" />
+    <Content Include="Content\Kendo\textures\hue.png" />
+    <Content Include="Content\Kendo\textures\leather1.png" />
+    <Content Include="Content\Kendo\textures\leather2.png" />
+    <Content Include="Content\Kendo\textures\noise.png" />
+    <Content Include="Content\Kendo\textures\stripe1.png" />
+    <Content Include="Content\Kendo\textures\stripe2.png" />
+    <Content Include="Content\Kendo\textures\stripe3.png" />
+    <Content Include="Content\Kendo\textures\stripe4.png" />
+    <Content Include="Content\Kendo\textures\stripe5.png" />
+    <Content Include="Content\Kendo\textures\stripe6.png" />
+    <Content Include="Content\Kendo\textures\transparency.png" />
+    <Content Include="Content\Kendo\textures\transtexture.png" />
+    <Content Include="Content\Kendo\Uniform\editor.png" />
+    <Content Include="Content\Kendo\Uniform\imagebrowser.png" />
+    <Content Include="Content\Kendo\Uniform\indeterminate.gif" />
+    <Content Include="Content\Kendo\Uniform\loading-image.gif" />
+    <Content Include="Content\Kendo\Uniform\loading.gif" />
+    <Content Include="Content\Kendo\Uniform\loading_2x.gif" />
+    <Content Include="Content\Kendo\Uniform\slider-h.gif" />
+    <Content Include="Content\Kendo\Uniform\slider-v.gif" />
+    <Content Include="Content\Kendo\Uniform\sprite.png" />
+    <Content Include="Content\Kendo\Uniform\sprite_2x.png" />
     <Content Include="Content\Menu.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\prettyPhoto.css" />
@@ -484,6 +642,7 @@
     <Content Include="Images\Uploads\News\2014072715251801.jpg" />
     <Content Include="Interior.aspx" />
     <Content Include="Lesson.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="News.aspx" />
     <Content Include="packages.config" />
     <Content Include="NestedMasterPage.master" />
@@ -506,6 +665,8 @@
     <Content Include="Scripts\jquery.carouFredSel-6.1.0-packed.js" />
     <Content Include="Scripts\jquery.easing.1.3.js" />
     <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\kendo.core.min.js" />
+    <Content Include="Scripts\kendo.web.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Script.js" />
     <Content Include="UserControls\NewsManagement.ascx" />
@@ -552,12 +713,26 @@
     <Compile Include="Admin\Consultant.aspx.designer.cs">
       <DependentUpon>Consultant.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\MenuConsultant.aspx.cs">
+      <DependentUpon>MenuConsultant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MenuConsultant.aspx.designer.cs">
+      <DependentUpon>MenuConsultant.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Project.aspx.cs">
+      <DependentUpon>Project.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Project.aspx.designer.cs">
+      <DependentUpon>Project.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -582,6 +757,7 @@
     <Compile Include="commingsoon.aspx.designer.cs">
       <DependentUpon>commingsoon.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Common\UIProcess.cs" />
     <Compile Include="Consultant-1-1.aspx.cs">
       <DependentUpon>Consultant-1-1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -638,12 +814,25 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Contents\AddProject.aspx.cs">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contents\AddProject.aspx.designer.cs">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contents\Investigate.aspx.cs">
       <DependentUpon>Investigate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Contents\Investigate.aspx.designer.cs">
       <DependentUpon>Investigate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\AuthenPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -682,6 +871,13 @@
     </Compile>
     <Compile Include="LessonMasterPage.master.designer.cs">
       <DependentUpon>LessonMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="NestedMasterPage.master.cs">
       <DependentUpon>NestedMasterPage.master</DependentUpon>
@@ -792,8 +988,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Common\" />
-    <Folder Include="Core\" />
     <Folder Include="Images\projects\architecture\batch\classic\" />
     <Folder Include="Images\projects\architecture\other\" />
     <Folder Include="Images\projects\architecture\villa\classic\" />

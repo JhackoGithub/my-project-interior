@@ -6,7 +6,11 @@
 <head runat="server">
     <title></title>
     <script src="../Scripts/jquery-1.8.2.min.js"></script>
+    <script src="../Scripts/kendo.web.min.js"></script>
+    <script src="../Scripts/kendo.core.min.js"></script>
     <script src="../Scripts/Script.js"></script>
+    <link href="~/Content/Kendo/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/Content/Kendo/kendo.default.min.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
     <link href="~/Content/Menu.css" rel="stylesheet" />
 </head>
@@ -24,10 +28,9 @@
                 <nav>
                     <ul id="menu">
                         <li><a id="A2" href="../">Tranh chủ</a></li>
-                        <li><a id="A3" href="#">Kiến trúc</a></li>
-                        <li><a id="A4" href="#">Nội thât</a></li>
+                        <li><a id="A3" href="#">Quản lý Dự án</a></li>
                         <li><a id="A1" href="../Admin/Consultant.aspx">Tư vấn</a></li>
-                        <li><a id="A5" href="../Admin/News.aspx">Tin tức</a></li>
+                        <li><a id="A5" href="../Admin/News.aspx">Quản lý Tin tức</a></li>
                         <li><a id="A6" href="#">Liên hệ</a></li>
                     </ul>
                 </nav>

@@ -17,7 +17,7 @@
         <a href="http://www.xemngay.com/Default.aspx?blog=huongnha2" target="_blank">phong thủy</a>
     </li>
     <li id="menu-item-6" class="current-menu-item">
-        <a href="../Contact.aspx?type=4">liên hệ</a>
+        <a href="../Contact.aspx?type=4&id=0">liên hệ</a>
     </li>
 </ul>
 
