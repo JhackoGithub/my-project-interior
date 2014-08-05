@@ -15,8 +15,8 @@
         function showPopup() {
             $("#containerproject").html("");
             var url = "../Contents/AddProject.aspx";
-            wnd = ShowPopupIframe(900, 790, "Tạo mới dự án", "containerproject", url);
-            $("#containerproject").parent().width(900).height(790);
+            wnd = ShowPopupIframe(900, 600, "Tạo mới dự án", "containerproject", url);
+            $("#containerproject").parent().width(900).height(600);
         }
         
         function closePopup() {

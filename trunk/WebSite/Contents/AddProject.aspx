@@ -84,6 +84,16 @@
                     background-color: #F4F0EE;
                     color: #333;
                 }
+                .rbl {
+                    margin-top: 0 !important;
+                }
+                .rbl label{
+                    display: block;
+                }
+
+                .rbl td{
+                    text-align: center;
+                }
     </style>
     <link href="../Content/Kendo/kendo.common.min.css" rel="stylesheet" />
     <link href="../Content/Kendo/kendo.default.min.css" rel="stylesheet" />
@@ -117,17 +127,17 @@
         <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
         <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
         <div class="admin-projet-info">
-            <div style="height: 260px;">
+            <div style="height: 220px;">
                 <div class="admin-project-info-left">
                     <div class="admin-project-add">
                         <div class="admin-project-add-label">Loại dự án</div>
                         <div class="admin-project-add-control">
-                            <asp:DropDownList runat="server" ID="ddlType">
+                            <asp:RadioButtonList runat="server" ID="rblType" RepeatDirection="Horizontal" CssClass="rbl">
                                 <Items>
                                     <asp:ListItem Value="0" Text="Công trình" Selected="True"></asp:ListItem>
                                     <asp:ListItem Value="1" Text="Nội thất"></asp:ListItem>
                                 </Items>
-                            </asp:DropDownList>
+                            </asp:RadioButtonList>
                         </div>
                     </div>
                     <div class="admin-project-add">
@@ -206,11 +216,11 @@
                     </div>
                 </div>
             </div>
-            <div style="text-align: right; padding-top: 10px;">
+        </div>
+        <div style="text-align: right; padding-top: 5px; width: 870px; margin: 10px auto 0 auto; border-top: gray solid 1px;">
                 <a class="k-button k-button-icontext k-grid-update" id="save" onclick="closePopup() "><span class="k-icon k-grid-update"></span>Tạo mới</a>
                 <a class="k-button k-button-icontext k-grid-cancel" id="closepoup" onclick="closePopup() "><span class="k-icon k-cancel"></span>Hủy</a>
             </div>
-        </div>
         <div id="containerimages"></div>
         <script type="text/javascript">
 
@@ -218,11 +228,15 @@
             function showPopupImages() {
                 $("#containerimages").html("");
                 var url = "../Contents/ImageManager.aspx";
-                wnd = ShowPopupIframe(700, 600, "Tạo mới dự án", "containerimages", url);
-                $("#containerimages").parent().width(700).height(600);
+                wnd = ShowPopupIframe(750, 530, "Chọn thư mục ảnh dự án", "containerimages", url);
+                $("#containerimages").parent().width(750).height(530);
             }
             function closePopup() {
                 window.parent.closePopup();
+            }
+
+            function closeChildPopup() {
+                wnd.close();
             }
         </script>
     </form>
