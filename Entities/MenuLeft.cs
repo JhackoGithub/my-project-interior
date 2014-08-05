@@ -6,6 +6,8 @@ namespace Entities
     {
         public int Id { get; set; }
 
+        public int Type { get; set; }
+
         public int? ParentId { get; set; }
 
         public int? Position { get; set; }

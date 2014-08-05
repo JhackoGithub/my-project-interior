@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="padding-bottom: 10px">
-        <button type="button" onclick="showPopupGroup()">Tạo mới dự án</button>
+        <button type="button" onclick="showPopup()">Tạo mới dự án</button>
     </div>
     <div id="containerproject"></div>
 
@@ -12,21 +12,15 @@
     <script type="text/javascript">
         
         var wnd;
-        function showPopupGroup() {
+        function showPopup() {
             $("#containerproject").html("");
-            //var title = "";
-            //if (id == 0) {
-            //    action = 'new';
-            //    title = "Add permission group";
-            //} else if (action == 'view') {
-            //    title = "Permissions of group";
-            //} else {
-            //    title = "Edit permission group";
-            //}
-
             var url = "../Contents/AddProject.aspx";
-            wnd = ShowPopupIframe(900, 700, "", "containerproject", url);
-            $("#containerproject").parent().width(900).height(700);
+            wnd = ShowPopupIframe(900, 790, "Tạo mới dự án", "containerproject", url);
+            $("#containerproject").parent().width(900).height(790);
+        }
+        
+        function closePopup() {
+            wnd.close();
         }
     </script>
 </telerik:RadCodeBlock>
