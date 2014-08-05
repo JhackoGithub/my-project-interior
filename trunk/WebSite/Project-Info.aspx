@@ -204,11 +204,11 @@
         </div>
         <div id="tabs">
             <div id="project-info">
-                <h3>Thông tin</h3>
+                <h3 style="display: none;">Thông tin</h3>
                 <asp:Literal runat="server" ID="ltProjectInfo"></asp:Literal>
             </div>
             <div id="project-desc">
-                <h3>Thuyết minh</h3>
+                <h3 style="display: none;">Thuyết minh</h3>
                 <asp:Literal runat="server" ID="ltProjectDesc"></asp:Literal>
             </div>
         </div>

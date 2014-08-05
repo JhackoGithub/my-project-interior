@@ -22,6 +22,33 @@ namespace WebSite.Contents {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// RadScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadScriptManager RadScriptManager1;
+        
+        /// <summary>
+        /// QsfSkinManager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadSkinManager QsfSkinManager;
+        
+        /// <summary>
+        /// QsfFromDecorator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadFormDecorator QsfFromDecorator;
+        
+        /// <summary>
         /// ddlType control.
         /// </summary>
         /// <remarks>
@@ -29,15 +56,6 @@ namespace WebSite.Contents {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlType;
-        
-        /// <summary>
-        /// DropDownList1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
         /// tbName control.
@@ -49,30 +67,57 @@ namespace WebSite.Contents {
         protected global::System.Web.UI.WebControls.TextBox tbName;
         
         /// <summary>
-        /// tbImage control.
+        /// rdVillaModern control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbImage;
+        protected global::System.Web.UI.WebControls.RadioButton rdVillaModern;
         
         /// <summary>
-        /// ltProjectInfo control.
+        /// rdVillaClassic control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltProjectInfo;
+        protected global::System.Web.UI.WebControls.RadioButton rdVillaClassic;
         
         /// <summary>
-        /// ltProjectDesc control.
+        /// rdBatchModern control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltProjectDesc;
+        protected global::System.Web.UI.WebControls.RadioButton rdBatchModern;
+        
+        /// <summary>
+        /// rdBatchClassic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdBatchClassic;
+        
+        /// <summary>
+        /// radEditorInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadEditor radEditorInfo;
+        
+        /// <summary>
+        /// radEditorDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadEditor radEditorDesc;
     }
 }
