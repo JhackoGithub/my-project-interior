@@ -1,6 +1,17 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NewsManagement.ascx.cs" Inherits="WebSite.UserControls.NewsManagement" %>
-<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
-
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<style type="text/css">
+    #imagePreview {
+        margin-top: 5px;
+        width: 180px;
+        height: 180px;
+        background-position: center center;
+        background-size: cover;
+        -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+        display: inline-block;
+        background-image: url(../Images/no-image.png);
+    }
+</style>
 <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
 <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
 <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
@@ -19,7 +30,7 @@
 <div style="height: 550px; margin: 0 auto;">
     <label id="lblContent">Nội dung bài viết</label>
     <br />
-    <telerik:RadEditor runat="server" ID="radContent" Width="960" Height="500" Skin="Metro" EditModes="Design">
+    <telerik:RadEditor runat="server" ID="radContent" Width="960" Height="500" Skin="Metro">
         <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
         <Modules>
             <telerik:EditorModule Name="RadEditorStatistics" Visible="false" Enabled="true"></telerik:EditorModule>
@@ -34,19 +45,19 @@
 <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
     <script type="text/javascript">
         $(function () {
-            $("#imagePreview").css("background-image", "url(<%= ImageUrl%>)");
+            $("#imagePreview").css("background-image", "url(<%= ImageUrl %>)");
 
-                $("#uploadFile").on("change", function () {
-                    var files = !!this.files ? this.files : [];
-                    if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
-                    if (/^image/.test(files[0].type)) { // only image file
-                        var reader = new FileReader(); // instance of the FileReader
-                        reader.readAsDataURL(files[0]); // read the local file
-                        reader.onloadend = function () { // set image data as background of div
-                            $("#imagePreview").css("background-image", "url(" + this.result + ")");
-                        };
-                    }
-                });
+            $("#uploadFile").on("change", function () {
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+                if (/^image/.test(files[0].type)) { // only image file
+                    var reader = new FileReader(); // instance of the FileReader
+                    reader.readAsDataURL(files[0]); // read the local file
+                    reader.onloadend = function () { // set image data as background of div
+                        $("#imagePreview").css("background-image", "url(" + this.result + ")");
+                    };
+                }
             });
+        });
     </script>
 </telerik:RadCodeBlock>

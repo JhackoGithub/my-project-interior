@@ -902,7 +902,9 @@ tr.pager td
 
 .admin-projet-info
 {
-    width: 850px;
+    width: 870px;
+    height: 530px;
+    overflow: auto;
     margin: 0 auto;
     padding-top: 20px;
 }
@@ -980,13 +982,15 @@ tr.pager td
 
 .admin-image-gallary {
     float: right;
-    width: 400px;
+    width: 380px;
+    height: 470px;
     border-left: 1px gray solid;
+    overflow: auto;
 }
 .admin-image-gallary div {
     float: left;
     padding: 5px;
-    display: inline-block;
+    width: 110px;
 }
 .admin-image-gallary div img {
     width: 100px;

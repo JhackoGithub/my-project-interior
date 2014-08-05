@@ -714,13 +714,6 @@
     <Compile Include="Admin\Consultant.aspx.designer.cs">
       <DependentUpon>Consultant.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\MenuConsultant.aspx.cs">
-      <DependentUpon>MenuConsultant.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\MenuConsultant.aspx.designer.cs">
-      <DependentUpon>MenuConsultant.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
