@@ -17,11 +17,28 @@
         <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
         <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
         <div style="width: 680px; height: 530px; padding: 10px; margin: 0 auto;">
-            <div style="float: left; height: 530px; border-right: 1px gray solid; overflow: auto;">
+            <div style="float: left; height: 530px; overflow: auto;">
                 <telerik:RadTreeView runat="server" ID="tvFolderImg" Skin="Metro">
                 </telerik:RadTreeView>
             </div>
-            <div style="float: right;">
+            <div class="admin-image-gallary">
+                <div>
+                    <img src="../Images/projects/architecture/villa/modern/1/1.jpg" />
+                    <asp:RadioButton runat="server" ID="rd1" GroupName="rd"/>
+                </div>
+                <div>
+                    <img src="../Images/projects/architecture/villa/modern/1/1.jpg" />
+                    <asp:RadioButton runat="server" ID="RadioButton1" GroupName="rd"/>
+                </div><div>
+                    <img src="../Images/projects/architecture/villa/modern/1/1.jpg" />
+                    <asp:RadioButton runat="server" ID="RadioButton2" GroupName="rd"/>
+                </div><div>
+                    <img src="../Images/projects/architecture/villa/modern/1/1.jpg" />
+                    <asp:RadioButton runat="server" ID="RadioButton3" GroupName="rd"/>
+                </div><div>
+                    <img src="../Images/projects/architecture/villa/modern/1/1.jpg" />
+                    <asp:RadioButton runat="server" ID="RadioButton4" GroupName="rd"/>
+                </div>
             </div>
             <div style="text-align: right; padding-top: 10px; clear: both;">
                 <a class="k-button k-button-icontext k-grid-update" id="save" onclick="closePopup() "><span class="k-icon k-grid-update"></span>Tạo mới</a>
