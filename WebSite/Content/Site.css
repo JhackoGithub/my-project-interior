@@ -977,3 +977,20 @@ tr.pager td
 .admin-project-cate ul ul li.even{
     background: #fff;
 }
+
+.admin-image-gallary {
+    float: right;
+    width: 400px;
+    border-left: 1px gray solid;
+}
+.admin-image-gallary div {
+    float: left;
+    padding: 5px;
+    display: inline-block;
+}
+.admin-image-gallary div img {
+    width: 100px;
+}
+.admin-image-gallary div input {
+    width: 20px;
+}
