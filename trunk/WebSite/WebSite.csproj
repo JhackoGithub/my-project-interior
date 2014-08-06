@@ -39,6 +39,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -119,7 +123,7 @@
     <Content Include="About.aspx" />
     <Content Include="Admin\AddNews.aspx" />
     <Content Include="Admin\Consultant.aspx" />
-    <Content Include="Admin\MenuConsultant.aspx" />
+    <Content Include="Admin\Menu.aspx" />
     <Content Include="Admin\News.aspx" />
     <Content Include="Admin\Project.aspx" />
     <Content Include="App_Themes\BocaTheme\Button.Metro.css" />
@@ -650,6 +654,8 @@
     <Content Include="DetailMasterPage.master" />
     <Content Include="LessonMasterPage.master" />
     <Content Include="AdminMasterPage.Master" />
+    <Content Include="Handler\BaseHandler.ashx" />
+    <Content Include="Handler\MenuHanlder.ashx" />
     <None Include="Properties\PublishProfiles\Publish.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Project-Info.aspx" />
@@ -714,6 +720,13 @@
     <Compile Include="Admin\Consultant.aspx.designer.cs">
       <DependentUpon>Consultant.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -752,6 +765,7 @@
       <DependentUpon>commingsoon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common\UIProcess.cs" />
+    <Compile Include="Common\Utils.cs" />
     <Compile Include="Consultant-1-1.aspx.cs">
       <DependentUpon>Consultant-1-1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -851,6 +865,12 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\BaseHandler.ashx.cs">
+      <DependentUpon>BaseHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\MenuHanlder.ashx.cs">
+      <DependentUpon>MenuHanlder.ashx</DependentUpon>
     </Compile>
     <Compile Include="Interior.aspx.cs">
       <DependentUpon>Interior.aspx</DependentUpon>

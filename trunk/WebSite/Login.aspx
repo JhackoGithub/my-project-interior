@@ -20,12 +20,12 @@
             <ol>
                 <li>
                     <asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>
-                    <asp:TextBox runat="server" ID="UserName" />
+                    <asp:TextBox runat="server" ID="UserName" Text="vinh" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="The user name field is required." />
                 </li>
                 <li>
                     <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
-                    <asp:TextBox runat="server" ID="Password" TextMode="Password" />
+                    <asp:TextBox runat="server" ID="Password" TextMode="Password" Text="123456" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="field-validation-error" ErrorMessage="The password field is required." />
                 </li>
                 <li>

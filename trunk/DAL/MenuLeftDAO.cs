@@ -14,15 +14,20 @@ namespace DAL
 
         public MenuLeftDAO(Transaction transaction) : base(transaction) { }
 
-        public List<MenuLeft> GetMenuLefs()
+        public List<MenuLeft> GetMenuLefs(int type)
         {
-            var res = ExecuteToList<MenuLeft>("MenuLeft_GetAll");
+            var paramSql = new SqlParameter("@Type", type);
+            var res = ExecuteToList<MenuLeft>("MenuLeft_GetAll", paramSql);
             return res;
         }
 
-        public MenuLeft GetMenuLefById(int id)
+        public MenuLeft GetMenuLefById(int id, int type)
         {
-            var paramSql = new SqlParameter("@Id", id);
+            var paramSql = new[] 
+            {
+                new SqlParameter("@Id", id),
+                new SqlParameter("@Type", type)
+            };
             var res = ExecuteToSingleOrDefault<MenuLeft>("MenuLeft_GetById", paramSql);
             return res;
         }
@@ -31,6 +36,7 @@ namespace DAL
         {
             var paramArrs = new[]
             {
+                new SqlParameter("@Type", menuLeft.Type),                  
                 new SqlParameter("@ParentId", menuLeft.ParentId),                  
                 new SqlParameter("@Position", menuLeft.Position),
                 new SqlParameter("@Name", menuLeft.Name),
@@ -45,6 +51,7 @@ namespace DAL
             var paramArrs = new[]
             {
                 new SqlParameter("@Id", menuLeft.Id),
+                new SqlParameter("@Type", menuLeft.Type),                  
                 new SqlParameter("@ParentId", menuLeft.ParentId),                  
                 new SqlParameter("@Position", menuLeft.Position),
                 new SqlParameter("@Name", menuLeft.Name),

@@ -1,4 +1,34 @@
-﻿
+﻿var AjaxConst = {};
+AjaxConst.GetRequest = 'GET';
+AjaxConst.PostRequest = 'POST';
+
+function callMenuHandler(url, entryData, requestType, successCallBack) {
+    $.ajax({
+        url: url,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        //timeout: 20000,
+        data: entryData,
+        async: true,
+        cache: false,
+        type: requestType,
+        responseType: "json",
+        success: function (data) {
+            if (data == null)
+                return;
+            if (data.error != null) {
+                return;
+            }
+            successCallBack(data);
+        },
+        error: function (xhr, status, error) {
+            if (error.length == 0)
+                return;
+            if (error === 'timeout')
+                alert("msgAjaxTimeout");
+        }
+    });
+}
 
 $(document).ready(function () {
     $('#cssmenu > ul > li ul').each(function (index, e) {
