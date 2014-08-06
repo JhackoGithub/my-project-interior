@@ -39,10 +39,10 @@ namespace BLL
             return res;
         }
 
-        public int DeleteNews(int id)
+        public int DeleteMenuLef(int id)
         {
-            var dao = new NewsDAO();
-            var res = dao.DeleteNews(id, DateTime.Now);
+            var dao = new MenuLeftDAO();
+            var res = dao.DeleteMenuLef(id, DateTime.Now);
             return res;
         }
     }
