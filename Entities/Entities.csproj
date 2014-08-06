@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="MenuLeft.cs" />
     <Compile Include="News.cs" />
+    <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

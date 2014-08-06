@@ -84,16 +84,21 @@
                     background-color: #F4F0EE;
                     color: #333;
                 }
-                .rbl {
-                    margin-top: 0 !important;
-                }
-                .rbl label{
-                    display: block;
-                }
 
-                .rbl td{
-                    text-align: center;
-                }
+        .rbl
+        {
+            margin-top: 0 !important;
+        }
+
+            .rbl label
+            {
+                display: block;
+            }
+
+            .rbl td
+            {
+                text-align: center;
+            }
     </style>
     <link href="../Content/Kendo/kendo.common.min.css" rel="stylesheet" />
     <link href="../Content/Kendo/kendo.default.min.css" rel="stylesheet" />
@@ -154,29 +159,45 @@
                     <div class="admin-project-add">
                         <div class="admin-project-add-label">Kiểu dự án</div>
                         <div class="admin-project-add-control" style="height: 200px; width: 240px; overflow: auto;">
-                        <div class="admin-project-cate" style="float: left; width: 220px;">
-                            <ul>
-                                <li><span>Biệt thự</span>
-                                    <ul>
-                                        <li class="even">
-                                            <asp:RadioButton runat="server" GroupName="Project-Type" ID="rdVillaModern" Text="Hiện đại" />
-                                        </li>
-                                        <li class="last odd">
-                                            <asp:RadioButton runat="server" GroupName="Project-Type" ID="rdVillaClassic" Text="Cổ điển" />
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><span>Nhà lô phố</span><ul>
-                                    <li class="even">
-                                        <asp:RadioButton runat="server" GroupName="Project-Type" ID="rdBatchModern" Text="Hiện đại" />
+                            <div class="admin-project-cate" style="float: left; width: 220px;">
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <div style="float: left;">Biệt thự</div>
+                                        </div>
+                                        <ul>
+                                            <li class="even">
+                                                <div>
+                                                    <asp:RadioButton runat="server" GroupName="Project-Type" ID="rdVillaModern" Text="Hiện đại" />
+                                                </div>
+
+                                            </li>
+                                            <li class="last odd">
+                                                <div>
+                                                    <asp:RadioButton runat="server" GroupName="Project-Type" ID="rdVillaClassic" Text="Cổ điển" />
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </li>
-                                    <li class="last odd">
-                                        <asp:RadioButton runat="server" GroupName="Project-Type" ID="rdBatchClassic" Text="Cổ điển" />
+                                    <li>
+                                        <div>
+                                            <div style="float: left;">Nhà lô phố</div>
+                                        </div>
+                                        <ul>
+                                            <li class="even">
+                                                <div>
+                                                <asp:RadioButton runat="server" GroupName="Project-Type" ID="rdBatchModern" Text="Hiện đại" />
+                                                    </div>
+                                            </li>
+                                            <li class="last odd">
+                                                <div>
+                                                <asp:RadioButton runat="server" GroupName="Project-Type" ID="rdBatchClassic" Text="Cổ điển" />
+                                                    </div>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
-                                </li>
-                            </ul>
-                        </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -218,9 +239,9 @@
             </div>
         </div>
         <div style="text-align: right; padding-top: 5px; width: 870px; margin: 10px auto 0 auto; border-top: gray solid 1px;">
-                <a class="k-button k-button-icontext k-grid-update" id="save" onclick="closePopup() "><span class="k-icon k-grid-update"></span>Tạo mới</a>
-                <a class="k-button k-button-icontext k-grid-cancel" id="closepoup" onclick="closePopup() "><span class="k-icon k-cancel"></span>Hủy</a>
-            </div>
+            <a class="k-button k-button-icontext k-grid-update" id="save" onclick="closePopup() "><span class="k-icon k-grid-update"></span>Tạo mới</a>
+            <a class="k-button k-button-icontext k-grid-cancel" id="closepoup" onclick="closePopup() "><span class="k-icon k-cancel"></span>Hủy</a>
+        </div>
         <div id="containerimages"></div>
         <script type="text/javascript">
 

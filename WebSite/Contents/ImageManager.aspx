@@ -18,16 +18,19 @@
         <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
         <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
         <div style="width: 730px; height: 460px; padding: 10px; margin: 0 auto;">
-            <div style="float: left; height: 460px; min-width: 330px; overflow: auto;">
+            <div style="float: left; height: 460px; min-width: 330px; overflow: auto; background-color: lightcyan;">
                 <telerik:RadTreeView runat="server" ID="tvFolderImg" Skin="Metro" OnNodeClick="tvFolderImg_NodeClick">
                 </telerik:RadTreeView>
             </div>
-            <div class="admin-image-gallary">
-                <asp:Literal runat="server" ID="ltImages"></asp:Literal>          
-            </div>
+            <telerik:RadAjaxLoadingPanel runat="server" ID="radAjaxLoadGrid"></telerik:RadAjaxLoadingPanel>
+            <telerik:RadAjaxPanel ID="radAjaxPanel" runat="server" LoadingPanelID="radAjaxLoadGrid">
+                <div class="admin-image-gallary" runat="server">
+                    <asp:Literal runat="server" ID="ltImages"></asp:Literal>          
+                </div>
+            </telerik:RadAjaxPanel>
         </div>
         <div style="text-align: right; padding-top: 5px; width: 730px; margin: 10px auto 0 auto; border-top: gray solid 1px; clear: both;">
-            <a class="k-button k-button-icontext k-grid-update" id="save" onclick="closePopup() "><span class="k-icon k-grid-update"></span>Tạo mới</a>
+            <a class="k-button k-button-icontext k-grid-update" id="save" onclick="closePopup() "><span class="k-icon k-grid-update"></span>Chọn</a>
             <a class="k-button k-button-icontext k-grid-cancel" id="closepoup" onclick="closePopup() "><span class="k-icon k-cancel"></span>Hủy</a>
         </div>
         <script type="text/javascript">

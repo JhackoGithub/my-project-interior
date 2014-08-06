@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DAL;
 using Entities;
 
@@ -9,17 +7,17 @@ namespace BLL
 {
     public class MenuLeftBO
     {
-        public List<MenuLeft> GetMenuLeft()
+        public List<MenuLeft> GetMenuLeft(int type)
         {
             var dao = new MenuLeftDAO();
-            var res = dao.GetMenuLefs();
+            var res = dao.GetMenuLefs(type);
             return res;
         }
 
-        public MenuLeft GetMenuLeftById(int id)
+        public MenuLeft GetMenuLeftById(int id, int type)
         {
             var dao = new MenuLeftDAO();
-            var res = dao.GetMenuLefById(id);
+            var res = dao.GetMenuLefById(id, type);
             return res;
         }
 
