@@ -19,20 +19,23 @@ namespace WebSite.Handler
         {
             var jsonString = string.Empty;
             context.Response.ContentType = "text/plain";
-            MenuLeft menuLeft;
-            int id = 0;
+            int id = context.Request.QueryString["id"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["id"]);
             var action = context.Request.QueryString["funcname"].ToLower();
-            int type = Convert.ToInt32(context.Request.QueryString["type"].ToLower());
+            int type = Convert.ToInt32(context.Request.QueryString["type"]);
             switch (action)
             {
                 case "getall":
                     jsonString = GetMenus(type);
                     break;
                 case "create":
-                    menuLeft = Utils.ConvertDeserialize<MenuLeft>(context, ref jsonString);
+                    var menuLeft = Utils.ConvertDeserialize<MenuLeft>(context, ref jsonString);
                     jsonString = CreateMenu(menuLeft);
                     break;
-                default:
+                case "delete":
+                    jsonString = DeleteMenu(id);
+                    break;
+                case "edit":
+                    jsonString = GetMenuById(id, type);
                     break;
             }
             context.Response.Write(jsonString);
@@ -48,7 +51,7 @@ namespace WebSite.Handler
             {
                 if (menu == null) continue;
                 var menuChild = menus.Where(t => t.ParentId != null && t.ParentId == menu.Id).ToList();
-                htmlMenu.AppendFormat("<li><div><div style='float: left;'>{0}</div><div class='action-image' style='float: right;'><img value='{1}' src='../Images/iEdit.png' width='16' /><img value='{2}' src='../Images/iDelete.png' width='16' /></div></div>", menu.Name, menu.Id, menu.Id);
+                htmlMenu.AppendFormat("<li><div><div style='float: left;'>{0}</div><div style='float: right;'><img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' /><img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' /></div></div>", menu.Name, menu.Id, menu.Id);
                 if (menuChild.Count == 0)
                 {
                     htmlMenu.Append("</li>");
@@ -58,7 +61,7 @@ namespace WebSite.Handler
                     htmlMenu.Append("<ul>");
                     foreach (var menuLeft in menuChild)
                     {
-                        htmlMenu.AppendFormat("<li><div><span>{0}</span><div class='action-image'><img value='{1}' src='../Images/iEdit.png' width='16' /><img value='{2}' src='../Images/iDelete.png' width='16' /></div></div></li>", menuLeft.Name, menuLeft.Id, menuLeft.Id);
+                        htmlMenu.AppendFormat("<li><div><span>{0}</span><div><img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' /><img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' /></div></div></li>", menuLeft.Name, menuLeft.Id, menuLeft.Id);
                     }
                     htmlMenu.Append("</ul>");
                 }
@@ -78,10 +81,24 @@ namespace WebSite.Handler
             return res;
         }
 
+        private string GetMenuById(int id, int type)
+        {
+            var bo = new MenuLeftBO();
+            var res = bo.GetMenuLeftById(id, type);
+            return Utils.ConvertToJsonString(res);
+        }
+
         private string CreateMenu(MenuLeft menuLeft)
         {
             var bo = new MenuLeftBO();
             var res = bo.AddMenuLef(menuLeft);
+            return Utils.ConvertToJsonString(res);
+        }
+
+        private string DeleteMenu(int id)
+        {
+            var bo = new MenuLeftBO();
+            var res = bo.DeleteMenuLef(id);
             return Utils.ConvertToJsonString(res);
         }
     }

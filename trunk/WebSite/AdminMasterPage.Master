@@ -31,7 +31,7 @@
                         <li><a id="A3" href="../Admin/Project.aspx">Quản lý Dự án</a></li>
                         <li><a id="A1" href="../Admin/Consultant.aspx">Tư vấn</a></li>
                         <li><a id="A5" href="../Admin/News.aspx">Quản lý Tin tức</a></li>
-                        <li><a id="A4" href="../Admin/MenuConsultant.aspx">Quản lý Menu</a></li>
+                        <li><a id="A4" href="../Admin/Menu.aspx">Quản lý Menu</a></li>
                         <li><a id="A6" href="#">Liên hệ</a></li>
                     </ul>
                 </nav>

@@ -40,7 +40,7 @@
         </div>
         <div style="clear: both;">
             <button type="button" id="btnCreate" onclick="">Tạo mới</button>
-            <button type="button" id="btnCancel" onclick="">Hủy</button>
+            <button type="button" id="btnCancel" onclick="location.reload()">Hủy</button>
         </div>
     </div>
     <div class="admin-project-cate" style="border-left: lightgray 1px solid; float: left; margin: 10px; width: 200px; padding-left: 30px;">
@@ -49,11 +49,6 @@
         $(document).ready(function () {
           
             bindMenu();
-            
-            $('.action-image').click(function () {
-                var id = $(this).attr('value');
-                console.log("id: " + id);
-            });
             
         });
         
@@ -89,7 +84,7 @@
             var name = $('#tbName').val();
             menu.name = name;
             var data = JSON.stringify(menu);
-            var url = "../Handler/MenuHanlder.ashx?funcname=create&type= " + resType;
+            var url = "../Handler/MenuHanlder.ashx?funcname=create&type=" + resType;
             callMenuHandler(url, data, AjaxConst.PostRequest, addMenuCallback);
         });
 
@@ -101,7 +96,7 @@
 
         function bindMenu() {
             var resType = $('input[name=rdType]:checked').val();
-            var url = "../Handler/MenuHanlder.ashx?funcname=getall&type= " + resType;
+            var url = "../Handler/MenuHanlder.ashx?funcname=getall&type=" + resType;
             callMenuHandler(url, null, AjaxConst.GetRequest, bindMenuCallback);
         }
 
@@ -110,8 +105,33 @@
             $('#parentid').html(data.dropdown);
         }
 
-        
+        function editMenu(id) {
+            var resType = $('input[name=rdType]:checked').val();
+            var url = "../Handler/MenuHanlder.ashx?funcname=edit&id=" + id + "&type=" + resType;
+            callMenuHandler(url, null, AjaxConst.GetRequest, getMenuByIdCallback);
+        }
 
+        function getMenuByIdCallback(data) {
+            var $radios = $('input:radio[name=rdKind]');
+            var strfilter = data.ParentId == null ? '[value="0"]' : '[value="1"]';
+            $radios.filter(strfilter).click();
+            if (data.ParentId == null) {
+                $('#tbPos').val(data.Position);
+            } else {
+                $('#parentid').val(data.ParentId);
+            }
+            $('#tbName').val(data.Name);
+            $('#btnCreate').html('Lưu thay đổi');
+        }
+        function deleteMenu(id) {
+            var url = "../Handler/MenuHanlder.ashx?funcname=delete&id=" + id;
+            callMenuHandler(url, null, AjaxConst.PostRequest, deleteMenuCallback);
+        }
 
+        function deleteMenuCallback(data) {
+            if (data != "0") {
+                bindMenu();
+            }
+        }
     </script>
 </asp:Content>
