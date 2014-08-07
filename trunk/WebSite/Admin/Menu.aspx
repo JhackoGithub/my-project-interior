@@ -1,8 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="WebSite.Admin.Menu" Theme="BocaTheme" %>
-
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="FeaturedContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <telerik:radscriptmanager runat="server" ID="RadScriptManager1" />
+    <telerik:radskinmanager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
+    <telerik:radformdecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
     <div style="width: 50%; float: left; margin: 10px;">
         <div style="height: 40px; display: inline-flex;">
             <label style="vertical-align: baseline; width: 180px; float: left;">
@@ -23,7 +26,7 @@
                 <input type="radio" id="rdChild" name="rdKind" value="1" style="width: 25px;" />Tạo menu con
             </label>
         </div>
-        <div id="divControl" style="clear: both; height: 70px;">
+        <div id="divControl" style="clear: both; height: 50px;">
             <div id="divPos" style="float: left;">
                 <label>Vị trí sắp xếp</label>
                 <input type="text" id="tbPos" placeholder="chỉ nhập số" style="width: 80px;"/>
@@ -46,6 +49,9 @@
     <div class="admin-project-cate" style="border-left: lightgray 1px solid; float: left; margin: 10px; width: 200px; padding-left: 30px;">
     </div>
     <script type="text/javascript">
+
+        var _id = 0;
+
         $(document).ready(function () {
           
             bindMenu();
@@ -67,12 +73,11 @@
             bindMenu();
         });
 
-        $('#btnCreate').click(function () {
-            var menu = new Object();
-            var resType = $('input[name=rdType]:checked').val();
+        function bindControlToEntity(menu) {
+            var resType = $('input:radio[name=rdType]:checked').val();
             menu.type = resType;
-            var resKind = $('input[name=rdKind]:checked').val();
-            if(resKind == "0") {
+            var resKind = $('input:radio[name=rdKind]:checked').val();
+            if (resKind == "0") {
                 var pos = $('#tbPos').val();
                 menu.position = pos;
                 menu.parentid = null;
@@ -83,8 +88,14 @@
             }
             var name = $('#tbName').val();
             menu.name = name;
+        }
+
+        $('#btnCreate').click(function () {
+            var menu = new Object();
+            bindControlToEntity(menu);
             var data = JSON.stringify(menu);
-            var url = "../Handler/MenuHanlder.ashx?funcname=create&type=" + resType;
+            var action = _id == 0 ? 'create' : 'update';
+            var url = "../Handler/MenuHanlder.ashx?funcname=" + action + "&id=" + _id + "&type=" + menu.type;
             callMenuHandler(url, data, AjaxConst.PostRequest, addMenuCallback);
         });
 
@@ -106,24 +117,38 @@
         }
 
         function editMenu(id) {
+            _id = id;
             var resType = $('input[name=rdType]:checked').val();
             var url = "../Handler/MenuHanlder.ashx?funcname=edit&id=" + id + "&type=" + resType;
             callMenuHandler(url, null, AjaxConst.GetRequest, getMenuByIdCallback);
         }
 
         function getMenuByIdCallback(data) {
-            var $radios = $('input:radio[name=rdKind]');
+            var $rdType = $('input:radio[name=rdType]');
+            var $rdKind = $('input:radio[name=rdKind]');
+            $rdKind.attr('disabled', false);
+            $rdType.attr('disabled', false);
+            
             var strfilter = data.ParentId == null ? '[value="0"]' : '[value="1"]';
-            $radios.filter(strfilter).click();
+            $rdKind.filter(strfilter).click();
+            
             if (data.ParentId == null) {
                 $('#tbPos').val(data.Position);
             } else {
                 $('#parentid').val(data.ParentId);
             }
+            
+            $rdKind.attr('disabled', true);
+            $rdType.attr('disabled', true);
+            
             $('#tbName').val(data.Name);
             $('#btnCreate').html('Lưu thay đổi');
         }
+        
         function deleteMenu(id) {
+            var res = confirm('Bạn có muốn xóa menu này?');
+            if(!res)
+                return;
             var url = "../Handler/MenuHanlder.ashx?funcname=delete&id=" + id;
             callMenuHandler(url, null, AjaxConst.PostRequest, deleteMenuCallback);
         }

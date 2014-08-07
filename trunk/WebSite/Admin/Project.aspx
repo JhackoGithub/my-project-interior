@@ -4,24 +4,26 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="padding-bottom: 10px">
-        <button type="button" onclick="showPopup()">Tạo mới dự án</button>
+        <button type="button" id="btnAdd" onclick="showPopup()">Tạo mới dự án</button>
     </div>
     <div id="containerproject"></div>
 
 <telerik:RadCodeBlock runat="server">
     <script type="text/javascript">
+        $('#btnAdd').click(function() {
+            location.href = 'AddProject.aspx';
+        });
+        //var wnd;
+        //function showPopup() {
+        //    $("#containerproject").html("");
+        //    var url = "../Contents/AddProject.aspx";
+        //    wnd = ShowPopupIframe(1000, 600, "Tạo mới dự án", "containerproject", url);
+        //    $("#containerproject").parent().width(1000).height(600);
+        //}
         
-        var wnd;
-        function showPopup() {
-            $("#containerproject").html("");
-            var url = "../Contents/AddProject.aspx";
-            wnd = ShowPopupIframe(900, 600, "Tạo mới dự án", "containerproject", url);
-            $("#containerproject").parent().width(900).height(600);
-        }
-        
-        function closePopup() {
-            wnd.close();
-        }
+        //function closePopup() {
+        //    wnd.close();
+        //}
     </script>
 </telerik:RadCodeBlock>
 </asp:Content>

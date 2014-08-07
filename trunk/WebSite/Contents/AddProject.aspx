@@ -13,15 +13,15 @@
             background-color: #F4F0EE;
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
-            width: 830px;
-            height: 440px;
+            width: 650px;
+            height: 510px;
             padding: 10px;
         }
 
         #tabs > div
         {
-            width: 830px;
-            height: 440px;
+            width: 650px;
+            height: 510px;
             float: left;
             overflow: hidden;
             padding-top: 2px;
@@ -49,7 +49,7 @@
 
         #pager
         {
-            width: 830px;
+            width: 650px;
             margin: -41px auto 0px auto;
             text-align: left;
         }
@@ -132,17 +132,17 @@
         <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
         <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
         <div class="admin-projet-info">
-            <div style="height: 220px;">
+            <div style="height: 600px;">
                 <div class="admin-project-info-left">
                     <div class="admin-project-add">
                         <div class="admin-project-add-label">Loại dự án</div>
                         <div class="admin-project-add-control">
-                            <asp:RadioButtonList runat="server" ID="rblType" RepeatDirection="Horizontal" CssClass="rbl">
-                                <Items>
-                                    <asp:ListItem Value="0" Text="Công trình" Selected="True"></asp:ListItem>
-                                    <asp:ListItem Value="1" Text="Nội thất"></asp:ListItem>
-                                </Items>
-                            </asp:RadioButtonList>
+                            <label style="vertical-align: baseline; width: 180px; float: left;">
+                                <input type="radio" id="rdArchi" name="rdType" value="0" checked="checked" style="width: 25px;" />Công trình
+                            </label>
+                            <label style="vertical-align: baseline; width: 160px; float: left;">
+                                <input type="radio" id="rdInteri" name="rdType" value="1" style="width: 25px;" />Nội thất
+                            </label>
                         </div>
                     </div>
                     <div class="admin-project-add">
@@ -154,13 +154,12 @@
                     <div class="admin-project-add">
                         <button type="button" onclick="showPopupImages()">Chọn thư mục hình ảnh</button>
                     </div>
-                </div>
-                <div class="admin-project-info-right">
                     <div class="admin-project-add">
                         <div class="admin-project-add-label">Kiểu dự án</div>
                         <div class="admin-project-add-control" style="height: 200px; width: 240px; overflow: auto;">
                             <div class="admin-project-cate" style="float: left; width: 220px;">
-                                <ul>
+                                <asp:Literal runat="server" ID="ltMenu"></asp:Literal>
+                                <%--<ul>
                                     <li>
                                         <div>
                                             <div style="float: left;">Biệt thự</div>
@@ -196,51 +195,59 @@
                                             </li>
                                         </ul>
                                     </li>
-                                </ul>
+                                </ul>--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-project-info-right">
+                    <div id="wrapper-tab">
+                        <div id="pager">
+                        </div>
+                        <div id="tabs">
+                            <div id="project-info">
+                                <h3 style="display: none;">Thông tin</h3>
+                                <telerik:RadEditor runat="server" ID="radEditorInfo" Width="600" Height="500" Skin="Metro"
+                                    EditModes="Design">
+                                    <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
+                                    <Modules>
+
+                                        <telerik:EditorModule Name="RadEditorHtmlInspector" Enabled="true" Visible="false" />
+                                        <telerik:EditorModule Name="RadEditorNodeInspector" Enabled="true" Visible="false" />
+                                        <telerik:EditorModule Name="RadEditorDomInspector" Enabled="false" Visible="False" />
+                                        <telerik:EditorModule Name="RadEditorStatistics" Enabled="false" Visible="False" />
+
+                                    </Modules>
+                                    <Content>
+</Content>
+
+<TrackChangesSettings CanAcceptTrackChanges="False"></TrackChangesSettings>
+                                </telerik:RadEditor>
+                            </div>
+                            <div id="project-desc">
+                                <h3 style="display: none;">Thuyết minh</h3>
+                                <telerik:RadEditor runat="server" ID="radEditorDesc" Width="600" Height="500" Skin="Metro" EditModes="Design">
+                                    <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
+                                    <Modules>
+                                        <telerik:EditorModule Name="RadEditorStatistics" Visible="false" Enabled="false"></telerik:EditorModule>
+                                        <telerik:EditorModule Name="RadEditorDomInspector" Visible="false" Enabled="false"></telerik:EditorModule>
+                                        <telerik:EditorModule Name="RadEditorNodeInspector" Visible="false" Enabled="false"></telerik:EditorModule>
+                                        <telerik:EditorModule Name="RadEditorHtmlInspector" Visible="false" Enabled="false"></telerik:EditorModule>
+                                    </Modules>
+                                    <Content>
+</Content>
+
+<TrackChangesSettings CanAcceptTrackChanges="False"></TrackChangesSettings>
+                                </telerik:RadEditor>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="wrapper-tab">
-                <div id="pager">
-                </div>
-                <div id="tabs">
-                    <div id="project-info">
-                        <h3 style="display: none;">Thông tin</h3>
-                        <telerik:RadEditor runat="server" ID="radEditorInfo" Width="830" Height="440" Skin="Metro"
-                            EditModes="Design">
-                            <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
-                            <Modules>
-
-                                <telerik:EditorModule Name="RadEditorHtmlInspector" Enabled="true" Visible="false" />
-                                <telerik:EditorModule Name="RadEditorNodeInspector" Enabled="true" Visible="false" />
-                                <telerik:EditorModule Name="RadEditorDomInspector" Enabled="false" Visible="False" />
-                                <telerik:EditorModule Name="RadEditorStatistics" Enabled="false" Visible="False" />
-
-                            </Modules>
-                            <Content></Content>
-                        </telerik:RadEditor>
-                    </div>
-                    <div id="project-desc">
-                        <h3 style="display: none;">Thuyết minh</h3>
-                        <telerik:RadEditor runat="server" ID="radEditorDesc" Width="830" Height="440" Skin="Metro" EditModes="Design">
-                            <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
-                            <Modules>
-                                <telerik:EditorModule Name="RadEditorStatistics" Visible="false" Enabled="false"></telerik:EditorModule>
-                                <telerik:EditorModule Name="RadEditorDomInspector" Visible="false" Enabled="false"></telerik:EditorModule>
-                                <telerik:EditorModule Name="RadEditorNodeInspector" Visible="false" Enabled="false"></telerik:EditorModule>
-                                <telerik:EditorModule Name="RadEditorHtmlInspector" Visible="false" Enabled="false"></telerik:EditorModule>
-                            </Modules>
-                            <Content></Content>
-                        </telerik:RadEditor>
-                    </div>
-                </div>
-            </div>
         </div>
         <div style="text-align: right; padding-top: 5px; width: 870px; margin: 10px auto 0 auto; border-top: gray solid 1px;">
-            <a class="k-button k-button-icontext k-grid-update" id="save" onclick="closePopup() "><span class="k-icon k-grid-update"></span>Tạo mới</a>
-            <a class="k-button k-button-icontext k-grid-cancel" id="closepoup" onclick="closePopup() "><span class="k-icon k-cancel"></span>Hủy</a>
+            <a class="k-button k-button-icontext k-grid-update" id="save" onclick="closePopup()"><span class="k-icon k-grid-update"></span>Tạo mới</a>
+            <a class="k-button k-button-icontext k-grid-cancel" id="closepoup" onclick="closePopup()"><span class="k-icon k-cancel"></span>Hủy</a>
         </div>
         <div id="containerimages"></div>
         <script type="text/javascript">

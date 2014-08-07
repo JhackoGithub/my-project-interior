@@ -7,6 +7,13 @@ namespace BLL
 {
     public class MenuLeftBO
     {
+        public List<MenuLeft> GetMenuProject()
+        {
+            var dao = new MenuLeftDAO();
+            var res = dao.GetMenuProject();
+            return res;
+        }
+
         public List<MenuLeft> GetMenuLeft(int type)
         {
             var dao = new MenuLeftDAO();

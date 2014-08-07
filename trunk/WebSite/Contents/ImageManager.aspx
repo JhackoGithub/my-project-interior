@@ -11,6 +11,7 @@
     <link href="../Content/Kendo/kendo.default.min.css" rel="stylesheet" />
     <link href="../Content/Site.css" rel="stylesheet" />
     <script src="../Scripts/jquery-1.8.2.min.js"></script>
+    <script src="../Scripts/Script.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,13 +20,13 @@
         <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
         <div style="width: 730px; height: 460px; padding: 10px; margin: 0 auto;">
             <div style="float: left; height: 460px; min-width: 330px; overflow: auto; background-color: lightcyan;">
-                <telerik:RadTreeView runat="server" ID="tvFolderImg" Skin="Metro" OnNodeClick="tvFolderImg_NodeClick">
+                <telerik:RadTreeView runat="server" ID="tvFolderImg" Skin="Metro" OnClientNodeClicked="ClientNodeClicked">
                 </telerik:RadTreeView>
             </div>
             <telerik:RadAjaxLoadingPanel runat="server" ID="radAjaxLoadGrid"></telerik:RadAjaxLoadingPanel>
             <telerik:RadAjaxPanel ID="radAjaxPanel" runat="server" LoadingPanelID="radAjaxLoadGrid">
                 <div class="admin-image-gallary" runat="server">
-                    <asp:Literal runat="server" ID="ltImages"></asp:Literal>          
+                    <%--<asp:Literal runat="server" ID="ltImages"></asp:Literal>          --%>
                 </div>
             </telerik:RadAjaxPanel>
         </div>
@@ -37,6 +38,19 @@
             function closePopup() {
                 window.parent.closeChildPopup();
             }
+            
+            function ClientNodeClicked(sender, eventArgs) {
+                var node = eventArgs.get_node();
+                //alert("You clicked " + node.get_text());
+                var data = JSON.stringify(node.get_text());
+                var url = "../Handler/ImageHandler.ashx?funcname=select";
+                callMenuHandler(url, data, AjaxConst.PostRequest, binImageGridCallback);
+            }
+
+            function binImageGridCallback(data) {
+                $('.admin-image-gallary').html(data.html);
+            }
+
         </script>
     </form>
 </body>

@@ -122,6 +122,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Admin\AddNews.aspx" />
+    <Content Include="Admin\AddProject.aspx" />
     <Content Include="Admin\Consultant.aspx" />
     <Content Include="Admin\Menu.aspx" />
     <Content Include="Admin\News.aspx" />
@@ -656,6 +657,8 @@
     <Content Include="AdminMasterPage.Master" />
     <Content Include="Handler\BaseHandler.ashx" />
     <Content Include="Handler\MenuHanlder.ashx" />
+    <Content Include="Handler\ProjectHandler.ashx" />
+    <Content Include="Handler\ImageHandler.ashx" />
     <None Include="Properties\PublishProfiles\Publish.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Project-Info.aspx" />
@@ -712,6 +715,13 @@
     </Compile>
     <Compile Include="Admin\AddNews.aspx.designer.cs">
       <DependentUpon>AddNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddProject.aspx.cs">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddProject.aspx.designer.cs">
+      <DependentUpon>AddProject.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Consultant.aspx.cs">
       <DependentUpon>Consultant.aspx</DependentUpon>
@@ -869,8 +879,14 @@
     <Compile Include="Handler\BaseHandler.ashx.cs">
       <DependentUpon>BaseHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Handler\ImageHandler.ashx.cs">
+      <DependentUpon>ImageHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Handler\MenuHanlder.ashx.cs">
       <DependentUpon>MenuHanlder.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\ProjectHandler.ashx.cs">
+      <DependentUpon>ProjectHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Interior.aspx.cs">
       <DependentUpon>Interior.aspx</DependentUpon>
