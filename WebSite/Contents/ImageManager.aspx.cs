@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using Telerik.Web.UI;
 
 namespace WebSite.Contents
@@ -51,31 +46,31 @@ namespace WebSite.Contents
             
         }
 
-        protected void tvFolderImg_NodeClick(object sender, RadTreeNodeEventArgs e)
-        {
-            var res = e.Node.Value;
-            BindImages(res);
-        }
+        //protected void tvFolderImg_NodeClick(object sender, RadTreeNodeEventArgs e)
+        //{
+        //    var res = e.Node.Value;
+        //    BindImages(res);
+        //}
 
-        private void BindImages(string folder)
-        {
-            string path = string.Format(@"\Images\projects{0}\", folder);
-            if (!Directory.Exists(Server.MapPath(path)))
-                return;
-            var dirInfo = new DirectoryInfo(Server.MapPath(path));
-            var images = new StringBuilder();
-            foreach (FileInfo fileInfo in dirInfo.GetFiles())
-            {
-                if (fileInfo.Name.Equals("project-view.jpg") || fileInfo.Name.Equals("project-main.jpg"))
-                    continue;
-                var pathImage = string.Format("{0}{1}", path, fileInfo.Name);
-                images.Append("<div>");
-                images.AppendFormat("<img src='{0}' />", pathImage);
-                images.AppendFormat("<input id='rd{0}' type='radio' name='rd' value='rd{1}'><label for='rd{2}'>ảnh đại diện</label>", fileInfo.Name, fileInfo.Name, fileInfo.Name);
-                images.Append("</div>");
-            }
-            ltImages.Text = images.ToString();
-        }
+        //private void BindImages(string folder)
+        //{
+        //    string path = string.Format(@"\Images\projects{0}\", folder);
+        //    if (!Directory.Exists(Server.MapPath(path)))
+        //        return;
+        //    var dirInfo = new DirectoryInfo(Server.MapPath(path));
+        //    var images = new StringBuilder();
+        //    foreach (FileInfo fileInfo in dirInfo.GetFiles())
+        //    {
+        //        if (fileInfo.Name.Equals("project-view.jpg") || fileInfo.Name.Equals("project-main.jpg"))
+        //            continue;
+        //        var pathImage = string.Format("{0}{1}", path, fileInfo.Name);
+        //        images.Append("<div>");
+        //        images.AppendFormat("<img src='{0}' />", pathImage);
+        //        images.AppendFormat("<input id='rd{0}' type='radio' name='rd' value='rd{1}'><label for='rd{2}'>ảnh đại diện</label>", fileInfo.Name, fileInfo.Name, fileInfo.Name);
+        //        images.Append("</div>");
+        //    }
+        //    ltImages.Text = images.ToString();
+        //}
     }
 }
 

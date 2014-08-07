@@ -904,8 +904,7 @@ tr.pager td
 
 .admin-projet-info
 {
-    width: 870px;
-    height: 530px;
+    width: 960px;
     overflow: auto;
     margin: 0 auto;
     padding-top: 20px;
@@ -1023,5 +1022,3 @@ tr.pager td
 .admin-image-gallary div input {
     width: 20px;
 }
-
-.action-image{}

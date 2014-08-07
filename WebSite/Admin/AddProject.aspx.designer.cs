@@ -7,19 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebSite.Contents {
+namespace WebSite.Admin {
     
     
     public partial class AddProject {
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// RadScriptManager1 control.
@@ -58,15 +49,6 @@ namespace WebSite.Contents {
         protected global::System.Web.UI.WebControls.TextBox tbName;
         
         /// <summary>
-        /// ltMenu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltMenu;
-        
-        /// <summary>
         /// radEditorInfo control.
         /// </summary>
         /// <remarks>
@@ -83,5 +65,14 @@ namespace WebSite.Contents {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadEditor radEditorDesc;
+        
+        /// <summary>
+        /// RadCodeBlock1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadCodeBlock RadCodeBlock1;
     }
 }

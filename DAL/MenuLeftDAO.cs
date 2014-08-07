@@ -13,6 +13,12 @@ namespace DAL
         public MenuLeftDAO(){}
 
         public MenuLeftDAO(Transaction transaction) : base(transaction) { }
+        
+        public List<MenuLeft> GetMenuProject()
+        {
+            var res = ExecuteToList<MenuLeft>("MenuLeftProject_GetAll");
+            return res;
+        }
 
         public List<MenuLeft> GetMenuLefs(int type)
         {
