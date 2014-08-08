@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Entities
 {
@@ -15,11 +12,13 @@ namespace Entities
 
         public string Name { get; set; }
 
+        public string PathImage { get; set; }
+
         public string PrimaryImage { get; set; }
 
-        public string Description { get; set; }
+        public string Information { get; set; }
 
-        public string Document { get; set; }
+        public string Description { get; set; }
 
         public DateTime CreatedOn { get; set; }
 

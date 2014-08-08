@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="MenuLeftBO.cs" />
     <Compile Include="NewsBO.cs" />
+    <Compile Include="ProjectBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

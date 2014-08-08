@@ -2,9 +2,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContainer" runat="server">
     <script type="text/javascript">
-        jQuery(function () {
+        jQuery(function() {
             $('.sf-menu #menu-item-6').addClass('current_page_item');
-            
+
         });
 
         function resizeIframe(obj) {
@@ -18,7 +18,7 @@
     <div class="container_12 primary_content_wrap clearfix">
         <div id="content">
             <div id="post-14" class="page">
-                <div id='cssmenu' style="width: 230px; display: inline; float: left; margin-left: 10px; margin-right: 10px;">
+                <div id='cssmenu' style="display: inline; float: left; margin-left: 10px; margin-right: 10px; width: 230px;">
                     <ul>
                         <li class="has-sub"><a href="#"><span>Khách hàng</span></a>
                             <ul id="menucontact">
@@ -30,9 +30,9 @@
                         </li>
                     </ul>
                 </div>
-                <div style="width: 670px; height: 100%; display: inline; float: left; margin-left: 10px; margin-right: 10px;">
+                <div style="display: inline; float: left; height: 100%; margin-left: 10px; margin-right: 10px; width: 670px;">
                     <div id="divIframe" style="display: none;">
-                        <iframe id="cloudpreview" style="width: 670px; height: 100%;" scrolling="no" frameborder="0" onload='javascript:resizeIframe(this);'></iframe>
+                        <iframe id="cloudpreview" style="height: 100%; width: 670px;" scrolling="no" frameborder="0" onload=' javascript:resizeIframe(this); '></iframe>
                     </div>
                     <div id="divMap" style="display: block;">
                         <h2>Bản đồ đến công ty</h2>
@@ -46,10 +46,10 @@
         </div>
     </div>
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             var id = getParameterByName('id');
             var page = 'Contact.aspx?type=4&id=' + id;
-            $('#cssmenu ul li ul li a').each(function () {
+            $('#cssmenu ul li ul li a').each(function() {
                 var link = $(this).attr('href');
                 if (link.indexOf(page) >= 0) {
                     $(this).children().addClass('active');
@@ -59,7 +59,7 @@
         });
 
         function getDirectPage(id) {
-            if(id == "0") {
+            if (id == "0") {
                 $('#divMap').css('display', 'block');
                 $('#divIframe').css('display', 'none');
             } else {
@@ -67,15 +67,15 @@
                 $('#divIframe').css('display', 'block');
                 if (id == "1") {
                     sourceIframe("Quote.html");
-                } else if(id == "2") {
+                } else if (id == "2") {
                     sourceIframe("Process.html");
                 } else {
                     sourceIframe("Investigate.aspx");
                 }
             }
         }
-        
-        //$('#menucontact li a').click(function () {
+
+    //$('#menucontact li a').click(function () {
         //    var id = getParameterByName('id');
         //    switch (id) {
         //    case '1':

@@ -33,15 +33,15 @@
 .Metro .reEmptyMessage { color: #bbbbbb; }
 
 .Metro.RadEditor .reEditorModes a {
-    border: 1px solid white;
     background-color: white;
+    border: 1px solid white;
     color: #767676;
 }
 
 .Metro.RadEditor .reEditorModes .reMode_selected {
+    background-color: #25a0da !important;
     background-image: none;
     border: 1px solid #e5e5e5;
-    background-color: #25a0da !important;
     color: white;
 }
 
@@ -105,25 +105,25 @@
 .Metro .reToolbar li { color: #000; }
 
 .Metro .reToolbar .reTool_text:hover {
-    margin-left: 0;
-    margin-right: 0;
     border-left: 1px solid #767676;
     border-right: 1px solid #767676;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .Metro .reToolbar .reTool_text.reTool_selected,
 .Metro .reToolbar .reTool_text.reTool_selected:hover {
-    margin-left: 0;
-    margin-right: 0;
     border-left: 1px solid #767676;
     border-right: 1px solid #767676;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .Metro .reToolbar .reTool_text.reTool_disabled,
 .Metro .reToolbar .reTool_text.reTool_disabled:hover {
+    border: 0;
     margin-left: 0;
     margin-right: 0;
-    border: 0;
 }
 
 .Metro .reToolbar .reTool.reSplitButton.reTool_disabled:hover { _background: none; }
@@ -133,15 +133,15 @@
 
 .Metro .reDropdown,
 .Metro .reTool_disabled.reDropdown:hover {
+    background-color: white;
     border: 1px solid #e5e5e5;
     color: #767676;
-    background-color: white;
 }
 
 .Metro .Metro .reDropdown:hover {
+    background-color: #e8e8e8;
     border: 1px solid #e5e5e5;
     color: #000 !important;
-    background-color: #e8e8e8;
 }
 
 .Metro.reDropDownBody .reTlbVertical ul li .reButton_text { color: #767676; }
@@ -151,8 +151,8 @@
 .Metro.reInsertTable { background-color: white; }
 
 .Metro table.reSpinBox {
-    border: 1px solid #e5e5e5;
     background: white;
+    border: 1px solid #e5e5e5;
 }
 
 .Metro table.reSpinBox:hover {
@@ -161,8 +161,8 @@
 }
 
 .Metro.RadEditor input {
-    border: 1px solid #e5e5e5;
     background-color: white;
+    border: 1px solid #e5e5e5;
     color: #767676;
 }
 
@@ -190,8 +190,8 @@
 .Metro.reColorPicker span { border: 1px solid #e5e5e5; }
 
 .Metro .reAjaxspell_button {
-    border: 1px solid #e5e5e5;
     background: #25a0da;
+    border: 1px solid #e5e5e5;
     color: black;
 }
 
@@ -215,15 +215,15 @@
 .Metro .reInsertTable table { background: white; }
 
 .Metro.reInsertTable table td {
-    border: 1px solid #e5e5e5;
     background: white;
+    border: 1px solid #e5e5e5;
 }
 
 .Metro .reInsertTable .reTlbVertical ul { background-color: white; }
 
 .Metro.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text, .Metro.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text:link, .Metro.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text:visited {
-    color: black !important;
     background: transparent none;
+    color: black !important;
     _background: none !important;
 }
 
@@ -233,8 +233,8 @@
 .Metro .rePopupButtonContainer .rePopupButton,
 .Metro .reCommentViewText,
 .Metro .reCommentInfoPanel {
-    border: 1px solid #e5e5e5;
     background-color: white;
+    border: 1px solid #e5e5e5;
     border-radius: 0;
 }
 
@@ -243,30 +243,30 @@
 
 .Metro.RadEditor .reCommentButton,
 .Metro .rePopupButtonContainer .rePopupButton {
+    background-color: white;
     border-color: #e5e5e5;
     color: #767676;
-    background-color: white;
 }
 
 .Metro.RadEditor .reCommentButton:hover,
 .Metro .rePopupButtonContainer .rePopupButton:hover {
-    color: black;
-    border-color: #767676;
     background-color: #e8e8e8;
+    border-color: #767676;
+    color: black;
 }
 
 .Metro.RadEditor .reCommentButton:active,
 .Metro .rePopupButtonContainer .rePopupButton:active {
-    color: white;
-    border-color: #25a0da;
     background-color: #25a0da;
+    border-color: #25a0da;
+    color: white;
 }
 
 .Metro .rePopupContainer .rePopupTitle {
-    color: white;
     background-color: #25a0da;
     border-color: #767676;
     border-radius: 0;
+    color: white;
 }
 
 .Metro.RadEditor.reRtl .reTool .split_arrow:hover { border-right-color: #e5e5e5; }

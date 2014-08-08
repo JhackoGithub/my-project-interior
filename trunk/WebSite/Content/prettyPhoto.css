@@ -31,8 +31,8 @@ div.pp_default .pp_previous:hover {
 div.pp_default .pp_expand {
     background: url(../images/prettyPhoto/default/sprite.png) 0 -29px no-repeat;
     cursor: pointer;
+    height: 28px;
     width: 28px;
-    height: 28px
 }
 
 div.pp_default .pp_expand:hover {
@@ -43,8 +43,8 @@ div.pp_default .pp_expand:hover {
 div.pp_default .pp_contract {
     background: url(../images/prettyPhoto/default/sprite.png) 0 -84px no-repeat;
     cursor: pointer;
+    height: 28px;
     width: 28px;
-    height: 28px
 }
 
 div.pp_default .pp_contract:hover {
@@ -53,10 +53,10 @@ div.pp_default .pp_contract:hover {
 }
 
 div.pp_default .pp_close {
-    width: 30px;
-    height: 30px;
     background: url(../images/prettyPhoto/default/sprite.png) 2px 1px no-repeat;
-    cursor: pointer
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
 }
 
 div.pp_default .pp_gallery ul li a {
@@ -65,8 +65,8 @@ div.pp_default .pp_gallery ul li a {
 }
 
 div.pp_default .pp_gallery a.pp_arrow_previous, div.pp_default .pp_gallery a.pp_arrow_next {
+    left: auto;
     position: static;
-    left: auto
 }
 
 div.pp_default .pp_nav .pp_play, div.pp_default .pp_nav .pp_pause {
@@ -80,13 +80,13 @@ div.pp_default .pp_nav .pp_pause { background-position: -51px -29px }
 div.pp_default a.pp_arrow_previous, div.pp_default a.pp_arrow_next {
     background: url(../images/prettyPhoto/default/sprite.png) -31px -3px no-repeat;
     height: 20px;
+    margin: 4px 0 0;
     width: 20px;
-    margin: 4px 0 0
 }
 
 div.pp_default a.pp_arrow_next {
+    background-position: -82px -3px;
     left: 52px;
-    background-position: -82px -3px
 }
 
 div.pp_default .pp_content_container .pp_details { margin-top: 5px }
@@ -94,21 +94,21 @@ div.pp_default .pp_content_container .pp_details { margin-top: 5px }
 div.pp_default .pp_nav {
     clear: none;
     height: 30px;
+    position: relative;
     width: 105px;
-    position: relative
 }
 
 div.pp_default .pp_nav .currentTextHolder {
-    font-family: Georgia;
-    font-style: italic;
     font-color: #999;
+    font-family: Georgia;
     font-size: 11px;
+    font-style: italic;
     left: 75px;
     line-height: 25px;
+    margin: 0;
+    padding: 0 0 0 10px;
     position: absolute;
     top: 2px;
-    margin: 0;
-    padding: 0 0 0 10px
 }
 
 div.pp_default .pp_close:hover, div.pp_default .pp_nav .pp_play:hover, div.pp_default .pp_nav .pp_pause:hover, div.pp_default .pp_arrow_next:hover, div.pp_default .pp_arrow_previous:hover { opacity: 0.7 }
@@ -163,10 +163,10 @@ div.light_rounded .pp_contract:hover {
 }
 
 div.light_rounded .pp_close {
-    width: 75px;
-    height: 22px;
     background: url(../images/prettyPhoto/light_rounded/sprite.png) -1px -1px no-repeat;
-    cursor: pointer
+    cursor: pointer;
+    height: 22px;
+    width: 75px;
 }
 
 div.light_rounded .pp_nav .pp_play {
@@ -228,15 +228,15 @@ div.dark_rounded .pp_contract:hover {
 }
 
 div.dark_rounded .pp_close {
-    width: 75px;
-    height: 22px;
     background: url(../images/prettyPhoto/dark_rounded/sprite.png) -1px -1px no-repeat;
-    cursor: pointer
+    cursor: pointer;
+    height: 22px;
+    width: 75px;
 }
 
 div.dark_rounded .pp_description {
+    color: #fff;
     margin-right: 85px;
-    color: #fff
 }
 
 div.dark_rounded .pp_nav .pp_play {
@@ -291,10 +291,10 @@ div.dark_square .pp_contract:hover {
 }
 
 div.dark_square .pp_close {
-    width: 75px;
-    height: 22px;
     background: url(../images/prettyPhoto/dark_square/sprite.png) -1px -1px no-repeat;
-    cursor: pointer
+    cursor: pointer;
+    height: 22px;
+    width: 75px;
 }
 
 div.dark_square .pp_nav { clear: none }
@@ -346,10 +346,10 @@ div.light_square .pp_contract:hover {
 }
 
 div.light_square .pp_close {
-    width: 75px;
-    height: 22px;
     background: url(../images/prettyPhoto/light_square/sprite.png) -1px -1px no-repeat;
-    cursor: pointer
+    cursor: pointer;
+    height: 22px;
+    width: 75px;
 }
 
 div.light_square .pp_nav .pp_play {
@@ -409,10 +409,10 @@ div.facebook .pp_contract:hover {
 }
 
 div.facebook .pp_close {
-    width: 22px;
-    height: 22px;
     background: url(../images/prettyPhoto/facebook/sprite.png) -1px -1px no-repeat;
-    cursor: pointer
+    cursor: pointer;
+    height: 22px;
+    width: 22px;
 }
 
 div.facebook .pp_description { margin: 0 37px 0 0 }
@@ -531,11 +531,11 @@ div.pp_pic_holder {
 
 .pp_social .facebook {
     float: left;
+    margin-left: 5px;
+    overflow: hidden;
     position: relative;
     top: -1px;
-    margin-left: 5px;
     width: 55px;
-    overflow: hidden
 }
 
 .pp_social .twitter { float: left }
@@ -591,10 +591,10 @@ a.pp_arrow_previous, a.pp_arrow_next {
 .pp_gallery ul {
     float: left;
     height: 35px;
+    margin: 0 0 0 5px;
+    padding: 0;
     position: relative;
     white-space: nowrap;
-    margin: 0 0 0 5px;
-    padding: 0
 }
 
 .pp_gallery ul a {
@@ -654,22 +654,22 @@ a.pp_expand, a.pp_contract {
 }
 
 a.pp_close {
-    position: absolute;
-    right: 0;
-    top: 0;
     display: block;
     line-height: 22px;
-    text-indent: -10000px
+    position: absolute;
+    right: 0;
+    text-indent: -10000px;
+    top: 0;
 }
 
 .pp_loaderIcon {
     display: block;
     height: 24px;
     left: 50%;
+    margin: -12px 0 0 -12px;
     position: absolute;
     top: 50%;
     width: 24px;
-    margin: -12px 0 0 -12px
 }
 
 #pp_full_res { line-height: 1!important }
@@ -682,8 +682,8 @@ div.ppt {
     color: #fff;
     display: none;
     font-size: 17px;
+    margin: 0 0 5px 15px;
     z-index: 9999;
-    margin: 0 0 5px 15px
 }
 
 div.pp_default .pp_content, div.light_rounded .pp_content { background-color: #fff }

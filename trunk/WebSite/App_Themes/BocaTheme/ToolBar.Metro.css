@@ -1,16 +1,16 @@
 /* <RadToolBar / Default> */
 .RadToolBar_Metro .rtbOuter {
-    padding: 1px;
     background-color: #ffffff;
     border: 1px solid #e5e5e5;
+    padding: 1px;
 }
 
 /* <buttons> */
 
 .RadToolBar_Metro .rtbWrap,
 .RadToolBar_Metro .rtbTemplate {
-    font: normal 12px/20px "Segoe UI", Arial, sans-serif;
     color: #767676;
+    font: normal 12px/20px "Segoe UI", Arial, sans-serif;
 }
 
 .RadToolBar_Metro .rtbItem .rtbWrap { padding: 3px; }
@@ -34,10 +34,10 @@
 .RadToolBar_Metro .rtbDropDownExpanded .rtbWrap,
 .RadToolBar_Metro .rtbChecked .rtbWrap,
 .RadToolBar_Metro li.rtbChecked .rtbWrap:hover {
-    padding: 2px;
+    background-color: #249fd9;
     border: 1px solid #249fd9;
     color: #ffffff;
-    background-color: #249fd9;
+    padding: 2px;
 }
 
 /* </button states> */
@@ -68,8 +68,8 @@ html .RadToolBar_Metro .rtbInHovered .rtbChoiceArrow { background-position: -21p
 .RadToolBar_Metro .rtbItemClicked .rtbVOriented .rtbChoiceArrow,
 .RadToolBar_Metro .rtbItemClicked .rtbChoiceArrow {
     background-color: transparent;
-    background-repeat: no-repeat;
     background-image: url('ToolBar/rtbClickedDropArrows.png');
+    background-repeat: no-repeat;
 }
 
 .RadToolBar_Metro .rtbSplBtnClicked .rtbExpandUp .rtbChoiceArrow,
@@ -78,15 +78,15 @@ html .RadToolBar_Metro .rtbInHovered .rtbChoiceArrow { background-position: -21p
 /* </Drop Down Arrows> */
 
 .RadToolBar_Metro_Horizontal li.rtbSeparator {
+    background: #e5e5e5;
     border: 0;
     margin-left: 1px;
-    background: #e5e5e5;
 }
 
 .RadToolBar_Metro_Vertical li.rtbSeparator {
+    background: #e5e5e5;
     border: 0;
     margin-top: 1px;
-    background: #e5e5e5;
 }
 
 /* </buttons> */
@@ -101,26 +101,26 @@ html .RadToolBar_Metro .rtbInHovered .rtbChoiceArrow { background-position: -21p
 /* <drop-down> */
 
 div.RadToolBarDropDown_Metro {
-    margin-top: 4px;
-    border-color: #e5e5e5;
     background-color: #ffffff;
+    border-color: #e5e5e5;
+    margin-top: 4px;
 }
 
 .RadToolBarDropDown_Metro .rtbWrap,
 .RadToolBarDropDown_Metro .rtbTemplate {
     color: #767676;
     font-family: "Segoe UI", Arial, sans-serif;
-    font-weight: normal;
     font-size: 11px;
+    font-weight: normal;
     text-transform: uppercase;
 }
 
 .RadToolBarDropDown_Metro .rtbGroup .rtbItem { padding-left: 1px; }
 
 .RadToolBarDropDown_Metro .rtbGroup .rtbItem .rtbWrap {
-    padding: 1px 3px 1px 35px;
-    margin-right: 1px;
     border: 0;
+    margin-right: 1px;
+    padding: 1px 3px 1px 35px;
 }
 
 .RadToolBarDropDown_Metro_rtl .rtbGroup .rtbItem .rtbWrap { padding: 1px 35px 1px 3px; }
@@ -129,8 +129,8 @@ div.RadToolBarDropDown_Metro {
 
 .RadToolBarDropDown_Metro_rtl .rtbGroup .rtbItemHovered .rtbWrap,
 .RadToolBarDropDown_Metro_rtl .rtbGroup .rtbItemFocused .rtbWrap {
-    padding: 0 34px 0 2px;
     color: black;
+    padding: 0 34px 0 2px;
 }
 
 .RadToolBarDropDown_Metro_rtl .rtbGroup .rtbItemHovered .rtbIcon,
@@ -142,8 +142,8 @@ div.RadToolBarDropDown_Metro {
 .RadToolBarDropDown_Metro .rtbDisabled .rtbWrap { color: #e5e5e5; }
 
 .RadToolBarDropDown_Metro .rtbSeparator {
-    border-color: #e5e5e5;
     background-color: #e5e5e5;
+    border-color: #e5e5e5;
 }
 
 /* </drop-down> */

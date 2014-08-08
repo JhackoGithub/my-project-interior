@@ -40,15 +40,6 @@ namespace WebSite.Admin {
         protected global::Telerik.Web.UI.RadFormDecorator QsfFromDecorator;
         
         /// <summary>
-        /// tbName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbName;
-        
-        /// <summary>
         /// radEditorInfo control.
         /// </summary>
         /// <remarks>

@@ -101,19 +101,19 @@
 
     <script type="text/javascript">
 
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             $('.sf-menu #menu-item-2').addClass('current_page_item');
 
 
-            $('#cssmenu > ul > li ul').each(function (index, e) {
+            $('#cssmenu > ul > li ul').each(function(index, e) {
                 var count = $(e).find('li').length;
                 var content = '<span class="cnt">' + count + '</span>';
                 $(e).closest('li').children('a').append(content);
             });
             $('#cssmenu ul ul li:odd').addClass('odd');
             $('#cssmenu ul ul li:even').addClass('even');
-            $('#cssmenu > ul > li > a').click(function () {
+            $('#cssmenu > ul > li > a').click(function() {
                 $('#cssmenu li').removeClass('active');
                 $(this).closest('li').addClass('active');
                 var checkElement = $(this).next();

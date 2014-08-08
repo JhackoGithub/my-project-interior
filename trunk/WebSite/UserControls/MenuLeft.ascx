@@ -4,10 +4,10 @@
     <asp:Literal runat="server" ID="ltMenu"></asp:Literal>
 </div>
 <script type="text/javascript">
-    $(function () {
+    $(function() {
         var cate = getParameterByName('cate');
         var page = 'Architecture.aspx?type=0&tab=1&cate=' + cate;
-        $('#cssmenu ul li ul li a').each(function () {
+        $('#cssmenu ul li ul li a').each(function() {
             var link = $(this).attr('href');
             if (link.indexOf(page) >= 0) {
                 $(this).children().addClass('active');

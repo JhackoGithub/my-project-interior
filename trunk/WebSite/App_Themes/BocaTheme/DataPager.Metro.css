@@ -1,6 +1,6 @@
 .RadDataPager_Metro {
-    border: 1px solid #e5e5e5;
     background: #fff;
+    border: 1px solid #e5e5e5;
     color: #000;
 }
 
@@ -23,8 +23,8 @@
 .RadDataPager_Metro .rdpPageLast:hover { background-position: 0 -1050px; }
 
 .RadDataPager_Metro .rdpPagerButton {
-    border: 1px solid #25a0da;
     background: #25a0da;
+    border: 1px solid #25a0da;
     color: #fff;
     font: normal 12px "Segoe UI", Arial, Helvetica, sans-serif;
     line-height: normal;
@@ -36,8 +36,8 @@
 }
 
 .RadDataPager_Metro .rdpNumPart a:hover {
-    color: #000;
     background-color: #e5e5e5;
+    color: #000;
 }
 
 .RadDataPager_Metro .rdpNumPart a.rdpCurrentPage { border-color: #25a0da; }

@@ -1,15 +1,16 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Web.UI;
 using Telerik.Web.UI;
 
 namespace WebSite.Contents
 {
-    public partial class ImageManager : System.Web.UI.Page
+    public partial class ImageManager : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(IsPostBack)
+            if (IsPostBack)
                 return;
             LoadFolderImage();
         }
@@ -19,7 +20,7 @@ namespace WebSite.Contents
             const string path = @"\Images\projects\";
             if (!Directory.Exists(Server.MapPath(path)))
                 return;
-            
+
             var dirMain = new DirectoryInfo(Server.MapPath(path));
             var treeNode = new RadTreeNode
                                {
@@ -32,18 +33,17 @@ namespace WebSite.Contents
 
         private void LoadFolder(DirectoryInfo directory, RadTreeNode treeNode)
         {
-            foreach (var dirs in directory.GetDirectories())
+            foreach (DirectoryInfo dirs in directory.GetDirectories())
             {
                 var node = new RadTreeNode
-                {
-                    Text = dirs.Name,
-                    Value = string.Format("{0}\\{1}", treeNode.Value, dirs.Name)
-                };   
+                               {
+                                   Text = dirs.Name,
+                                   Value = string.Format("{0}\\{1}", treeNode.Value, dirs.Name)
+                               };
                 treeNode.Nodes.Add(node);
-                if(dirs.GetDirectories().Any())
+                if (dirs.GetDirectories().Any())
                     LoadFolder(dirs, node);
             }
-            
         }
 
         //protected void tvFolderImg_NodeClick(object sender, RadTreeNodeEventArgs e)

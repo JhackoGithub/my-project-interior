@@ -657,7 +657,7 @@
         _mouseDown: function(event) {
             // don't let more than one widget handle mouseStart
             if (mouseHandled) {
-                return
+                return;
             }
             ;
 
@@ -669,7 +669,7 @@
             var self = this,
                 btnIsLeft = (event.which == 1),
                 // event.target.nodeName works around a bug in IE 8 with
-			// disabled inputs (#7620)
+                // disabled inputs (#7620)
                 elIsCancel = (typeof this.options.cancel == "string" && event.target.nodeName ? $(event.target).closest(this.options.cancel).length : false);
             if (!btnIsLeft || elIsCancel || !this._mouseCapture(event)) {
                 return true;
@@ -3012,8 +3012,7 @@
             this._mouseInit();
 
             //We're ready to go
-            this.ready = true
-
+            this.ready = true;
         },
 
         destroy: function() {
@@ -5482,7 +5481,7 @@ jQuery.effects || (function($, undefined) {
             self.element
                 .addClass("ui-accordion ui-widget ui-helper-reset")
                 // in lack of child-selectors in CSS
-			// we need to mark top-LIs in a UL-accordion for some IE-fix
+                // we need to mark top-LIs in a UL-accordion for some IE-fix
                 .children("li")
                 .addClass("ui-accordion-li-fix");
 
@@ -6273,7 +6272,7 @@ jQuery.effects || (function($, undefined) {
                 this._initSource();
             }
             if (key === "appendTo") {
-                this.menu.element.appendTo($(value || "body", this.element[0].ownerDocument)[0])
+                this.menu.element.appendTo($(value || "body", this.element[0].ownerDocument)[0]);
             }
             if (key === "disabled" && value && this.xhr) {
                 this.xhr.abort();
@@ -6422,7 +6421,7 @@ jQuery.effects || (function($, undefined) {
             var ul = this.menu.element;
             ul.outerWidth(Math.max(
                 // Firefox wraps long text (possibly a rounding bug)
-			// so we add 1px to avoid the wrapping (#7513)
+                // so we add 1px to avoid the wrapping (#7513)
                 ul.width("").outerWidth() + 1,
                 this.element.outerWidth()
             ));
@@ -7812,7 +7811,7 @@ jQuery.effects || (function($, undefined) {
             this._attachHandlers(inst);
             var cover = inst.dpDiv.find('iframe.ui-datepicker-cover'); // IE6- only
             if (!!cover.length) { //avoid call to outerXXXX() when not in IE6
-                cover.css({ left: -borders[0], top: -borders[1], width: inst.dpDiv.outerWidth(), height: inst.dpDiv.outerHeight() })
+                cover.css({ left: -borders[0], top: -borders[1], width: inst.dpDiv.outerWidth(), height: inst.dpDiv.outerHeight() });
             }
             inst.dpDiv.find('.' + this._dayOverClass + ' a').mouseover();
             var numMonths = this._getNumberOfMonths(inst);
@@ -7827,7 +7826,7 @@ jQuery.effects || (function($, undefined) {
                 'Class']('ui-datepicker-rtl');
             if (inst == $.datepicker._curInst && $.datepicker._datepickerShowing && inst.input &&
                 // #6694 - don't focus the input if it's already focused
-				// this breaks the change event in IE
+                // this breaks the change event in IE
                 inst.input.is(':visible') && !inst.input.is(':disabled') && inst.input[0] != document.activeElement)
                 inst.input.focus();
             // deffered render of the years select (to avoid flashes on Firefox) 
@@ -9053,7 +9052,7 @@ jQuery.effects || (function($, undefined) {
                         zIndex: options.zIndex
                     })
                     // setting tabIndex makes the div focusable
-				// setting outline to 0 prevents a border on focus in Mozilla
+                    // setting outline to 0 prevents a border on focus in Mozilla
                     .attr('tabIndex', -1).css('outline', 0).keydown(function(event) {
                         if (options.closeOnEscape && !event.isDefaultPrevented() && event.keyCode &&
                             event.keyCode === $.ui.keyCode.ESCAPE) {
@@ -9393,7 +9392,7 @@ jQuery.effects || (function($, undefined) {
             var self = this,
                 options = self.options,
                 // .ui-resizable has position: relative defined in the stylesheet
-			// but dialogs have to use absolute or fixed positioning
+                // but dialogs have to use absolute or fixed positioning
                 position = self.uiDialog.css('position'),
                 resizeHandles = (typeof handles === 'string' ?
                     handles :
@@ -10278,7 +10277,7 @@ jQuery.effects || (function($, undefined) {
                     .appendTo(this.element)
                     .addClass("ui-slider-range" +
                         // note: this isn't the most fittingly semantic framework class for this element,
-				// but worked best visually with a variety of themes
+                        // but worked best visually with a variety of themes
                         " ui-widget-header" +
                         ((o.range === "min" || o.range === "max") ? " ui-slider-range-" + o.range : ""));
             }

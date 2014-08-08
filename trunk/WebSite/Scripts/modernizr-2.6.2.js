@@ -50,7 +50,7 @@ window.Modernizr = (function(window, document, undefined) {
     var version = '2.6.2',
         Modernizr = { },
         /*>>cssclasses*/
-    // option for enabling the HTML classes to be added
+        // option for enabling the HTML classes to be added
         enableClasses = true,
         /*>>cssclasses*/
 
@@ -71,13 +71,13 @@ window.Modernizr = (function(window, document, undefined) {
 
         toString = { }.toString,
         // TODO :: make the prefixes more granular
-    /*>>prefixes*/
-    // List of property values to set for css tests. See ticket #21
+        /*>>prefixes*/
+        // List of property values to set for css tests. See ticket #21
         prefixes = ' -webkit- -moz- -o- -ms- '.split(' '),
         /*>>prefixes*/
 
-    /*>>domprefixes*/
-    // Following spec is to expose vendor-specific style properties as:
+        /*>>domprefixes*/
+        // Following spec is to expose vendor-specific style properties as:
     //   elem.style.WebkitBorderRadius
     // and the following would be incorrect:
     //   elem.style.webkitBorderRadius
@@ -92,7 +92,7 @@ window.Modernizr = (function(window, document, undefined) {
         domPrefixes = omPrefixes.toLowerCase().split(' '),
         /*>>domprefixes*/
 
-    /*>>ns*/
+        /*>>ns*/
         ns = { 'svg': 'http://www.w3.org/2000/svg' },
         /*>>ns*/
 
@@ -105,7 +105,7 @@ window.Modernizr = (function(window, document, undefined) {
 
 
         /*>>teststyles*/
-    // Inject element with style element and some CSS rules
+        // Inject element with style element and some CSS rules
         injectElementWithStyles = function(rule, callback, nodes, testnames) {
 
             var style, ret, node, docOverflow,
@@ -160,8 +160,8 @@ window.Modernizr = (function(window, document, undefined) {
         },
         /*>>teststyles*/
 
-    /*>>mq*/
-    // adapted from matchMedia polyfill
+        /*>>mq*/
+        // adapted from matchMedia polyfill
     // by Scott Jehl and Paul Irish
     // gist.github.com/786768
         testMediaQuery = function(mq) {
@@ -185,9 +185,9 @@ window.Modernizr = (function(window, document, undefined) {
         /*>>mq*/
 
 
-     /*>>hasevent*/
-    //
-    // isEventSupported determines if a given element supports the given event
+        /*>>hasevent*/
+        //
+     // isEventSupported determines if a given element supports the given event
     // kangax.github.com/iseventsupported/
     //
     // The following results are known incorrects:
@@ -239,9 +239,9 @@ window.Modernizr = (function(window, document, undefined) {
         })(),
         /*>>hasevent*/
 
-    // TODO :: Add flag for hasownprop ? didn't last time
+        // TODO :: Add flag for hasownprop ? didn't last time
 
-    // hasOwnProperty shim by kangax needed for Safari 2.0 support
+        // hasOwnProperty shim by kangax needed for Safari 2.0 support
         _hasOwnProperty = ({ }).hasOwnProperty, hasOwnProp;
 
     if (!is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined')) {
@@ -928,7 +928,7 @@ window.Modernizr = (function(window, document, undefined) {
                         bool = defaultView.getComputedStyle &&
                             defaultView.getComputedStyle(inputElem, null).WebkitAppearance !== 'textfield' &&
                             // Mobile android web browser has false positive, so must
-                              // check the height to see if the widget is actually there.
+                            // check the height to see if the widget is actually there.
                             (inputElem.offsetHeight !== 0);
 
                         docElement.removeChild(inputElem);

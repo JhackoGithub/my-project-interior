@@ -1,8 +1,8 @@
-﻿var AjaxConst = {};
+﻿var AjaxConst = { };
 AjaxConst.GetRequest = 'GET';
 AjaxConst.PostRequest = 'POST';
 
-function callMenuHandler(url, entryData, requestType, successCallBack) {
+function callAjaxHandler(url, entryData, requestType, successCallBack) {
     $.ajax({
         url: url,
         contentType: "application/json; charset=utf-8",
@@ -13,7 +13,7 @@ function callMenuHandler(url, entryData, requestType, successCallBack) {
         cache: false,
         type: requestType,
         responseType: "json",
-        success: function (data) {
+        success: function(data) {
             if (data == null)
                 return;
             if (data.error != null) {
@@ -21,7 +21,7 @@ function callMenuHandler(url, entryData, requestType, successCallBack) {
             }
             successCallBack(data);
         },
-        error: function (xhr, status, error) {
+        error: function(xhr, status, error) {
             if (error.length == 0)
                 return;
             if (error === 'timeout')
@@ -30,15 +30,15 @@ function callMenuHandler(url, entryData, requestType, successCallBack) {
     });
 }
 
-$(document).ready(function () {
-    $('#cssmenu > ul > li ul').each(function (index, e) {
+$(document).ready(function() {
+    $('#cssmenu > ul > li ul').each(function(index, e) {
         var count = $(e).find('li').length;
         var content = '<span class="cnt">' + count + '</span>';
         $(e).closest('li').children('a').append(content);
     });
     $('#cssmenu ul ul li:odd').addClass('odd');
     $('#cssmenu ul ul li:even').addClass('even');
-    $('#cssmenu > ul > li > a').click(function () {
+    $('#cssmenu > ul > li > a').click(function() {
         $('#cssmenu li').removeClass('active');
         $(this).closest('li').addClass('active');
         var checkElement = $(this).next();
@@ -67,7 +67,7 @@ function ShowPopupIframe(w, h, title, divContainer, url) {
         modal: true,
         visible: false,
         resizable: false,
-        close: function (e) {
+        close: function(e) {
             $(this.element).empty();
         },
         actions: ["Close"],
@@ -80,7 +80,7 @@ function ShowPopupIframe(w, h, title, divContainer, url) {
     wnd.center().open();
 
     $(".k-window-action").removeClass("k-window-action").addClass("k-link-wnd");
-    $("a.k-link-wnd").click(function () {
+    $("a.k-link-wnd").click(function() {
         ClosePopup(wnd);
     });
     return wnd;
@@ -98,5 +98,3 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results == null ? "-1" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-
-

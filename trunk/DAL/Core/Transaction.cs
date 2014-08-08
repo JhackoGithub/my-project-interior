@@ -10,7 +10,7 @@ namespace DAL.Core
         public static Transaction Begin()
         {
             var transaction = new Transaction();
-            var sqlConnection = Connection.Instance.Open();
+            SqlConnection sqlConnection = Connection.Instance.Open();
             transaction.SqlTransaction = sqlConnection.BeginTransaction();
             return transaction;
         }

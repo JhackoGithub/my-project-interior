@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="Consultant.aspx.cs" Inherits="WebSite.Admin.Consultant" %>
-<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="~/UserControls/NewsManagement.ascx" TagPrefix="ucNewsMng" TagName="NewsMng" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="FeaturedContent" runat="server">

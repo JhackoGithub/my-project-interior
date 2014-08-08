@@ -26,19 +26,19 @@
             }
 
             .fluid_container {
-                margin: 0 auto;
                 height: 640px;
+                margin: 0 auto;
                 width: 960px;
             }
         </style>
 
 
-        <script src="Scripts/jquery-1.8.2.min.js"></script>
+        <script src="Scripts/jquery-1.8.2.min.js"> </script>
         <script src="Scripts/jquery.easing.1.3.js"> </script>
         <script src="Scripts/camera.js" type="text/javascript"> </script>
-        <script src="Scripts/Script.js" type="text/javascript"></script>
+        <script src="Scripts/Script.js" type="text/javascript"> </script>
         <script type="text/javascript">
-            jQuery(function () {
+            jQuery(function() {
                 jQuery('#camera_wrap_2').camera({
                     height: '520px',
                     loader: 'bar',
@@ -46,7 +46,7 @@
                     thumbnails: true,
                     imagePath: '/Images/'
                 });
-                
+
                 $('ul li:first').addClass('current_page_item');
             });
         </script>
@@ -62,12 +62,12 @@
                                 <div class="container_12 clearfix header">
                                     <div class="grid_12">
                                         <div class="logo">
-                                            <div style="padding: 5px; float: left;">
+                                            <div style="float: left; padding: 5px;">
                                                 <a href="#">
                                                     <img src="Images/logo.png" width="100px" /></a>
                                             </div>
-                                            <div style="float: left; width: 190px; padding-top: 20px;">
-                                                <div style="text-transform: uppercase; text-align: left; color: white; text-decoration: underline; font-family: sans-serif; font-size: 10pt; line-height: 1.6em;">
+                                            <div style="float: left; padding-top: 20px; width: 190px;">
+                                                <div style="color: white; font-family: sans-serif; font-size: 10pt; line-height: 1.6em; text-align: left; text-decoration: underline; text-transform: uppercase;">
                                                     công ty cổ phần tư vấn thiết kế và xây dựng a&m
                                                 </div>
                                             </div>

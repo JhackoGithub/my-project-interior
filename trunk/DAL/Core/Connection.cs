@@ -1,26 +1,16 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Linq;
-using DAL.Core;
 
 namespace DAL.Core
 {
     public class Connection
     {
         private static Connection _instance;
-        public static Connection Instance
-        {
-            get
-            {
-                return _instance ?? (_instance = new Connection());
-            }
-        }
-
-        private readonly string _connectionString;
-
-        private readonly string _connectionPoolString;
 
         private readonly string _connectionNoPoolString;
+        private readonly string _connectionPoolString;
+        private readonly string _connectionString;
 
         private Connection()
         {
@@ -30,13 +20,19 @@ namespace DAL.Core
             {
                 throw new Exception("Connection String can not null");
             }
-            var connArrs = _connectionString.Split(';');
-            var sTemp = connArrs
+            string[] connArrs = _connectionString.Split(';');
+            string sTemp = connArrs
                 .Where(CheckStartWith)
                 .Aggregate(string.Empty, (current, t) => current + (t + ";"));
 
-            _connectionPoolString = sTemp + "Pooling=true;Min Pool Size=5;Max Pool Size=15;Connect Timeout=2;Connection Reset = True;Connection Lifetime = 600;";
+            _connectionPoolString = sTemp +
+                                    "Pooling=true;Min Pool Size=5;Max Pool Size=15;Connect Timeout=2;Connection Reset = True;Connection Lifetime = 600;";
             _connectionNoPoolString = sTemp + "Pooling=false;Connect Timeout=45;";
+        }
+
+        public static Connection Instance
+        {
+            get { return _instance ?? (_instance = new Connection()); }
         }
 
         private static bool CheckStartWith(string str)

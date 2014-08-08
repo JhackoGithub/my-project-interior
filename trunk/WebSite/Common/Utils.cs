@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Web;
 using Newtonsoft.Json;
 
@@ -11,7 +8,7 @@ namespace WebSite.Common
     {
         public static string ConvertToJsonString(object obj)
         {
-            var result = JsonConvert.SerializeObject(obj);
+            string result = JsonConvert.SerializeObject(obj);
             return result;
         }
 
@@ -42,5 +39,11 @@ namespace WebSite.Common
         {
             return JsonConvert.DeserializeObject<T>(value);
         }
+    }
+
+    public class Constant
+    {
+        public const string PROJECT_ARCHITECTURE = "Công trình";
+        public const string PROJECT_INTERIOR = "Nội thất";
     }
 }

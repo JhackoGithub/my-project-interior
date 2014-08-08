@@ -47,6 +47,7 @@
     <Compile Include="Core\Transaction.cs" />
     <Compile Include="MenuLeftDAO.cs" />
     <Compile Include="NewsDAO.cs" />
+    <Compile Include="ProjectDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

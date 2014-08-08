@@ -8,20 +8,24 @@ namespace DAL
 {
     public class NewsDAO : BaseDAO
     {
-        public NewsDAO(){}
+        public NewsDAO()
+        {
+        }
 
-        public NewsDAO(Transaction transaction) : base(transaction){}
+        public NewsDAO(Transaction transaction) : base(transaction)
+        {
+        }
 
         public List<News> GetNews()
         {
-            var res = ExecuteToList<News>("News_GetAll");
+            List<News> res = ExecuteToList<News>("News_GetAll");
             return res;
         }
 
         public List<News> GetTopNews(int top)
         {
             var paramSql = new SqlParameter("@Top", top);
-            var res = ExecuteToList<News>("News_GetTop", paramSql);
+            List<News> res = ExecuteToList<News>("News_GetTop", paramSql);
             return res;
         }
 
@@ -35,13 +39,13 @@ namespace DAL
         public void AddNews(News news)
         {
             var paramArrs = new[]
-            {
-                new SqlParameter("@Title", news.Title),                  
-                new SqlParameter("@SubContent", news.SubContent),
-                new SqlParameter("@ImageUrl", news.ImageUrl),
-                new SqlParameter("@Contents",news.Contents),
-                new SqlParameter("@CreatedOn",news.CreatedOn)
-            };
+                                {
+                                    new SqlParameter("@Title", news.Title),
+                                    new SqlParameter("@SubContent", news.SubContent),
+                                    new SqlParameter("@ImageUrl", news.ImageUrl),
+                                    new SqlParameter("@Contents", news.Contents),
+                                    new SqlParameter("@CreatedOn", news.CreatedOn)
+                                };
 
             news.Id = ExecuteToSingleOrDefault<int>("News_Insert", paramArrs);
         }
@@ -49,28 +53,28 @@ namespace DAL
         public int UpdateNews(News news)
         {
             var paramArrs = new[]
-            {
-                new SqlParameter("@Id", news.Id),
-                new SqlParameter("@Title", news.Title),                  
-                new SqlParameter("@SubContent", news.SubContent),
-                new SqlParameter("@ImageUrl", news.ImageUrl),
-                new SqlParameter("@Contents",news.Contents),
-                new SqlParameter("@ChangedOn", news.ChangedOn)
-            };
+                                {
+                                    new SqlParameter("@Id", news.Id),
+                                    new SqlParameter("@Title", news.Title),
+                                    new SqlParameter("@SubContent", news.SubContent),
+                                    new SqlParameter("@ImageUrl", news.ImageUrl),
+                                    new SqlParameter("@Contents", news.Contents),
+                                    new SqlParameter("@ChangedOn", news.ChangedOn)
+                                };
 
-            var retVal = ExecuteCommand("News_Update", paramArrs);
+            int retVal = ExecuteCommand("News_Update", paramArrs);
             return retVal;
         }
 
         public int DeleteNews(int id, DateTime deletedOn)
         {
             var paramArrs = new[]
-            {
-                new SqlParameter("@Id", id),
-                new SqlParameter("@DeletedOn", deletedOn)
-            };
+                                {
+                                    new SqlParameter("@Id", id),
+                                    new SqlParameter("@DeletedOn", deletedOn)
+                                };
 
-            var retVal = ExecuteCommand("News_Delete", paramArrs);
+            int retVal = ExecuteCommand("News_Delete", paramArrs);
             return retVal;
         }
     }

@@ -13,4 +13,3 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="SubContent" runat="server">
     <asp:Literal runat="server" ID="ltProjects"></asp:Literal>
 </asp:Content>
-

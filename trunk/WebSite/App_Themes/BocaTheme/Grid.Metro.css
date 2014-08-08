@@ -1,8 +1,8 @@
 .RadGrid_Metro {
-    border: 1px solid #e5e5e5;
     background: white;
+    border: 1px solid #e5e5e5;
     color: black;
-    font: normal 12px "Segoe UI", Arial, Helvetica, sans-serif;
+    font: inherit !important;
     line-height: 16px;
 }
 
@@ -12,7 +12,7 @@
 .RadGrid_Metro .rgCommandRow table,
 .RadGrid_Metro .rgEditForm table,
 .RadGrid_Metro .rgPager table {
-    font: normal 12px "Segoe UI", Arial, Helvetica, sans-serif;
+    font: inherit !important;
     line-height: 16px;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .GridToolTip_Metro {
-    font: normal 12px "Segoe UI", Arial, Helvetica, sans-serif;
+    font: inherit !important;
     line-height: 16px;
 }
 
@@ -107,8 +107,8 @@
 
 .RadGrid_Metro .rgMasterTable .rgSelectedCell,
 .RadGrid_Metro .rgSelectedRow {
-    color: #fff;
     background: #25a0da;
+    color: #fff;
 }
 
 .RadGrid_Metro .rgSelectedCell a,
@@ -203,31 +203,31 @@
 .RadGrid_Metro .rgPageLast:hover { background-position: 0 -1050px; }
 
 .RadGrid_Metro .rgPager .rgPagerButton {
-    border-color: #25a0da;
     background: #25a0da;
+    border-color: #25a0da;
     color: #fff;
-    font: 12px/12px "segoe ui", arial, sans-serif;
+    font: inherit !important;
 }
 
 .RadGrid_Metro .rgNumPart a {
     border: 1px solid rgb(180, 211, 237);
-    line-height: 20px;
     color: #767676;
+    line-height: 20px;
 }
 
 .RadGrid_Metro .rgNumPart a:hover {
-    color: #000;
     background-color: #e5e5e5;
+    color: #000;
 }
 
 .RadGrid_Metro .rgNumPart a.rgCurrentPage {
-    border-color: #25a0da;
     background: transparent;
+    border-color: #25a0da;
 }
 
 .RadGrid_Metro .rgNumPart a.rgCurrentPage:hover {
-    border-color: #25a0da;
     background: transparent;
+    border-color: #25a0da;
 }
 
 .RadGrid_Metro .rgHeader .rgSortAsc {
@@ -259,26 +259,26 @@
 
 .RadGrid_Metro .rgFilterBox {
     border-color: #e5e5e5;
-    font: 12px "segoe ui", arial, sans-serif;
     color: #000;
+    font: 12px "segoe ui", arial, sans-serif;
     height: 15px;
 }
 
 .RadMenu_Metro .rgHCMClear,
 .RadMenu_Metro .rgHCMFilter {
-    border-color: #7e7e7e;
-    background: #25a0da;
-    color: #000;
-    font-family: "segoe ui", arial, sans-serif;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
+    background: #25a0da;
+    border-color: #7e7e7e;
     border-radius: 0;
+    color: #000;
+    font-family: "segoe ui", arial, sans-serif;
 }
 
 .RadMenu_Metro .rgHCMClear:hover,
 .RadMenu_Metro .rgHCMFilter:hover {
-    border-color: #c98400;
     background-color: #ffe79c;
+    border-color: #c98400;
     color: #882501;
 }
 
@@ -325,26 +325,26 @@
 .RadGrid_Metro .rgUngroup { background-position: 0 -6999px; }
 
 .RadGrid_Metro .rgGroupItem {
-    border: 1px solid #7e7e7e;
     background: #fff;
+    border: 1px solid #7e7e7e;
     color: #000;
 }
 
 .RadGrid_Metro .rgMasterTable td.rgGroupCol, .RadGrid_Metro .rgMasterTable td.rgExpandCol {
-    border-color: #c9c9c9;
     background: #c9c9c9 none;
+    border-color: #c9c9c9;
 }
 
 .RadGrid_Metro .rgGroupHeader {
     background: #c9c9c9;
+    color: #000;
     font-size: 1.1em;
     line-height: 22px;
-    color: #000;
 }
 
 .RadGrid_Metro .rgGroupHeader td {
-    padding-left: 8px;
     padding-bottom: 2px;
+    padding-left: 8px;
 }
 
 .RadGrid_Metro .rgExpand { background-position: 5px -496px; }
@@ -383,8 +383,8 @@
 
 .RadGrid_Metro tfoot .rgCommandCell,
 .RadGrid_Metro .rgMasterTable > tbody > tr.rgCommandRow .rgCommandCell {
-    border-top: 1px solid #e5e5e5;
     border-bottom: 0;
+    border-top: 1px solid #e5e5e5;
 }
 
 .RadGrid_Metro .rgCommandTable { border: 0; }
@@ -395,25 +395,25 @@
 }
 
 .RadGrid_Metro input.rgAdd {
-    margin-right: 3px;
     background-position: 0 -1650px;
+    margin-right: 3px;
 }
 
 .RadGrid_Metro input.rgRefresh {
-    margin-right: 3px;
     background-position: 0 -1600px;
+    margin-right: 3px;
 }
 
 .RadGrid_Metro .rgSave { background-position: 3px -1825px; }
 
 .RadGrid_Metro .rgEdit {
-    margin-right: 3px;
     background-position: 0 -1700px;
+    margin-right: 3px;
 }
 
 .RadGrid_Metro .rgDel {
-    margin-right: 3px;
     background-position: 0 -1750px;
+    margin-right: 3px;
 }
 
 .RadGrid_Metro .rgExpXLS,
@@ -440,10 +440,10 @@
 .GridItemDropIndicator_Metro { border-top: 1px dashed #666; }
 
 .GridToolTip_Metro {
-    border: 1px solid #c98400;
-    padding: 3px;
     background: #ffefbd;
+    border: 1px solid #c98400;
     color: #333;
+    padding: 3px;
 }
 
 .RadGridRTL_Metro .rgHeader:first-child, .RadGridRTL_Metro th.rgResizeCol:first-child,
@@ -473,6 +473,6 @@
 .RadGridRTL_Metro .rgExpand { background-position: -20px -496px; }
 
 .RadGrid td {
-    word-wrap: break-word;
     word-break: break-all;
+    word-wrap: break-word;
 }
