@@ -27,9 +27,9 @@ body { min-width: 960px; }
 .grid_12 {
     display: inline;
     float: left;
-    position: relative;
     margin-left: 10px;
     margin-right: 10px;
+    position: relative;
 }
 
 
@@ -65,11 +65,9 @@ body { min-width: 960px; }
 
 .container_12 .grid_3 { width: 220px; }
 
-.container_12 .grid_4 {
-    width:300px;
+.container_12 .grid_4 { width: 300px;
     /*padding-right: 100px;
-    padding-bottom: 20px;*/
-}
+    padding-bottom: 20px;*/ }
 
 .container_12 .grid_5 { width: 380px; }
 
@@ -202,8 +200,8 @@ body { min-width: 960px; }
 
 .container_12 .menu-bottom div {
     float: left;
-    padding-left: 160px;
     margin-bottom: -20px;
+    padding-left: 160px;
 }
 
 
@@ -215,10 +213,10 @@ body { min-width: 960px; }
 .clear {
     clear: both;
     display: block;
+    height: 0;
     overflow: hidden;
     visibility: hidden;
     width: 0;
-    height: 0;
 }
 
 /* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
@@ -227,10 +225,10 @@ body { min-width: 960px; }
 .clearfix:after {
     content: '\0020';
     display: block;
+    height: 0;
     overflow: hidden;
     visibility: hidden;
     width: 0;
-    height: 0;
 }
 
 .clearfix:after { clear: both; }

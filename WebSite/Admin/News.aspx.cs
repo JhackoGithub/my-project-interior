@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.UI;
 using BLL;
+using Telerik.Web.UI;
 using WebSite.Core;
-
 
 namespace WebSite.Admin
 {
@@ -11,10 +10,10 @@ namespace WebSite.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(IsPostBack)return;
         }
 
-        protected void rgNews_NeedDataSource(object sender, Telerik.Web.UI.GridNeedDataSourceEventArgs e)
+        protected void rgNews_NeedDataSource(object sender, GridNeedDataSourceEventArgs e)
         {
             var news = GetNews();
             rgNews.DataSource = news;
@@ -27,15 +26,15 @@ namespace WebSite.Admin
             return res;
         }
 
-        protected void rgNews_ItemCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e)
+        protected void rgNews_ItemCommand(object sender, GridCommandEventArgs e)
         {
             switch (e.CommandName)
             {
                 case "delete":
-                    var id = int.Parse(e.CommandArgument.ToString());
+                    int id = int.Parse(e.CommandArgument.ToString());
                     var newsBo = new NewsBO();
-                    var res = newsBo.DeleteNews(id);
-                    var msg = string.Format("Xóa bản tin {0}", res > 0 ? "thành công" : "bị lỗi");
+                    int res = newsBo.DeleteNews(id);
+                    string msg = string.Format("Xóa bản tin {0}", res > 0 ? "thành công" : "bị lỗi");
                     ltScript.Text = string.Format("<script>alert('{0}');</script>", msg);
                     break;
             }

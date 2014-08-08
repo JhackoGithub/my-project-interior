@@ -4,86 +4,84 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContainer" runat="server">
     <style type="text/css">
         .tab p {
-            text-align: justify;
             color: rgb(51, 51, 51);
+            text-align: justify;
         }
 
         .tab .news-title {
-            margin: 10px 0px 0px;
-            padding: 0px 0px 10px;
+            background-color: #ffffff;
             font-family: arial;
             font-size: 12px;
-            background-color: #ffffff;
+            margin: 10px 0px 0px;
+            padding: 0px 0px 10px;
         }
 
-            .tab .news-title h1 {
-                margin-top: 0px;
-                margin-right: 0px;
-                margin-left: 0px;
-                padding-top: 0px;
-                padding-right: 0px;
-                padding-left: 0px;
-                font-weight: 400;
-                font-size: 28px;
-                line-height: 32px;
-            }
+        .tab .news-title h1 {
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 32px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+        }
 
         .tab .news-subcontent {
+            background-color: #ffffff;
+            color: #444444;
+            float: left;
+            font-family: arial;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 18px;
             margin: 0px;
             padding: 0px 0px 10px;
-            color: #444444;
-            font-weight: 700;
-            font-size: 14px;
-            line-height: 18px;
-            font-family: arial;
-            float: left;
-            background-color: #ffffff;
         }
 
         .tab .news-contents {
+            background-color: #ffffff;
+            color: #444444;
+            float: left;
+            font-family: arial;
+            line-height: 18px;
             margin: 0px;
             padding: 0px 0px 10px;
-            color: #444444;
-            line-height: 18px;
-            font-family: arial;
-            float: left;
-            background-color: #ffffff;
         }
 
-        .tab .news-relative {
-            padding-top: 50px;
-        }
+        .tab .news-relative { padding-top: 50px; }
 
         .tab .news-relateditemtitle {
-            font-weight: bold;
-            text-align: left;
             color: #666;
+            font-weight: bold;
             margin-left: 5px;
             margin-right: 5px;
+            text-align: left;
         }
 
         .tab .mt3 {
-            margin-top: 15px;
             margin-bottom: 10px;
+            margin-top: 15px;
         }
 
         .tab .img130 {
-            width: 130px;
-            padding: 2px;
             float: left;
             margin-right: 5px;
+            padding: 2px;
+            width: 130px;
         }
 
         .tab .icon-detail {
             background-position: 100% 2px;
-            padding-right: 10px;
             float: right;
+            padding-right: 10px;
         }
 
         .tab .line1 {
+            background: #dbdbdb;
             height: 1px;
             overflow: hidden;
-            background: #dbdbdb;
         }
     </style>
     <div class="container_12 primary_content_wrap clearfix">
@@ -97,15 +95,15 @@
                                     <asp:Repeater ID="rptTopNews" runat="server">
                                         <ItemTemplate>
                                             <div class="mt3 clearfix">
-                                                <a title="" href="News.aspx?type=2&id=<%# Eval("Id") %>">
-                                                    <img class="img130" src="Images/Uploads/News/<%# Eval("ImageUrl") ?? "no-image.png" %>" alt="">
+                                                <a title="" href="News.aspx?type=2&id=<%#                                        Eval("Id") %>">
+                                                    <img class="img130" src="Images/Uploads/News/<%#                                        Eval("ImageUrl") ?? "no-image.png" %>" alt="">
                                                 </a>
                                                 <div>
-                                                    <h2><a title="" href="News.aspx?type=2&id=<%# Eval("Id") %>">
-                                                        <%# Eval("Title") %>
-                                                    </a></h2>
-                                                    <div><%# Eval("SubContent") %></div>
-                                                    <a class="icon-detail" href="News.aspx?type=2&id=<%# Eval("Id") %>">Xem tiếp</a>
+                                                    <h2><a title="" href="News.aspx?type=2&id=<%#Eval("Id") %>">
+                                                            <%#Eval("Title") %>
+                                                        </a></h2>
+                                                    <div><%#Eval("SubContent") %></div>
+                                                    <a class="icon-detail" href="News.aspx?type=2&id=<%#Eval("Id") %>">Xem tiếp</a>
                                                 </div>
                                             </div>
                                             <div class="line1"></div>
@@ -131,7 +129,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div style="float: left; width: 265px; margin-left: 15px;">
+                            <div style="float: left; margin-left: 15px; width: 265px;">
                                 <ucSameProject:SameProject runat="server" ID="sameProject" />
                             </div>
                         </div>

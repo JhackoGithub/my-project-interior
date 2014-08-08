@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Text;
 using System.Web;
 using WebSite.Common;
@@ -15,9 +12,9 @@ namespace WebSite.Handler
     {
         protected override void ProcessMainRequest(HttpContext context)
         {
-            var jsonString = string.Empty;
+            string jsonString = string.Empty;
             context.Response.ContentType = "text/plain";
-            var action = context.Request.QueryString["funcname"].ToLower();
+            string action = context.Request.QueryString["funcname"].ToLower();
             switch (action)
             {
                 case "select":
@@ -39,17 +36,19 @@ namespace WebSite.Handler
             {
                 if (fileInfo.Name.Equals("project-view.jpg") || fileInfo.Name.Equals("project-main.jpg"))
                     continue;
-                var pathImage = string.Format("{0}{1}", path, fileInfo.Name);
+                string pathImage = string.Format("{0}{1}", path, fileInfo.Name);
                 images.Append("<div>");
                 images.AppendFormat("<img src='{0}' />", pathImage);
-                images.AppendFormat("<input id='rd{0}' type='radio' name='rd' value='rd{1}'><label for='rd{2}'>ảnh đại diện</label>", fileInfo.Name, fileInfo.Name, fileInfo.Name);
+                images.AppendFormat(
+                    "<input id='rd{0}' type='radio' name='projectimage' value='{1}'><label for='rd{2}'>ảnh đại diện</label>",
+                    fileInfo.Name, fileInfo.Name, fileInfo.Name);
                 images.Append("</div>");
             }
             var json = new
                            {
                                html = images.ToString()
                            };
-            var res = Utils.ConvertToJsonString(json);
+            string res = Utils.ConvertToJsonString(json);
             return res;
         }
     }

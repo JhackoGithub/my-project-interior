@@ -14,19 +14,20 @@ namespace WebSite.Handler
     /// </summary>
     public class MenuHanlder : BaseHandler
     {
-
         protected override void ProcessMainRequest(HttpContext context)
         {
-            var jsonString = string.Empty;
+            string jsonString = string.Empty;
             context.Response.ContentType = "text/plain";
             MenuLeft menuLeft;
             int id = context.Request.QueryString["id"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["id"]);
-            var action = context.Request.QueryString["funcname"].ToLower();
+            string action = context.Request.QueryString["funcname"].ToLower();
             int type = Convert.ToInt32(context.Request.QueryString["type"]);
             switch (action)
             {
                 case "getall":
-                    var form = context.Request.QueryString["frm"] == null ? string.Empty : context.Request.QueryString["frm"].ToLower();
+                    string form = context.Request.QueryString["frm"] == null
+                                      ? string.Empty
+                                      : context.Request.QueryString["frm"].ToLower();
                     jsonString = GetMenus(type, form);
                     break;
                 case "create":
@@ -51,14 +52,14 @@ namespace WebSite.Handler
         private string GetMenus(int type, string form)
         {
             var bo = new MenuLeftBO();
-            var menus = bo.GetMenuLeft(type);
+            List<MenuLeft> menus = bo.GetMenuLeft(type);
             var htmlMenu = new StringBuilder();
             object json;
-            if(string.IsNullOrEmpty(form))
+            if (string.IsNullOrEmpty(form))
             {
                 GenerateMenu(menus, htmlMenu);
                 var htmlDropdown = new StringBuilder();
-                foreach (var menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
+                foreach (MenuLeft menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
                 {
                     htmlDropdown.AppendFormat("<option value='{0}'>{1}</option>", menu.Id, menu.Name);
                 }
@@ -76,17 +77,17 @@ namespace WebSite.Handler
                                menu = htmlMenu.ToString(),
                            };
             }
-            var res = Utils.ConvertToJsonString(json);
+            string res = Utils.ConvertToJsonString(json);
             return res;
         }
 
         private void GenerateMenu(List<MenuLeft> menus, StringBuilder htmlMenu)
         {
             htmlMenu.Append("<ul>");
-            foreach (var menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
+            foreach (MenuLeft menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
             {
                 if (menu == null) continue;
-                var menuChild = menus.Where(t => t.ParentId != null && t.ParentId == menu.Id).ToList();
+                List<MenuLeft> menuChild = menus.Where(t => t.ParentId != null && t.ParentId == menu.Id).ToList();
                 htmlMenu.AppendFormat("<li>" +
                                       "<div>" +
                                       "<div style='float: left;'>{0}</div>" +
@@ -103,7 +104,7 @@ namespace WebSite.Handler
                 else
                 {
                     htmlMenu.Append("<ul>");
-                    foreach (var menuLeft in menuChild)
+                    foreach (MenuLeft menuLeft in menuChild)
                     {
                         htmlMenu.AppendFormat("<li>" +
                                               "<div>" +
@@ -113,7 +114,7 @@ namespace WebSite.Handler
                                               "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' />" +
                                               "</div>" +
                                               "</div>" +
-                                              "</li>", 
+                                              "</li>",
                                               menuLeft.Name, menuLeft.Id, menuLeft.Id);
                     }
                     htmlMenu.Append("</ul>");
@@ -125,10 +126,10 @@ namespace WebSite.Handler
         private void GenerateMenuProject(List<MenuLeft> menus, StringBuilder htmlMenu)
         {
             htmlMenu.Append("<ul>");
-            foreach (var menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
+            foreach (MenuLeft menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
             {
                 if (menu == null) continue;
-                var menuChild = menus.Where(t => t.ParentId != null && t.ParentId == menu.Id).ToList();
+                List<MenuLeft> menuChild = menus.Where(t => t.ParentId != null && t.ParentId == menu.Id).ToList();
                 htmlMenu.AppendFormat("<li>" +
                                       "<div>" +
                                       "<div style='float: left;'>{0}</div>" +
@@ -140,7 +141,7 @@ namespace WebSite.Handler
                 else
                 {
                     htmlMenu.Append("<ul>");
-                    foreach (var menuLeft in menuChild)
+                    foreach (MenuLeft menuLeft in menuChild)
                     {
                         htmlMenu.AppendFormat("<li>" +
                                               "<div>" +
@@ -159,21 +160,21 @@ namespace WebSite.Handler
         private string GetMenuById(int id, int type)
         {
             var bo = new MenuLeftBO();
-            var res = bo.GetMenuLeftById(id, type);
+            MenuLeft res = bo.GetMenuLeftById(id, type);
             return Utils.ConvertToJsonString(res);
         }
 
         private string CreateMenu(MenuLeft menuLeft)
         {
             var bo = new MenuLeftBO();
-            var res = bo.AddMenuLef(menuLeft);
+            int res = bo.AddMenuLef(menuLeft);
             return Utils.ConvertToJsonString(res);
         }
 
         private string UpdateMenu(MenuLeft menuLeft)
         {
             var bo = new MenuLeftBO();
-            var res = bo.UpdateMenuLef(menuLeft);
+            int res = bo.UpdateMenuLef(menuLeft);
             return Utils.ConvertToJsonString(res);
         }
 
@@ -181,7 +182,7 @@ namespace WebSite.Handler
         private string DeleteMenu(int id)
         {
             var bo = new MenuLeftBO();
-            var res = bo.DeleteMenuLef(id);
+            int res = bo.DeleteMenuLef(id);
             return Utils.ConvertToJsonString(res);
         }
     }

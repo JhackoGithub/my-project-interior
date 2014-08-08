@@ -6,10 +6,10 @@ namespace WebSite.Core
     {
         public string CurrentUser
         {
-            get { return (string)Session["CurrentUser"]; }
+            get { return (string) Session["CurrentUser"]; }
             set
             {
-                var user = value;
+                string user = value;
                 Session["CurrentUser"] = user;
             }
         }

@@ -1,29 +1,63 @@
 .RadTreeView_Metro {
     color: black;
-    font: normal 12px/16px "Segoe UI", Arial, Helvetica, sans-serif;
+    /*font: normal 12px/16px "Segoe UI", Arial, Helvetica, sans-serif;*/
+    font: inherit !important;
 }
 
 .RadTreeView_Metro a.rtIn { *color: black; }
 
 .RadTreeView_Metro .rtHover .rtIn {
-    border-color: #e5e5e5;
     background-color: #e5e5e5;
+    border-color: #e5e5e5;
+}
+
+.RadTreeView .rtLines .rtLI
+{
+   background:url('TreeView/NodeSpan.png') repeat-y 0 0 !important;
+}
+.RadTreeView .rtLines .rtFirst
+{
+   background:url('TreeView/FirstNodeSpan.png') no-repeat 0 1.273em !important;
+}
+.RadTreeView .rtLines .rtLast,
+.RadTreeView .rtLines .rtLast .rtUL
+{
+   background:none;
+}
+
+.RadTreeView .rtLines .rtBot
+{
+   background:url('TreeView/BottomLine.png') 0 0 no-repeat !important;
+}
+
+.RadTreeView .rtLines .rtTop
+{
+   background:url('TreeView/TopLine.png') 0 0 no-repeat !important;
+}
+.RadTreeView .rtLines .rtLast .rtTop
+{
+   background:url('TreeView/SingleLine.png') 0 0 no-repeat !important;
+}
+.RadTreeView .rtLines .rtMid
+{
+   background:url('TreeView/MiddleLine.png') 0 0 no-repeat !important;
 }
 
 .RadTreeView_Metro .rtSelected .rtIn {
+    background-color: #249fd9;
     border-color: #249fd9;
     color: #ffffff;
-    background-color: #249fd9;
 }
 
 .RadTreeView_Metro .rtEdit .rtIn {
-    border-color: #000000;
     background: #ffffff;
+    border-color: #000000;
 }
 
 .RadTreeView_Metro .rtEdit .rtIn input {
     color: black;
-    font: normal 12px/16px "Segoe UI", Arial, Helvetica, sans-serif;
+    /*font: normal 12px/16px "Segoe UI", Arial, Helvetica, sans-serif;*/
+    font: inherit !important;
 }
 
 .RadTreeView_Metro .rtChecked,
@@ -33,7 +67,7 @@
     _background-image: url('Common/radFormToggleSpriteIE6.png');
 }
 
-.RadTreeView_Metro .rtLoadingIcon { background-image: url('Common/loading_small.gif'); }
+.RadTreeView_Metro .rtLoadingIcon { background-image: url('TreeView/LoadingIcon.gif'); }
 
 .RadTreeView_Metro .rtSelected .rtLoadingBefore,
 .RadTreeView_Metro .rtSelected .rtLoadingAfter,

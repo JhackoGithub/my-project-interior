@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebSite
 {
-    public partial class Consultant_1_4 : System.Web.UI.Page
+    public partial class Consultant_1_4 : Page
     {
         private int Level
         {
@@ -26,10 +22,17 @@ namespace WebSite
             menu.Append("<ul>");
             menu.Append("<li class='has-sub'><a href='#'><span>Kiến thức cần thiết khi xây nhà</span></a>");
             menu.Append("<ul>");
-            menu.AppendFormat("<li><a href='Consultant-1-1.aspx?type={0}'><span>Kiến thức cần thiết khi xây nhà</span></a></li>", Level);
-            menu.AppendFormat("<li><a href='Consultant-1-2.aspx?type={0}'><span>Giá trị thiết kế chuyên nghiệp</span></a></li>", Level);
-            menu.AppendFormat("<li><a href='Consultant-1-3.aspx?type={0}'><span>Quy trình thiết kế</span></a></li>", Level);
-            menu.AppendFormat("<li class='last'><a href='Consultant-1-4.aspx?type={0}'><span class='active'>Nội dung hồ sơ bản vẽ</span></a></li>", Level);
+            menu.AppendFormat(
+                "<li><a href='Consultant-1-1.aspx?type={0}'><span>Kiến thức cần thiết khi xây nhà</span></a></li>",
+                Level);
+            menu.AppendFormat(
+                "<li><a href='Consultant-1-2.aspx?type={0}'><span>Giá trị thiết kế chuyên nghiệp</span></a></li>",
+                Level);
+            menu.AppendFormat("<li><a href='Consultant-1-3.aspx?type={0}'><span>Quy trình thiết kế</span></a></li>",
+                              Level);
+            menu.AppendFormat(
+                "<li class='last'><a href='Consultant-1-4.aspx?type={0}'><span class='active'>Nội dung hồ sơ bản vẽ</span></a></li>",
+                Level);
             menu.Append("</ul>");
             menu.Append("</li>");
 
@@ -60,6 +63,7 @@ namespace WebSite
             menu.Append("</ul>");
             menu.Append("</li>");
         }
+
         private void GenerateMenuInterior(StringBuilder menu)
         {
             menu.Append("<li class='has-sub'><a href='#'><span>Nội thât biệt thự</span></a>");

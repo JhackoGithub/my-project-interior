@@ -8,13 +8,13 @@
                     <div class="tabs">
                         <asp:ContentPlaceHolder runat="server" ID="MenuTopContent"></asp:ContentPlaceHolder>
                         <div class="tab-wrapper">
-                            <div class="tab" style="display: block; width: 900px; margin: 20px;">
+                            <div class="tab" style="display: block; margin: 20px; width: 900px;">
                                 <asp:ContentPlaceHolder runat="server" ID="SlideProjectContent"></asp:ContentPlaceHolder>
                             </div>
-                            <div class="tab" style="display: block; float: left; margin-top: 70px; width: 700px; background-image: url(/Images/tail-bottom-home.png); background-repeat: repeat-x;">
+                            <div class="tab" style="background-image: url(/Images/tail-bottom-home.png); background-repeat: repeat-x; display: block; float: left; margin-top: 70px; width: 700px;">
                                 <asp:ContentPlaceHolder runat="server" ID="SubContent"></asp:ContentPlaceHolder>
                             </div>
-                            <div style="float: right; width: 230px; margin-top: 52px;">
+                            <div style="float: right; margin-top: 52px; width: 230px;">
                                 <asp:ContentPlaceHolder runat="server" ID="ContentRight"></asp:ContentPlaceHolder>
                             </div>
                         </div>

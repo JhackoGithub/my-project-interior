@@ -208,9 +208,15 @@
     <Content Include="App_Themes\BocaTheme\TreeList\rtlTopRTL.gif" />
     <Content Include="App_Themes\BocaTheme\TreeList\sprite.gif" />
     <Content Include="App_Themes\BocaTheme\TreeView.Metro.css" />
+    <Content Include="App_Themes\BocaTheme\TreeView\BottomLine.png" />
+    <Content Include="App_Themes\BocaTheme\TreeView\FirstNodeSpan.png" />
     <Content Include="App_Themes\BocaTheme\TreeView\LoadingIcon.gif" />
     <Content Include="App_Themes\BocaTheme\TreeView\Metro.gif" />
+    <Content Include="App_Themes\BocaTheme\TreeView\MiddleLine.png" />
+    <Content Include="App_Themes\BocaTheme\TreeView\NodeSpan.png" />
     <Content Include="App_Themes\BocaTheme\TreeView\PlusMinus.png" />
+    <Content Include="App_Themes\BocaTheme\TreeView\SingleLine.png" />
+    <Content Include="App_Themes\BocaTheme\TreeView\TopLine.png" />
     <Content Include="App_Themes\BocaTheme\TreeView\TriState.png" />
     <Content Include="App_Themes\BocaTheme\Upload.Metro.css" />
     <Content Include="App_Themes\BocaTheme\Upload\Metro.gif" />
@@ -774,6 +780,7 @@
     <Compile Include="commingsoon.aspx.designer.cs">
       <DependentUpon>commingsoon.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Common\Extensions.cs" />
     <Compile Include="Common\UIProcess.cs" />
     <Compile Include="Common\Utils.cs" />
     <Compile Include="Consultant-1-1.aspx.cs">

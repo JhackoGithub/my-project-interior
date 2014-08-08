@@ -6,14 +6,14 @@ namespace DAL.Core
     {
         private static AppConfig _instance;
 
-        public static AppConfig Instance
-        {
-            get { return _instance ?? (_instance = new AppConfig()); }
-        }
-
         private AppConfig()
         {
             BiobanxConnectionString = GetConnectionString("ConnectionString");
+        }
+
+        public static AppConfig Instance
+        {
+            get { return _instance ?? (_instance = new AppConfig()); }
         }
 
         public string BiobanxConnectionString { get; private set; }

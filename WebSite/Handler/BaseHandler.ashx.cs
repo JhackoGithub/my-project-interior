@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.SessionState;
 
 namespace WebSite.Handler
@@ -9,6 +8,7 @@ namespace WebSite.Handler
     /// </summary>
     public abstract class BaseHandler : IHttpHandler, IRequiresSessionState
     {
+        #region IHttpHandler Members
 
         public void ProcessRequest(HttpContext context)
         {
@@ -17,11 +17,13 @@ namespace WebSite.Handler
             ProcessMainRequest(context);
         }
 
-        protected abstract void ProcessMainRequest(HttpContext context);
-
         public bool IsReusable
         {
             get { return false; }
         }
+
+        #endregion
+
+        protected abstract void ProcessMainRequest(HttpContext context);
     }
 }

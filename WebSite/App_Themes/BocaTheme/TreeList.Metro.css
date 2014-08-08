@@ -1,8 +1,8 @@
 /*global*/
 .RadTreeList_Metro,
 .rtlCEdit div.RadTreeList_Metro {
-    border-color: #e5e5e5;
     background: #fff;
+    border-color: #e5e5e5;
     color: #000;
 }
 
@@ -94,8 +94,8 @@
 /*tooltip*/
 
 .TreeListToolTip_Metro {
-    border-color: #c98400;
     background: #ffefbd;
+    border-color: #c98400;
     color: #333;
 }
 
@@ -134,8 +134,8 @@
 .RadTreeList_Metro .rtlPager .rtlPageLast:hover { background-position: 0 -1050px; }
 
 .RadTreeList_Metro .rtlPager .rtlPagerButton {
-    border-color: #25a0da;
     background: #25a0da;
+    border-color: #25a0da;
     color: #fff;
     font-family: "segoe ui", arial, sans-serif;
 }
@@ -146,16 +146,16 @@
 }
 
 .RadTreeList_Metro .rtlPager .rtlNumPart a:hover {
-    color: #000;
     background-color: #e5e5e5;
+    color: #000;
 }
 
 .RadTreeList_Metro .rtlPager .rtlNumPart a.rtlCurrentPage {
-    border-color: #25a0da;
     background: transparent;
+    border-color: #25a0da;
 }
 
 .RadTreeList_Metro .rtlPager .rtlNumPart a.rtlCurrentPage:hover {
-    border-color: #25a0da;
     background: transparent;
+    border-color: #25a0da;
 }

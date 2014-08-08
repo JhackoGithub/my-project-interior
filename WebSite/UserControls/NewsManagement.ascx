@@ -2,14 +2,14 @@
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <style type="text/css">
     #imagePreview {
-        margin-top: 5px;
-        width: 180px;
-        height: 180px;
+        -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+        background-image: url(../Images/no-image.png);
         background-position: center center;
         background-size: cover;
-        -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
         display: inline-block;
-        background-image: url(../Images/no-image.png);
+        height: 180px;
+        margin-top: 5px;
+        width: 180px;
     }
 </style>
 <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
@@ -44,16 +44,16 @@
 
 <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             $("#imagePreview").css("background-image", "url(<%= ImageUrl %>)");
 
-            $("#uploadFile").on("change", function () {
+            $("#uploadFile").on("change", function() {
                 var files = !!this.files ? this.files : [];
                 if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
                 if (/^image/.test(files[0].type)) { // only image file
                     var reader = new FileReader(); // instance of the FileReader
                     reader.readAsDataURL(files[0]); // read the local file
-                    reader.onloadend = function () { // set image data as background of div
+                    reader.onloadend = function() { // set image data as background of div
                         $("#imagePreview").css("background-image", "url(" + this.result + ")");
                     };
                 }

@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
+using System.Web.UI;
 using BLL;
 
 namespace WebSite
 {
-    public partial class News : System.Web.UI.Page
+    public partial class News : Page
     {
         private int Id
         {
@@ -13,7 +15,7 @@ namespace WebSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(IsPostBack)
+            if (IsPostBack)
                 return;
             BindEntityToControl();
             BindNewsRelative();
@@ -26,7 +28,7 @@ namespace WebSite
             {
                 pnlTopNews.Visible = true;
                 pnlDetails.Visible = false;
-                var news = newsBo.GetTopNews(5);
+                List<Entities.News> news = newsBo.GetTopNews(5);
                 rptTopNews.DataSource = news;
                 rptTopNews.DataBind();
             }
@@ -34,7 +36,7 @@ namespace WebSite
             {
                 pnlTopNews.Visible = false;
                 pnlDetails.Visible = true;
-                var news = newsBo.GetNewsById(Id);
+                Entities.News news = newsBo.GetNewsById(Id);
                 lbTitle.Text = news.Title;
                 ltSubContent.Text = news.SubContent;
                 ltContents.Text = news.Contents;
@@ -44,12 +46,12 @@ namespace WebSite
         private void BindNewsRelative()
         {
             var newsBo = new NewsBO();
-            var news = newsBo.GetNews();
+            List<Entities.News> news = newsBo.GetNews();
             var htmlNews = new StringBuilder();
-            foreach (var newse in news)
+            foreach (Entities.News newse in news)
             {
                 htmlNews.Append("<li><span>");
-                htmlNews.AppendFormat("<a href='/News.aspx?type=2&id={0}'>{1}</a>",newse.Id, newse.Title);
+                htmlNews.AppendFormat("<a href='/News.aspx?type=2&id={0}'>{1}</a>", newse.Id, newse.Title);
                 htmlNews.Append("</li></span>");
             }
             ltNewRelative.Text = htmlNews.ToString();

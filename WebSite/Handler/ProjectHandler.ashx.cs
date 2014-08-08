@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
+using BLL;
+using WebSite.Common;
+using ProjectBE = Entities.Project;
 
 namespace WebSite.Handler
 {
@@ -12,16 +13,37 @@ namespace WebSite.Handler
     {
         protected override void ProcessMainRequest(HttpContext context)
         {
-            var jsonString = string.Empty;
+            string jsonString = string.Empty;
             context.Response.ContentType = "text/plain";
             int id = context.Request.QueryString["id"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["id"]);
-            var action = context.Request.QueryString["funcname"].ToLower();
-            int type = Convert.ToInt32(context.Request.QueryString["type"]);
+            string action = context.Request.QueryString["funcname"].ToLower();
+            var project = new ProjectBE();
             switch (action)
             {
-                default:
+                case "create":
+                    project = Utils.ConvertDeserialize<ProjectBE>(context, ref jsonString);
+                    jsonString = CreateProject(project);
+                    break;
+                case "update":
+                    project = Utils.ConvertDeserialize<ProjectBE>(context, ref jsonString);
+                    jsonString = UpdateProject(project);
                     break;
             }
+            context.Response.Write(jsonString);
+        }
+
+        private string CreateProject(ProjectBE project)
+        {
+            var bo = new ProjectBO();
+            var res = bo.AddProject(project);
+            return Utils.ConvertToJsonString(res);
+        }
+
+        private string UpdateProject(ProjectBE project)
+        {
+            var bo = new ProjectBO();
+            var res = bo.UpdateProject(project);
+            return Utils.ConvertToJsonString(res);
         }
     }
 }

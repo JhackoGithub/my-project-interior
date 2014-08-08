@@ -3,54 +3,54 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <script src="../Scripts/jquery-1.8.2.min.js"></script>
-    <script src="../Scripts/kendo.web.min.js"></script>
-    <script src="../Scripts/kendo.core.min.js"></script>
-    <script src="../Scripts/Script.js"></script>
-    <link href="~/Content/Kendo/kendo.common.min.css" rel="stylesheet" />
-    <link href="~/Content/Kendo/kendo.default.min.css" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet" />
-    <%--<link href="~/Content/Menu.css" rel="stylesheet" />--%>
-</head>
-<body class="home page" style="color: #878786;">
-    <form id="form1" runat="server">
-    <header>
-        <div class="content-wrapper">
-            <div class="float-right">
-                <section id="login" runat="server">
-                    <p>
-                        <asp:Literal runat="server" ID="ltUserName"></asp:Literal>
-                        <asp:LinkButton runat="server" ID="lbLogout" Text="Log off" OnClick="lbLogout_Click"></asp:LinkButton>
-                    </p>
-                </section>
-                <nav>
-                    <ul id="menu">
-                        <li><a id="A2" href="../">Tranh chủ</a></li>
-                        <li><a id="A3" href="../Admin/Project.aspx">Quản lý Dự án</a></li>
-                        <li><a id="A1" href="../Admin/Consultant.aspx">Tư vấn</a></li>
-                        <li><a id="A5" href="../Admin/News.aspx">Quản lý Tin tức</a></li>
-                        <li><a id="A4" href="../Admin/Menu.aspx">Quản lý Menu</a></li>
-                        <li><a id="A6" href="#">Liên hệ</a></li>
-                    </ul>
-                </nav>
+    <head runat="server">
+        <title></title>
+        <script src="../Scripts/jquery-1.8.2.min.js"> </script>
+        <script src="../Scripts/kendo.web.min.js"> </script>
+        <script src="../Scripts/kendo.core.min.js"> </script>
+        <script src="../Scripts/Script.js"> </script>
+        <link href="~/Content/Kendo/kendo.common.min.css" rel="stylesheet" />
+        <link href="~/Content/Kendo/kendo.default.min.css" rel="stylesheet" />
+        <link href="~/Content/Site.css" rel="stylesheet" />
+        <%--<link href="~/Content/Menu.css" rel="stylesheet" />--%>
+    </head>
+    <body class="home page" style="color: #878786;">
+        <form id="form1" runat="server">
+            <header>
+                <div class="content-wrapper">
+                    <div class="float-right">
+                        <section id="login" runat="server">
+                            <p>
+                                <asp:Literal runat="server" ID="ltUserName"></asp:Literal>
+                                <asp:LinkButton runat="server" ID="lbLogout" Text="Log off" OnClick="lbLogout_Click"></asp:LinkButton>
+                            </p>
+                        </section>
+                        <nav>
+                            <ul id="menu">
+                                <li><a id="A2" href="../">Tranh chủ</a></li>
+                                <li><a id="A3" href="../Admin/Project.aspx">Quản lý Dự án</a></li>
+                                <li><a id="A1" href="../Admin/Consultant.aspx">Tư vấn</a></li>
+                                <li><a id="A5" href="../Admin/News.aspx">Quản lý Tin tức</a></li>
+                                <li><a id="A4" href="../Admin/Menu.aspx">Quản lý Menu</a></li>
+                                <li><a id="A6" href="#">Liên hệ</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <div id="body" style="min-height: 300px;">
+                <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+                <div class="content-wrapper">
+                    <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                </div>
             </div>
-        </div>
-    </header>
-    <div id="body" style="min-height: 300px;">
-        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
-        <div class="content-wrapper">
-            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
-        </div>
-    </div>
-    <footer>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </div>
-        </div>
-    </footer>
-    </form>
-</body>
+            <footer>
+                <div class="content-wrapper">
+                    <div class="float-left">
+                        <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                    </div>
+                </div>
+            </footer>
+        </form>
+    </body>
 </html>

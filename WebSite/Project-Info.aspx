@@ -5,101 +5,86 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuTopContent" runat="server">
     <ucMenuTop:MenuTop ID="menuTop" runat="server" />
     <style type="text/css">
-        #wrapper
-        {
-            width: 900px;
+        #wrapper {
             height: 400px;
+            width: 900px;
             /*margin: -200px 0 0 -450px;
 			position: absolute;
 			top: 50%;
 			left: 50%;*/
         }
 
-        #carousel img
-        {
+        #carousel img {
+            border: none;
             display: block;
             float: left;
-            border: none;
             position: relative;
         }
 
-        #wrapper-tab
-        {
+        #wrapper-tab {
             background-color: #F4F0EE;
-            border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
-            width: 680px;
+            border-top: 1px solid #ccc;
             padding: 10px;
+            width: 680px;
         }
 
-        #tabs > div
-        {
-            width: 680px;
+        #tabs > div {
             /*height: 250px;*/
             float: left;
             overflow: hidden;
+            width: 680px;
         }
 
-        #tabs img
-        {
+        #tabs img {
             display: block;
-            margin: 0 25px 0 0;
             float: left;
+            margin: 0 25px 0 0;
         }
 
-        #tabs h3
-        {
+        #tabs h3 {
             font-size: 30px;
             line-height: 20px;
             margin: 60px 0 20px 0;
         }
 
         #tabs #project-desc img {
-			margin-top: 30px;
-            text-align: center;
-		}
-
-        #pager
-        {
-            width: 680px;
-            margin: -61px auto 0px auto;
+            margin-top: 30px;
             text-align: center;
         }
 
-            #pager a
-            {
-                border: 1px solid transparent;
-                border-bottom: none;
-                border-left: none;
-                border-color: #ccc;
-                color: #999;
-                font-size: 20px;
-                text-decoration: none;
-                line-height: 30px;
-                display: inline-block;
-                height: 30px;
-                padding: 10px 30px;
-            }
+        #pager {
+            margin: -61px auto 0px auto;
+            text-align: center;
+            width: 680px;
+        }
 
-                #pager a:hover
-                {
-                    color: #666;
-                }
+        #pager a {
+            border: 1px solid transparent;
+            border-bottom: none;
+            border-color: #ccc;
+            border-left: none;
+            color: #999;
+            display: inline-block;
+            font-size: 20px;
+            height: 30px;
+            line-height: 30px;
+            padding: 10px 30px;
+            text-decoration: none;
+        }
 
-                #pager a:first-child
-                {
-                    border-left: 1px solid #ccc;
-                }
+        #pager a:hover { color: #666; }
 
-                #pager a.selected
-                {
-                    background-color: #F4F0EE;
-                    color: #333;
-                }
+        #pager a:first-child { border-left: 1px solid #ccc; }
+
+        #pager a.selected {
+            background-color: #F4F0EE;
+            color: #333;
+        }
     </style>
-    <script src="Scripts/jquery.carouFredSel-6.0.4-packed.js"></script>
+    <script src="Scripts/jquery.carouFredSel-6.0.4-packed.js"> </script>
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             var _center = {
                 width: 600,
                 height: 400,
@@ -149,14 +134,14 @@
                     timeoutDuration: 2500,
                     easing: 'swing',
                     pauseOnHover: 'immediate',
-                    onBefore: function (data) {
+                    onBefore: function(data) {
                         data.items.old.eq(0).animate(_outLeft);
                         data.items.visible.eq(0).animate(_left);
                         data.items.visible.eq(1).animate(_center);
                         data.items.visible.eq(2).animate(_right).css({ zIndex: 1 });
                         data.items.visible.eq(2).next().css(_outRight).css({ zIndex: 0 });
 
-                        setTimeout(function () {
+                        setTimeout(function() {
                             data.items.old.eq(0).css({ zIndex: 1 });
                             data.items.visible.eq(0).css({ zIndex: 2 });
                             data.items.visible.eq(1).css({ zIndex: 3 });
@@ -178,18 +163,18 @@
                 auto: false,
                 pagination: {
                     container: '#pager',
-                    anchorBuilder: function (nr) {
+                    anchorBuilder: function(nr) {
                         return '<a href="#">' + $(this).find('h3').text() + '</a>';
                     }
                 }
             });
-          
-            $("#carousel").mouseover(function () {
+
+            $("#carousel").mouseover(function() {
                 $("#carousel").trigger('pause', true);
             });
         });
-        
-		</script>
+
+    </script>
 </asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="SlideProjectContent">
     <div id="wrapper">

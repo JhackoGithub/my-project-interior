@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div style="margin-top: 10px; height: 30px; text-align: center;">
+        <div style="height: 30px; margin-top: 10px; text-align: center;">
             <small>Copyright © 2014 Bản quyền thuộc về noithatviet.com.vn.</small>
         </div>
     </div>

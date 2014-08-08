@@ -18,12 +18,12 @@ table.RadCalendar_Metro {
 .RadCalendar_Metro .rcTitlebar td { padding: 0 0 1px; }
 
 .RadCalendar_Metro .rcTitlebar .rcPrev, .RadCalendar_Metro .rcTitlebar .rcNext, .RadCalendar_Metro .rcTitlebar .rcFastPrev, .RadCalendar_Metro .rcTitlebar .rcFastNext {
-    width: 16px;
-    height: 16px;
-    border: 1px solid transparent;
-    margin: 1px 2px 0;
     background-image: url('Calendar/sprite.gif');
+    border: 1px solid transparent;
     color: #ccc;
+    height: 16px;
+    margin: 1px 2px 0;
+    width: 16px;
 }
 
 .RadCalendar_Metro .rcTitlebar .rcFastPrev { background-position: 0 -250px; }
@@ -35,8 +35,8 @@ table.RadCalendar_Metro {
 .RadCalendar_Metro .rcTitlebar .rcFastNext { background-position: 0 -550px; }
 
 .RadCalendar_Metro .rcTitlebar .rcPrev:hover, .RadCalendar_Metro .rcTitlebar .rcNext:hover, .RadCalendar_Metro .rcTitlebar .rcFastPrev:hover, .RadCalendar_Metro .rcTitlebar .rcFastNext:hover {
-    border-color: #e5e5e5;
     background-color: #e5e5e5;
+    border-color: #e5e5e5;
 }
 
 .RadCalendar_Metro .rcTitlebar .rcFastPrev:hover { background-position: 0 -650px; }
@@ -48,18 +48,18 @@ table.RadCalendar_Metro {
 .RadCalendar_Metro .rcTitlebar .rcFastNext:hover { background-position: 0 -950px; }
 
 .RadCalendarMultiView_Metro .rcTitlebar .rcPrev:hover, .RadCalendarMultiView_Metro .rcTitlebar .rcNext:hover, .RadCalendarMultiView_Metro .rcTitlebar .rcFastPrev:hover, .RadCalendarMultiView_Metro .rcTitlebar .rcFastNext:hover {
-    border-color: #fff;
     background-color: transparent;
+    border-color: #fff;
 }
 
 .RadCalendarMultiView_Metro .rcTitlebar .rcFastPrev {
-    margin-left: 4px;
     background-position: 0 -200px;
+    margin-left: 4px;
 }
 
 .RadCalendarMultiView_Metro .rcTitlebar .rcFastPrev:hover {
-    margin-left: 4px;
     background-position: 0 -200px;
+    margin-left: 4px;
 }
 
 .RadCalendarMultiView_Metro .rcTitlebar .rcPrev { background-position: 0 -300px; }
@@ -71,13 +71,13 @@ table.RadCalendar_Metro {
 .RadCalendarMultiView_Metro .rcTitlebar .rcNext:hover { background-position: 0 -400px; }
 
 .RadCalendarMultiView_Metro .rcTitlebar .rcFastNext {
-    margin-right: 4px;
     background-position: 0 -500px;
+    margin-right: 4px;
 }
 
 .RadCalendarMultiView_Metro .rcTitlebar .rcFastNext:hover {
-    margin-right: 4px;
     background-position: 0 -500px;
+    margin-right: 4px;
 }
 
 .RadCalendar_Metro .rcMain { border-color: #999; }
@@ -88,20 +88,20 @@ table.RadCalendar_Metro {
 
 .RadCalendar_Metro .rcWeek th {
     border-bottom: 1px solid #e5e5e5;
-    padding: 4px 6px 4px 0;
     color: #000;
+    padding: 4px 6px 4px 0;
 }
 
 .RadCalendar_Metro .rcWeek .rcViewSel {
-    width: 13px;
-    padding: 0 7px 0 9px;
     color: #25a0de;
+    padding: 0 7px 0 9px;
+    width: 13px;
 }
 
 .RadCalendar_Metro .rcRow th {
-    width: 13px;
-    padding: 0 7px 0 9px;
     color: #25a0de;
+    padding: 0 7px 0 9px;
+    width: 13px;
 }
 
 .RadCalendar_Metro .rcRow td { border-color: #fff; }
@@ -117,15 +117,15 @@ table.RadCalendar_Metro {
 .RadCalendar_Metro .rcMain .rcOutOfRange span { color: #777; }
 
 .RadCalendar_Metro .rcRow .rcSelected {
-    border-color: #fff;
     background: #25a0da;
+    border-color: #fff;
 }
 
 .RadCalendar_Metro .rcMain .rcRow .rcSelected a { color: #fff; }
 
 .RadCalendar_Metro .rcRow .rcHover {
-    border-color: #e5e5e5;
     background: #e5e5e5;
+    border-color: #e5e5e5;
 }
 
 .RadCalendar_Metro .rcMain .rcRow .rcHover a { color: #000; }
@@ -136,8 +136,8 @@ table.RadCalendar_Metro {
 /*multimonth view*/
 
 .RadCalendarMultiView_Metro .rcTitlebar {
-    border: 0 none;
     background: #25a0da;
+    border: 0 none;
     color: #fff;
 }
 
@@ -151,17 +151,17 @@ table.RadCalendar_Metro {
 
 .RadCalendarMultiView_Metro .rcMainTable .rcTitle {
     border-color: #e5e5e5;
-    padding: 0 0 2px;
     line-height: 22px;
+    padding: 0 0 2px;
 }
 
 /*month view*/
 
 table.RadCalendarMonthView_Metro {
-    border-color: #dadad2;
     background: #fff;
-    font: 12px "segoe ui", arial, sans-serif;
+    border-color: #dadad2;
     color: #333;
+    font: 12px "segoe ui", arial, sans-serif;
 }
 
 .RadCalendarMonthView_Metro #rcMView_Feb, .RadCalendarMonthView_Metro #rcMView_Apr, .RadCalendarMonthView_Metro #rcMView_Jun, .RadCalendarMonthView_Metro #rcMView_Aug, .RadCalendarMonthView_Metro #rcMView_Oct, .RadCalendarMonthView_Metro #rcMView_Dec { border-right: 1px solid #999; }
@@ -169,16 +169,16 @@ table.RadCalendarMonthView_Metro {
 .RadCalendarMonthView_Metro a { color: #333; }
 
 .RadCalendarMonthView_Metro .rcSelected a {
-    border-color: #25a0da;
     background: #25a0da;
+    border-color: #25a0da;
     color: #fff;
 }
 
 .RadCalendarMonthView_Metro #rcMView_PrevY a, .RadCalendarMonthView_Metro #rcMView_NextY a {
-    width: 18px;
-    height: 13px;
     background: url('Calendar/sprite.gif');
     color: #ccc;
+    height: 13px;
+    width: 18px;
 }
 
 .RadCalendarMonthView_Metro #rcMView_PrevY a { background-position: 0 -2100px; }
@@ -188,8 +188,8 @@ table.RadCalendarMonthView_Metro {
 .RadCalendarMonthView_Metro .rcButtons { padding: 5px 7px 4px; }
 
 .RadCalendarMonthView_Metro input {
-    border-color: #e5e5e5;
     background: transparent;
+    border-color: #e5e5e5;
     color: #767676;
     font: 12px "segoe ui", arial, sans-serif;
 }
@@ -197,17 +197,17 @@ table.RadCalendarMonthView_Metro {
 /*time view*/
 
 table.RadCalendarTimeView_Metro {
-    border-color: #dadad2;
     background: #fff;
+    border-color: #dadad2;
     font: 12px "segoe ui", arial, sans-serif;
 }
 
 .RadCalendarTimeView_Metro th {
-    border-bottom: 1px solid #999;
-    padding: 0 0 1px;
     background: #fff;
+    border-bottom: 1px solid #999;
     color: #767676;
     line-height: 23px;
+    padding: 0 0 1px;
 }
 
 table.RadCalendarTimeView_Metro td { border-color: #999; }
@@ -215,14 +215,14 @@ table.RadCalendarTimeView_Metro td { border-color: #999; }
 .RadCalendarTimeView_Metro a { color: #333; }
 
 .RadCalendarTimeView_Metro td.rcSelected a {
-    border-color: #25a0da;
     background: #25a0da;
+    border-color: #25a0da;
     color: #fff;
 }
 
 .RadCalendarTimeView_Metro td.rcHover a {
-    border-color: #e5e5e5;
     background: #e5e5e5;
+    border-color: #e5e5e5;
     color: #000;
 }
 

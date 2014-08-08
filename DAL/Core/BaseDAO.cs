@@ -9,8 +9,8 @@ namespace DAL.Core
 {
     public class BaseDAO
     {
-
         private readonly Transaction _transaction;
+        private MethodInfo _methodInfo;
 
         public BaseDAO()
         {
@@ -26,8 +26,8 @@ namespace DAL.Core
             try
             {
                 SetConnection(sqlCommand);
-                var obj = sqlCommand.ExecuteScalar();
-                return obj == null ? default(T) : (T)obj;
+                object obj = sqlCommand.ExecuteScalar();
+                return obj == null ? default(T) : (T) obj;
             }
             catch (Exception)
             {
@@ -44,7 +44,7 @@ namespace DAL.Core
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand(queryString) { CommandType = commandType };
+            var sqlCommand = new SqlCommand(queryString) {CommandType = commandType};
             sqlCommand.Parameters.AddRange(parameters);
 
             return ExecuteScalar<T>(sqlCommand);
@@ -54,7 +54,7 @@ namespace DAL.Core
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand(storeProcedureName) { CommandType = CommandType.StoredProcedure   };
+            var sqlCommand = new SqlCommand(storeProcedureName) {CommandType = CommandType.StoredProcedure};
             sqlCommand.Parameters.AddRange(parameters);
 
             return ExecuteScalar<T>(sqlCommand);
@@ -83,7 +83,7 @@ namespace DAL.Core
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand(queryString) { CommandType = commandType };
+            var sqlCommand = new SqlCommand(queryString) {CommandType = commandType};
             sqlCommand.Parameters.AddRange(parameters);
 
             return ExecuteCommand(sqlCommand);
@@ -93,39 +93,42 @@ namespace DAL.Core
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand(storeProcedureName) { CommandType = CommandType.StoredProcedure };
+            var sqlCommand = new SqlCommand(storeProcedureName) {CommandType = CommandType.StoredProcedure};
             sqlCommand.Parameters.AddRange(parameters);
 
             return ExecuteCommand(sqlCommand);
         }
 
-        protected T ExecuteToReturnValue<T>(CommandType commandType, string queryString, params SqlParameter[] parameters)
+        protected T ExecuteToReturnValue<T>(CommandType commandType, string queryString,
+                                            params SqlParameter[] parameters)
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand(queryString) { CommandType = commandType };
-            var returnValue = new SqlParameter { ParameterName = "@ReturnValue", Direction = ParameterDirection.ReturnValue };
+            var sqlCommand = new SqlCommand(queryString) {CommandType = commandType};
+            var returnValue = new SqlParameter
+                                  {ParameterName = "@ReturnValue", Direction = ParameterDirection.ReturnValue};
             sqlCommand.Parameters.Add(returnValue);
             sqlCommand.Parameters.AddRange(parameters);
 
             ExecuteCommand(sqlCommand);
 
-            return (T)sqlCommand.Parameters["@ReturnValue"].Value;
+            return (T) sqlCommand.Parameters["@ReturnValue"].Value;
         }
 
         protected T ExecuteToReturnValue<T>(string storeProcedureName, params SqlParameter[] parameters)
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand(storeProcedureName) { CommandType = CommandType.StoredProcedure };
-            var returnValue = new SqlParameter { ParameterName = "@ReturnValue", Direction = ParameterDirection.ReturnValue };
+            var sqlCommand = new SqlCommand(storeProcedureName) {CommandType = CommandType.StoredProcedure};
+            var returnValue = new SqlParameter
+                                  {ParameterName = "@ReturnValue", Direction = ParameterDirection.ReturnValue};
             sqlCommand.Parameters.Add(returnValue);
             sqlCommand.Parameters.AddRange(parameters);
 
             ExecuteCommand(sqlCommand);
 
-            var res = sqlCommand.Parameters["@ReturnValue"].Value;
-            return (T)res;
+            object res = sqlCommand.Parameters["@ReturnValue"].Value;
+            return (T) res;
         }
 
         private List<T> ExecuteToList<T>(SqlCommand sqlCommand)
@@ -134,18 +137,18 @@ namespace DAL.Core
             {
                 SetConnection(sqlCommand);
 
-                var dataReader = sqlCommand.ExecuteReader();
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
                 if (dataReader.FieldCount == 0)
                 {
                     return null;
                 }
                 var recordList = new List<T>();
 
-                var builder = DynamicBuilder<T>.CreateBuilder(dataReader);
+                DynamicBuilder<T> builder = DynamicBuilder<T>.CreateBuilder(dataReader);
 
                 while (dataReader.Read())
                 {
-                    var record = builder.Build(dataReader);
+                    T record = builder.Build(dataReader);
                     recordList.Add(record);
                 }
                 dataReader.Close();
@@ -167,7 +170,7 @@ namespace DAL.Core
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand { CommandText = queryString, CommandType = commandType };
+            var sqlCommand = new SqlCommand {CommandText = queryString, CommandType = commandType};
             sqlCommand.Parameters.AddRange(parameters);
 
             return ExecuteToList<T>(sqlCommand);
@@ -177,7 +180,8 @@ namespace DAL.Core
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand { CommandText = storeProcedureName, CommandType = CommandType.StoredProcedure };
+            var sqlCommand = new SqlCommand
+                                 {CommandText = storeProcedureName, CommandType = CommandType.StoredProcedure};
             sqlCommand.Parameters.AddRange(parameters);
 
             return ExecuteToList<T>(sqlCommand);
@@ -185,7 +189,7 @@ namespace DAL.Core
 
         public static object GetData<T>(IDataReader dataReader, bool isGenericType)
         {
-            var builder = DynamicBuilder<T>.CreateBuilder(dataReader);
+            DynamicBuilder<T> builder = DynamicBuilder<T>.CreateBuilder(dataReader);
             if (!isGenericType)
             {
                 return dataReader.Read() ? builder.Build(dataReader) : default(T);
@@ -195,18 +199,19 @@ namespace DAL.Core
 
             while (dataReader.Read())
             {
-                var record = builder.Build(dataReader);
+                T record = builder.Build(dataReader);
                 res.Add(record);
             }
             return res;
         }
 
-        private MethodInfo _methodInfo;
         private MethodInfo GetDataMethod()
         {
             if (_methodInfo == null)
             {
-                _methodInfo = GetType().GetMethod("GetData", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
+                _methodInfo = GetType().GetMethod("GetData",
+                                                  BindingFlags.Public | BindingFlags.Static |
+                                                  BindingFlags.FlattenHierarchy);
             }
             return _methodInfo;
         }
@@ -217,28 +222,27 @@ namespace DAL.Core
             {
                 SetConnection(sqlCommand);
 
-                var dataReader = sqlCommand.ExecuteReader();
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
                 if (dataReader.FieldCount == 0)
                 {
                     return null;
                 }
 
                 var res = new List<object>();
-                var i = 0;
-                var method = GetDataMethod();
+                int i = 0;
+                MethodInfo method = GetDataMethod();
                 do
                 {
-                    var isGenericType = types[i].IsGenericType;
-                    var reader = new object[] { dataReader, isGenericType };
-                    var type = isGenericType
-                                   ? types[i].GetGenericArguments()[0]
-                                   : types[i];
-                    var generic = method.MakeGenericMethod(type);
+                    bool isGenericType = types[i].IsGenericType;
+                    var reader = new object[] {dataReader, isGenericType};
+                    Type type = isGenericType
+                                    ? types[i].GetGenericArguments()[0]
+                                    : types[i];
+                    MethodInfo generic = method.MakeGenericMethod(type);
 
                     res.Add(generic.Invoke(this, reader));
                     i++;
-                }
-                while (i < types.Count && dataReader.NextResult());
+                } while (i < types.Count && dataReader.NextResult());
 
                 dataReader.Close();
 
@@ -255,21 +259,24 @@ namespace DAL.Core
             }
         }
 
-        public List<object> ExecuteToMultiObject(Type[] types, CommandType commandType, string queryString, params SqlParameter[] parameters)
+        public List<object> ExecuteToMultiObject(Type[] types, CommandType commandType, string queryString,
+                                                 params SqlParameter[] parameters)
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand { CommandText = queryString, CommandType = commandType };
+            var sqlCommand = new SqlCommand {CommandText = queryString, CommandType = commandType};
             sqlCommand.Parameters.AddRange(parameters);
 
             return ExecuteToMultiObject(types, sqlCommand);
         }
 
-        public List<object> ExecuteToMultiObject(Type[] types, string storeProcedureName, params SqlParameter[] parameters)
+        public List<object> ExecuteToMultiObject(Type[] types, string storeProcedureName,
+                                                 params SqlParameter[] parameters)
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand { CommandText = storeProcedureName, CommandType = CommandType.StoredProcedure };
+            var sqlCommand = new SqlCommand
+                                 {CommandText = storeProcedureName, CommandType = CommandType.StoredProcedure};
             sqlCommand.Parameters.AddRange(parameters);
 
             return ExecuteToMultiObject(types, sqlCommand);
@@ -284,7 +291,7 @@ namespace DAL.Core
 
                 dataReader = sqlCommand.ExecuteReader();
 
-                var builder = DynamicBuilder<T>.CreateBuilder(dataReader);
+                DynamicBuilder<T> builder = DynamicBuilder<T>.CreateBuilder(dataReader);
 
                 return dataReader.Read() ? builder.Build(dataReader) : default(T);
             }
@@ -303,11 +310,12 @@ namespace DAL.Core
             }
         }
 
-        protected T ExecuteToSingleOrDefault<T>(CommandType commandType, string queryString, params SqlParameter[] parameters)
+        protected T ExecuteToSingleOrDefault<T>(CommandType commandType, string queryString,
+                                                params SqlParameter[] parameters)
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand { CommandText = queryString, CommandType = commandType };
+            var sqlCommand = new SqlCommand {CommandText = queryString, CommandType = commandType};
             sqlCommand.Parameters.AddRange(parameters);
 
             return ExecuteToSingleOrDefault<T>(sqlCommand);
@@ -317,7 +325,8 @@ namespace DAL.Core
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand { CommandText = storeProcedureName, CommandType = CommandType.StoredProcedure };
+            var sqlCommand = new SqlCommand
+                                 {CommandText = storeProcedureName, CommandType = CommandType.StoredProcedure};
             sqlCommand.Parameters.AddRange(parameters);
 
             return ExecuteToSingleOrDefault<T>(sqlCommand);
@@ -345,11 +354,12 @@ namespace DAL.Core
             }
         }
 
-        protected DataTable ExecuteToDataTable(CommandType commandType, string queryString, params SqlParameter[] parameters)
+        protected DataTable ExecuteToDataTable(CommandType commandType, string queryString,
+                                               params SqlParameter[] parameters)
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand { CommandText = queryString, CommandType = commandType };
+            var sqlCommand = new SqlCommand {CommandText = queryString, CommandType = commandType};
 
             sqlCommand.Parameters.AddRange(parameters);
             return ExecuteToDataTable(sqlCommand);
@@ -359,7 +369,8 @@ namespace DAL.Core
         {
             FixParameterNullValue(parameters);
 
-            var sqlCommand = new SqlCommand { CommandText = storeProcedureName, CommandType = CommandType.StoredProcedure };
+            var sqlCommand = new SqlCommand
+                                 {CommandText = storeProcedureName, CommandType = CommandType.StoredProcedure};
 
             sqlCommand.Parameters.AddRange(parameters);
             return ExecuteToDataTable(sqlCommand);
@@ -377,6 +388,7 @@ namespace DAL.Core
                 sqlCommand.Transaction = _transaction.SqlTransaction;
             }
         }
+
         private void CloseConnection(IDbConnection sqlConnection)
         {
             if ((_transaction == null || _transaction.SqlTransaction == null)
@@ -402,13 +414,12 @@ namespace DAL.Core
             {
                 return;
             }
-            var query = sqlParameters
+            IEnumerable<SqlParameter> query = sqlParameters
                 .Where(par => par.Value == null);
-            foreach (var par in query)
+            foreach (SqlParameter par in query)
             {
                 par.Value = DBNull.Value;
             }
         }
-
     }
 }

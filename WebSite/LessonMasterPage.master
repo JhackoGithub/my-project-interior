@@ -9,7 +9,7 @@
                     <div class="tabs">
                         <ucMenuTop:MenuTop ID="menuTop" runat="server" />
                         <div class="tab-wrapper">
-                            <div id="tab1" class="Consultant-info" style="display: block; margin: 10px; float: left; width: 650px;">
+                            <div id="tab1" class="Consultant-info" style="display: block; float: left; margin: 10px; width: 650px;">
                                 <asp:ContentPlaceHolder runat="server" ID="SubContent"></asp:ContentPlaceHolder>
                             </div>
                             <div id='cssmenu' style="float: left; width: 265px;">
@@ -51,7 +51,7 @@
         $(function() {
             var page = window.location.pathname;
 
-            $('#cssmenu ul li ul li a').each(function () {
+            $('#cssmenu ul li ul li a').each(function() {
                 var link = $(this).attr('href');
                 if (link.indexOf(page) >= 0) {
                     $(this).children().addClass('active');

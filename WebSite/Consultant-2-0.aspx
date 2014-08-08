@@ -51,7 +51,7 @@
                                         <br />
                                         <br />
                                         “biệt thự” có nghĩa là nhà rộng có vườn riêng biệt. Tuy nhiên, nếu so sánh loại nhà biệt thự trong các dự án hiện nay và với những biệt thự được xây dựng trước giải phóng tại Thủ Đức hoặc xây dựng từ thời Pháp trong khu trung tâm quận 3 thì rõ ràng khái niệm biệt thự đã có những khoảng cách khá xa. Những biệt thự được xây dựng trước 1975 và cả những căn được xây dựng từ thời Pháp đều có diện tích từ 500m2 đến vài ngàn mét vuông. Ngoài diện tích xây nhà còn có phần đất cho vườn cây cảnh, hòn non bộ, không ít căn còn có cả hồ bơi, thậm chí còn đủ đất để làm một sân tennis…
-Trong khi đó, hiện nay không ít biệt thự tại các dự án khu dân cư, khu đô thị mới có diện tích nhà đất rất hạn hẹp, thông thường chỉ khoảng 200m2 đất, thậm chí có thể ít hơn.
+                                        Trong khi đó, hiện nay không ít biệt thự tại các dự án khu dân cư, khu đô thị mới có diện tích nhà đất rất hạn hẹp, thông thường chỉ khoảng 200m2 đất, thậm chí có thể ít hơn.
                                         <br />
                                         <br />
                                         <img src="Images/products/16.jpg" />
@@ -61,7 +61,7 @@ Trong khi đó, hiện nay không ít biệt thự tại các dự án khu dân 
                                         <br />
                                         <br />
                                         Hiện nay chúng ta vẫn chưa có văn bản nào quy định tiêu chuẩn cho biệt thự, từ diện tích nhà, đất đến kiến trúc…”. Có lẽ chính vì vậy khoảng cách về chuẩn giữa các căn biệt thự rất xa nhau, diện tích từ 200m2 đến vài ngàn mét, kiến trúc từ Tây, Tàu đến Ta, độ cao từ nhà trệt đến vài tầng, từ đơn lập, song lập đến tứ lập…
-Các loại biệt thự cơ bản như:biệt thự liên lập, song lập, tứ lập, biệt thự phố…
+                                        Các loại biệt thự cơ bản như:biệt thự liên lập, song lập, tứ lập, biệt thự phố…
 
                                     </p>
                                     <p>
@@ -102,10 +102,10 @@ Các loại biệt thự cơ bản như:biệt thự liên lập, song lập, t�
                                     </p>
                                     <p>
                                         3.1 Tiền phòng là không gian đầu mối nối tiếp → các không gian khác là nơi để giày dép, mủ nón và áo khoác để chỉnh trang y phục S 6 ÷ 8m (phòng dệm không khí)
-                                    <br />
+                                        <br />
                                         <br />
                                         3.2 Phòng ngủ: không gian nghỉ ngơi, học tập yêu cầu thông thoáng và chiếu sáng, tuyệt đối không được bố trí lối đi xuyên qua phòng ngủ để → phòng khác. Thường bố trí cho hai người sử dụng S = 12 ÷ 16m. Xu hướng làm phòng ngủ lớn do nhu cầu: phải trang trí màu sắc nhẹ nhàng, lịch sự, dễ làm vệ sinh. Bố trí về hướng nam và đông nam và có vị trí kín đáo.
-                                    <br />
+                                        <br />
                                         <br />
                                         3.3 Phòng khách: sử dụng để giao tiếp, lễ tiệc, nuôi dạy con cái
                                         <br />
@@ -114,19 +114,19 @@ Các loại biệt thự cơ bản như:biệt thự liên lập, song lập, t�
                                         - Kín đáo, tế nhị. Là các không gian thể hiện phong cách của chủ nhà. Thường thiết kế với S: 16 ÷ 20m2 (4 ÷ 5 người)
                                         <br />
                                         - Tổ chức thông thoáng tốt.
-                                    <br />
+                                        <br />
                                         <br />
                                         3.4 Phòng ăn và bếp : là không gian ăn uống, bồi dưỡng của gia đình
                                         <br />
                                         Yêu cầu : Phải thông thoáng, vật liệu sử dụng có độ chịu lửa cao, dễ lau chùi làm vệ sinh. Bếp nên đặt ở hướng tây và cuối gió.
-                                    <br />
+                                        <br />
                                         <br />
                                         3.5 Khu vệ sinh (WC)
                                         <br />
                                         Nhà 1 tầng nên chia thành 2 khu : (Tắm, giặt, xí) và (Rửa, tiểu tiện). Diện tích mỗi khu (S) = 1,8 ÷ 2m2. Nhà nhiều tầng thì nên gộp chung hai khu nêu trên.
                                         <br />
                                         Yêu cầu : khu w.c phải thông thoáng chiếu sáng tốt, bố trí ở hướng tây và cuối gió.
-                                    <br />
+                                        <br />
                                         <br />
                                         3.6 Kho : là nơi lưu trữ các vật dụng không thường xuyên sử dụng. Vị trí: Phía trên WC, dưới gầm cầu thang gần bếp S = 4 ÷ 6m2
 
@@ -155,19 +155,19 @@ Các loại biệt thự cơ bản như:biệt thự liên lập, song lập, t�
 
     <script type="text/javascript">
 
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             $('.sf-menu #menu-item-2').addClass('current_page_item');
 
 
-            $('#cssmenu > ul > li ul').each(function (index, e) {
+            $('#cssmenu > ul > li ul').each(function(index, e) {
                 var count = $(e).find('li').length;
                 var content = '<span class="cnt">' + count + '</span>';
                 $(e).closest('li').children('a').append(content);
             });
             $('#cssmenu ul ul li:odd').addClass('odd');
             $('#cssmenu ul ul li:even').addClass('even');
-            $('#cssmenu > ul > li > a').click(function () {
+            $('#cssmenu > ul > li > a').click(function() {
                 $('#cssmenu li').removeClass('active');
                 $(this).closest('li').addClass('active');
                 var checkElement = $(this).next();

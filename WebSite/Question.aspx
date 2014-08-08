@@ -12,37 +12,37 @@
 
                             <div id="tab1" class="tab" style="display: block; float: left; width: 700px;">
                                 <p>Giải đáp thắc mắc:
-    <br/>
-        Ai cũng có những khó khăn, khúc mắc nhất định trong quá trình từ khi bắt đầu có dự đinh
-            xây dựng nhà, cải tạo nhà cửa, căn hộ chung cư, mặt bằng kinh doanh...<br />
-        Hay đặt câu hỏi, chúng tôi sẽ cho bạn câu trả lời tốt nhất,hiệu quả nhất với công trình của bạn.
-    </p>
-    <p>Thông tin khách hàng:
-    <br/>(Các thông tin của quý khách sẽ được bảo mật)</p>
-    <asp:TextBox runat="server" ID="tbEmail" Width="300px"></asp:TextBox><br />
-    <br />
-    <asp:TextBox runat="server" ID="tbPhone" Width="300px"></asp:TextBox><br />
-    <br />
-    <asp:TextBox runat="server" ID="tbAddress" Width="300px"></asp:TextBox>
-    <p>Nội dung câu hỏi</p>
-    <asp:TextBox runat="server" ID="tbContent" TextMode="MultiLine" Width="489px" Height="104px"></asp:TextBox><br />
-    <br />
-    <asp:Button runat="server" ID="btSubmit" Text="Gửi" />
-    <div style="clear: both;"></div>
-    <div class="img-bottom-info">
-        <img src="Images/products/8.jpg" />
-        <img src="Images/products/2.jpg" />
-        <img src="Images/products/3.jpg" />
-        <img src="Images/products/4.jpg" />
-        <img src="Images/products/5.jpg" />
-        <img src="Images/products/6.jpg" />
-        <img src="Images/products/7.jpg" />
-        <img src="Images/products/9.jpg" />
-    </div>
+                                    <br/>
+                                    Ai cũng có những khó khăn, khúc mắc nhất định trong quá trình từ khi bắt đầu có dự đinh
+                                    xây dựng nhà, cải tạo nhà cửa, căn hộ chung cư, mặt bằng kinh doanh...<br />
+                                    Hay đặt câu hỏi, chúng tôi sẽ cho bạn câu trả lời tốt nhất,hiệu quả nhất với công trình của bạn.
+                                </p>
+                                <p>Thông tin khách hàng:
+                                    <br/>(Các thông tin của quý khách sẽ được bảo mật)</p>
+                                <asp:TextBox runat="server" ID="tbEmail" Width="300px"></asp:TextBox><br />
+                                <br />
+                                <asp:TextBox runat="server" ID="tbPhone" Width="300px"></asp:TextBox><br />
+                                <br />
+                                <asp:TextBox runat="server" ID="tbAddress" Width="300px"></asp:TextBox>
+                                <p>Nội dung câu hỏi</p>
+                                <asp:TextBox runat="server" ID="tbContent" TextMode="MultiLine" Width="489px" Height="104px"></asp:TextBox><br />
+                                <br />
+                                <asp:Button runat="server" ID="btSubmit" Text="Gửi" />
+                                <div style="clear: both;"></div>
+                                <div class="img-bottom-info">
+                                    <img src="Images/products/8.jpg" />
+                                    <img src="Images/products/2.jpg" />
+                                    <img src="Images/products/3.jpg" />
+                                    <img src="Images/products/4.jpg" />
+                                    <img src="Images/products/5.jpg" />
+                                    <img src="Images/products/6.jpg" />
+                                    <img src="Images/products/7.jpg" />
+                                    <img src="Images/products/9.jpg" />
+                                </div>
                             </div>
-<div style="float: right; width: 230px; padding-top: 15px;">
-                            <ucSameProject:SameProject runat="server" ID="sameProject"/>
-</div>
+                            <div style="float: right; padding-top: 15px; width: 230px;">
+                                <ucSameProject:SameProject runat="server" ID="sameProject"/>
+                            </div>
                         </div>
                     </div>
                 </div>

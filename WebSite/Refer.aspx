@@ -19,7 +19,7 @@
             </figure>
             <h5><a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">Biệt thự hiện đại</a></h5>
             Thiết kế: Kts. Vũ Quang Vĩnh
-                                        <div class="clear"></div>
+            <div class="clear"></div>
         </li>
         <li class="projects">
             <figure class="featured-thumbnail">
@@ -28,7 +28,7 @@
             </figure>
             <h5><a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">Biệt thự hiện đại</a></h5>
             Thiết kế: Kts. Vũ Quang Vĩnh
-                                        <div class="clear"></div>
+            <div class="clear"></div>
         </li>
         <li class="projects">
             <figure class="featured-thumbnail">
@@ -37,7 +37,7 @@
             </figure>
             <h5><a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">Biệt thự hiện đại</a></h5>
             Thiết kế: Kts. Vũ Quang Vĩnh
-                                        <div class="clear"></div>
+            <div class="clear"></div>
         </li>
         <li class="projects">
             <figure class="featured-thumbnail">
@@ -46,7 +46,7 @@
             </figure>
             <h5><a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">Biệt thự hiện đại</a></h5>
             Thiết kế: Kts. Vũ Quang Vĩnh
-                                        <div class="clear"></div>
+            <div class="clear"></div>
         </li>
         <li class="projects">
             <figure class="featured-thumbnail">
@@ -55,7 +55,7 @@
             </figure>
             <h5><a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">Biệt thự hiện đại</a></h5>
             Thiết kế: Kts. Vũ Quang Vĩnh
-                                        <div class="clear"></div>
+            <div class="clear"></div>
         </li>
         <li class="projects">
             <figure class="featured-thumbnail">
@@ -64,7 +64,7 @@
             </figure>
             <h5><a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">Biệt thự hiện đại</a></h5>
             Thiết kế: Kts. Vũ Quang Vĩnh
-                                        <div class="clear"></div>
+            <div class="clear"></div>
         </li>
     </ul>
 </asp:Content>

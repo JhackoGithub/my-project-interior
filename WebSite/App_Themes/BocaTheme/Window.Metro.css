@@ -1,8 +1,8 @@
 /* Window/WindowHorizontalSprites.gif */
 .RadWindow_Metro {
+    border: 1px solid #e5e5e5;
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
     font-size: 12px;
-    border: 1px solid #e5e5e5;
     /* end shadows */
     /* When ShowContentDuringLoad="false" */
 }
@@ -45,9 +45,9 @@
 .RadWindow_Metro .rwControlButtons a {
     background-color: #25a0da;
     background-image: url('Window/CommandButtonSprites.gif');
-    width: 29px;
-    height: 19px;
     border: 1px solid #25a0da;
+    height: 19px;
+    width: 29px;
 }
 
 .RadWindow_Metro table.rwTitlebarControls em {
@@ -103,8 +103,8 @@
 div.RadWindow_Metro a.rwCancel,
 div.RadWindow_Metro a.rwCancel span {
     background: none !important;
-    cursor: pointer;
     border: 0 !important;
+    cursor: pointer;
 }
 
 div.RadWindow_Metro a.rwCancel span span,

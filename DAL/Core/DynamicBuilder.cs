@@ -7,11 +7,11 @@ namespace DAL.Core
 {
     public class DynamicBuilder<T>
     {
-        private static readonly MethodInfo getValueMethod = typeof(IDataRecord).GetMethod("get_Item", new [] { typeof(int) });
+        private static readonly MethodInfo getValueMethod = typeof (IDataRecord).GetMethod("get_Item",
+                                                                                           new[] {typeof (int)});
 
-        private static readonly MethodInfo isDBNullMethod = typeof(IDataRecord).GetMethod("IsDBNull", new [] { typeof(int) });
-
-        private delegate T Load(IDataRecord dataRecord);
+        private static readonly MethodInfo isDBNullMethod = typeof (IDataRecord).GetMethod("IsDBNull",
+                                                                                           new[] {typeof (int)});
 
         private Load _handler;
 
@@ -28,12 +28,12 @@ namespace DAL.Core
         {
             var dynamicBuilder = new DynamicBuilder<T>();
 
-            var method = new DynamicMethod("DynamicCreate", typeof(T), new [] { typeof(IDataRecord) },
-                                                     typeof(T), true);
-            var generator = method.GetILGenerator();
+            var method = new DynamicMethod("DynamicCreate", typeof (T), new[] {typeof (IDataRecord)},
+                                           typeof (T), true);
+            ILGenerator generator = method.GetILGenerator();
 
-            var result = generator.DeclareLocal(typeof(T));
-            if (IsSingleType(typeof(T)))
+            LocalBuilder result = generator.DeclareLocal(typeof (T));
+            if (IsSingleType(typeof (T)))
             {
                 generator.Emit(OpCodes.Ldarg_0);
                 generator.Emit(OpCodes.Ldc_I4, 0);
@@ -44,18 +44,20 @@ namespace DAL.Core
             }
             else
             {
-                generator.Emit(OpCodes.Newobj, typeof(T).GetConstructor(Type.EmptyTypes));
+                generator.Emit(OpCodes.Newobj, typeof (T).GetConstructor(Type.EmptyTypes));
                 generator.Emit(OpCodes.Stloc, result);
-                for (var i = 0; i < dataRecord.FieldCount; i++)
+                for (int i = 0; i < dataRecord.FieldCount; i++)
                 {
-                    var propertyInfo = typeof(T).GetProperty(dataRecord.GetName(i), BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase);
-                    var endIfLabel = generator.DefineLabel();
+                    PropertyInfo propertyInfo = typeof (T).GetProperty(dataRecord.GetName(i),
+                                                                       BindingFlags.Instance | BindingFlags.Public |
+                                                                       BindingFlags.IgnoreCase);
+                    Label endIfLabel = generator.DefineLabel();
 
                     if (propertyInfo == null)
                     {
                         continue;
                     }
-                    var proMethod = propertyInfo.GetSetMethod();
+                    MethodInfo proMethod = propertyInfo.GetSetMethod();
                     if (proMethod == null)
                     {
                         continue;
@@ -79,7 +81,7 @@ namespace DAL.Core
                 generator.Emit(OpCodes.Ret);
             }
 
-            dynamicBuilder._handler = (Load)method.CreateDelegate(typeof(Load));
+            dynamicBuilder._handler = (Load) method.CreateDelegate(typeof (Load));
             return dynamicBuilder;
         }
 
@@ -87,5 +89,11 @@ namespace DAL.Core
         {
             return type.IsValueType || type.Name == "String";
         }
+
+        #region Nested type: Load
+
+        private delegate T Load(IDataRecord dataRecord);
+
+        #endregion
     }
 }

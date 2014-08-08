@@ -5,59 +5,59 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head runat="server">
-    <meta charset="utf-8" />
-    <title><%: Page.Title %> - noithatviet.net.vn</title>
-    <link href="~/Content/normalize.css" rel="stylesheet" />
-    <link href="~/Content/StyleSheet.css" rel="stylesheet" />
-    <link href="~/Content/Menu.css" rel="stylesheet" />
-    <link href="~/Content/prettyPhoto.css" rel="stylesheet" />
-    <link href="~/Content/grid.css" rel="stylesheet" />
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width" />
+    <head runat="server">
+        <meta charset="utf-8" />
+        <title><%: Page.Title %> - noithatviet.net.vn</title>
+        <link href="~/Content/normalize.css" rel="stylesheet" />
+        <link href="~/Content/StyleSheet.css" rel="stylesheet" />
+        <link href="~/Content/Menu.css" rel="stylesheet" />
+        <link href="~/Content/prettyPhoto.css" rel="stylesheet" />
+        <link href="~/Content/grid.css" rel="stylesheet" />
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
 
-    <script src="Scripts/jquery-1.8.2.min.js"></script>
-    <script src="Scripts/Script.js"></script>
+        <script src="Scripts/jquery-1.8.2.min.js"> </script>
+        <script src="Scripts/Script.js"> </script>
 
-</head>
-<body class="home page" style="color: #878786;">
-    <form runat="server">
-        <div id="main">
-            <header id="header-master">
-                <div class="splash">
-                    <div class="tail-top">
-                        <div class="tail-bottom">
-                            <div class="container_12 clearfix header-master">
-                                <div class="grid_12">
-                                    <div class="logo">
-                                        <div style="padding: 5px; float: left;">
-                                            <a href="#">
-                                                <img src="Images/logo.png" width="100px" />
-                                            </a>
-                                        </div>
-                                        <div style="float: left; width: 190px; padding-top: 20px;">
-                                            <div style="text-transform: uppercase; text-align: left; color: white; text-decoration: underline; font-family: sans-serif; font-size: 10pt; line-height: 1.6em;">
-                                                công ty cổ phần tư vấn thiết kế và xây dựng a&m
+    </head>
+    <body class="home page" style="color: #878786;">
+        <form runat="server">
+            <div id="main">
+                <header id="header-master">
+                    <div class="splash">
+                        <div class="tail-top">
+                            <div class="tail-bottom">
+                                <div class="container_12 clearfix header-master">
+                                    <div class="grid_12">
+                                        <div class="logo">
+                                            <div style="float: left; padding: 5px;">
+                                                <a href="#">
+                                                    <img src="Images/logo.png" width="100px" />
+                                                </a>
+                                            </div>
+                                            <div style="float: left; padding-top: 20px; width: 190px;">
+                                                <div style="color: white; font-family: sans-serif; font-size: 10pt; line-height: 1.6em; text-align: left; text-decoration: underline; text-transform: uppercase;">
+                                                    công ty cổ phần tư vấn thiết kế và xây dựng a&m
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="primary">
-                                        <ucMenu:Menu ID="menu" runat="server" />
-                                    </div>
-                                    <div id="top-search">
-                                        <input type="text" name="s" class="input-search" />
-                                        <input type="submit" id="submit" value="" />
-                                    </div>
+                                        <div class="primary">
+                                            <ucMenu:Menu ID="menu" runat="server" />
+                                        </div>
+                                        <div id="top-search">
+                                            <input type="text" name="s" class="input-search" />
+                                            <input type="submit" id="submit" value="" />
+                                        </div>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </header>
-            <asp:ContentPlaceHolder runat="server" ID="MainContainer"></asp:ContentPlaceHolder>
-        </div>
-        <ucFooter:Footer ID="footer" runat="server" />
-    </form>
-</body>
+                </header>
+                <asp:ContentPlaceHolder runat="server" ID="MainContainer"></asp:ContentPlaceHolder>
+            </div>
+            <ucFooter:Footer ID="footer" runat="server" />
+        </form>
+    </body>
 </html>

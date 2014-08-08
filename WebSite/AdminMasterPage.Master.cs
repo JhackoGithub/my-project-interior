@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using WebSite.Common;
 
 namespace WebSite
 {
-    public partial class AdminMasterPage : System.Web.UI.MasterPage
+    public partial class AdminMasterPage : MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var user = (string)Session["CurrentUser"];
-            if(user == null)
+            var user = (string) Session["CurrentUser"];
+            if (user == null)
             {
                 login.Visible = false;
                 return;

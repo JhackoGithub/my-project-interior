@@ -5,7 +5,7 @@
 </div>
 
 <script type="text/javascript">
-    $(function () {
+    $(function() {
 
         var tab = getParameterByName('tab');
         if (tab == 1) {

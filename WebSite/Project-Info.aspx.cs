@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebSite
 {
-    public partial class Project_Info : System.Web.UI.Page
+    public partial class Project_Info : Page
     {
         private string Id
         {
@@ -37,7 +33,7 @@ namespace WebSite
             {
                 if (fileInfo.Name.Equals("project-view.jpg") || fileInfo.Name.Equals("project-main.jpg"))
                     continue;
-                var pathImage = string.Format("{0}{1}", path, fileInfo.Name);
+                string pathImage = string.Format("{0}{1}", path, fileInfo.Name);
                 imageDesc.AppendFormat("<img src='{0}' style='width: 450px;' /><br />", pathImage);
                 images.AppendFormat("<img src='{0}' />", pathImage);
             }
@@ -49,9 +45,10 @@ namespace WebSite
             projectInfo.Append("Hướng khu đất: Tây Bắc<br />");
             projectInfo.Append("Chủ đầu tư: Lê Trung Sơn - sinh năm: 1985<br />");
             projectInfo.Append("Số người ở tại công trình: 3 thế hệ: ông bà, vợ chồng chủ hộ và 2 con (6 người)<br />");
-            projectInfo.Append("Yêu cầu: đầy đủ các không gian: phòng khách, phòng bếp, 5 phòng ngủ, phòng làm việc, sinh hoạt chung, phòng thờ, gara, sân vườn...<br />");
+            projectInfo.Append(
+                "Yêu cầu: đầy đủ các không gian: phòng khách, phòng bếp, 5 phòng ngủ, phòng làm việc, sinh hoạt chung, phòng thờ, gara, sân vườn...<br />");
             ltProjectInfo.Text = projectInfo.ToString();
-            
+
             ltProjectDesc.Text = imageDesc.ToString();
         }
     }

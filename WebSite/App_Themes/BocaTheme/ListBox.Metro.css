@@ -5,107 +5,107 @@
 
 .RadListBox_Metro .rlbGroup,
 .RadListBox_Metro .rlbTemplateContainer {
-    border: 1px solid #e5e5e5;
     background: white;
+    border: 1px solid #e5e5e5;
 }
 
 .RadListBox_Metro .rlbHeader,
 .RadListBox_Metro .rlbFooter { background-color: #e8e8e8; }
 
 .RadListBox_Metro .rlbList .rlbHovered {
-    color: black;
     background-color: #e8e8e8;
+    color: black;
 }
 
 .RadListBox_Metro .rlbList .rlbSelected {
-    color: white;
     background-color: #25a0da;
+    color: white;
 }
 
 .RadListBox_Metro .rlbList .rlbDisabled {
-    color: #767676;
     background-color: transparent;
+    color: #767676;
 }
 
 .RadListBox_Metro .rlbList .rlbDisabled .rlbImage {
-    opacity: 0.5;
     -moz-opacity: 0.5;
     filter: alpha(opacity=50);
+    opacity: 0.5;
 }
 
 .RadListBox_Metro .rlbEmptyMessage { color: #bbbbbb; }
 
 .RadListBox_Metro .rlbCheckAllItems {
-    padding: 2px 5px;
-    color: black;
     background-color: #e8e8e8;
+    color: black;
+    padding: 2px 5px;
 }
 
 .RadListBox_Metro .rlbCheckAllItems.rlbDisabled,
 .RadListBox_Metro .rlbCheckAllItems.rlbDisabled:hover { background-color: #e8e8e8; }
 
 .RadListBox_Metro .rlbCheckAllItemsHovered {
-    color: black;
     background-color: #e8e8e8;
+    color: black;
 }
 
 .RadListBox_Metro .rlbDropClue {
-    width: 10px;
+    background-color: transparent;
     background-image: url('ListBox/rlbDropClue.png');
     background-position: 0 0;
     background-repeat: no-repeat;
-    background-color: transparent;
     left: -10px;
+    width: 10px;
 }
 
 .RadListBox_Metro .rlbDropClueAbove {
-    border-top-style: dotted;
     border-top-color: #8e8e8e;
+    border-top-style: dotted;
 }
 
 .RadListBox_Metro .rlbDropClueBelow {
-    border-bottom-style: dotted;
     border-bottom-color: #8e8e8e;
+    border-bottom-style: dotted;
 }
 
 .RadListBox_Metro .rlbButton {
-    border-color: #e5e5e5;
-    color: black;
     background-color: #f9f9f9;
-    height: 20px;
-    border-width: 1px;
+    border-color: #e5e5e5;
     border-style: solid;
+    border-width: 1px;
+    color: black;
+    height: 20px;
 }
 
 .RadListBox_Metro .rlbButton:hover {
+    background-color: #e5e5e5;
     border-color: #e5e5e5;
     color: black;
-    background-color: #e5e5e5;
 }
 
 .RadListBox_Metro .rlbButton:active {
+    background-color: #25a0da;
     border-color: #25a0da;
     color: white;
-    background-color: #25a0da;
 }
 
 .RadListBox_Metro .rlbButton .rlbButtonBL,
 .RadListBox_Metro .rlbButton .rlbButtonBR,
 .RadListBox_Metro .rlbButton .rlbButtonTR,
 .RadListBox_Metro .rlbButton .rlbButtonTL {
+    background: none;
+    border: 0;
+    display: block;
     margin: 0;
     padding: 0;
-    border: 0;
-    background: none;
-    display: block;
     position: static;
 }
 
 .RadListBox_Metro .rlbButton .rlbButtonText {
-    padding-top: 0;
-    height: 20px;
     background: url('ListBox/rlbSprite.png') no-repeat;
+    height: 20px;
     line-height: 20px;
+    padding-top: 0;
     position: static;
 }
 
@@ -118,17 +118,17 @@
 .RadListBox_Metro .rlbNoButtonText .rlbButtonBR,
 .RadListBox_Metro .rlbNoButtonText .rlbButtonTR,
 .RadListBox_Metro .rlbNoButtonText .rlbButtonTL {
-    width: 20px;
     height: 20px;
+    width: 20px;
 }
 
 .RadListBox_Metro .rlbNoButtonText .rlbButtonText {
-    padding: 0;
-    margin: 0;
-    width: 20px;
-    height: 20px;
     display: block;
+    height: 20px;
+    margin: 0;
+    padding: 0;
     position: static;
+    width: 20px;
 }
 
 .RadListBox_Metro .rlbButtonAreaTop .rlbNoButtonText,
@@ -137,9 +137,9 @@
 .RadListBox_Metro .rlbDisabled,
 .RadListBox_Metro .rlbDisabled:hover,
 .RadListBox_Metro .rlbDisabled:active {
+    background-color: #fcfcfc;
     border-color: #e6e6e6;
     color: #767676;
-    background-color: #fcfcfc;
 }
 
 .RadListBox_Metro .rlbMoveUp .rlbButtonText { background-position: 0 0; }

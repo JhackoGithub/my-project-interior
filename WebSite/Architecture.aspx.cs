@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebSite
 {
@@ -15,11 +12,11 @@ namespace WebSite
         {
             get { return Request.QueryString["cate"] ?? "all"; }
         }
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Master != null) Master.Page.Title = "Công trình";
-            
+
             LoadProject();
         }
 
@@ -30,15 +27,19 @@ namespace WebSite
 
             var htmlProject = new StringBuilder();
             htmlProject.Append("<ul class='recent-posts projects'>");
-            foreach (var project in projects)
+            foreach (Project project in projects)
             {
-                var projectName = string.Format("Dự án {0}", project.Name);
-                var pathImage = string.Format("{0}\\project-view.jpg", project.Path);
+                string projectName = string.Format("Dự án {0}", project.Name);
+                string pathImage = string.Format("{0}\\project-view.jpg", project.Path);
                 htmlProject.AppendFormat("<li class='projects'>");
                 htmlProject.AppendFormat("<figure class='featured-thumbnail'>");
-                htmlProject.AppendFormat("<a href='Project-Info.aspx?type=0&tab=1&cate={0}&project={1}' title='{2}'><img src='{3}' /></a>", project.Category, project.Id, projectName, pathImage);
+                htmlProject.AppendFormat(
+                    "<a href='Project-Info.aspx?type=0&tab=1&cate={0}&project={1}' title='{2}'><img src='{3}' /></a>",
+                    project.Category, project.Id, projectName, pathImage);
                 htmlProject.Append("</figure>");
-                htmlProject.AppendFormat("<h5><a href='Project-Info.aspx?type=0&tab=1&cate={0}&project={1}' title='{2}'>{3}</a></h5>", project.Category, project.Id, projectName, projectName);
+                htmlProject.AppendFormat(
+                    "<h5><a href='Project-Info.aspx?type=0&tab=1&cate={0}&project={1}' title='{2}'>{3}</a></h5>",
+                    project.Category, project.Id, projectName, projectName);
                 htmlProject.Append("<div class='clear'></div>");
                 htmlProject.Append("</li>");
             }
@@ -49,8 +50,8 @@ namespace WebSite
         private void GetProjects(List<Project> projects)
         {
             var paths = new List<string>();
-            
-            if(Category == "all")
+
+            if (Category == "all")
             {
                 paths.Add(@"\Images\projects\architecture\villa\modern\");
                 paths.Add(@"\Images\projects\architecture\villa\classic\");
@@ -59,25 +60,27 @@ namespace WebSite
             }
             else
             {
-                var path = Category.Replace('-', '\\');
+                string path = Category.Replace('-', '\\');
                 if (string.IsNullOrEmpty(path))
                     return;
                 paths.Add(string.Format(@"\Images\projects\architecture\{0}\", path));
             }
-            foreach (var path in paths)
+            foreach (string path in paths)
             {
-                if(!Directory.Exists(Server.MapPath(path)))
+                if (!Directory.Exists(Server.MapPath(path)))
                     continue;
                 var dirInfo = new DirectoryInfo(Server.MapPath(path));
                 foreach (DirectoryInfo directory in dirInfo.GetDirectories())
                 {
                     var project = new Project
-                    {
-                        Id = string.Format("{0}-{1}-{2}", directory.Parent.Parent, directory.Parent, directory.Name),
-                        Category = string.Format("{0}-{1}", directory.Parent.Parent, directory.Parent),
-                        Name = directory.Name,
-                        Path = string.Format("{0}{1}", path, directory.Name)
-                    };
+                                      {
+                                          Id =
+                                              string.Format("{0}-{1}-{2}", directory.Parent.Parent, directory.Parent,
+                                                            directory.Name),
+                                          Category = string.Format("{0}-{1}", directory.Parent.Parent, directory.Parent),
+                                          Name = directory.Name,
+                                          Path = string.Format("{0}{1}", path, directory.Name)
+                                      };
                     projects.Add(project);
                 }
             }
