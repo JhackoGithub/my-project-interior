@@ -20,10 +20,10 @@
         <MasterTableView AllowMultiColumnSorting="False" AllowFilteringByColumn="False">
             <Columns>
                 <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Tiêu đề" AndCurrentFilterFunction="Contains" HtmlEncode="True"
-                                         AllowSorting="true" ShowFilterIcon="false">
+                                         AllowSorting="False" ShowFilterIcon="false">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn DataField="CreatedOn" UniqueName="CreatedOn" HeaderText="Ngày đăng" AutoPostBackOnFilter="true"
-                                         AllowSorting="true" SortExpression="CreatedOn" AllowFiltering="False" ShowFilterIcon="False" DataFormatString="{0:g}">
+                                         AllowSorting="False" SortExpression="CreatedOn" AllowFiltering="False" ShowFilterIcon="False" DataFormatString="{0:g}">
                     <HeaderStyle Width="130px"></HeaderStyle>
                 </telerik:GridBoundColumn>
                 <telerik:GridTemplateColumn UniqueName="TemplateColumn" AllowFiltering="False">

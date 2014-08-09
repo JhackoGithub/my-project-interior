@@ -6,7 +6,8 @@
 <script type="text/javascript">
     $(function() {
         var cate = getParameterByName('cate');
-        var page = 'Architecture.aspx?type=0&tab=1&cate=' + cate;
+        var type = getParameterByName('type');
+        var page = 'Project.aspx?type=' + type + '&tab=1&cate=' + cate;
         $('#cssmenu ul li ul li a').each(function() {
             var link = $(this).attr('href');
             if (link.indexOf(page) >= 0) {

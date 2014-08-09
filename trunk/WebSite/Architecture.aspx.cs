@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Web.UI;
+using ProjectBE = Entities.Project;
 
 namespace WebSite
 {
@@ -17,17 +18,17 @@ namespace WebSite
         {
             if (Master != null) Master.Page.Title = "Công trình";
 
-            LoadProject();
+            //LoadProject();
         }
-
+        /*
         private void LoadProject()
         {
-            var projects = new List<Project>();
+            var projects = new List<ProjectBE>();
             GetProjects(projects);
 
             var htmlProject = new StringBuilder();
             htmlProject.Append("<ul class='recent-posts projects'>");
-            foreach (Project project in projects)
+            foreach (ProjectBE project in projects)
             {
                 string projectName = string.Format("Dự án {0}", project.Name);
                 string pathImage = string.Format("{0}\\project-view.jpg", project.Path);
@@ -47,7 +48,7 @@ namespace WebSite
             ltProjects.Text = htmlProject.ToString();
         }
 
-        private void GetProjects(List<Project> projects)
+        private void GetProjects(List<ProjectBE> projects)
         {
             var paths = new List<string>();
 
@@ -72,26 +73,27 @@ namespace WebSite
                 var dirInfo = new DirectoryInfo(Server.MapPath(path));
                 foreach (DirectoryInfo directory in dirInfo.GetDirectories())
                 {
-                    var project = new Project
+                    var project = new ProjectBE
                                       {
                                           Id =
                                               string.Format("{0}-{1}-{2}", directory.Parent.Parent, directory.Parent,
                                                             directory.Name),
-                                          Category = string.Format("{0}-{1}", directory.Parent.Parent, directory.Parent),
+                                          CategoryId = string.Format("{0}-{1}", directory.Parent.Parent, directory.Parent),
                                           Name = directory.Name,
-                                          Path = string.Format("{0}{1}", path, directory.Name)
+                                          PathImage = string.Format("{0}{1}", path, directory.Name)
                                       };
                     projects.Add(project);
                 }
             }
         }
+        */
     }
 
-    public class Project
-    {
-        public string Id { get; set; }
-        public string Category { get; set; }
-        public string Name { get; set; }
-        public string Path { get; set; }
-    }
+    //public class Project
+    //{
+    //    public string Id { get; set; }
+    //    public string Category { get; set; }
+    //    public string Name { get; set; }
+    //    public string Path { get; set; }
+    //}
 }

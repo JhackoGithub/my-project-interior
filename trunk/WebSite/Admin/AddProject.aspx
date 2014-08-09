@@ -177,7 +177,22 @@
                 });
 
                 bindMenu();
+                bindProjectById();
             });
+
+            function bindProjectById() {
+                var id = getParameterByName('id');
+                if (id == "-1")
+                    return;
+                var url = "../Handler/ProjectHandler.ashx?funcname=edit&id=" + id;
+                callAjaxHandler(url, null, AjaxConst.GetRequest, bindProjectByIdCallback);
+            }
+
+            function bindProjectByIdCallback(data) {
+                if (data == null || data.project == null)
+                    return;
+                bindEntityToControl(data.project);
+            }
 
             $('#showPopupImage').click(function() {
                 $("#containerimages").html("");
@@ -230,16 +245,27 @@
                 project.description = textDesc;
                 project.information = textInfo;
             }
+
+            function bindEntityToControl(project) {
+                //$radios.filter('[value=Male]').prop('checked', true);
+                $('input:radio[name=rdType]:checked').val(project.Type);
+                $('input:radio[name=rdKind]:checked').val(project.CategoryId);
+                var editorDesc = $find("<%=radEditorDesc.ClientID%>");
+                var editorInfo = $find("<%=radEditorInfo.ClientID%>");
+                editorDesc.set_html(project.Description);
+                editorInfo.set_html(project.Information);
+                $('#tbName').val(project.Name);
+            }
             
             $('#btnSave').click(function () {
                 var project = new Object();
                 bindControlToEntity(project);
                 var data = JSON.stringify(project);
                 var url = "../Handler/ProjectHandler.ashx?funcname=create";
-                callAjaxHandler(url, data, AjaxConst.PostRequest, createProjectCallbacl);
+                callAjaxHandler(url, data, AjaxConst.PostRequest, createProjectCallback);
             });
 
-            function createProjectCallbacl(data) {
+            function createProjectCallback(data) {
                 if (data != "0") {
                     console.log("Create project successfull");
                 }

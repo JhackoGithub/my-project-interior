@@ -34,8 +34,6 @@ namespace WebSite.Handler
             var images = new StringBuilder();
             foreach (FileInfo fileInfo in dirInfo.GetFiles())
             {
-                if (fileInfo.Name.Equals("project-view.jpg") || fileInfo.Name.Equals("project-main.jpg"))
-                    continue;
                 string pathImage = string.Format("{0}{1}", path, fileInfo.Name);
                 images.Append("<div>");
                 images.AppendFormat("<img src='{0}' />", pathImage);

@@ -5,10 +5,10 @@
         <a href="../Default.aspx">trang chủ</a>
     </li>
     <li id="menu-item-2" class="current-menu-item">
-        <a href="../Architecture.aspx?type=0&tab=1">kiến trúc</a>
+        <a href="../Project.aspx?type=0&tab=1">kiến trúc</a>
     </li>
     <li id="menu-item-3" class="current-menu-item">
-        <a href="../Interior.aspx?type=1&tab=1">nội thất</a>
+        <a href="../Project.aspx?type=1&tab=1">nội thất</a>
     </li>
     <li id="menu-item-4" class="current-menu-item">
         <a href="../News.aspx?type=2">tin tức</a>
