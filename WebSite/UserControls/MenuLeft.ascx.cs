@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Web.UI;
+using System.Linq;
+using BLL;
+using MenuBE = Entities.MenuLeft;
 
 namespace WebSite.UserControls
 {
@@ -13,67 +17,53 @@ namespace WebSite.UserControls
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(IsPostBack)
+                return;
             GenerateMenu();
+        }
+
+        private List<MenuBE> GetMenuProject()
+        {
+            var bo = new MenuLeftBO();
+            var menus = bo.GetMenuProject();
+            var res = menus.Where(t => t.Type == Type).ToList();
+            return res;
         }
 
         private void GenerateMenu()
         {
-            if (Type == 0)
-                GenerateMenuArchiture();
-            else
+            var menus = GetMenuProject();
+            var htmlMenu = new StringBuilder();
+            htmlMenu.Append("<ul>");
+            foreach (MenuBE menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
             {
-                GenerateMenuInterior();
+                if (menu == null) continue;
+                List<MenuBE> menuChild = menus.Where(t => t.ParentId != null && t.ParentId == menu.Id).ToList();
+                htmlMenu.AppendFormat("<li>" +
+                                      "<a href='#'>" +
+                                        "<span>{0}</span>" +
+                                      "</a>", menu.Name);
+                if (menuChild.Count == 0)
+                {
+                    htmlMenu.Append("</li>");
+                }
+                else
+                {
+                    htmlMenu.Append("<ul>");
+                    foreach (MenuBE menuLeft in menuChild)
+                    {
+                        htmlMenu.AppendFormat("<li>" +
+                                                "<a href='Project.aspx?type={0}&tab=1&cate={1}'>" +
+                                                    "<span>{2}</span>" +
+                                                "</a>" +
+                                              "</li>",
+                                              Type, menuLeft.Id, menuLeft.Name);
+                    }
+                    htmlMenu.Append("</ul>");
+                }
             }
-        }
-
-        private void GenerateMenuArchiture()
-        {
-            var menu = new StringBuilder();
-            menu.Append("<ul>");
-            menu.Append("<li class='has-sub'><a href='#'><span>Biệt thự</span></a>");
-            menu.Append("<ul>");
-            menu.AppendFormat(
-                "<li><a href='Architecture.aspx?type=0&tab=1&cate=villa-modern'><span>Hiện đại</span></a></li>");
-            menu.Append(
-                "<li class='last'><a href='Architecture.aspx?type=0&tab=1&cate=villa-classic'><span>Cổ điển</span></a></li>");
-            menu.Append("</ul>");
-            menu.Append("</li>");
-            menu.Append("<li class='has-sub'><a href='#'><span>Nhà lô phố</span></a>");
-            menu.Append("<ul>");
-            menu.Append(
-                "<li><a href='Architecture.aspx?type=0&tab=1&cate=batch-modern'><span>Hiện đại</span></a></li>");
-            menu.Append(
-                "<li class='last'><a href='Architecture.aspx?type=0&tab=1&cate=batch-classic'><span>Cổ điển</span></a></li>");
-            menu.Append("</ul>");
-            menu.Append("</li>");
-            menu.Append("</ul>");
-            ltMenu.Text = menu.ToString();
-        }
-
-        private void GenerateMenuInterior()
-        {
-            var menu = new StringBuilder();
-            menu.Append("<ul>");
-            menu.Append("<li class='has-sub'><a href='#'><span>Nội thât biệt thự</span></a>");
-            menu.Append("<ul>");
-            menu.Append("<li><a href='Interior.aspx'><span>Hiện đại</span></a></li>");
-            menu.Append("<li class='last'><a href='commingsoon.aspx'><span>Cổ điển</span></a></li>");
-            menu.Append("</ul>");
-            menu.Append("</li>");
-            menu.Append("<li class='has-sub'><a href='#'><span>Nội thât nhà lô phố</span></a>");
-            menu.Append("<ul>");
-            menu.Append("<li><a href='Architecture.aspx'><span>Hiện đại</span></a></li>");
-            menu.Append("<li class='last'><a href='commingsoon.aspx'><span>Cổ điển</span></a></li>");
-            menu.Append("</ul>");
-            menu.Append("</li>");
-            menu.Append("<li class='has-sub'><a href='#'><span>Nội thât chung cư</span></a>");
-            menu.Append("<ul>");
-            menu.Append("<li><a href='Architecture.aspx'><span>Hiện đại</span></a></li>");
-            menu.Append("<li class='last'><a href='commingsoon.aspx'><span>Cổ điển</span></a></li>");
-            menu.Append("</ul>");
-            menu.Append("</li>");
-            menu.Append("</ul>");
-            ltMenu.Text = menu.ToString();
+            htmlMenu.Append("</ul>");
+            ltMenu.Text = htmlMenu.ToString();
         }
     }
 }

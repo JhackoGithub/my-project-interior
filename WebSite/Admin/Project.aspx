@@ -36,9 +36,8 @@
                     <HeaderStyle HorizontalAlign="Right" Width="130px" />
                     <ItemStyle HorizontalAlign="Right" Width="130px" />
                     <ItemTemplate>
-                        <a href="../News.aspx?type=2&id=<%#                                        Eval("Id") %>" target="_blank" class="Grid-View"></a>
-                        <a href="AddProject.aspx?id=<%#Eval
-                                                                                                   ("Id") %>" class="Grid-Edit"></a>
+                        <a href="#" target="_blank" class="Grid-View"></a>
+                        <a href="AddProject.aspx?id=<%#Eval("Id") %>" class="Grid-Edit"></a>
                         <asp:LinkButton runat="server" ID="lkbDelete" CssClass="Grid-Delete" CommandName="delete" CommandArgument='<%#Eval("Id") %>'></asp:LinkButton>
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>

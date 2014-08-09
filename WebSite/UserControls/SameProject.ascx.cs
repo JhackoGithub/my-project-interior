@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Web.UI;
+using System.Linq;
+using BLL;
+using ProjectBE = Entities.Project;
 
 namespace WebSite.UserControls
 {
@@ -13,9 +16,9 @@ namespace WebSite.UserControls
             get { return Request.QueryString["type"] == null ? 0 : Convert.ToInt32(Request.QueryString["type"]); }
         }
 
-        private string Category
+        private int CategoryId
         {
-            get { return Request.QueryString["cate"] ?? "villa\\modern"; }
+            get { return Request.QueryString["cate"] == null ? 0 : Convert.ToInt32(Request.QueryString["cate"]); }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -24,26 +27,26 @@ namespace WebSite.UserControls
 
             GenerateSameProject();
         }
-
+        
         private void GenerateSameProject()
         {
-            var projects = new List<Project>();
-            GetProjects(projects);
+            var projects = GetProjects();
+            
             var htmlProject = new StringBuilder();
             htmlProject.Append("<ul class='recent-posts projects'>");
-            foreach (Project project in projects)
+            foreach (ProjectBE project in projects)
             {
                 string projectName = string.Format("Dự án {0}", project.Name);
-                string pathImage = string.Format("{0}\\project-view.jpg", project.Path);
+                string pathImage = string.Format("Images\\projects{0}\\{1}", project.PathImage, project.PrimaryImage);
                 htmlProject.AppendFormat("<li class='projects'>");
                 htmlProject.AppendFormat("<figure class='featured-thumbnail'>");
                 htmlProject.AppendFormat(
-                    "<a href='Project-Info.aspx?type={0}&tab=1&project={1}&cate={2}' title='{3}'><img src='{4}' /></a>",
-                    Type, project.Id, project.Category, projectName, pathImage);
+                    "<a href='Project-Info.aspx?type={0}&tab=1&project={1}&cate={2}' title='{3}'><img src='{4}' style='width: 200px;' /></a>",
+                    Type, project.Id, project.CategoryId, projectName, pathImage);
                 htmlProject.Append("</figure>");
                 htmlProject.AppendFormat(
                     "<h5><a href='Project-Info.aspx?type={0}&tab=1&project={1}&cate={2}' title='{3}'>{4}</a></h5>", Type,
-                    project.Id, project.Category, projectName, projectName);
+                    project.Id, project.CategoryId, projectName, projectName);
                 htmlProject.Append("<div class='clear'></div>");
                 htmlProject.Append("</li>");
             }
@@ -51,30 +54,11 @@ namespace WebSite.UserControls
             ltProjects.Text = htmlProject.ToString();
         }
 
-        private void GetProjects(List<Project> projects)
+        private IEnumerable<ProjectBE> GetProjects()
         {
-            string cate = Category.Replace('-', '\\');
-            if (string.IsNullOrEmpty(cate))
-            {
-                cate = "villa\\modern";
-            }
-            string path = string.Format(@"\Images\projects\architecture\{0}\", cate);
-            if (!Directory.Exists(Server.MapPath(path)))
-                return;
-            var dirInfo = new DirectoryInfo(Server.MapPath(path));
-            foreach (DirectoryInfo directory in dirInfo.GetDirectories())
-            {
-                var project = new Project
-                                  {
-                                      Id =
-                                          string.Format("{0}-{1}-{2}", directory.Parent.Parent, directory.Parent,
-                                                        directory.Name),
-                                      Category = string.Format("{0}-{1}", directory.Parent.Parent, directory.Parent),
-                                      Name = directory.Name,
-                                      Path = string.Format("{0}{1}", path, directory.Name)
-                                  };
-                projects.Add(project);
-            }
+            var bo = new ProjectBO();
+            var res = bo.GetProjectCateId(CategoryId);
+            return res;
         }
     }
 }

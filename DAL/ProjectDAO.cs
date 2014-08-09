@@ -26,6 +26,13 @@ namespace DAL
             return res;
         }
 
+        public List<Project> GetProjectCateId(int cateId)
+        {
+            var paramSql = new SqlParameter("@CategoryId", cateId);
+            var res = ExecuteToList<Project>("Project_GetByCategoryId", paramSql);
+            return res;
+        }
+
         public void AddProject(Project project)
         {
             var paramArrs = new[]

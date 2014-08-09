@@ -23,6 +23,13 @@ namespace BLL
             return res;
         }
 
+        public List<Project> GetProjectCateId(int cateId)
+        {
+            var dao = new ProjectDAO();
+            var res = dao.GetProjectCateId(cateId);
+            return res;
+        }
+
         public int AddProject(Project project)
         {
             var dao = new ProjectDAO();

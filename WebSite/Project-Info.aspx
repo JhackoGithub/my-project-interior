@@ -8,10 +8,6 @@
         #wrapper {
             height: 400px;
             width: 900px;
-            /*margin: -200px 0 0 -450px;
-			position: absolute;
-			top: 50%;
-			left: 50%;*/
         }
 
         #carousel img {

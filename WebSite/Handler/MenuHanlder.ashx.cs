@@ -187,8 +187,3 @@ namespace WebSite.Handler
         }
     }
 }
-
-//<div>
-//                                                    <img src="../Images/iEdit.png" width="16" />
-//                                                    <img src="../Images/iDelete.png" width="16" />
-//                                                </div>

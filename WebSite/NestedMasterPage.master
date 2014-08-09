@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NestedMasterPage.master.cs" Inherits="WebSite.NestedMasterPage" %>
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NestedMasterPage.master.cs" Inherits="WebSite.NestedMasterPage" EnableTheming="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContainer" runat="server">
     

@@ -2,14 +2,16 @@
 using System.IO;
 using System.Text;
 using System.Web.UI;
+using BLL;
+using ProjectBE = Entities.Project;
 
 namespace WebSite
 {
     public partial class Project_Info : Page
     {
-        private string Id
+        private int Id
         {
-            get { return Request.QueryString["project"] ?? "null"; }
+            get { return Request.QueryString["project"] == null ? 0 : Convert.ToInt32(Request.QueryString["project"]); }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -21,35 +23,25 @@ namespace WebSite
 
         private void LoadProject()
         {
-            if (Id == "null")
+            if (Id == 0)
                 return;
-            string path = string.Format(@"\Images\projects\architecture\{0}\", Id.Replace('-', '\\'));
+            var bo = new ProjectBO();
+            var res = bo.GetProjectById(Id);
+            if (res == null)
+                return;
+            var path = string.Format("Images\\projects{0}", res.PathImage);
             if (!Directory.Exists(Server.MapPath(path)))
                 return;
             var dirInfo = new DirectoryInfo(Server.MapPath(path));
-            var images = new StringBuilder();
-            var imageDesc = new StringBuilder();
+            var imageSlide = new StringBuilder();
             foreach (FileInfo fileInfo in dirInfo.GetFiles())
             {
-                if (fileInfo.Name.Equals("project-view.jpg") || fileInfo.Name.Equals("project-main.jpg"))
-                    continue;
-                string pathImage = string.Format("{0}{1}", path, fileInfo.Name);
-                imageDesc.AppendFormat("<img src='{0}' style='width: 450px;' /><br />", pathImage);
-                images.AppendFormat("<img src='{0}' />", pathImage);
+                string pathImage = string.Format("{0}\\{1}", path, fileInfo.Name);
+                imageSlide.AppendFormat("<img src='{0}' />", pathImage);
             }
-            ltImages.Text = images.ToString();
-
-            var projectInfo = new StringBuilder();
-            projectInfo.Append("Phong cách: Hiện đại<br />");
-            projectInfo.Append("Diện tích đất nghiên cứu: 530m2<br />");
-            projectInfo.Append("Hướng khu đất: Tây Bắc<br />");
-            projectInfo.Append("Chủ đầu tư: Lê Trung Sơn - sinh năm: 1985<br />");
-            projectInfo.Append("Số người ở tại công trình: 3 thế hệ: ông bà, vợ chồng chủ hộ và 2 con (6 người)<br />");
-            projectInfo.Append(
-                "Yêu cầu: đầy đủ các không gian: phòng khách, phòng bếp, 5 phòng ngủ, phòng làm việc, sinh hoạt chung, phòng thờ, gara, sân vườn...<br />");
-            ltProjectInfo.Text = projectInfo.ToString();
-
-            ltProjectDesc.Text = imageDesc.ToString();
+            ltImages.Text = imageSlide.ToString();
+            ltProjectInfo.Text = res.Information;
+            ltProjectDesc.Text = res.Description;
         }
     }
 }
