@@ -40,6 +40,15 @@ namespace WebSite.Admin {
         protected global::Telerik.Web.UI.RadFormDecorator QsfFromDecorator;
         
         /// <summary>
+        /// DialogOpener1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.DialogOpener DialogOpener1;
+        
+        /// <summary>
         /// rgProject control.
         /// </summary>
         /// <remarks>
