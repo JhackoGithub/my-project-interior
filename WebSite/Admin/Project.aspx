@@ -7,11 +7,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="padding-bottom: 10px; padding-top: 10px;">
         <button type="button" id="btnAdd" >Tạo mới dự án</button>
+        <button onclick="$find('<%= DialogOpener1.ClientID %>').open('ImageManager', {CssClasses: []});return false;">Open ImageManager</button> 
     </div>
     
     <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
     <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
     <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
+    <telerik:dialogopener runat="server" id="DialogOpener1" HandlerUrl="Telerik.Web.UI.DialogHandler.aspx" style="display: none;"></telerik:dialogopener> 
     <telerik:RadGrid ID="rgProject" runat="server" AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" PageSize="15" Height="300px"
                      EnableEmbeddedSkins="False" CellSpacing="0" GridLines="None" OnItemCommand="rgProject_ItemCommand" OnNeedDataSource="rgProject_NeedDataSource">
         <HeaderStyle HorizontalAlign="Left" Height="30" Font-Bold="True" />
@@ -57,6 +59,24 @@
             $('#btnAdd').click(function() {
                 location.href = 'AddProject.aspx';
             });
+            
+            //function ImageManagerFunction(sender, args) {
+            //    if (!args) {
+            //        alert('No file was selected!');
+            //        return false;
+            //    }
+
+            //    var selectedItem = args.get_value();
+
+
+            //if ($telerik.isIE) {
+            //    //txt.value = selectedItem.outerHTML;  //this is the selected IMG tag element
+            //}
+            //else {
+            //    var path = args.value.getAttribute("src", 2);
+            //    txt.value = "<img src='" + path + "' />";
+            //}
+        //}
     </script>
     </telerik:RadCodeBlock>
 </asp:Content>
