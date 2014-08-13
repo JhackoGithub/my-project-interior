@@ -13,15 +13,19 @@ namespace WebSite.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            FileManagerDialogParameters imageManagerParameters = new FileManagerDialogParameters();
-            imageManagerParameters.ViewPaths = new string[] { "~/Images" };
-            imageManagerParameters.UploadPaths = new string[] { "~/Images" };
-            imageManagerParameters.DeletePaths = new string[] { "~/Images" };
-            imageManagerParameters.MaxUploadFileSize = 5000000;
-            DialogDefinition imageManager = new DialogDefinition(typeof(ImageManagerDialog), imageManagerParameters);
-            imageManager.ClientCallbackFunction = "ImageManagerFunction";
-            imageManager.Width = Unit.Pixel(694);
-            imageManager.Height = Unit.Pixel(440);
+            var imageManagerParameters = new FileManagerDialogParameters
+                                             {
+                                                 ViewPaths = new string[] { "~/Images/projects" },
+                                                 UploadPaths = new string[] { "~/Images/projects" },
+                                                 DeletePaths = new string[] { "~/Images/projects" },
+                                                 MaxUploadFileSize = 157286400
+                                             };
+            var imageManager = new DialogDefinition(typeof(ImageManagerDialog), imageManagerParameters)
+                                   {
+                                       ClientCallbackFunction = "ImageManagerFunction",
+                                       Width = Unit.Pixel(694),
+                                       Height = Unit.Pixel(440)
+                                   };
             DialogOpener1.DialogDefinitions.Add("ImageManager", imageManager);
         }
 

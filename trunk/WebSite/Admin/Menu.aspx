@@ -6,6 +6,7 @@
     <telerik:radscriptmanager runat="server" ID="RadScriptManager1" />
     <telerik:radskinmanager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
     <telerik:radformdecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
+    <div class="admin-projet-info">
     <div style="float: left; margin: 10px; width: 50%;">
         <div style="display: inline-flex; height: 40px;">
             <label style="float: left; vertical-align: baseline; width: 180px;">
@@ -41,12 +42,13 @@
             <label>Tiêu đề</label>
             <input type="text" id="tbName"/>
         </div>
-        <div style="clear: both;">
+        <div style="clear: both; padding-top: 10px;">
             <button type="button" id="btnCreate">Tạo mới</button>
             <button type="button" id="btnCancel" onclick=" location.reload() ">Hủy</button>
         </div>
     </div>
     <div class="admin-project-cate" style="border-left: lightgray 1px solid; float: left; margin: 10px; padding-left: 30px; width: 200px;">
+    </div>
     </div>
     <script type="text/javascript">
 

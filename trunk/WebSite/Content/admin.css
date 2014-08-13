@@ -1,0 +1,253 @@
+﻿body {
+    min-height: 100%;
+    top: 0px;
+    position: relative;
+    color: #878786;
+    font-family: Sans-Serif;
+    font-size: 10pt;
+    background-color: #f1f1f1;
+    margin: 0px;
+}
+
+hr {
+    background-color: #d4d4d4;
+    color: #d4d4d4;
+    height: 1px;
+    border: 0px;
+    clear: both;
+}
+
+#admin-top {
+    width: 960px;
+    margin: auto;
+    height: 40px;
+}
+
+#admin-topnav {
+    height: 30px;
+    background-color: #d3d3d3;
+}
+
+#admin-topnav #topnavTut{
+    width: 935px;
+    margin: 10px auto;
+    padding-left: 5px;
+    padding-top: 7px;
+}
+
+#admin-body {
+    width: 960px;
+    margin: auto;
+}
+
+#admin-body #admin-page {
+    width: 940px;
+    min-height: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 20px 3px #d3d3d3;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 10px;
+    overflow: auto;
+}
+
+#admin-footer {
+    height: 60px;
+    width: 960px;
+    margin: auto;
+    color: #909090;
+    text-align: center;
+}
+
+a.topnav:link, a.topnav:visited {
+    padding-right: 15px;
+    color: #555555;
+    text-decoration: none;
+}
+
+/*Login form*/
+
+#login {
+    margin: 0 0 12px;
+    text-align: right;
+}
+#login a {
+    background: none;
+    color: #999;
+    font-weight: 600;
+    margin: 2px;
+    padding: 0;
+}
+
+#login a:hover { color: #333; }
+
+#loginForm { 
+    width: 50%;
+    padding-left: 20px;
+}
+
+#loginForm .validation-error {
+    display: block;
+    margin-left: 15px;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset legend { display: none; }
+
+fieldset ol {
+    list-style: none;
+    padding: 0;
+}
+
+fieldset ol li { padding-bottom: 5px; }
+
+/*End login*/
+
+.Grid-View {
+    background: url(/Images/iView.png) no-repeat;
+    display: inline-block;
+    height: 20px;
+    padding: 0 5px;
+    width: 20px;
+}
+
+.Grid-Edit {
+    background: url(/Images/iEdit.png) no-repeat;
+    display: inline-block;
+    height: 20px;
+    padding: 0 5px;
+    width: 20px;
+}
+
+.Grid-Delete {
+    background: url(/Images/iDelete.png) no-repeat;
+    display: inline-block;
+    height: 20px;
+    padding: 0 5px;
+    width: 20px;
+}
+
+.admin-project-add {
+    clear: both;
+    float: left;
+    padding-bottom: 5px;
+}
+
+.admin-project-add-label { padding-bottom: 5px; }
+
+.admin-project-add-control { }
+
+.admin-projet-info {
+    /*overflow: auto;*/
+    /*margin: 0 auto;
+    padding-top: 20px;
+    width: 940px;*/
+}
+
+.admin-project-info-left {
+    float: left;
+    width: 50%;
+}
+
+.admin-project-info-right {
+    float: right;
+    width: 50%;
+}
+
+.admin-project-cate,
+.admin-project-cate ul,
+.admin-project-cate li {
+    border: 0;
+    font-weight: normal;
+    line-height: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+}
+
+.admin-project-cate > ul > li {
+    color: #ffffff;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.admin-project-cate > ul > li > div {
+    background: #6f6e6e;
+    border-bottom: 1px solid #222222;
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+    height: 13px;
+    padding: 10px;
+}
+
+/* Sub menu */
+
+.admin-project-cate ul ul { display: block; }
+
+.admin-project-cate ul ul li {
+    border: 1px solid #e0e0e0;
+    border-top: 0;
+    cursor: pointer;
+    line-height: 2;
+}
+
+.admin-project-cate ul ul li div div {
+    float: right;
+    width: 48px;
+}
+
+.admin-project-cate img {
+    cursor: pointer;
+    padding-left: 5px;
+    padding-top: 4px;
+}
+
+.admin-project-cate ul ul li div label {
+    color: #333 !important;
+    cursor: pointer;
+}
+
+.admin-project-cate ul ul li div span {
+    color: #333 !important;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.admin-project-cate ul ul a {
+    color: #4d4d4d;
+    display: block;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.admin-project-cate ul ul li.odd { background: #f4f4f4; }
+
+.admin-project-cate ul ul li.even { background: #fff; }
+
+.admin-image-gallary {
+    float: right;
+    height: 470px;
+    overflow: auto;
+    width: 380px;
+}
+
+.admin-image-gallary div {
+    float: left;
+    padding: 5px;
+    width: 110px;
+}
+
+.admin-image-gallary div img { width: 100px; }
+
+.admin-image-gallary div input { width: 20px; }

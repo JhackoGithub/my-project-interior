@@ -30,7 +30,7 @@
 <div style="height: 550px; margin: 0 auto;">
     <label id="lblContent">Nội dung bài viết</label>
     <br />
-    <telerik:RadEditor runat="server" ID="radContent" Width="960" Height="500" Skin="Metro">
+    <telerik:RadEditor runat="server" ID="radContent" Width="940" Height="500" Skin="Metro">
         <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
         <Modules>
             <telerik:EditorModule Name="RadEditorStatistics" Visible="false" Enabled="true"></telerik:EditorModule>
