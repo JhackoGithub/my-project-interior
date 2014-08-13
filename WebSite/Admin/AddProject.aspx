@@ -97,7 +97,7 @@
                     </div>
                 </div>
                 <div class="admin-project-add">
-                    <a class="k-button k-button-icontext k-grid-update" id="showPopupImage" >Chọn thư mục hình ảnh</a>
+                    <button type="button" id="showPopupImage" >Chọn thư mục hình ảnh</button>
                     <label id="lblFolderSelected" style="display: block;"></label>
                     <label id="lblImageSelected" style="display: none;"></label>
                 </div>
@@ -119,7 +119,7 @@
             <div id="tabs">
                 <div id="project-info">
                     <h3 style="display: none;">Thông tin</h3>
-                    <telerik:RadEditor runat="server" ID="radEditorInfo" ClientIDMode="Static" Width="940" Height="550" Skin="Metro"
+                    <telerik:RadEditor runat="server" ID="radEditorInfo" ClientIDMode="Static" Width="920" Height="550" Skin="Metro"
                                        EditModes="Design">
                         <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
                         <Modules>
@@ -136,7 +136,7 @@
                 </div>
                 <div id="project-desc">
                     <h3 style="display: none;">Thuyết minh</h3>
-                    <telerik:RadEditor runat="server" ID="radEditorDesc" ClientIDMode="Static" Width="940" Height="550" Skin="Metro" EditModes="Design">
+                    <telerik:RadEditor runat="server" ID="radEditorDesc" ClientIDMode="Static" Width="920" Height="550" Skin="Metro" EditModes="Design">
                         <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
                         <Modules>
                             <telerik:EditorModule Name="RadEditorStatistics" Visible="false" Enabled="false"></telerik:EditorModule>
@@ -154,8 +154,8 @@
         </div>
     </div>
     <div style="margin: 10px auto 0 auto; padding-top: 5px; text-align: right;">
-        <a class="k-button k-button-icontext k-grid-update" id="btnSave" ><span class="k-icon k-grid-update"></span>Tạo mới</a>
-        <a class="k-button k-button-icontext k-grid-cancel" id="closepoup" onclick=" location.reload() "><span class="k-icon k-cancel"></span>Hủy</a>
+        <button type="button" id="btnSave" >Tạo mới</button>
+        <button type="button" id="closepoup" >Hủy</button>
     </div>
     <div id="containerimages"></div>
 

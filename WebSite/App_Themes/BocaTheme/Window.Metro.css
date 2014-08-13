@@ -1,8 +1,9 @@
 /* Window/WindowHorizontalSprites.gif */
 .RadWindow_Metro {
     border: 1px solid #e5e5e5;
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    /*font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 12px;*/
+    font: inherit !important;
     /* end shadows */
     /* When ShowContentDuringLoad="false" */
 }

@@ -47,7 +47,9 @@
 
 .Metro.RadEditor .reEditorModes a:hover { border: 1px solid #e5e5e5; }
 
-.Metro.RadEditor .reContentCell { background-color: white; }
+.Metro.RadEditor .reContentCell { background-color: white !important; }
+
+.Metro.RadEditor .reContentCell body { background-color: white !important; }
 
 .Metro.reWrapper, .Metro.RadEditor .reContentCell, .Metro.reColorPicker, .Metro.reInsertTable, .Metro.reDropDownBody, .Metro.reCustomLinks a:hover { border: 1px solid #e5e5e5; }
 

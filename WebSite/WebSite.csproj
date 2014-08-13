@@ -121,9 +121,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Content\admin.css" />
     <Content Include="Admin\AddNews.aspx" />
     <Content Include="Admin\AddProject.aspx" />
     <Content Include="Admin\Consultant.aspx" />
+    <Content Include="Admin\Images.aspx" />
     <Content Include="Admin\Menu.aspx" />
     <Content Include="Admin\News.aspx" />
     <Content Include="Admin\Project.aspx" />
@@ -738,6 +740,13 @@
     <Compile Include="Admin\Consultant.aspx.designer.cs">
       <DependentUpon>Consultant.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Images.aspx.cs">
+      <DependentUpon>Images.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Images.aspx.designer.cs">
+      <DependentUpon>Images.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -981,6 +990,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ImageManager.ascx.cs">
+      <DependentUpon>ImageManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ImageManager.ascx.designer.cs">
+      <DependentUpon>ImageManager.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\NewsManagement.ascx.cs">
       <DependentUpon>NewsManagement.ascx</DependentUpon>
