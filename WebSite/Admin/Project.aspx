@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="Project.aspx.cs" Inherits="WebSite.Admin.Project" Theme="BocaTheme" %>
 <%@ Import Namespace="WebSite.Common" %>
+<%@ Register Src="~/UserControls/ImageManager.ascx" TagPrefix="uc1" TagName="ImageManager" %>
 
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="FeaturedContent" runat="server">
@@ -7,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="padding-bottom: 10px; padding-top: 10px;">
         <button type="button" id="btnAdd" >Tạo mới dự án</button>
-        <button onclick="$find('<%= DialogOpener1.ClientID %>').open('ImageManager', {CssClasses: []});return false;">Open ImageManager</button> 
+        <button id="btnImageManager">Quản lý hình ảnh</button> 
     </div>
     
     <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
@@ -53,30 +54,19 @@
         </ClientSettings>
     </telerik:RadGrid>
     <asp:Literal runat="server" ID="ltScript"></asp:Literal>
-
+    <div id="containerimagemanager"></div>
     <telerik:RadCodeBlock runat="server">
         <script type="text/javascript">
             $('#btnAdd').click(function() {
                 location.href = 'AddProject.aspx';
             });
-            
-            //function ImageManagerFunction(sender, args) {
-            //    if (!args) {
-            //        alert('No file was selected!');
-            //        return false;
-            //    }
 
-            //    var selectedItem = args.get_value();
-
-
-            //if ($telerik.isIE) {
-            //    //txt.value = selectedItem.outerHTML;  //this is the selected IMG tag element
-            //}
-            //else {
-            //    var path = args.value.getAttribute("src", 2);
-            //    txt.value = "<img src='" + path + "' />";
-            //}
-        //}
+            $('#btnImageManager').click(function() {
+                $("#containerimagemanager").html("");
+                var url = "Image.aspx";
+                wnd = ShowPopupIframe(750, 530, "Quản lý hình ảnh", "containerimages", url);
+                $("#containerimagemanager").parent().width(750).height(530);
+            });
     </script>
     </telerik:RadCodeBlock>
 </asp:Content>
