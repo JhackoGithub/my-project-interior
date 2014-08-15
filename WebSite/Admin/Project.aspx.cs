@@ -42,9 +42,18 @@ namespace WebSite.Admin
             return res;
         }
 
-        protected void rgProject_ItemCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e)
+        protected void rgProject_ItemCommand(object sender, GridCommandEventArgs e)
         {
-
+            switch (e.CommandName)
+            {
+                case "delete":
+                    int id = int.Parse(e.CommandArgument.ToString());
+                    var newsBo = new ProjectBO();
+                    int res = newsBo.DeleteProject(id);
+                    string msg = string.Format("Xóa bản tin {0}", res > 0 ? "thành công" : "bị lỗi");
+                    ltScript.Text = string.Format("<script>alert('{0}');</script>", msg);
+                    break;
+            }
         }
     }
 }
