@@ -20,7 +20,7 @@
             <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
             <div style="height: 460px; margin: 0 auto; padding: 10px; width: 730px;">
                 <div style="background-color: lightcyan; float: left; height: 460px; min-width: 330px; overflow: auto;">
-                    <telerik:RadTreeView runat="server" ID="tvFolderImg" ClientIDMode="Static" Skin="Metro" OnClientNodeClicked=" ClientNodeClicked ">
+                    <telerik:RadTreeView runat="server" ID="tvFolderImg" ClientIDMode="Static" Skin="Metro" OnClientNodeClicked=" ClientNodeClicked " OnClientLoad="onLoad">
                     </telerik:RadTreeView>
                 </div>
                 <telerik:RadAjaxLoadingPanel runat="server" ID="radAjaxLoadGrid"></telerik:RadAjaxLoadingPanel>
@@ -34,6 +34,11 @@
             </div>
             <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
             <script type="text/javascript">
+
+                $(document).ready(function () {
+
+                });
+
                 function closePopup() {
                     window.parent.closeChildPopup();
                 }
@@ -54,13 +59,38 @@
                     if (node == null) {
                         return;
                     }
-                    var imgselected = $('input[name=projectimage]:checked').val();
+                    var imgselected = $('input:radio[name=projectimage]:checked').val();
                     var folderelected = node.get_value();
                     window.parent.getFolder(folderelected, imgselected);
                 }
 
                 function bindImageGridCallback(data) {
                     $('.admin-image-gallary').html(data.html);
+                }
+                
+                function onLoad(sender, args) {
+                    var tree = $find("<%= tvFolderImg.ClientID %>");
+                    var value = window.parent.document.getElementById("lblFolderSelected").innerHTML;
+                    var node = tree.findNodeByValue(value);
+                    node.get_parent().expand();
+                    node.select();
+                    var data = JSON.stringify(node.get_value());
+                    var url = "../Handler/ImageHandler.ashx?funcname=select";
+                    callAjaxHandler(url, data, AjaxConst.PostRequest, bindImageGridCallback);
+                    
+                    node = node.get_parent();
+                    while (node != null) {
+                        if (node.expand) {
+                            node.expand();
+                        }
+                        node = node.get_parent();
+                    }
+                    
+                    var imgselected = window.parent.document.getElementById("lblImageSelected").innerHTML;
+                    var $inpuimage = $('input:radio[name=projectimage]');
+
+                    var strfilterimg = '[value="' + imgselected + '"]';
+                    $inpuimage.filter(strfilterimg).click();
                 }
 
             </script>

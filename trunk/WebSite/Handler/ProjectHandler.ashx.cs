@@ -36,7 +36,9 @@ namespace WebSite.Handler
                     jsonString = CreateProject(project);
                     break;
                 case "update":
+                    int proId = context.Request.QueryString["id"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["id"]);
                     project = Utils.ConvertDeserialize<ProjectBE>(context, ref jsonString);
+                    project.Id = proId;
                     jsonString = UpdateProject(project);
                     break;
             }
