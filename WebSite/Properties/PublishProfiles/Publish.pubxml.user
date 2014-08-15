@@ -43,19 +43,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/28/2014 09:26:34</publishTime>
     </File>
     <File Include="Admin/AddNews.aspx">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
+    </File>
+    <File Include="Admin/AddProject.aspx">
+      <publishTime>08/15/2014 17:14:02</publishTime>
     </File>
     <File Include="Admin/Consultant.aspx">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
+    </File>
+    <File Include="Admin/Images.aspx">
+      <publishTime>08/13/2014 11:21:40</publishTime>
+    </File>
+    <File Include="Admin/Menu.aspx">
+      <publishTime>08/13/2014 16:41:46</publishTime>
     </File>
     <File Include="Admin/News.aspx">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/09/2014 10:14:24</publishTime>
+    </File>
+    <File Include="Admin/Project.aspx">
+      <publishTime>08/15/2014 17:16:54</publishTime>
     </File>
     <File Include="AdminMasterPage.Master">
-      <publishTime>08/04/2014 09:33:58</publishTime>
+      <publishTime>08/13/2014 17:29:32</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Button.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Button/ButtonSprites.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -67,7 +79,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Calendar.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Calendar/Metro.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -76,13 +88,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/ComboBox.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/ComboBox/Metro.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/DataPager.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/DataPager/Metro.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -97,19 +109,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/DropDownList.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/DropDownList/Metro.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/DropDownTree.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/DropDownTree/Metro.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Editor.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/13/2014 17:41:07</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Editor/CommonIcons.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -127,7 +139,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Grid.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 17:35:53</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Grid/AddRecord.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -196,7 +208,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Input.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Input/Metro.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -208,10 +220,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/LightBox.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/ListBox.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/ListBox/Metro.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -235,7 +247,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Menu.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Menu/Metro.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -247,7 +259,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/ToolBar.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/ToolBar/Metro.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -265,7 +277,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/TreeList.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/TreeList/Metro.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -295,7 +307,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/TreeView.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 11:25:17</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeView/BottomLine.png">
+      <publishTime>08/18/2011 13:54:31</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeView/FirstNodeSpan.png">
+      <publishTime>08/18/2011 13:54:31</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/TreeView/LoadingIcon.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -303,14 +321,26 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="App_Themes/BocaTheme/TreeView/Metro.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
+    <File Include="App_Themes/BocaTheme/TreeView/MiddleLine.png">
+      <publishTime>08/18/2011 13:54:31</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeView/NodeSpan.png">
+      <publishTime>08/18/2011 13:54:31</publishTime>
+    </File>
     <File Include="App_Themes/BocaTheme/TreeView/PlusMinus.png">
       <publishTime>08/04/2014 09:33:54</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeView/SingleLine.png">
+      <publishTime>08/18/2011 13:54:31</publishTime>
+    </File>
+    <File Include="App_Themes/BocaTheme/TreeView/TopLine.png">
+      <publishTime>08/18/2011 13:54:31</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/TreeView/TriState.png">
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Upload.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/08/2014 10:22:42</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Upload/Metro.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -322,7 +352,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Window.Metro.css">
-      <publishTime>08/04/2014 09:33:54</publishTime>
+      <publishTime>08/13/2014 11:30:52</publishTime>
     </File>
     <File Include="App_Themes/BocaTheme/Window/CommandButtonSprites.gif">
       <publishTime>08/04/2014 09:33:54</publishTime>
@@ -337,7 +367,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:33:54</publishTime>
     </File>
     <File Include="Architecture.aspx">
-      <publishTime>08/04/2014 09:33:55</publishTime>
+      <publishTime>08/09/2014 10:35:01</publishTime>
     </File>
     <File Include="bin/AspNet.ScriptManager.jQuery.dll">
       <publishTime>08/04/2014 09:42:12</publishTime>
@@ -346,10 +376,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:42:12</publishTime>
     </File>
     <File Include="bin/BLL.dll">
-      <publishTime>08/04/2014 14:21:04</publishTime>
+      <publishTime>08/15/2014 17:17:36</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>08/04/2014 14:21:04</publishTime>
+      <publishTime>08/15/2014 17:17:35</publishTime>
     </File>
     <File Include="bin/DotNetOpenAuth.AspNet.dll">
       <publishTime>08/04/2014 09:42:13</publishTime>
@@ -370,7 +400,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:42:18</publishTime>
     </File>
     <File Include="bin/Entities.dll">
-      <publishTime>08/04/2014 14:21:03</publishTime>
+      <publishTime>08/15/2014 17:17:35</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>08/04/2014 09:42:20</publishTime>
@@ -389,6 +419,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/Mono.Math.dll">
       <publishTime>08/04/2014 09:42:17</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>05/14/2014 14:18:05</publishTime>
     </File>
     <File Include="bin/Org.Mentalis.Security.Cryptography.dll">
       <publishTime>08/04/2014 09:42:17</publishTime>
@@ -409,58 +442,523 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/28/2014 09:28:20</publishTime>
     </File>
     <File Include="bin/WebSite.dll">
-      <publishTime>08/04/2014 14:21:05</publishTime>
+      <publishTime>08/15/2014 17:19:33</publishTime>
     </File>
     <File Include="commingsoon.aspx">
-      <publishTime>08/04/2014 09:33:55</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Consultant-1-1.aspx">
-      <publishTime>08/04/2014 09:33:55</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Consultant-1-2.aspx">
-      <publishTime>08/04/2014 09:33:58</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Consultant-1-3.aspx">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Consultant-1-4.aspx">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Consultant-2-0.aspx">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Consultant-2-1.aspx">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Consultant.aspx">
-      <publishTime>08/04/2014 09:33:55</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Contact.aspx">
-      <publishTime>08/04/2014 14:12:15</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
+    </File>
+    <File Include="Content/admin.css">
+      <publishTime>08/13/2014 17:31:46</publishTime>
     </File>
     <File Include="Content/camera.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/grid.css">
-      <publishTime>08/04/2014 09:35:49</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/ion.zoom.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
+    </File>
+    <File Include="Content/Kendo/Black/editor.png">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Black/imagebrowser.png">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Black/indeterminate.gif">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Black/loading-image.gif">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Black/loading.gif">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Black/loading_2x.gif">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Black/slider-h.gif">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Black/slider-v.gif">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Black/sprite.png">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Black/sprite_2x.png">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/BlueOpal/editor.png">
+      <publishTime>05/14/2014 14:17:20</publishTime>
+    </File>
+    <File Include="Content/Kendo/BlueOpal/imagebrowser.png">
+      <publishTime>05/14/2014 14:17:20</publishTime>
+    </File>
+    <File Include="Content/Kendo/BlueOpal/indeterminate.gif">
+      <publishTime>05/14/2014 14:17:20</publishTime>
+    </File>
+    <File Include="Content/Kendo/BlueOpal/loading-image.gif">
+      <publishTime>05/14/2014 14:17:20</publishTime>
+    </File>
+    <File Include="Content/Kendo/BlueOpal/loading.gif">
+      <publishTime>05/14/2014 14:17:20</publishTime>
+    </File>
+    <File Include="Content/Kendo/BlueOpal/loading_2x.gif">
+      <publishTime>05/14/2014 14:17:20</publishTime>
+    </File>
+    <File Include="Content/Kendo/BlueOpal/slider-h.gif">
+      <publishTime>05/14/2014 14:17:20</publishTime>
+    </File>
+    <File Include="Content/Kendo/BlueOpal/slider-v.gif">
+      <publishTime>05/14/2014 14:17:20</publishTime>
+    </File>
+    <File Include="Content/Kendo/BlueOpal/sprite.png">
+      <publishTime>05/14/2014 14:17:20</publishTime>
+    </File>
+    <File Include="Content/Kendo/BlueOpal/sprite_2x.png">
+      <publishTime>05/14/2014 14:17:20</publishTime>
+    </File>
+    <File Include="Content/Kendo/Bootstrap/editor.png">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Bootstrap/imagebrowser.png">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Bootstrap/indeterminate.gif">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Bootstrap/loading-image.gif">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Bootstrap/loading.gif">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Bootstrap/loading_2x.gif">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Bootstrap/slider-h.gif">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Bootstrap/slider-v.gif">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Bootstrap/sprite.png">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Bootstrap/sprite_2x.png">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/Default/editor.png">
+      <publishTime>05/14/2014 14:17:17</publishTime>
+    </File>
+    <File Include="Content/Kendo/Default/imagebrowser.png">
+      <publishTime>05/14/2014 14:17:17</publishTime>
+    </File>
+    <File Include="Content/Kendo/Default/indeterminate.gif">
+      <publishTime>05/14/2014 14:17:17</publishTime>
+    </File>
+    <File Include="Content/Kendo/Default/loading-image.gif">
+      <publishTime>05/14/2014 14:17:17</publishTime>
+    </File>
+    <File Include="Content/Kendo/Default/loading.gif">
+      <publishTime>05/14/2014 14:17:17</publishTime>
+    </File>
+    <File Include="Content/Kendo/Default/loading_2x.gif">
+      <publishTime>05/14/2014 14:17:17</publishTime>
+    </File>
+    <File Include="Content/Kendo/Default/slider-h.gif">
+      <publishTime>05/14/2014 14:17:17</publishTime>
+    </File>
+    <File Include="Content/Kendo/Default/slider-v.gif">
+      <publishTime>05/14/2014 14:17:17</publishTime>
+    </File>
+    <File Include="Content/Kendo/Default/sprite.png">
+      <publishTime>05/14/2014 14:17:17</publishTime>
+    </File>
+    <File Include="Content/Kendo/Default/sprite_2x.png">
+      <publishTime>05/14/2014 14:17:17</publishTime>
+    </File>
+    <File Include="Content/Kendo/Flat/editor.png">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Flat/imagebrowser.png">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Flat/indeterminate.gif">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Flat/loading-image.gif">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Flat/loading.gif">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Flat/loading_2x.gif">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Flat/slider-h.gif">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Flat/slider-v.gif">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Flat/sprite.png">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Flat/sprite_2x.png">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/HighContrast/editor.png">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/HighContrast/imagebrowser.png">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/HighContrast/indeterminate.gif">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/HighContrast/loading-image.gif">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/HighContrast/loading.gif">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/HighContrast/loading_2x.gif">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/HighContrast/slider-h.gif">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/HighContrast/slider-v.gif">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/HighContrast/sprite.png">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/HighContrast/sprite_2x.png">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.black.min.css">
+      <publishTime>05/14/2014 14:17:17</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.blueopal.min.css">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.bootstrap.min.css">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.common-bootstrap.min.css">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.common.min.css">
+      <publishTime>05/14/2014 14:17:20</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.default.min.css">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.flat.min.css">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.highcontrast.min.css">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.metro.min.css">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.metroblack.min.css">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.moonlight.min.css">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.rtl.min.css">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.silver.min.css">
+      <publishTime>05/14/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Content/Kendo/kendo.uniform.min.css">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/Metro/editor.png">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Metro/imagebrowser.png">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Metro/indeterminate.gif">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Metro/loading-image.gif">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Metro/loading.gif">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Metro/loading_2x.gif">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Metro/slider-h.gif">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Metro/slider-v.gif">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Metro/sprite.png">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/Metro/sprite_2x.png">
+      <publishTime>05/14/2014 14:17:18</publishTime>
+    </File>
+    <File Include="Content/Kendo/MetroBlack/editor.png">
+      <publishTime>05/14/2014 14:17:14</publishTime>
+    </File>
+    <File Include="Content/Kendo/MetroBlack/imagebrowser.png">
+      <publishTime>05/14/2014 14:17:14</publishTime>
+    </File>
+    <File Include="Content/Kendo/MetroBlack/indeterminate.gif">
+      <publishTime>05/14/2014 14:17:14</publishTime>
+    </File>
+    <File Include="Content/Kendo/MetroBlack/loading-image.gif">
+      <publishTime>05/14/2014 14:17:14</publishTime>
+    </File>
+    <File Include="Content/Kendo/MetroBlack/loading.gif">
+      <publishTime>05/14/2014 14:17:14</publishTime>
+    </File>
+    <File Include="Content/Kendo/MetroBlack/loading_2x.gif">
+      <publishTime>05/14/2014 14:17:14</publishTime>
+    </File>
+    <File Include="Content/Kendo/MetroBlack/slider-h.gif">
+      <publishTime>05/14/2014 14:17:14</publishTime>
+    </File>
+    <File Include="Content/Kendo/MetroBlack/slider-v.gif">
+      <publishTime>05/14/2014 14:17:14</publishTime>
+    </File>
+    <File Include="Content/Kendo/MetroBlack/sprite.png">
+      <publishTime>05/14/2014 14:17:14</publishTime>
+    </File>
+    <File Include="Content/Kendo/MetroBlack/sprite_2x.png">
+      <publishTime>05/14/2014 14:17:14</publishTime>
+    </File>
+    <File Include="Content/Kendo/Moonlight/editor.png">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/Moonlight/imagebrowser.png">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/Moonlight/indeterminate.gif">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/Moonlight/loading-image.gif">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/Moonlight/loading.gif">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/Moonlight/loading_2x.gif">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/Moonlight/slider-h.gif">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/Moonlight/slider-v.gif">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/Moonlight/sprite.png">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/Moonlight/sprite_2x.png">
+      <publishTime>05/14/2014 14:17:19</publishTime>
+    </File>
+    <File Include="Content/Kendo/Silver/editor.png">
+      <publishTime>05/14/2014 14:17:21</publishTime>
+    </File>
+    <File Include="Content/Kendo/Silver/imagebrowser.png">
+      <publishTime>05/14/2014 14:17:21</publishTime>
+    </File>
+    <File Include="Content/Kendo/Silver/indeterminate.gif">
+      <publishTime>05/14/2014 14:17:21</publishTime>
+    </File>
+    <File Include="Content/Kendo/Silver/loading-image.gif">
+      <publishTime>05/14/2014 14:17:21</publishTime>
+    </File>
+    <File Include="Content/Kendo/Silver/loading.gif">
+      <publishTime>05/14/2014 14:17:21</publishTime>
+    </File>
+    <File Include="Content/Kendo/Silver/loading_2x.gif">
+      <publishTime>05/14/2014 14:17:21</publishTime>
+    </File>
+    <File Include="Content/Kendo/Silver/slider-h.gif">
+      <publishTime>05/14/2014 14:17:21</publishTime>
+    </File>
+    <File Include="Content/Kendo/Silver/slider-v.gif">
+      <publishTime>05/14/2014 14:17:21</publishTime>
+    </File>
+    <File Include="Content/Kendo/Silver/sprite.png">
+      <publishTime>05/14/2014 14:17:21</publishTime>
+    </File>
+    <File Include="Content/Kendo/Silver/sprite_2x.png">
+      <publishTime>05/14/2014 14:17:21</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/brushed-metal.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots1.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots10.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots11.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots12.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots13.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots2.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots3.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots4.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots5.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots6.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots7.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots8.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/dots9.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/glass-lighter.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/glass.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/highlight.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/hsv-gradient.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/hue.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/leather1.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/leather2.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/noise.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/stripe1.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/stripe2.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/stripe3.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/stripe4.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/stripe5.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/stripe6.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/transparency.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/textures/transtexture.png">
+      <publishTime>05/14/2014 14:17:16</publishTime>
+    </File>
+    <File Include="Content/Kendo/Uniform/editor.png">
+      <publishTime>05/14/2014 14:17:23</publishTime>
+    </File>
+    <File Include="Content/Kendo/Uniform/imagebrowser.png">
+      <publishTime>05/14/2014 14:17:23</publishTime>
+    </File>
+    <File Include="Content/Kendo/Uniform/indeterminate.gif">
+      <publishTime>05/14/2014 14:17:23</publishTime>
+    </File>
+    <File Include="Content/Kendo/Uniform/loading-image.gif">
+      <publishTime>05/14/2014 14:17:23</publishTime>
+    </File>
+    <File Include="Content/Kendo/Uniform/loading.gif">
+      <publishTime>05/14/2014 14:17:23</publishTime>
+    </File>
+    <File Include="Content/Kendo/Uniform/loading_2x.gif">
+      <publishTime>05/14/2014 14:17:23</publishTime>
+    </File>
+    <File Include="Content/Kendo/Uniform/slider-h.gif">
+      <publishTime>05/14/2014 14:17:23</publishTime>
+    </File>
+    <File Include="Content/Kendo/Uniform/slider-v.gif">
+      <publishTime>05/14/2014 14:17:23</publishTime>
+    </File>
+    <File Include="Content/Kendo/Uniform/sprite.png">
+      <publishTime>05/14/2014 14:17:23</publishTime>
+    </File>
+    <File Include="Content/Kendo/Uniform/sprite_2x.png">
+      <publishTime>05/14/2014 14:17:23</publishTime>
     </File>
     <File Include="Content/Menu.css">
-      <publishTime>08/04/2014 09:35:49</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/normalize.css">
-      <publishTime>08/04/2014 09:35:49</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/prettyPhoto.css">
-      <publishTime>08/04/2014 09:35:49</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>08/04/2014 09:35:49</publishTime>
+      <publishTime>08/13/2014 16:19:03</publishTime>
     </File>
     <File Include="Content/StyleSheet.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
       <publishTime>08/04/2014 09:35:48</publishTime>
@@ -502,49 +1000,49 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:35:48</publishTime>
     </File>
     <File Include="Content/themes/base/jquery-ui.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.accordion.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.all.css">
       <publishTime>08/04/2014 09:35:48</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.autocomplete.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.base.css">
       <publishTime>08/04/2014 09:35:48</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.button.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.core.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.datepicker.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.dialog.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.progressbar.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.resizable.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.selectable.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.slider.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.tabs.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/jquery.ui.theme.css">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png">
       <publishTime>08/04/2014 09:35:48</publishTime>
@@ -624,26 +1122,44 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
       <publishTime>08/04/2014 09:35:48</publishTime>
     </File>
+    <File Include="Contents/AddProject.aspx">
+      <publishTime>08/15/2014 15:56:03</publishTime>
+    </File>
+    <File Include="Contents/ImageManager.aspx">
+      <publishTime>08/15/2014 16:59:44</publishTime>
+    </File>
     <File Include="Contents/Investigate.aspx">
-      <publishTime>08/04/2014 14:16:10</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Contents/Process.html">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Contents/Quote.html">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>08/04/2014 09:33:58</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="DetailMasterPage.master">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>08/04/2014 09:23:34</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>08/04/2014 09:33:58</publishTime>
+    </File>
+    <File Include="Handler/BaseHandler.ashx">
+      <publishTime>08/06/2014 11:21:59</publishTime>
+    </File>
+    <File Include="Handler/ImageHandler.ashx">
+      <publishTime>08/07/2014 17:11:53</publishTime>
+    </File>
+    <File Include="Handler/MenuHanlder.ashx">
+      <publishTime>08/06/2014 11:23:03</publishTime>
+    </File>
+    <File Include="Handler/ProjectHandler.ashx">
+      <publishTime>08/07/2014 15:54:45</publishTime>
     </File>
     <File Include="Images/accent.png">
       <publishTime>08/04/2014 09:33:58</publishTime>
@@ -1270,10 +1786,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/09/2014 11:35:00</publishTime>
     </File>
     <File Include="Interior.aspx">
-      <publishTime>08/04/2014 09:33:55</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="Lesson.aspx">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
     </File>
     <File Include="lesson1.aspx">
       <publishTime>07/21/2014 14:38:40</publishTime>
@@ -1300,28 +1816,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/21/2014 14:37:36</publishTime>
     </File>
     <File Include="LessonMasterPage.master">
-      <publishTime>08/04/2014 09:33:55</publishTime>
+      <publishTime>08/08/2014 10:22:41</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>08/13/2014 17:20:51</publishTime>
     </File>
     <File Include="NestedMasterPage.master">
-      <publishTime>08/04/2014 09:33:58</publishTime>
+      <publishTime>08/09/2014 10:34:44</publishTime>
     </File>
     <File Include="News.aspx">
-      <publishTime>08/04/2014 09:33:58</publishTime>
+      <publishTime>08/08/2014 10:26:15</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>08/04/2014 09:33:58</publishTime>
     </File>
     <File Include="Project-Info.aspx">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/09/2014 11:51:23</publishTime>
+    </File>
+    <File Include="Project.aspx">
+      <publishTime>08/09/2014 11:59:01</publishTime>
     </File>
     <File Include="Question.aspx">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/08/2014 10:22:40</publishTime>
     </File>
     <File Include="Refer.aspx">
-      <publishTime>08/04/2014 09:35:49</publishTime>
+      <publishTime>08/08/2014 10:22:40</publishTime>
     </File>
     <File Include="Scripts/camera.js">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:40</publishTime>
     </File>
     <File Include="Scripts/camera.min.js">
       <publishTime>08/04/2014 09:35:48</publishTime>
@@ -1330,22 +1852,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/04/2014 09:35:48</publishTime>
     </File>
     <File Include="Scripts/jquery-1.8.2.js">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:26:15</publishTime>
     </File>
     <File Include="Scripts/jquery-1.8.2.min.js">
       <publishTime>08/04/2014 09:35:48</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-1.8.24.js">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:40</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-1.8.24.min.js">
       <publishTime>08/04/2014 09:35:48</publishTime>
     </File>
     <File Include="Scripts/jquery.carouFredSel-6.0.4-packed.js">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:40</publishTime>
     </File>
     <File Include="Scripts/jquery.carouFredSel-6.1.0-packed.js">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:22:40</publishTime>
     </File>
     <File Include="Scripts/jquery.easing.1.3.js">
       <publishTime>08/04/2014 09:35:48</publishTime>
@@ -1353,44 +1875,53 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/jquery.min.js">
       <publishTime>08/04/2014 09:35:48</publishTime>
     </File>
+    <File Include="Scripts/kendo.core.min.js">
+      <publishTime>05/14/2014 14:17:25</publishTime>
+    </File>
+    <File Include="Scripts/kendo.web.min.js">
+      <publishTime>05/14/2014 14:17:25</publishTime>
+    </File>
     <File Include="Scripts/modernizr-2.6.2.js">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 10:26:15</publishTime>
     </File>
     <File Include="Scripts/Script.js">
-      <publishTime>08/04/2014 09:35:48</publishTime>
+      <publishTime>08/08/2014 16:11:28</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/08/2014 10:22:40</publishTime>
     </File>
     <File Include="Site.Mobile.Master">
       <publishTime>08/04/2014 09:33:55</publishTime>
     </File>
     <File Include="UserControls/Footer.ascx">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/08/2014 10:22:40</publishTime>
+    </File>
+    <File Include="UserControls/ImageManager.ascx">
+      <publishTime>08/14/2014 09:36:29</publishTime>
     </File>
     <File Include="UserControls/Menu.ascx">
-      <publishTime>08/04/2014 14:26:34</publishTime>
+      <publishTime>08/09/2014 10:42:37</publishTime>
     </File>
     <File Include="UserControls/MenuLeft.ascx">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/09/2014 11:59:17</publishTime>
     </File>
     <File Include="UserControls/MenuSubTop.ascx">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/08/2014 10:22:40</publishTime>
     </File>
     <File Include="UserControls/MenuTop.ascx">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/08/2014 10:22:40</publishTime>
     </File>
     <File Include="UserControls/NewsManagement.ascx">
-      <publishTime>08/04/2014 10:02:45</publishTime>
+      <publishTime>08/13/2014 17:24:50</publishTime>
     </File>
     <File Include="UserControls/SameProject.ascx">
-      <publishTime>08/04/2014 09:35:46</publishTime>
+      <publishTime>08/08/2014 10:22:40</publishTime>
     </File>
     <File Include="ViewSwitcher.ascx">
       <publishTime>08/04/2014 09:33:58</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/04/2014 14:21:08</publishTime>
+      <publishTime>08/15/2014 17:17:42</publishTime>
     </File>
   </ItemGroup>
 </Project>

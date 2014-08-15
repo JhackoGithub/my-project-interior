@@ -136,43 +136,6 @@
                             <div class="admin-project-add-control" style="height: 200px; overflow: auto; width: 240px;">
                                 <div class="admin-project-cate" style="float: left; width: 220px;">
                                     <asp:Literal runat="server" ID="ltMenu"></asp:Literal>
-                                    <%--<ul>
-                                    <li>
-                                        <div>
-                                            <div style="float: left;">Biệt thự</div>
-                                        </div>
-                                        <ul>
-                                            <li class="even">
-                                                <div>
-                                                    <asp:RadioButton runat="server" GroupName="Project-Type" ID="rdVillaModern" Text="Hiện đại" />
-                                                </div>
-
-                                            </li>
-                                            <li class="last odd">
-                                                <div>
-                                                    <asp:RadioButton runat="server" GroupName="Project-Type" ID="rdVillaClassic" Text="Cổ điển" />
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <div>
-                                            <div style="float: left;">Nhà lô phố</div>
-                                        </div>
-                                        <ul>
-                                            <li class="even">
-                                                <div>
-                                                <asp:RadioButton runat="server" GroupName="Project-Type" ID="rdBatchModern" Text="Hiện đại" />
-                                                    </div>
-                                            </li>
-                                            <li class="last odd">
-                                                <div>
-                                                <asp:RadioButton runat="server" GroupName="Project-Type" ID="rdBatchClassic" Text="Cổ điển" />
-                                                    </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>--%>
                                 </div>
                             </div>
                         </div>

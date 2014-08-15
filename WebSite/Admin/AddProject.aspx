@@ -162,6 +162,7 @@
     <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
         <script type="text/javascript">
             var wnd;
+            var _id = 0;
             $(document).ready(function() {
                 $('#tabs').carouFredSel({
                     circular: false,
@@ -181,10 +182,10 @@
             });
 
             function bindProjectById() {
-                var id = getParameterByName('id');
-                if (id == "-1")
+                _id = getParameterByName('id');
+                if (_id == "-1")
                     return;
-                var url = "../Handler/ProjectHandler.ashx?funcname=edit&id=" + id;
+                var url = "../Handler/ProjectHandler.ashx?funcname=edit&id=" + _id;
                 callAjaxHandler(url, null, AjaxConst.GetRequest, bindProjectByIdCallback);
             }
 
@@ -247,27 +248,43 @@
             }
 
             function bindEntityToControl(project) {
-                //$radios.filter('[value=Male]').prop('checked', true);
-                $('input:radio[name=rdType]:checked').val(project.Type);
-                $('input:radio[name=rdKind]:checked').val(project.CategoryId);
+                var $rdType = $('input:radio[name=rdType]');
+                var $rdKind = $('input:radio[name=rdKind]');
+                
+                var strfilterKind = project.CategoryId == null ? '[value=""]' : '[value="' + project.CategoryId + '"]';
+                $rdKind.filter(strfilterKind).click();
+                
+                var strfilterType = project.Type == null ? '[value="0"]' : '[value="' + project.Type + '"]';
+                $rdType.filter(strfilterType).click();
+
                 var editorDesc = $find("<%=radEditorDesc.ClientID%>");
                 var editorInfo = $find("<%=radEditorInfo.ClientID%>");
                 editorDesc.set_html(project.Description);
                 editorInfo.set_html(project.Information);
                 $('#tbName').val(project.Name);
+
+                $('#lblFolderSelected').text(project.PathImage);
+                $('#lblImageSelected').text(project.PrimaryImage);
+                
+                $('#btnSave').html('Lưu thay đổi');
+                $rdKind.attr('disabled', true);
+                $rdType.attr('disabled', true);
             }
             
             $('#btnSave').click(function () {
                 var project = new Object();
                 bindControlToEntity(project);
                 var data = JSON.stringify(project);
-                var url = "../Handler/ProjectHandler.ashx?funcname=create";
+                var action = _id == 0 ? 'create' : 'update';
+                var url = "../Handler/ProjectHandler.ashx?funcname=" + action + "&id=" + _id;
                 callAjaxHandler(url, data, AjaxConst.PostRequest, createProjectCallback);
             });
 
             function createProjectCallback(data) {
                 if (data != "0") {
-                    console.log("Create project successfull");
+                    var msg = _id == 0 ? "Đã thêm mới thành công" : "Bản ghi đã được thay đổi";
+                    alert(msg);
+                    window.location.href = "/Admin/Project.aspx";
                 }
             }
 
