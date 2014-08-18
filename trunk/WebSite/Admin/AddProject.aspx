@@ -176,14 +176,13 @@
                         }
                     }
                 });
-
+                _id = getParameterByName('id');
                 bindMenu();
                 bindProjectById();
             });
 
             function bindProjectById() {
-                _id = getParameterByName('id');
-                if (_id == "-1")
+                if (_id == "0")
                     return;
                 var url = "../Handler/ProjectHandler.ashx?funcname=edit&id=" + _id;
                 callAjaxHandler(url, null, AjaxConst.GetRequest, bindProjectByIdCallback);
@@ -218,7 +217,7 @@
 
             function bindMenu() {
                 var resType = $('input[name=rdType]:checked').val();
-                var url = "../Handler/MenuHanlder.ashx?funcname=getall&frm=project&type=" + resType;
+                var url = "../Handler/MenuHanlder.ashx?funcname=getall&frm=project&type=" + resType + "&projectid=" + _id;
                 callAjaxHandler(url, null, AjaxConst.GetRequest, bindMenuCallback);
             }
 

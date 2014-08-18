@@ -19,6 +19,7 @@ namespace WebSite.Handler
             string jsonString = string.Empty;
             context.Response.ContentType = "text/plain";
             MenuLeft menuLeft;
+            int projectId = context.Request.QueryString["projectid"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["projectid"]);
             int id = context.Request.QueryString["id"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["id"]);
             string action = context.Request.QueryString["funcname"].ToLower();
             int type = Convert.ToInt32(context.Request.QueryString["type"]);
@@ -28,7 +29,7 @@ namespace WebSite.Handler
                     string form = context.Request.QueryString["frm"] == null
                                       ? string.Empty
                                       : context.Request.QueryString["frm"].ToLower();
-                    jsonString = GetMenus(type, form);
+                    jsonString = GetMenus(type, form, projectId);
                     break;
                 case "create":
                     menuLeft = Utils.ConvertDeserialize<MenuLeft>(context, ref jsonString);
@@ -49,7 +50,7 @@ namespace WebSite.Handler
             context.Response.Write(jsonString);
         }
 
-        private string GetMenus(int type, string form)
+        private string GetMenus(int type, string form, int proId)
         {
             var bo = new MenuLeftBO();
             List<MenuLeft> menus = bo.GetMenuLeft(type);
@@ -71,7 +72,7 @@ namespace WebSite.Handler
             }
             else
             {
-                GenerateMenuProject(menus, htmlMenu);
+                GenerateMenuProject(menus, htmlMenu, proId);
                 json = new
                            {
                                menu = htmlMenu.ToString(),
@@ -123,8 +124,16 @@ namespace WebSite.Handler
             htmlMenu.Append("</ul>");
         }
 
-        private void GenerateMenuProject(List<MenuLeft> menus, StringBuilder htmlMenu)
+        private void GenerateMenuProject(List<MenuLeft> menus, StringBuilder htmlMenu, int proId)
         {
+            var cateId = -1;
+            if(proId > 0)
+            {
+                var bo = new ProjectBO();
+                var project = bo.GetProjectById(proId);
+                cateId = project.CategoryId;
+            }
+            
             htmlMenu.Append("<ul>");
             foreach (MenuLeft menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
             {
@@ -145,11 +154,11 @@ namespace WebSite.Handler
                     {
                         htmlMenu.AppendFormat("<li>" +
                                               "<div>" +
-                                              "<input id='rd{0}' type='radio' name='rdKind' value='{1}'>" +
-                                              "<label for='rd{2}'>{3}</label>" +
+                                              "<input id='rd{0}' type='radio' name='rdKind' value='{1}' {2}>" +
+                                              "<label for='rd{3}'>{4}</label>" +
                                               "</div>" +
                                               "</li>",
-                                              menuLeft.Id, menuLeft.Id, menuLeft.Id, menuLeft.Name);
+                                              menuLeft.Id, menuLeft.Id, cateId == menuLeft.Id ? "checked='checked'" : string.Empty, menuLeft.Id, menuLeft.Name);
                     }
                     htmlMenu.Append("</ul>");
                 }

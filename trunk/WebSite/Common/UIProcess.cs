@@ -18,7 +18,7 @@ namespace WebSite.Common
 
         public static string GetDefaultLink(string query, bool isFullPath = false)
         {
-            return GetFullPath(isFullPath, "../Admin/News.aspx", query);
+            return GetFullPath(isFullPath, "/Admin/News.aspx", query);
         }
     }
 }
