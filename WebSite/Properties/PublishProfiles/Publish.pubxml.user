@@ -442,7 +442,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/28/2014 09:28:20</publishTime>
     </File>
     <File Include="bin/WebSite.dll">
-      <publishTime>08/15/2014 17:19:33</publishTime>
+      <publishTime>08/15/2014 17:35:14</publishTime>
     </File>
     <File Include="commingsoon.aspx">
       <publishTime>08/08/2014 10:22:41</publishTime>

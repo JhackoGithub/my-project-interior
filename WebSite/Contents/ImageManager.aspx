@@ -70,8 +70,12 @@
                 
                 function onLoad(sender, args) {
                     var tree = $find("<%= tvFolderImg.ClientID %>");
+                    if (tree == null)
+                        return;
                     var value = window.parent.document.getElementById("lblFolderSelected").innerHTML;
                     var node = tree.findNodeByValue(value);
+                    if (node == null)
+                        return;
                     node.get_parent().expand();
                     node.select();
                     var data = JSON.stringify(node.get_value());

@@ -8,13 +8,13 @@
     $(function() {
 
         var tab = getParameterByName('tab');
-        if (tab == 1) {
+        if (tab == '1') {
             $('.tab-menu #menu-tab-1').addClass('active');
-        } else if (tab == 2) {
+        } else if (tab == '2') {
             $('.tab-menu #menu-tab-2').addClass('active');
-        } else if (tab == 3) {
+        } else if (tab == '3') {
             $('.tab-menu #menu-tab-3').addClass('active');
-        } else if (tab == 4) {
+        } else if (tab == '4') {
             $('.tab-menu #menu-tab-4').addClass('active');
         }
     });
