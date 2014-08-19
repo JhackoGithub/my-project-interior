@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Kiến trúc" Language="C#" MasterPageFile="~/NestedMasterPage.Master" AutoEventWireup="true" CodeBehind="Architecture.aspx.cs" Inherits="WebSite.Architecture" Theme="BocaTheme" %>
+﻿<%@ Page Title="Kiến trúc" Language="C#" MasterPageFile="~/NestedMasterPage.Master" AutoEventWireup="true" CodeBehind="Architecture.aspx.cs" Inherits="WebSite.Architecture" Theme="Windows7" %>
 
 <%@ Register Src="~/UserControls/MenuLeft.ascx" TagPrefix="ucMenuLeft" TagName="MenuLeft" %>
 <%@ Register Src="~/UserControls/MenuTop.ascx" TagPrefix="ucMenuTop" TagName="MenuTop" %>

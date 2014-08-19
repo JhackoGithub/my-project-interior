@@ -53,11 +53,12 @@ namespace WebSite.Handler
         private string GetMenus(int type, string form, int proId)
         {
             var bo = new MenuLeftBO();
-            List<MenuLeft> menus = bo.GetMenuLeft(type);
+            List<MenuLeft> menus = null;
             var htmlMenu = new StringBuilder();
             object json;
             if (string.IsNullOrEmpty(form))
             {
+                menus = bo.GetMenuLeft(type);
                 GenerateMenu(menus, htmlMenu);
                 var htmlDropdown = new StringBuilder();
                 foreach (MenuLeft menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
@@ -72,7 +73,16 @@ namespace WebSite.Handler
             }
             else
             {
-                GenerateMenuProject(menus, htmlMenu, proId);
+                var cateId = -1;
+                if (proId > 0)
+                {
+                    var proBo = new ProjectBO();
+                    var project = proBo.GetProjectById(proId);
+                    cateId = project.CategoryId;
+                    type = project.Type;
+                }
+                menus = bo.GetMenuLeft(type);
+                GenerateMenuProject(menus, htmlMenu, cateId);
                 json = new
                            {
                                menu = htmlMenu.ToString(),
@@ -124,16 +134,8 @@ namespace WebSite.Handler
             htmlMenu.Append("</ul>");
         }
 
-        private void GenerateMenuProject(List<MenuLeft> menus, StringBuilder htmlMenu, int proId)
+        private void GenerateMenuProject(List<MenuLeft> menus, StringBuilder htmlMenu, int cateId)
         {
-            var cateId = -1;
-            if(proId > 0)
-            {
-                var bo = new ProjectBO();
-                var project = bo.GetProjectById(proId);
-                cateId = project.CategoryId;
-            }
-            
             htmlMenu.Append("<ul>");
             foreach (MenuLeft menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
             {

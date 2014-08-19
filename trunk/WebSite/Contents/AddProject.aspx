@@ -106,7 +106,7 @@
     <body>
         <form id="form1" runat="server">
             <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
-            <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
+            <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
             <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
             <div class="admin-projet-info">
                 <div style="height: 600px;">
@@ -147,7 +147,7 @@
                             <div id="tabs">
                                 <div id="project-info">
                                     <h3 style="display: none;">Thông tin</h3>
-                                    <telerik:RadEditor runat="server" ID="radEditorInfo" Width="600" Height="500" Skin="Metro"
+                                    <telerik:RadEditor runat="server" ID="radEditorInfo" Width="600" Height="500" Skin="Windows7"
                                                        EditModes="Design">
                                         <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
                                         <Modules>
@@ -166,7 +166,7 @@
                                 </div>
                                 <div id="project-desc">
                                     <h3 style="display: none;">Thuyết minh</h3>
-                                    <telerik:RadEditor runat="server" ID="radEditorDesc" Width="600" Height="500" Skin="Metro" EditModes="Design">
+                                    <telerik:RadEditor runat="server" ID="radEditorDesc" Width="600" Height="500" Skin="Windows7" EditModes="Design">
                                         <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
                                         <Modules>
                                             <telerik:EditorModule Name="RadEditorStatistics" Visible="false" Enabled="false"></telerik:EditorModule>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="AddNews.aspx.cs" Inherits="WebSite.Admin.AddNews" Theme="BocaTheme" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="AddNews.aspx.cs" Inherits="WebSite.Admin.AddNews" Theme="Windows7" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="~/UserControls/NewsManagement.ascx" TagPrefix="ucNewsMng" TagName="NewsMng" %>
 
@@ -6,7 +6,6 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    
     <ucNewsMng:NewsMng runat="server" ID="ucNews" />
     
     <div style="clear: both;"></div>

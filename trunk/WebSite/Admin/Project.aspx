@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="Project.aspx.cs" Inherits="WebSite.Admin.Project" Theme="BocaTheme" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="Project.aspx.cs" Inherits="WebSite.Admin.Project" Theme="Windows7" %>
 <%@ Import Namespace="WebSite.Common" %>
 <%@ Register Src="~/UserControls/ImageManager.ascx" TagPrefix="uc1" TagName="ImageManager" %>
 
@@ -12,10 +12,10 @@
     </div>
     
     <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
-    <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
+    <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
     <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
     <telerik:dialogopener runat="server" id="DialogOpener1" HandlerUrl="Telerik.Web.UI.DialogHandler.aspx" style="display: none;"></telerik:dialogopener> 
-    <telerik:RadGrid ID="rgProject" runat="server" AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" PageSize="15" Height="300px"
+    <telerik:RadGrid ID="rgProject" runat="server" AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" PageSize="15"
                      EnableEmbeddedSkins="False" CellSpacing="0" GridLines="None" OnItemCommand="rgProject_ItemCommand" OnNeedDataSource="rgProject_NeedDataSource">
         <HeaderStyle HorizontalAlign="Left" Height="30" Font-Bold="True" />
         <MasterTableView AllowMultiColumnSorting="False" AllowFilteringByColumn="False">

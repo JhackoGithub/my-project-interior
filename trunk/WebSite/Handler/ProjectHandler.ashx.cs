@@ -20,12 +20,13 @@ namespace WebSite.Handler
             context.Response.ContentType = "text/plain";
             
             string action = context.Request.QueryString["funcname"].ToLower();
+            int type = context.Request.QueryString["type"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["type"]);
             var project = new ProjectBE();
             switch (action)
             {
                 case "getall":
                     int cateId = context.Request.QueryString["cate"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["cate"]);
-                    jsonString = GetProjects(cateId);
+                    jsonString = GetProjects(type, cateId);
                     break;
                 case "edit":
                     int id = context.Request.QueryString["id"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["id"]);
@@ -58,10 +59,11 @@ namespace WebSite.Handler
             return Utils.ConvertToJsonString(json);
         }
 
-        private string GetProjects(int cateId)
+        private string GetProjects(int type, int cateId)
         {
             var bo = new ProjectBO();
             var res = bo.GetProjects();
+            res = res.Where(t => t.Type == type).ToList();
             if (cateId > 0)
                 res = res.Where(t => t.CategoryId == cateId).ToList();
             var htmlProject = new StringBuilder();
