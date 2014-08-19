@@ -121,6 +121,111 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Themes\Windows7\Ajax.Windows7.css" />
+    <Content Include="App_Themes\Windows7\Ajax\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\AsyncUpload.Windows7.css" />
+    <Content Include="App_Themes\Windows7\AsyncUpload\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\Button.Windows7.css" />
+    <Content Include="App_Themes\Windows7\Button\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\ColorPicker.Windows7.css" />
+    <Content Include="App_Themes\Windows7\ColorPicker\ColorPickerSprites.png" />
+    <Content Include="App_Themes\Windows7\ColorPicker\rcpVerticalSprites.png" />
+    <Content Include="App_Themes\Windows7\ColorPicker\rcpVerticalSpritesIE6.png" />
+    <Content Include="App_Themes\Windows7\ColorPicker\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\ComboBox.Windows7.css" />
+    <Content Include="App_Themes\Windows7\ComboBox\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\Common\loading.gif" />
+    <Content Include="App_Themes\Windows7\Common\loading_small.gif" />
+    <Content Include="App_Themes\Windows7\Common\radActionsSprite.png" />
+    <Content Include="App_Themes\Windows7\Common\radActionsSpriteIE6.png" />
+    <Content Include="App_Themes\Windows7\Common\radFormSprite.png" />
+    <Content Include="App_Themes\Windows7\Common\radFormSpriteIE6.png" />
+    <Content Include="App_Themes\Windows7\Common\radFormToggleSprite.png" />
+    <Content Include="App_Themes\Windows7\Common\radFormToggleSpriteIE6.png" />
+    <Content Include="App_Themes\Windows7\Common\radGradientButtonSprite.png" />
+    <Content Include="App_Themes\Windows7\Common\radGradientListSprite.png" />
+    <Content Include="App_Themes\Windows7\DatePicker\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\DateTimePicker\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\DropDownList.Windows7.css" />
+    <Content Include="App_Themes\Windows7\DropDownList\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\DropDownTree.Windows7.css" />
+    <Content Include="App_Themes\Windows7\DropDownTree\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\Editor.Windows7.css" />
+    <Content Include="App_Themes\Windows7\Editor\ToolBarSprites.gif" />
+    <Content Include="App_Themes\Windows7\Editor\ToolbarVerticalSprites.gif" />
+    <Content Include="App_Themes\Windows7\Editor\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\FileExplorer.Windows7.css" />
+    <Content Include="App_Themes\Windows7\FileExplorer\FileExplorerToolbarSprites.png" />
+    <Content Include="App_Themes\Windows7\FileExplorer\FileExplorerToolbarSpritesIE6.gif" />
+    <Content Include="App_Themes\Windows7\FileExplorer\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\Filter.Windows7.css" />
+    <Content Include="App_Themes\Windows7\Filter\rfLast-rtl.gif" />
+    <Content Include="App_Themes\Windows7\Filter\rfLast.gif" />
+    <Content Include="App_Themes\Windows7\Filter\rfLine-rtl.gif" />
+    <Content Include="App_Themes\Windows7\Filter\rfLine.gif" />
+    <Content Include="App_Themes\Windows7\Filter\rfMiddle-rtl.gif" />
+    <Content Include="App_Themes\Windows7\Filter\rfMiddle.gif" />
+    <Content Include="App_Themes\Windows7\Filter\sprite.gif" />
+    <Content Include="App_Themes\Windows7\Filter\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\Grid.Windows7.css" />
+    <Content Include="App_Themes\Windows7\Grid\AddRecord.gif" />
+    <Content Include="App_Themes\Windows7\Grid\Cancel.gif" />
+    <Content Include="App_Themes\Windows7\Grid\Delete.gif" />
+    <Content Include="App_Themes\Windows7\Grid\Edit.gif" />
+    <Content Include="App_Themes\Windows7\Grid\Filter.gif" />
+    <Content Include="App_Themes\Windows7\Grid\MoveDown.gif" />
+    <Content Include="App_Themes\Windows7\Grid\MoveUp.gif" />
+    <Content Include="App_Themes\Windows7\Grid\PagingFirst.gif" />
+    <Content Include="App_Themes\Windows7\Grid\PagingLast.gif" />
+    <Content Include="App_Themes\Windows7\Grid\PagingNext.gif" />
+    <Content Include="App_Themes\Windows7\Grid\PagingPrev.gif" />
+    <Content Include="App_Themes\Windows7\Grid\Refresh.gif" />
+    <Content Include="App_Themes\Windows7\Grid\rgDrag.gif" />
+    <Content Include="App_Themes\Windows7\Grid\SingleMinus.gif" />
+    <Content Include="App_Themes\Windows7\Grid\SinglePlus.gif" />
+    <Content Include="App_Themes\Windows7\Grid\SortAsc.gif" />
+    <Content Include="App_Themes\Windows7\Grid\SortDesc.gif" />
+    <Content Include="App_Themes\Windows7\Grid\sprite.gif" />
+    <Content Include="App_Themes\Windows7\Grid\Update.gif" />
+    <Content Include="App_Themes\Windows7\Grid\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\ImageEditor.Windows7.css" />
+    <Content Include="App_Themes\Windows7\ImageEditor\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\Input.Windows7.css" />
+    <Content Include="App_Themes\Windows7\Input\ResizeEdge.gif" />
+    <Content Include="App_Themes\Windows7\Input\sprite.gif" />
+    <Content Include="App_Themes\Windows7\Input\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\Menu.Windows7.css" />
+    <Content Include="App_Themes\Windows7\Menu\rmRootExpand.png" />
+    <Content Include="App_Themes\Windows7\Menu\rmRoundedLeft.png" />
+    <Content Include="App_Themes\Windows7\Menu\rmRoundedLeft_rtl.png" />
+    <Content Include="App_Themes\Windows7\Menu\rmRoundedRight.png" />
+    <Content Include="App_Themes\Windows7\Menu\rmRoundedRight_rtl.png" />
+    <Content Include="App_Themes\Windows7\Menu\rmSprite.png" />
+    <Content Include="App_Themes\Windows7\Menu\rmVSprite.png" />
+    <Content Include="App_Themes\Windows7\Menu\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\TreeView.Windows7.css" />
+    <Content Include="App_Themes\Windows7\TreeView\ItemHoveredBg.png" />
+    <Content Include="App_Themes\Windows7\TreeView\ItemSelectedBg.png" />
+    <Content Include="App_Themes\Windows7\TreeView\LoadingIcon.gif" />
+    <Content Include="App_Themes\Windows7\TreeView\PlusMinus.png" />
+    <Content Include="App_Themes\Windows7\TreeView\TriState.png" />
+    <Content Include="App_Themes\Windows7\TreeView\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\Upload.Windows7.css" />
+    <Content Include="App_Themes\Windows7\Upload\AsyncProgress.png" />
+    <Content Include="App_Themes\Windows7\Upload\ruProgress.gif" />
+    <Content Include="App_Themes\Windows7\Upload\ruProgressArea.png" />
+    <Content Include="App_Themes\Windows7\Upload\ruSprite.png" />
+    <Content Include="App_Themes\Windows7\Upload\ruSpriteIE6.png" />
+    <Content Include="App_Themes\Windows7\Upload\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\Window.Windows7.css" />
+    <Content Include="App_Themes\Windows7\Window\AeroTitleBarBgr.gif" />
+    <Content Include="App_Themes\Windows7\Window\AeroTitleBarBgr.png" />
+    <Content Include="App_Themes\Windows7\Window\CommandButtonSprites.gif" />
+    <Content Include="App_Themes\Windows7\Window\WindowHorizontalSprites.gif" />
+    <Content Include="App_Themes\Windows7\Window\WindowHorizontalSprites.png" />
+    <Content Include="App_Themes\Windows7\Window\Windows7.gif" />
+    <Content Include="App_Themes\Windows7\Window\WindowVerticalSprites.gif" />
+    <Content Include="App_Themes\Windows7\Window\WindowVerticalSprites.png" />
     <Content Include="Content\admin.css" />
     <Content Include="Admin\AddNews.aspx" />
     <Content Include="Admin\AddProject.aspx" />
@@ -239,7 +344,6 @@
     <Content Include="Consultant-2-1.aspx" />
     <Content Include="Consultant.aspx" />
     <Content Include="Contact.aspx" />
-    <Content Include="Contents\AddProject.aspx" />
     <Content Include="Contents\ImageManager.aspx" />
     <Content Include="Contents\Investigate.aspx" />
     <Content Include="Contents\Process.html" />
@@ -827,13 +931,6 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Contents\AddProject.aspx.cs">
-      <DependentUpon>AddProject.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contents\AddProject.aspx.designer.cs">
-      <DependentUpon>AddProject.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contents\ImageManager.aspx.cs">
       <DependentUpon>ImageManager.aspx</DependentUpon>

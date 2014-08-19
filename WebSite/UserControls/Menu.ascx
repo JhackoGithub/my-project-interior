@@ -26,27 +26,28 @@
 
         $(this).siblings('li').removeClass('current_page_item');
         var type = getParameterByName('type');
+        var tab = getParameterByName('tab');
         switch (type) {
-        case '0':
-            $('.sf-menu #menu-item-2').addClass('current_page_item');
-            break;
-        case '1':
-            $('.sf-menu #menu-item-3').addClass('current_page_item');
-            break;
-        case '2':
-            $('.sf-menu #menu-item-4').addClass('current_page_item');
-            break;
-        case '3':
-            $('.sf-menu #menu-item-5').addClass('current_page_item');
-            break;
-        case '4':
-            $('.sf-menu #menu-item-6').addClass('current_page_item');
-            break;
-        default:
-            $('.sf-menu #menu-item-1').addClass('current_page_item');
-            break;
+            case '0':
+                if(tab != '0')
+                    $('.sf-menu #menu-item-2').addClass('current_page_item');
+                break;
+            case '1':
+                $('.sf-menu #menu-item-3').addClass('current_page_item');
+                break;
+            case '2':
+                $('.sf-menu #menu-item-4').addClass('current_page_item');
+                break;
+            case '3':
+                $('.sf-menu #menu-item-5').addClass('current_page_item');
+                break;
+            case '4':
+                $('.sf-menu #menu-item-6').addClass('current_page_item');
+                break;
+            default:
+                $('.sf-menu #menu-item-1').addClass('current_page_item');
+                break;
         }
-
     });
 
 </script>

@@ -43,7 +43,7 @@ namespace WebSite.Common
 
     public class Constant
     {
-        public const string PROJECT_ARCHITECTURE = "Công trình";
+        public const string PROJECT_ARCHITECTURE = "Kiến trúc";
         public const string PROJECT_INTERIOR = "Nội thất";
     }
 }

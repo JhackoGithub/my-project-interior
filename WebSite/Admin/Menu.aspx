@@ -1,16 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="WebSite.Admin.Menu" Theme="BocaTheme" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="WebSite.Admin.Menu" Theme="Windows7" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="FeaturedContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <telerik:radscriptmanager runat="server" ID="RadScriptManager1" />
-    <telerik:radskinmanager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
+    <telerik:radskinmanager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
     <telerik:radformdecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
     <div class="admin-projet-info">
     <div style="float: left; margin: 10px; width: 50%;">
         <div style="display: inline-flex; height: 40px;">
             <label style="float: left; vertical-align: baseline; width: 180px;">
-                <input type="radio" id="rdArchi" name="rdType" value="0" checked="checked" style="width: 25px;" />Menu Công trình
+                <input type="radio" id="rdArchi" name="rdType" value="0" checked="checked" style="width: 25px;" />Menu Kiến trúc
             </label>
             <label style="float: left; vertical-align: baseline; width: 160px;">
                 <input type="radio" id="rdInteri" name="rdType" value="1" style="width: 25px;" />Menu Nội thất

@@ -48,11 +48,11 @@
 </style>
 
 <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
-<telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
+<telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
 <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
 
 <div style="float: left; vertical-align: top;">
-    <telerik:RadFileExplorer runat="server" ID="RadFileExplorer1" Width="620px" Height="400px"
+    <telerik:RadFileExplorer runat="server" ID="RadFileExplorer1" Width="620px" Height="550px"
         OnClientItemSelected="OnClientItemSelected" EnableOpenFile="false">
     </telerik:RadFileExplorer>
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ImageManager.aspx.cs" Inherits="WebSite.Contents.ImageManager" Theme="BocaTheme" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ImageManager.aspx.cs" Inherits="WebSite.Contents.ImageManager" Theme="Windows7" %>
 
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
 
@@ -16,11 +16,11 @@
     <body>
         <form id="form1" runat="server">
             <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
-            <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
+            <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
             <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
             <div style="height: 460px; margin: 0 auto; padding: 10px; width: 730px;">
                 <div style="background-color: lightcyan; float: left; height: 460px; min-width: 330px; overflow: auto;">
-                    <telerik:RadTreeView runat="server" ID="tvFolderImg" ClientIDMode="Static" Skin="Metro" OnClientNodeClicked=" ClientNodeClicked " OnClientLoad="onLoad">
+                    <telerik:RadTreeView runat="server" ID="tvFolderImg" ClientIDMode="Static" Skin="Windows7" OnClientNodeClicked=" ClientNodeClicked " OnClientLoad="onLoad">
                     </telerik:RadTreeView>
                 </div>
                 <telerik:RadAjaxLoadingPanel runat="server" ID="radAjaxLoadGrid"></telerik:RadAjaxLoadingPanel>
@@ -29,8 +29,8 @@
                 </telerik:RadAjaxPanel>
             </div>
             <div style="border-top: gray solid 1px; clear: both; margin: 10px auto 0 auto; padding-top: 5px; text-align: right; width: 730px;">
-                <a class="k-button k-button-icontext k-grid-update" id="save" onclick=" selectFolder() "><span class="k-icon k-grid-update"></span>Chọn</a>
-                <a class="k-button k-button-icontext k-grid-cancel" id="closepoup" onclick=" closePopup() "><span class="k-icon k-cancel"></span>Hủy</a>
+                <button type="button" id="save" >Chọn thư mục</button>
+                <button type="button" id="closepoup" >Hủy chọn</button>
             </div>
             <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
             <script type="text/javascript">
@@ -39,19 +39,12 @@
 
                 });
 
-                function closePopup() {
+                $('#closepoup').click(function() {
                     window.parent.closeChildPopup();
-                }
-
-                function ClientNodeClicked(sender, eventArgs) {
-                    var node = eventArgs.get_node();
-                    var data = JSON.stringify(node.get_value());
-                    var url = "../Handler/ImageHandler.ashx?funcname=select";
-                    callAjaxHandler(url, data, AjaxConst.PostRequest, bindImageGridCallback);
-                }
-
-                function selectFolder() {
-                    if($('.admin-image-gallary').html() == '') {
+                });
+                
+                $('#save').click(function () {
+                    if ($('.admin-image-gallary').html() == '') {
                         return;
                     }
                     var treeView = $find("<%= tvFolderImg.ClientID %>");
@@ -62,10 +55,24 @@
                     var imgselected = $('input:radio[name=projectimage]:checked').val();
                     var folderelected = node.get_value();
                     window.parent.getFolder(folderelected, imgselected);
+                });
+                
+                function ClientNodeClicked(sender, eventArgs) {
+                    var node = eventArgs.get_node();
+                    var data = JSON.stringify(node.get_value());
+                    var url = "../Handler/ImageHandler.ashx?funcname=select";
+                    callAjaxHandler(url, data, AjaxConst.PostRequest, bindImageGridCallback);
                 }
 
                 function bindImageGridCallback(data) {
                     $('.admin-image-gallary').html(data.html);
+                    var imgselected = window.parent.document.getElementById("lblImageSelected").innerHTML;
+                    if (imgselected == null || imgselected == '')
+                        return;
+                    
+                    var $inpuimage = $('input:radio[name=projectimage]');
+                    var strfilterimg = '[value="' + imgselected + '"]';
+                    $inpuimage.filter(strfilterimg).click();
                 }
                 
                 function onLoad(sender, args) {
@@ -73,6 +80,8 @@
                     if (tree == null)
                         return;
                     var value = window.parent.document.getElementById("lblFolderSelected").innerHTML;
+                    if (value == null || value == '')
+                        return;
                     var node = tree.findNodeByValue(value);
                     if (node == null)
                         return;
@@ -89,12 +98,6 @@
                         }
                         node = node.get_parent();
                     }
-                    
-                    var imgselected = window.parent.document.getElementById("lblImageSelected").innerHTML;
-                    var $inpuimage = $('input:radio[name=projectimage]');
-
-                    var strfilterimg = '[value="' + imgselected + '"]';
-                    $inpuimage.filter(strfilterimg).click();
                 }
 
             </script>

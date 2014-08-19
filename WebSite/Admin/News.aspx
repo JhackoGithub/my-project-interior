@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="News.aspx.cs" Inherits="WebSite.Admin.News" Theme="BocaTheme" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="News.aspx.cs" Inherits="WebSite.Admin.News" Theme="Windows7" %>
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
@@ -12,7 +12,7 @@
         <button type="button" id="btnAdd" >Tạo mới bài viết</button>
     </div>
     <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
-    <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
+    <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
     <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
     <telerik:RadGrid ID="rgNews" runat="server" AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" PageSize="15" Height="300px"
                      EnableEmbeddedSkins="False" CellSpacing="0" GridLines="None" OnNeedDataSource="rgNews_NeedDataSource" OnItemCommand="rgNews_ItemCommand">

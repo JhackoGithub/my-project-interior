@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="AddProject.aspx.cs" Inherits="WebSite.Admin.AddProject" Theme="BocaTheme" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="AddProject.aspx.cs" Inherits="WebSite.Admin.AddProject" Theme="Windows7" %>
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="FeaturedContent" runat="server">
@@ -74,7 +74,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
-    <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Metro" />
+    <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
     <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
     <div class="admin-projet-info">
         <div style="height: 300px;">
@@ -83,7 +83,7 @@
                     <div class="admin-project-add-label">Loại dự án</div>
                     <div class="admin-project-add-control" style="display: table-caption;">
                         <label style="float: left; vertical-align: baseline; width: 100px;">
-                            <input type="radio" id="rdArchi" name="rdType" value="0" checked="checked" style="width: 25px;" />Công trình
+                            <input type="radio" id="rdArchi" name="rdType" value="0" checked="checked" style="width: 25px;" />Kiến trúc
                         </label>
                         <label style="float: left; vertical-align: baseline; width: 100px;">
                             <input type="radio" id="rdInteri" name="rdType" value="1" style="width: 25px;" />Nội thất
@@ -119,7 +119,7 @@
             <div id="tabs">
                 <div id="project-info">
                     <h3 style="display: none;">Thông tin</h3>
-                    <telerik:RadEditor runat="server" ID="radEditorInfo" ClientIDMode="Static" Width="920" Height="550" Skin="Metro"
+                    <telerik:RadEditor runat="server" ID="radEditorInfo" ClientIDMode="Static" Width="920" Height="550" Skin="Windows7"
                                        EditModes="Design">
                         <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
                         <Modules>
@@ -136,7 +136,7 @@
                 </div>
                 <div id="project-desc">
                     <h3 style="display: none;">Thuyết minh</h3>
-                    <telerik:RadEditor runat="server" ID="radEditorDesc" ClientIDMode="Static" Width="920" Height="550" Skin="Metro" EditModes="Design">
+                    <telerik:RadEditor runat="server" ID="radEditorDesc" ClientIDMode="Static" Width="920" Height="550" Skin="Windows7" EditModes="Design">
                         <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
                         <Modules>
                             <telerik:EditorModule Name="RadEditorStatistics" Visible="false" Enabled="false"></telerik:EditorModule>
@@ -248,12 +248,7 @@
 
             function bindEntityToControl(project) {
                 var $rdType = $('input:radio[name=rdType]');
-                var $rdKind = $('input:radio[name=rdKind]');
-                
-                var strfilterKind = project.CategoryId == null ? '[value=""]' : '[value="' + project.CategoryId + '"]';
-                $rdKind.filter(strfilterKind).click();
-                
-                var strfilterType = project.Type == null ? '[value="0"]' : '[value="' + project.Type + '"]';
+                var strfilterType = project.Type == 0 ? '[value="0"]' : '[value="1"]';
                 $rdType.filter(strfilterType).click();
 
                 var editorDesc = $find("<%=radEditorDesc.ClientID%>");
@@ -266,7 +261,6 @@
                 $('#lblImageSelected').text(project.PrimaryImage);
                 
                 $('#btnSave').html('Lưu thay đổi');
-                $rdKind.attr('disabled', true);
                 $rdType.attr('disabled', true);
             }
             
