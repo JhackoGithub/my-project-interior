@@ -115,12 +115,12 @@ namespace WebSite.Handler
                 htmlProject.Append("</figure>");
                 htmlProject.AppendFormat(
                     "<h5><a href='Project-Info.aspx?type={0}&tab=1&cate={1}&project={2}' title='{3}'>{4}</a></h5>",
-                    type, 0, 0, projectName, pathImage);
+                    type, 0, 0, projectName, projectName);
                 htmlProject.Append("</div>");
             }
             var json = new
                            {
-                               project = htmlProject.ToString()
+                               html = htmlProject.ToString()
                            };
             return Utils.ConvertToJsonString(json);
             return htmlProject.ToString();

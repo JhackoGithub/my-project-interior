@@ -5,9 +5,9 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head runat="server">
-        <title></title>
-        <style type="text/css">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
             #wrapper-tab {
                 background-color: #F4F0EE;
                 border-bottom: 1px solid #ccc;
