@@ -11,60 +11,28 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="SubContent" runat="server">
-    <ul class="recent-posts projects">
-        <li class="projects">
-            <figure class="featured-thumbnail">
-                <a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">
-                    <img src="Images/products/10.jpg" /></a>
-            </figure>
-            <h5><a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">Biệt thự hiện đại</a></h5>
-            Thiết kế: Kts. Vũ Quang Vĩnh
-            <div class="clear"></div>
-        </li>
-        <li class="projects">
-            <figure class="featured-thumbnail">
-                <a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">
-                    <img src="Images/products/11.jpg" /></a>
-            </figure>
-            <h5><a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">Biệt thự hiện đại</a></h5>
-            Thiết kế: Kts. Vũ Quang Vĩnh
-            <div class="clear"></div>
-        </li>
-        <li class="projects">
-            <figure class="featured-thumbnail">
-                <a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">
-                    <img src="Images/products/12.jpg" /></a>
-            </figure>
-            <h5><a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">Biệt thự hiện đại</a></h5>
-            Thiết kế: Kts. Vũ Quang Vĩnh
-            <div class="clear"></div>
-        </li>
-        <li class="projects">
-            <figure class="featured-thumbnail">
-                <a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">
-                    <img src="Images/products/13.jpg" /></a>
-            </figure>
-            <h5><a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">Biệt thự hiện đại</a></h5>
-            Thiết kế: Kts. Vũ Quang Vĩnh
-            <div class="clear"></div>
-        </li>
-        <li class="projects">
-            <figure class="featured-thumbnail">
-                <a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">
-                    <img src="Images/products/14.jpg" /></a>
-            </figure>
-            <h5><a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">Biệt thự hiện đại</a></h5>
-            Thiết kế: Kts. Vũ Quang Vĩnh
-            <div class="clear"></div>
-        </li>
-        <li class="projects">
-            <figure class="featured-thumbnail">
-                <a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">
-                    <img src="Images/products/15.jpg" /></a>
-            </figure>
-            <h5><a href="1product-info.aspx?type=1&tab=1" title="Biệt thự hiện đại">Biệt thự hiện đại</a></h5>
-            Thiết kế: Kts. Vũ Quang Vĩnh
-            <div class="clear"></div>
-        </li>
-    </ul>
+    <div id="container-project" class="isotope"></div>
+    <script type="text/javascript">
+        $(function () {
+            bindProjects();
+        });
+
+        function bindProjects() {
+            var type = getParameterByName('type');
+            var url = "../Handler/ProjectHandler.ashx?funcname=getrefer&type=" + type;
+            callAjaxHandler(url, null, AjaxConst.GetRequest, bindProjectCallback);
+        }
+
+        function bindProjectCallback(data) {
+            $('#container-project').html(data.html);
+
+            window.setTimeout(reloadgrid, 1000);
+        }
+
+        function reloadgrid() {
+            $('#container-project').isotope({
+                itemSelector: '.box-project',
+            });
+        }
+    </script>
 </asp:Content>

@@ -157,7 +157,7 @@
                         </div>
                     </div>
                     <div id="second-content-area">
-                        <div id="text-3" class="widget-content grid_4" style="width: 100%;">
+                        <div id="text-3" style="width: 800px; margin-left: auto; margin-right: auto;">
                             <div class="inner">
                                 <h3>Welcome!</h3>
                                 <div>
