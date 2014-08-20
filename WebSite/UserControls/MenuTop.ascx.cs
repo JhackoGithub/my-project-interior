@@ -13,6 +13,8 @@ namespace WebSite.UserControls
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(IsPostBack)
+                return;
             GenerateMenu();
         }
 
@@ -21,8 +23,8 @@ namespace WebSite.UserControls
             var menu = new StringBuilder();
             menu.Append("<ul>");
             menu.AppendFormat(Type == 0
-                                  ? "<li><a id='menu-tab-1' href='Architecture.aspx?type={0}&tab=1'>Công trình</a></li>"
-                                  : "<li><a id='menu-tab-1' href='Interior.aspx?type={0}&tab=1'>Nội thất</a></li>",
+                                  ? "<li><a id='menu-tab-1' href='Project.aspx?type={0}&tab=1'>Công trình</a></li>"
+                                  : "<li><a id='menu-tab-1' href='Project.aspx?type={0}&tab=1'>Nội thất</a></li>",
                               Type);
             menu.AppendFormat("<li><a id='menu-tab-2' href='Consultant.aspx?type={0}&tab=2'>Tư vấn</a></li>", Type);
             menu.AppendFormat("<li><a id='menu-tab-3' href='Refer.aspx?type={0}&tab=3'>Tham khảo</a></li>", Type);
