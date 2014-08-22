@@ -10,15 +10,11 @@
     <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7"/>
     <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
     <section id="loginForm">
-        <hgroup class="title">
-            <h1><%: Title %>.</h1>
-        </hgroup>
-        <h2>Use a local account to log in.</h2>
         <p class="validation-summary-errors">
             <asp:Literal runat="server" ID="FailureText" />
         </p>
-        <fieldset>
-            <legend>Log in Form</legend>
+        <fieldset style="padding: 20px;">
+            <legend style="display: block !important">Log in Form</legend>
             <div class="admin-project-add">
                 <div class="admin-project-add-label" style="width: 100px; float: left;">
                     User name

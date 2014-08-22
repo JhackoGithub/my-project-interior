@@ -52,7 +52,7 @@
         </script>
 
     </head>
-    <body class="home page" style="color: #878786;">
+    <body class="home page">
         <form runat="server">
             <div id="main">
                 <header id="header">

@@ -334,7 +334,6 @@
     <Content Include="App_Themes\BocaTheme\Window\Icon.gif" />
     <Content Include="App_Themes\BocaTheme\Window\Metro.gif" />
     <Content Include="App_Themes\BocaTheme\Window\rwResize.gif" />
-    <Content Include="Architecture.aspx" />
     <Content Include="commingsoon.aspx" />
     <Content Include="Consultant-1-1.aspx" />
     <Content Include="Consultant-1-2.aspx" />
@@ -1258,7 +1257,6 @@
     <Content Include="Images\Uploads\News\201407271320021418253-80775645.jpg" />
     <Content Include="Images\Uploads\News\20140727132845xanh2.jpg" />
     <Content Include="Images\Uploads\News\2014072715251801.jpg" />
-    <Content Include="Interior.aspx" />
     <Content Include="Lesson.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="News.aspx" />
@@ -1382,13 +1380,6 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Architecture.aspx.cs">
-      <DependentUpon>Architecture.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Architecture.aspx.designer.cs">
-      <DependentUpon>Architecture.aspx</DependentUpon>
-    </Compile>
     <Compile Include="commingsoon.aspx.cs">
       <DependentUpon>commingsoon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1503,13 +1494,6 @@
     </Compile>
     <Compile Include="Handler\ProjectHandler.ashx.cs">
       <DependentUpon>ProjectHandler.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="Interior.aspx.cs">
-      <DependentUpon>Interior.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Interior.aspx.designer.cs">
-      <DependentUpon>Interior.aspx</DependentUpon>
     </Compile>
     <Compile Include="Lesson.aspx.cs">
       <DependentUpon>Lesson.aspx</DependentUpon>

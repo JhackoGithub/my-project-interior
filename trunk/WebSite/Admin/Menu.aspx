@@ -1,66 +1,101 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="WebSite.Admin.Menu" Theme="Windows7" %>
+
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="FeaturedContent" runat="server">
+    <style type="text/css">
+        .divMenuType
+        {
+            clear: both;
+            height: 40px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <telerik:radscriptmanager runat="server" ID="RadScriptManager1" />
-    <telerik:radskinmanager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
-    <telerik:radformdecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
+    <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
+    <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
+    <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
     <div class="admin-projet-info">
-    <div style="float: left; margin: 10px; width: 50%;">
-        <div style="display: inline-flex; height: 40px;">
-            <label style="float: left; vertical-align: baseline; width: 180px;">
-                <input type="radio" id="rdArchi" name="rdType" value="0" checked="checked" style="width: 25px;" />Menu Kiến trúc
-            </label>
-            <label style="float: left; vertical-align: baseline; width: 160px;">
-                <input type="radio" id="rdInteri" name="rdType" value="1" style="width: 25px;" />Menu Nội thất
-            </label>
-            <label style="float: left; vertical-align: baseline; width: 160px;">
-                <input type="radio" id="rdConsul" name="rdType" value="2" style="width: 25px;" />Menu Tư vấn
-            </label>
-        </div>
-        <div id="divType" style="height: 40px;">
-            <label style="float: left; vertical-align: baseline; width: 180px;">
-                <input type="radio" id="rdParent" name="rdKind" value="0" checked="checked" style="width: 25px;" />Tạo menu đầu mục
-            </label>
-            <label style="float: left; vertical-align: baseline; width: 200px;">
-                <input type="radio" id="rdChild" name="rdKind" value="1" style="width: 25px;" />Tạo menu con
-            </label>
-        </div>
-        <div id="divControl" style="clear: both; height: 50px;">
-            <div id="divPos" style="float: left;">
-                <label>Vị trí sắp xếp</label>
-                <input type="text" id="tbPos" placeholder="chỉ nhập số" style="width: 80px;"/>
+        <div style="float: left; margin: 10px; width: 50%;">
+
+            <fieldset style="padding: 20px; display: block; margin-bottom: 10px;">
+                <legend style="display: block !important">Chọn loại menu</legend>
+                <div class="divMenuType">
+                    <label style="float: left; vertical-align: baseline; width: 160px;">
+                        <input type="radio" id="rdArchi" name="rdType" value="0" checked="checked" style="width: 25px;" />Menu dự án Kiến trúc
+                    </label>
+                </div>
+                <div class="divMenuType">
+                    <label style="float: left; vertical-align: baseline; width: 160px;">
+                        <input type="radio" id="rdInteri" name="rdType" value="1" style="width: 25px;" />Menu dự án Nội thất
+                    </label>
+                </div>
+                <div class="divMenuType">
+                    <label style="float: left; vertical-align: baseline; width: 160px;">
+                        <input type="radio" id="rdConsul" name="rdType" value="2" style="width: 25px;" />Menu Tư vấn
+                    </label>
+                    <div>
+                        <label style="float: left; vertical-align: baseline; width: 160px;">
+                            <input type="radio" id="Radio1" name="rdType" value="0" checked="checked" style="width: 25px;" />Menu dự án Kiến trúc
+                        </label>
+                        <label style="float: left; vertical-align: baseline; width: 160px;">
+                            <input type="radio" id="Radio2" name="rdType" value="1" style="width: 25px;" />Menu dự án Nội thất
+                        </label>
+                    </div>
+                </div>
+                <div class="divMenuType">
+                    <label style="float: left; vertical-align: baseline; width: 160px;">
+                        <input type="radio" id="rdContact" name="rdType" value="3" style="width: 25px;" />Menu Liên hệ
+                    </label>
+                </div>
+            </fieldset>
+            <%--<div style="clear: both;"></div>
+            <fieldset style="padding: 20px; display: block; margin-bottom: 10px;">
+                <legend style="display: block !important">Menu tin và bài viết</legend>
+                
+                
+            </fieldset>--%>
+            <div id="divType" style="height: 40px; padding-left: 20px;">
+                <label style="float: left; vertical-align: baseline; width: 160px;">
+                    <input type="radio" id="rdParent" name="rdKind" value="0" checked="checked" style="width: 25px;" />Tạo menu đầu mục
+                </label>
+                <label style="float: left; vertical-align: baseline; width: 200px;">
+                    <input type="radio" id="rdChild" name="rdKind" value="1" style="width: 25px;" />Tạo menu con
+                </label>
             </div>
-            <div id="divParent" style="display: none; float: left;">
-                <label>Chọn menu đầu mục</label>
-                <select id="parentid" style="height: 30px; width: 145px;">
-                </select>
+            <div id="divControl" style="clear: both; height: 50px; padding-left: 20px;">
+                <div id="divPos" style="float: left;">
+                    <label>Vị trí sắp xếp</label>
+                    <input type="text" id="tbPos" placeholder="chỉ nhập số" style="width: 80px;" />
+                </div>
+                <div id="divParent" style="display: none; float: left;">
+                    <label>Chọn menu đầu mục</label>
+                    <select id="parentid" style="height: 30px; width: 145px;">
+                    </select>
+                </div>
+            </div>
+            <div style="clear: both; padding-left: 20px;">
+                <label>Tiêu đề</label>
+                <input type="text" id="tbName" />
+            </div>
+            <div style="clear: both; padding-top: 10px; padding-left: 20px;">
+                <button type="button" id="btnCreate">Tạo mới</button>
+                <button type="button" id="btnCancel" onclick=" location.reload() ">Hủy</button>
             </div>
         </div>
-        <div style="clear: both;">
-            <label>Tiêu đề</label>
-            <input type="text" id="tbName"/>
+        <div class="admin-project-cate" style="border-left: lightgray 1px solid; float: left; margin: 10px; padding-left: 30px; width: 310px;">
         </div>
-        <div style="clear: both; padding-top: 10px;">
-            <button type="button" id="btnCreate">Tạo mới</button>
-            <button type="button" id="btnCancel" onclick=" location.reload() ">Hủy</button>
-        </div>
-    </div>
-    <div class="admin-project-cate" style="border-left: lightgray 1px solid; float: left; margin: 10px; padding-left: 30px; width: 200px;">
-    </div>
     </div>
     <script type="text/javascript">
 
         var _id = 0;
 
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             bindMenu();
 
         });
 
-        $("input:radio[name=rdKind]").click(function() {
+        $("input:radio[name=rdKind]").click(function () {
             var value = $(this).val();
             if (value == '0') {
                 $("#divControl #divPos").css("display", "block");
@@ -71,7 +106,7 @@
             }
         });
 
-        $("input:radio[name=rdType]").click(function() {
+        $("input:radio[name=rdType]").click(function () {
             bindMenu();
         });
 
@@ -92,7 +127,7 @@
             menu.name = name;
         }
 
-        $('#btnCreate').click(function() {
+        $('#btnCreate').click(function () {
             var menu = new Object();
             bindControlToEntity(menu);
             var data = JSON.stringify(menu);

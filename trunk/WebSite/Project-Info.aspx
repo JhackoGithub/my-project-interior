@@ -29,7 +29,7 @@
             /*height: 250px;*/
             float: left;
             overflow: hidden;
-            width: 680px;
+            width: 660px;
         }
 
         #tabs img {
@@ -60,7 +60,7 @@
             border-bottom: none;
             border-color: #ccc;
             border-left: none;
-            color: #999;
+            /*color: #999;*/
             display: inline-block;
             font-size: 20px;
             height: 30px;
@@ -184,11 +184,11 @@
         <div id="pager">
         </div>
         <div id="tabs">
-            <div id="project-info">
+            <div id="project-info" style="padding: 10px;">
                 <h3 style="display: none;">Thông tin</h3>
                 <asp:Literal runat="server" ID="ltProjectInfo"></asp:Literal>
             </div>
-            <div id="project-desc">
+            <div id="project-desc" style="padding: 10px;">
                 <h3 style="display: none;">Thuyết minh</h3>
                 <asp:Literal runat="server" ID="ltProjectDesc"></asp:Literal>
             </div>

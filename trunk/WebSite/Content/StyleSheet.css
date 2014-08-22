@@ -41,7 +41,7 @@ img::-moz-selection
 body
 {
     -webkit-tap-highlight-color: #878786;
-    color: #fff;
+    /*color: #fff;*/
 }
 
 #main
