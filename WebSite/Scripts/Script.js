@@ -98,3 +98,9 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results == null ? "0" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
+function getRouteParameter(index) {
+    var pathname = window.location.pathname;
+    var result = pathname.split('/')[index];
+    return result;
+}
