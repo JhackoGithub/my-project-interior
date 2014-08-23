@@ -45,6 +45,7 @@ namespace DAL
             var paramArrs = new[]
                                 {
                                     new SqlParameter("@Type", menuLeft.Type),
+                                    new SqlParameter("@SubType", menuLeft.SubType),
                                     new SqlParameter("@ParentId", menuLeft.ParentId),
                                     new SqlParameter("@Position", menuLeft.Position),
                                     new SqlParameter("@Name", menuLeft.Name),
@@ -60,6 +61,7 @@ namespace DAL
                                 {
                                     new SqlParameter("@Id", menuLeft.Id),
                                     new SqlParameter("@Type", menuLeft.Type),
+                                    new SqlParameter("@SubType", menuLeft.SubType),
                                     new SqlParameter("@ParentId", menuLeft.ParentId),
                                     new SqlParameter("@Position", menuLeft.Position),
                                     new SqlParameter("@Name", menuLeft.Name),

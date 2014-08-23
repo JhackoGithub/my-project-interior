@@ -29,7 +29,8 @@ namespace WebSite.Handler
                     string form = context.Request.QueryString["frm"] == null
                                       ? string.Empty
                                       : context.Request.QueryString["frm"].ToLower();
-                    jsonString = GetMenus(type, form, projectId);
+                    int subType = context.Request.QueryString["subtype"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["subtype"]);
+                    jsonString = GetMenus(type, subType, form, projectId);
                     break;
                 case "create":
                     menuLeft = Utils.ConvertDeserialize<MenuLeft>(context, ref jsonString);
@@ -50,7 +51,7 @@ namespace WebSite.Handler
             context.Response.Write(jsonString);
         }
 
-        private string GetMenus(int type, string form, int proId)
+        private string GetMenus(int type, int subType, string form, int proId)
         {
             var bo = new MenuLeftBO();
             List<MenuLeft> menus = null;
@@ -59,6 +60,10 @@ namespace WebSite.Handler
             if (string.IsNullOrEmpty(form))
             {
                 menus = bo.GetMenuLeft(type);
+                if(type == 2)
+                {
+                    menus = menus.Where(t => t.Type == 2 && (t.SubType == 0 || t.SubType == subType)).ToList();
+                }
                 GenerateMenu(menus, htmlMenu);
                 var htmlDropdown = new StringBuilder();
                 foreach (MenuLeft menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
