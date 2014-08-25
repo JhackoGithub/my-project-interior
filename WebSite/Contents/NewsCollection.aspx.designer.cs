@@ -7,54 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebSite.UserControls {
+namespace WebSite.Contents {
     
     
-    public partial class NewsManagement {
+    public partial class NewsCollection {
         
         /// <summary>
-        /// tbTitle control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public global::System.Web.UI.WebControls.TextBox tbTitle;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// tbSubcontent control.
+        /// RadScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public global::System.Web.UI.WebControls.TextBox tbSubcontent;
+        protected global::Telerik.Web.UI.RadScriptManager RadScriptManager1;
         
         /// <summary>
-        /// uploadFile control.
+        /// QsfSkinManager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public global::System.Web.UI.HtmlControls.HtmlInputFile uploadFile;
+        protected global::Telerik.Web.UI.RadSkinManager QsfSkinManager;
         
         /// <summary>
-        /// radContent control.
+        /// QsfFromDecorator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public global::Telerik.Web.UI.RadEditor radContent;
+        protected global::Telerik.Web.UI.RadFormDecorator QsfFromDecorator;
         
         /// <summary>
-        /// RadCodeBlock1 control.
+        /// rgNews control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public global::Telerik.Web.UI.RadCodeBlock RadCodeBlock1;
+        protected global::Telerik.Web.UI.RadGrid rgNews;
     }
 }

@@ -176,16 +176,13 @@ fieldset ol li { padding-bottom: 5px; }
 .admin-project-cate > ul > li {
     color: #ffffff;
     display: block;
-    font-size: 14px;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
 .admin-project-cate > ul > li > div {
     background: #6f6e6e;
     border-bottom: 1px solid #222222;
     display: block;
-    font-size: 13px;
     font-weight: 300;
     height: 13px;
     padding: 10px;
@@ -199,12 +196,12 @@ fieldset ol li { padding-bottom: 5px; }
     border: 1px solid #e0e0e0;
     border-top: 0;
     cursor: pointer;
-    line-height: 2;
+    line-height: 3;
 }
 
 .admin-project-cate ul ul li div div {
     float: right;
-    width: 48px;
+    width: 65px;
 }
 
 .admin-project-cate img {
@@ -227,7 +224,6 @@ fieldset ol li { padding-bottom: 5px; }
 .admin-project-cate ul ul a {
     color: #4d4d4d;
     display: block;
-    font-size: 13px;
     padding: 10px;
 }
 

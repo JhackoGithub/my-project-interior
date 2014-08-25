@@ -45,5 +45,8 @@ namespace WebSite.Common
     {
         public const string PROJECT_ARCHITECTURE = "Kiến trúc";
         public const string PROJECT_INTERIOR = "Nội thất";
+        public const string NEWS = "Tin tức";
+        public const string CONSULTANT = "Tư vấn";
+        public const string CONTACT = "Liên hệ";
     }
 }

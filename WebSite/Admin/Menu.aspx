@@ -15,11 +15,15 @@
         .divMenuType input {
             width: 25px;
         }
-        .divMenuTypeConsul {
-            height: 30px;
-        }
+
         .divMenuTypeConsul {
             display: none;
+            border: 1px solid rgb(198, 140, 105);
+            width: 320px;
+            height: 30px;
+            float: left;
+            border-radius: 5px;
+            padding-top: 8px;
         }
 
     </style>
@@ -31,21 +35,24 @@
     <div class="admin-projet-info">
         <div style="float: left; margin: 10px; width: 54%;">
 
-            <fieldset style="display: block; margin-bottom: 10px; padding-top: 10px; padding-left: 10px;">
-                <legend style="display: block !important">Chọn loại menu</legend>
+            <fieldset style="display: block; margin-bottom: 20px; padding-top: 20px; padding-left: 10px;">
+                <legend style="display: block !important; font: inherit;">Tạo menu cho dự án</legend>
                 <div class="divMenuType">
                     <label>
-                        <input type="radio" id="rdArchi" name="rdType" value="0" checked="checked" />Menu dự án Kiến trúc
+                        <input type="radio" id="rdArchi" name="rdType" value="0" checked="checked" />Dự án kiểu Kiến trúc
                     </label>
                 </div>
                 <div class="divMenuType">
                     <label>
-                        <input type="radio" id="rdInteri" name="rdType" value="1" />Menu dự án Nội thất
+                        <input type="radio" id="rdInteri" name="rdType" value="1" />Dự án kiểu Nội thất
                     </label>
                 </div>
+            </fieldset>
+            <fieldset style="display: block; margin-bottom: 20px; padding-top: 20px; padding-left: 10px;">
+                <legend style="display: block !important; font: inherit;">Tạo menu cho mục tin và bài viết</legend>
                 <div class="divMenuType">
-                    <label>
-                        <input type="radio" id="rdConsul" name="rdType" value="2" />Menu Tư vấn
+                    <label style="padding-top: 10px;">
+                        <input type="radio" id="rdConsul" name="rdType" value="2" />Mục Tư vấn
                     </label>
                     <div class="divMenuTypeConsul">
                         <label style="width: 160px;">
@@ -59,9 +66,9 @@
                         </label>
                     </div>
                 </div>
-                <div class="divMenuType">
+                <div class="divMenuType" style="padding-top: 10px;">
                     <label>
-                        <input type="radio" id="rdContact" name="rdType" value="3" />Menu Liên hệ
+                        <input type="radio" id="rdContact" name="rdType" value="3" />Mục Liên hệ
                     </label>
                 </div>
             </fieldset>
@@ -76,20 +83,25 @@
             </div>
             <div id="divControl" style="clear: both; height: 50px; padding-left: 10px;">
                 <div id="divPos" style="float: left;">
-                    <label>Vị trí sắp xếp</label>
+                    <label>Vị trí sắp xếp:</label>
                     <input type="text" id="tbPos" placeholder="chỉ nhập số" style="width: 80px;" />
                 </div>
                 <div id="divParent" style="display: none; float: left;">
-                    <label>Chọn menu đầu mục</label>
+                    <label>Chọn menu đầu mục:</label>
                     <select id="parentid" style="height: 30px; width: 145px;">
                     </select>
                 </div>
             </div>
-            <div style="clear: both; padding-left: 20px;">
-                <label>Tiêu đề</label>
-                <input type="text" id="tbName" />
+            <div style="clear: both; padding-left: 10px;">
+                <label>Tiêu đề:</label>
+                <input type="text" id="tbName" style="width: 300px;" />
             </div>
-            <div style="clear: both; padding-top: 10px; padding-left: 10px;">
+            <div id="divlinknews" style="clear: both; padding-left: 10px; padding-top: 10px; display: none;">
+                <label>Liên kết tới bài viết: </label>
+                <img id="linkNews" src="../Images/link.png" title="Tạo liên kết tới bài viết" width="25" style="cursor: pointer;" />
+                <label id="lblNewsId" style="display: none;">0</label>
+            </div>
+            <div style="clear: both; padding-top: 20px; padding-left: 10px;">
                 <button type="button" id="btnCreate">Tạo mới</button>
                 <button type="button" id="btnCancel" onclick=" location.reload() ">Hủy</button>
             </div>
@@ -97,8 +109,9 @@
         <div class="admin-project-cate" style="border-left: lightgray 1px solid; float: left; margin: 10px; padding-left: 30px; width: 310px;">
         </div>
     </div>
+    <div id="containernews"></div>
     <script type="text/javascript">
-
+        var wnd;
         var _id = 0;
 
         $(document).ready(function () {
@@ -125,6 +138,11 @@
             }else {
                 $('.divMenuTypeConsul').css("display", "none");
             }
+            if(value == '2' || value == '3') {
+                $("#divlinknews").css("display", "block");
+            } else {
+                $("#divlinknews").css("display", "none");
+            }
         });
 
         $("input:radio[name=rdConsulType]").click(function() {
@@ -150,6 +168,7 @@
             } else {
                 menu.subtype = null;
             }
+            menu.link = $('#lblNewsId').text();
             var name = $('#tbName').val();
             menu.name = name;
         }
@@ -228,5 +247,22 @@
                 bindMenu();
             }
         }
+        
+        $('#linkNews').click(function () {
+            $("#containernews").html("");
+            var url = "../Contents/NewsCollection.aspx";
+            wnd = ShowPopupIframe(750, 450, "Chọn bài viết", "containernews", url);
+            $("#containernews").parent().width(750).height(450);
+        });
+        
+        function closeChildPopup() {
+            wnd.close();
+        }
+
+        function getNewsId(val) {
+            $('#lblNewsId').text(val);
+            closeChildPopup();
+        }
+        
     </script>
 </asp:Content>

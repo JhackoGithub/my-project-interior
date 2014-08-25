@@ -226,6 +226,7 @@
     <Content Include="App_Themes\Windows7\Window\Windows7.gif" />
     <Content Include="App_Themes\Windows7\Window\WindowVerticalSprites.gif" />
     <Content Include="App_Themes\Windows7\Window\WindowVerticalSprites.png" />
+    <Content Include="Contents\NewsCollection.aspx" />
     <Content Include="Content\admin.css" />
     <Content Include="Admin\AddNews.aspx" />
     <Content Include="Admin\AddProject.aspx" />
@@ -590,6 +591,7 @@
     <Content Include="Images\iDelete.png" />
     <Content Include="Images\iEdit.png" />
     <Content Include="Images\iView.png" />
+    <Content Include="Images\link.png" />
     <Content Include="Images\loading-map.gif" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\marker.png" />
@@ -607,6 +609,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\pattern.gif" />
+    <Content Include="Images\preview.png" />
     <Content Include="Images\products\00.jpg" />
     <Content Include="Images\products\1.jpg" />
     <Content Include="Images\products\10.jpg" />
@@ -1459,6 +1462,13 @@
     </Compile>
     <Compile Include="Contents\Investigate.aspx.designer.cs">
       <DependentUpon>Investigate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contents\NewsCollection.aspx.cs">
+      <DependentUpon>NewsCollection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contents\NewsCollection.aspx.designer.cs">
+      <DependentUpon>NewsCollection.aspx</DependentUpon>
     </Compile>
     <Compile Include="Core\AuthenPage.cs">
       <SubType>ASPXCodeBehind</SubType>
