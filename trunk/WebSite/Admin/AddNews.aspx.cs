@@ -2,11 +2,13 @@
 using System.Web;
 using BLL;
 using WebSite.Core;
+using NewsBE = Entities.News;
 
 namespace WebSite.Admin
 {
     public partial class AddNews : AuthenPage
     {
+        public string ImageUrl = "/Images/no-image.png";
         private const string Path = "/Images/Uploads/News/";
 
         private int Id
@@ -16,7 +18,7 @@ namespace WebSite.Admin
 
         private string Filename
         {
-            get { return (string) ViewState["FILE_NAME"]; }
+            get { return (string)ViewState["FILE_NAME"]; }
             set { ViewState["FILE_NAME"] = value; }
         }
 
@@ -32,8 +34,10 @@ namespace WebSite.Admin
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            var news = new Entities.News();
+            var news = new NewsBE();
             BindControlToEntity(news);
+            if(string.IsNullOrEmpty(news.Contents))
+                return;
             var newBo = new NewsBO();
             news.Id = Id;
             int res = Id == 0 ? newBo.AddNews(news) : newBo.UpdateNews(news);
@@ -49,23 +53,27 @@ namespace WebSite.Admin
         private void BindEntityToControl()
         {
             var newsBo = new NewsBO();
-            Entities.News news = newsBo.GetNewsById(Id);
-            ucNews.tbTitle.Text = news.Title;
-            ucNews.tbSubcontent.Text = news.SubContent;
-            ucNews.radContent.Content = news.Contents;
+            NewsBE news = newsBo.GetNewsById(Id);
+            tbTitle.Text = news.Title;
+            tbSubcontent.Text = news.SubContent;
+            radContent.Content = news.Contents;
             if (string.IsNullOrEmpty(news.ImageUrl)) return;
             Filename = news.ImageUrl;
-            ucNews.ImageUrl = string.Format("{0}{1}", Path, news.ImageUrl);
+            ImageUrl = string.Format("{0}{1}", Path, news.ImageUrl);
         }
 
-        private void BindControlToEntity(Entities.News news)
+        private void BindControlToEntity(NewsBE news)
         {
-            news.Title = ucNews.tbTitle.Text.Trim();
-            news.SubContent = ucNews.tbSubcontent.Text.Trim();
-            news.Contents = ucNews.radContent.Content;
+            news.Type = int.Parse(hdfNewKind.Value);
+            if (news.Type != 0)
+            {
+                news.Title = tbTitle.Text.Trim();
+                news.Contents = radContent.Content;
+                return;
+            }
+            news.SubContent = tbSubcontent.Text.Trim();
             news.ImageUrl = Filename;
-
-            HttpPostedFile postedFile = ucNews.uploadFile.PostedFile;
+            HttpPostedFile postedFile = uploadFile.PostedFile;
             if (postedFile == null || postedFile.ContentLength <= 0) return;
             if (string.IsNullOrEmpty(Filename) ||
                 (!string.IsNullOrEmpty(Filename) && !Filename.Equals(postedFile.FileName)))

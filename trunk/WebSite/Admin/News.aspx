@@ -19,6 +19,11 @@
         <HeaderStyle HorizontalAlign="Left" Height="30" Font-Bold="True" />
         <MasterTableView AllowMultiColumnSorting="False" AllowFilteringByColumn="False">
             <Columns>
+                <telerik:GridTemplateColumn UniqueName="TemplateColumn" AllowFiltering="False">
+                    <ItemTemplate>
+                        <%#Convert.ToInt32(Eval("Type")) == 0 ? "Tin tức" : "Bài viết khác" %>
+                    </ItemTemplate>
+                </telerik:GridTemplateColumn>
                 <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Tiêu đề" AndCurrentFilterFunction="Contains" HtmlEncode="True"
                                          AllowSorting="False" ShowFilterIcon="false">
                 </telerik:GridBoundColumn>

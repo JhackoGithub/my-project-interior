@@ -105,11 +105,11 @@ namespace WebSite.Handler
                 if (menu == null) continue;
                 List<MenuLeft> menuChild = menus.Where(t => t.ParentId != null && t.ParentId == menu.Id).ToList();
                 htmlMenu.AppendFormat("<li>" +
-                                      "<div>" +
-                                      "<div style='float: left;'>{0}</div>" +
-                                      "<div style='float: right;'>" +
-                                      "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' />" +
-                                      "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' />" +
+                                      "<div style='height: 20px;'>" +
+                                      "<div style='float: left; text-transform: uppercase;padding-top: 5px;'>{0}</div>" +
+                                      "<div style='float: right; padding-right: 15px;'>" +
+                                      "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' title='Xóa' />" +
+                                      "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' title='Sửa' />" +
                                       "</div>" +
                                       "</div>",
                                       menu.Name, menu.Id, menu.Id);
@@ -122,12 +122,17 @@ namespace WebSite.Handler
                     htmlMenu.Append("<ul>");
                     foreach (MenuLeft menuLeft in menuChild)
                     {
+                        var imgLink = (menuLeft.Type == 2 &&  menuLeft.Link > 0)
+                                          ? string.Format(
+                                              "<img src='../Images/link.png' width='16' title='Xem liên kết' />")
+                                          : string.Empty;
                         htmlMenu.AppendFormat("<li>" +
                                               "<div>" +
                                               "<span>{0}</span>" +
                                               "<div>" +
-                                              "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' />" +
-                                              "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' />" +
+                                              "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' title='Xóa' />" +
+                                              "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' title='Sửa' />" +
+                                              imgLink +
                                               "</div>" +
                                               "</div>" +
                                               "</li>",

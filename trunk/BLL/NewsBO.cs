@@ -14,6 +14,13 @@ namespace BLL
             return res;
         }
 
+        public List<News> GetNewsByType(int type)
+        {
+            var dao = new NewsDAO();
+            List<News> res = dao.GetNewsByType(type);
+            return res;
+        }
+
         public List<News> GetTopNews(int top)
         {
             var dao = new NewsDAO();

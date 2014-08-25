@@ -16,7 +16,7 @@ namespace Entities
 
         public string Name { get; set; }
 
-        public string Link { get; set; }
+        public int? Link { get; set; }
 
         public DateTime CreatedOn { get; set; }
 

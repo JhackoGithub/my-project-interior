@@ -49,6 +49,7 @@ namespace DAL
                                     new SqlParameter("@ParentId", menuLeft.ParentId),
                                     new SqlParameter("@Position", menuLeft.Position),
                                     new SqlParameter("@Name", menuLeft.Name),
+                                    new SqlParameter("@Link", menuLeft.Link == 0 ? null : menuLeft.Link),
                                     new SqlParameter("@CreatedOn", menuLeft.CreatedOn)
                                 };
 
@@ -65,6 +66,7 @@ namespace DAL
                                     new SqlParameter("@ParentId", menuLeft.ParentId),
                                     new SqlParameter("@Position", menuLeft.Position),
                                     new SqlParameter("@Name", menuLeft.Name),
+                                    new SqlParameter("@Link", menuLeft.Link == 0 ? null : menuLeft.Link),
                                     new SqlParameter("@ChangedOn", menuLeft.ChangedOn)
                                 };
 

@@ -22,6 +22,13 @@ namespace DAL
             return res;
         }
 
+        public List<News> GetNewsByType(int type)
+        {
+            var paramSql = new SqlParameter("@Type", type);
+            List<News> res = ExecuteToList<News>("News_GetByType", paramSql);
+            return res;
+        }
+
         public List<News> GetTopNews(int top)
         {
             var paramSql = new SqlParameter("@Top", top);
@@ -40,6 +47,7 @@ namespace DAL
         {
             var paramArrs = new[]
                                 {
+                                    new SqlParameter("@Type", news.Type),
                                     new SqlParameter("@Title", news.Title),
                                     new SqlParameter("@SubContent", news.SubContent),
                                     new SqlParameter("@ImageUrl", news.ImageUrl),
