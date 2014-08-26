@@ -99,7 +99,7 @@
             <div id="divlinknews" style="clear: both; padding-left: 10px; padding-top: 10px; display: none;">
                 <label>Liên kết tới bài viết: </label>
                 <img id="linkNews" src="../Images/link.png" title="Tạo liên kết tới bài viết" width="25" style="cursor: pointer;" />
-                <label id="lblNewsId" style="display: none;">0</label>
+                <label id="lblNewsId" style="display: none;"></label>
             </div>
             <div style="clear: both; padding-top: 20px; padding-left: 10px;">
                 <button type="button" id="btnCreate">Tạo mới</button>
@@ -168,7 +168,8 @@
             } else {
                 menu.subtype = null;
             }
-            menu.link = $('#lblNewsId').text();
+            var newsid = $('#lblNewsId').text();
+            menu.link = newsid == '' ? null : newsid;
             var name = $('#tbName').val();
             menu.name = name;
         }
@@ -189,7 +190,6 @@
         }
 
         function bindMenu() {
-            
             var resType = $('input[name=rdType]:checked').val();
             var param = "&type=" + resType;
             if(resType == "2") {
@@ -209,17 +209,23 @@
             _id = id;
             var resType = $('input[name=rdType]:checked').val();
             var url = "../Handler/MenuHanlder.ashx?funcname=edit&id=" + id + "&type=" + resType;
-            callAjaxHandler(url, null, AjaxConst.GetRequest, getMenuByIdCallback);
+            callAjaxHandler(url, null, AjaxConst.GetRequest, bindEntityToControl);
         }
 
-        function getMenuByIdCallback(data) {
+        function bindEntityToControl(data) {
             var $rdType = $('input:radio[name=rdType]');
             var $rdKind = $('input:radio[name=rdKind]');
+            var $rdConsulType = $('input:radio[name=rdConsulType]');
+            
             $rdKind.attr('disabled', false);
             $rdType.attr('disabled', false);
+            $rdConsulType('disabled', false);
 
-            var strfilter = data.ParentId == null ? '[value="0"]' : '[value="1"]';
-            $rdKind.filter(strfilter).click();
+            var filterkind = data.ParentId== null ? '[value="0"]' : '[value="1"]';
+            $rdKind.filter(filterkind).click();
+            
+            var filtertype = '[value="' + data.Type + '"]';
+            $rdType.filter(filtertype).click();
 
             if (data.ParentId == null) {
                 $('#tbPos').val(data.Position);
@@ -229,7 +235,9 @@
 
             $rdKind.attr('disabled', true);
             $rdType.attr('disabled', true);
+            $rdConsulType('disabled', true);
 
+            $('#lblNewsId').text(data.Link == null ? '' : data.Link);
             $('#tbName').val(data.Name);
             $('#btnCreate').html('Lưu thay đổi');
         }
