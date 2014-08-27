@@ -22,12 +22,21 @@ namespace WebSite {
         protected global::WebSite.UserControls.MenuTop menuTop;
         
         /// <summary>
-        /// ltMenuLeft control.
+        /// menuLeft control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltMenuLeft;
+        protected global::WebSite.UserControls.MenuLeft menuLeft;
+        
+        /// <summary>
+        /// ltContents control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltContents;
     }
 }

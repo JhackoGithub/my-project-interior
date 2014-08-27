@@ -22,6 +22,12 @@ namespace DAL
             return res;
         }
 
+        public List<MenuLeft> GetMenuConsultant()
+        {
+            List<MenuLeft> res = ExecuteToList<MenuLeft>("MenuLeftConsultant_GetAll");
+            return res;
+        }
+
         public List<MenuLeft> GetMenuLefs(int type)
         {
             var paramSql = new SqlParameter("@Type", type);
