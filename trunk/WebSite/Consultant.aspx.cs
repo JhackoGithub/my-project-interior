@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Web.UI;
+using BLL;
 
 namespace WebSite
 {
@@ -11,80 +12,37 @@ namespace WebSite
             get { return Request.QueryString["type"] == null ? 0 : Convert.ToInt32(Request.QueryString["type"]); }
         }
 
+        private int Id
+        {
+            get { return Request.QueryString["id"] == null ? 0 : Convert.ToInt32(Request.QueryString["id"]); }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            GenerateMenuLeft();
+            if(IsPostBack)
+                return;
+            //GenerateMenuLeft();
+            BindContent();
         }
 
-        private void GenerateMenuLeft()
+        private void BindContent()
         {
-            var menu = new StringBuilder();
-            menu.Append("<ul>");
-            menu.Append("<li class='has-sub'><a href='#'><span>Kiến thức cần thiết khi xây nhà</span></a>");
-            menu.Append("<ul>");
-            menu.AppendFormat(
-                "<li><a href='Consultant-1-1.aspx?type={0}'><span>Kiến thức cần thiết khi xây nhà</span></a></li>",
-                Type);
-            menu.AppendFormat(
-                "<li><a href='Consultant-1-2.aspx?type={0}'><span>Giá trị thiết kế chuyên nghiệp</span></a></li>",
-                Type);
-            menu.AppendFormat(
-                "<li class='last'><a href='Consultant-1-3.aspx?type={0}'><span>Quy trình thiết kế</span></a></li>",
-                Type);
-            menu.AppendFormat(
-                "<li class='last'><a href='Consultant-1-4.aspx?type={0}'><span>Nội dung hồ sơ bản vẽ</span></a></li>",
-                Type);
-            menu.Append("</ul>");
-            menu.Append("</li>");
-
-            if (Type == 0)
+            if(Id == 0)
             {
-                GenerateMenuArchiture(menu);
+                const string defaultContent = @"<p style='font-size: 13pt;'>Chuyên trang thiết kế nhà ở</p>
+                                    <p>
+                                        Kiến trúc và nội thất nhà ở có lẽ là lĩnh vực được nhiều sự quan tâm nhất. Bạn cũng như
+                                        chúng tôi, mỗi người đều có một mái nhà và dù chúng là những ngôi biệt thự sang trọng hay những
+                                        căn hộ bình dị thì chúng vẫn thật gần gũi với tất cả chúng ta.
+                                    </p>
+                                    <p>
+                                        Cùng với sự phát triển về kinh tế xã hội, khi nhu cầu của mỗi người không chỉ dừng ở 'ăn no, mặc ấm' mà đang chuyển thành 'ăn ngon, mặc đẹp' thì một ngôi nhà không chỉ cần bền chắc mà còn phải đẹp và thật sự tiện nghi. Để làm được điều đó không thể thiếu vai trò của các Kiến trúc sư. Một bản thiết kế tốt sẽ đem lại cho bạn cái Đẹp sự Tiện nghi, giúp bạn Tiết kiệm chi phí đầu tư, hạn chế phát sinh chi phí khi thi công... </p>";
+                ltContents.Text = defaultContent;
+                return;
             }
-            else
-            {
-                GenerateMenuInterior(menu);
-            }
-            menu.Append("</ul>");
-            ltMenuLeft.Text = menu.ToString();
-        }
-
-        private void GenerateMenuArchiture(StringBuilder menu)
-        {
-            menu.Append("<li class='has-sub'><a href='#'><span>Biệt thự</span></a>");
-            menu.Append("<ul>");
-            menu.Append("<li><a href='Architecture.aspx'><span>Hiện đại</span></a></li>");
-            menu.Append("<li class='last'><a href='commingsoon.aspx'><span>Cổ điển</span></a></li>");
-            menu.Append("</ul>");
-            menu.Append("</li>");
-            menu.Append("<li class='has-sub'><a href='#'><span>Nhà lô phố</span></a>");
-            menu.Append("<ul>");
-            menu.Append("<li><a href='Architecture.aspx'><span>Hiện đại</span></a></li>");
-            menu.Append("<li class='last'><a href='commingsoon.aspx'><span>Cổ điển</span></a></li>");
-            menu.Append("</ul>");
-            menu.Append("</li>");
-        }
-
-        private void GenerateMenuInterior(StringBuilder menu)
-        {
-            menu.Append("<li class='has-sub'><a href='#'><span>Nội thât biệt thự</span></a>");
-            menu.Append("<ul>");
-            menu.Append("<li><a href='Interior.aspx'><span>Hiện đại</span></a></li>");
-            menu.Append("<li class='last'><a href='commingsoon.aspx'><span>Cổ điển</span></a></li>");
-            menu.Append("</ul>");
-            menu.Append("</li>");
-            menu.Append("<li class='has-sub'><a href='#'><span>Nội thât nhà lô phố</span></a>");
-            menu.Append("<ul>");
-            menu.Append("<li><a href='Architecture.aspx'><span>Hiện đại</span></a></li>");
-            menu.Append("<li class='last'><a href='commingsoon.aspx'><span>Cổ điển</span></a></li>");
-            menu.Append("</ul>");
-            menu.Append("</li>");
-            menu.Append("<li class='has-sub'><a href='#'><span>Nội thât chung cư</span></a>");
-            menu.Append("<ul>");
-            menu.Append("<li><a href='Architecture.aspx'><span>Hiện đại</span></a></li>");
-            menu.Append("<li class='last'><a href='commingsoon.aspx'><span>Cổ điển</span></a></li>");
-            menu.Append("</ul>");
-            menu.Append("</li>");
+            var bo = new NewsBO();
+            var res = bo.GetNewsById(Id);
+            ltContents.Text = res.Contents ?? string.Empty;
         }
     }
 }

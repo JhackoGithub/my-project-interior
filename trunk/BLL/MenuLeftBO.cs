@@ -14,6 +14,13 @@ namespace BLL
             return res;
         }
 
+        public List<MenuLeft> GetMenuConsultant()
+        {
+            var dao = new MenuLeftDAO();
+            List<MenuLeft> res = dao.GetMenuConsultant();
+            return res;
+        }
+
         public List<MenuLeft> GetMenuLeft(int type)
         {
             var dao = new MenuLeftDAO();

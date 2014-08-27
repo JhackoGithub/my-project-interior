@@ -56,13 +56,13 @@
                     </label>
                     <div class="divMenuTypeConsul">
                         <label style="width: 160px;">
-                            <input type="radio" id="rdConsulGeneral" name="rdConsulType" value="0" checked="checked"/>Phần chung cho cả 2
+                            <input type="radio" id="rdConsulGeneral" name="rdConsulType" value="2" checked="checked"/>Phần chung cho cả 2
                         </label>
                         <label style="width: 80px;">
-                            <input type="radio" id="rdConsulArchi" name="rdConsulType" value="1" />Kiến trúc
+                            <input type="radio" id="rdConsulArchi" name="rdConsulType" value="0" />Kiến trúc
                         </label>
                         <label style="width: 80px;">
-                            <input type="radio" id="rdConsulInteri" name="rdConsulType" value="2" />Nội thất
+                            <input type="radio" id="rdConsulInteri" name="rdConsulType" value="1" />Nội thất
                         </label>
                     </div>
                 </div>
@@ -219,7 +219,7 @@
             
             $rdKind.attr('disabled', false);
             $rdType.attr('disabled', false);
-            $rdConsulType('disabled', false);
+            $rdConsulType.attr('disabled', false);
 
             var filterkind = data.ParentId== null ? '[value="0"]' : '[value="1"]';
             $rdKind.filter(filterkind).click();
@@ -235,7 +235,7 @@
 
             $rdKind.attr('disabled', true);
             $rdType.attr('disabled', true);
-            $rdConsulType('disabled', true);
+            $rdConsulType.attr('disabled', true);
 
             $('#lblNewsId').text(data.Link == null ? '' : data.Link);
             $('#tbName').val(data.Name);

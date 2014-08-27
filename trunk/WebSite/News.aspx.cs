@@ -46,7 +46,7 @@ namespace WebSite
         private void BindNewsRelative()
         {
             var newsBo = new NewsBO();
-            List<Entities.News> news = newsBo.GetNews();
+            List<Entities.News> news = newsBo.GetNewsByType(0);
             var htmlNews = new StringBuilder();
             foreach (Entities.News newse in news)
             {
