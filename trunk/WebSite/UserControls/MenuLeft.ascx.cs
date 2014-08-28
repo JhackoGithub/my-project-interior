@@ -29,18 +29,26 @@ namespace WebSite.UserControls
         private List<MenuBE> GetMenuProject()
         {
             var bo = new MenuLeftBO();
-            if(Tab == 1)
+            var res = new List<MenuBE>();
+            switch (Tab)
             {
-                var menus = bo.GetMenuProject();
-                var res = menus.Where(t => t.Type == Type).ToList();
-                return res;
+                case 1:
+                    {
+                        var menus = bo.GetMenuProject();
+                        res = menus.Where(t => t.Type == Type).ToList();
+                    }
+                    break;
+                case 2:
+                    {
+                        var menus = bo.GetMenuConsultant();
+                        res = menus.Where(t => t.SubType == 2 || t.SubType == Type).ToList();
+                    }
+                    break;
+                case 0:
+                        res = bo.GetMenuContact();
+                    break;
             }
-            else
-            {
-                var menus = bo.GetMenuConsultant();
-                var res = menus.Where(t => (t.SubType == 2 || t.SubType == Type) && t.Link != null).ToList();
-                return res;
-            }
+            return res;
         }
 
         private void GenerateMenu()
@@ -51,31 +59,38 @@ namespace WebSite.UserControls
             foreach (MenuBE menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
             {
                 if (menu == null) continue;
-                List<MenuBE> menuChild = menus.Where(t => t.ParentId != null && t.ParentId == menu.Id).ToList();
-                htmlMenu.AppendFormat("<li>" +
-                                      "<a href='#'>" +
-                                        "<span>{0}</span>" +
-                                      "</a>", menu.Name);
+                List<MenuBE> menuChild = Tab == 1
+                                             ? menus.Where(t => t.ParentId != null && t.ParentId == menu.Id).ToList()
+                                             : menus.Where(t => t.ParentId != null && t.ParentId == menu.Id && t.Link != null).ToList();
                 if (menuChild.Count == 0)
+                    continue;
+                htmlMenu.AppendFormat("<li><a href='#'><span>{0}</span></a></li>", menu.Name);
+                
+                htmlMenu.Append("<ul>");
+                if(Tab == 0)
                 {
-                    htmlMenu.Append("</li>");
+                    htmlMenu.AppendFormat("<li><a href='Contact.aspx?type={0}&name=map'><span>Địa điểm công ty</span></a></li>", Type); 
                 }
-                else
+                foreach (MenuBE menuLeft in menuChild)
                 {
-                    htmlMenu.Append("<ul>");
-                    foreach (MenuBE menuLeft in menuChild)
+                    if (Tab == 1)
                     {
-                        if (Tab == 1)
-                        {
-                            htmlMenu.AppendFormat("<li><a href='Project.aspx?type={0}&tab=1&cate={1}'><span>{2}</span></a></li>", Type,menuLeft.Id, menuLeft.Name);
-                        }
-                        else
-                        {
-                            htmlMenu.AppendFormat("<li><a href='Consultant.aspx?type={0}&tab=2&id={1}'><span>{2}</span></a></li>", Type, menuLeft.Link, menuLeft.Name);
-                        }
+                        htmlMenu.AppendFormat("<li><a href='Project.aspx?type={0}&tab=1&cate={1}'><span>{2}</span></a></li>", Type,menuLeft.Id, menuLeft.Name);
                     }
-                    htmlMenu.Append("</ul>");
+                    else if(Tab == 2)
+                    {
+                        htmlMenu.AppendFormat("<li><a href='Consultant.aspx?type={0}&tab=2&id={1}'><span>{2}</span></a></li>", Type, menuLeft.Link ?? 0, menuLeft.Name);
+                    }
+                    else
+                    {
+                        htmlMenu.AppendFormat("<li><a href='Contact.aspx?type={0}&id={1}'><span>{2}</span></a></li>", Type, menuLeft.Link ?? 0, menuLeft.Name);
+                    }
                 }
+                if (Tab == 0)
+                {
+                    htmlMenu.AppendFormat("<li><a href='Contact.aspx?type={0}&name=phieu-dieu-tra'><span>Phiếu điều tra</span></a></li>", Type);
+                }
+                htmlMenu.Append("</ul>");
             }
             htmlMenu.Append("</ul>");
             ltMenu.Text = htmlMenu.ToString();

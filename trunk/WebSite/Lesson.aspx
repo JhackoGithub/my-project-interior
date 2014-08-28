@@ -487,7 +487,6 @@
             var id = getParameterByName('id');
             var tab = getParameterByName('tab');
             var url = page + "?type=" + type + "&id=" + id + "&tab=" + tab;
-            debugger;
             $('#cssmenu ul li ul li a').each(function() {
                 var link = $(this).attr('href');
                 if (link.indexOf(url) >= 0) {

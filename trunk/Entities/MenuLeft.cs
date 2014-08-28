@@ -8,7 +8,7 @@ namespace Entities
 
         public int Type { get; set; }
 
-        public int SubType { get; set; }
+        public int? SubType { get; set; }
 
         public int? ParentId { get; set; }
 

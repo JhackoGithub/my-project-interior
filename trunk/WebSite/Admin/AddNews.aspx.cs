@@ -54,9 +54,11 @@ namespace WebSite.Admin
         {
             var newsBo = new NewsBO();
             NewsBE news = newsBo.GetNewsById(Id);
+            hdfNewKind.Value = news.Type.ToString();
             tbTitle.Text = news.Title;
             tbSubcontent.Text = news.SubContent;
             radContent.Content = news.Contents;
+            ltScript.Text = string.Format("<script>newsKindClick('{0}')</script>", news.Type);
             if (string.IsNullOrEmpty(news.ImageUrl)) return;
             Filename = news.ImageUrl;
             ImageUrl = string.Format("{0}{1}", Path, news.ImageUrl);

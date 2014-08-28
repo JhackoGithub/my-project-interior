@@ -31,11 +31,11 @@ function callAjaxHandler(url, entryData, requestType, successCallBack) {
 }
 
 $(document).ready(function() {
-    $('#cssmenu > ul > li ul').each(function(index, e) {
-        var count = $(e).find('li').length;
-        var content = '<span class="cnt">' + count + '</span>';
-        $(e).closest('li').children('a').append(content);
-    });
+    //$('#cssmenu > ul > li ul').each(function(index, e) {
+    //    var count = $(e).find('li').length;
+    //    var content = '<span class="cnt">' + count + '</span>';
+    //    $(e).closest('li').children('a').append(content);
+    //});
     $('#cssmenu ul ul li:odd').addClass('odd');
     $('#cssmenu ul ul li:even').addClass('even');
     $('#cssmenu > ul > li > a').click(function() {
