@@ -54,7 +54,7 @@
 <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
     <div class="news-top">
     <label>
-        <input type="radio" id="rdNews" name="rdNewsKind" value="0" checked="checked" style="width: 25px;" />Tạo bài viết cho mục Tin tức
+        <input type="radio" id="rdNews" name="rdNewsKind" value="0" style="width: 25px;" />Tạo bài viết cho mục Tin tức
     </label>
     <br/>
     <label>
@@ -128,6 +128,12 @@
                     $("#newsImage").css("display", "none");
                 }
             });
+
+            function newsKindClick(val) {
+                var $rdKind = $('input:radio[name=rdNewsKind]');
+                var filterkind = '[value="' + val + '"]';
+                $rdKind.filter(filterkind).click();
+            }
 
             function validate() {
                 var title = $find("<%=tbTitle.ClientID%>");

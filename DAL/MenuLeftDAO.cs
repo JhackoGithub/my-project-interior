@@ -18,15 +18,22 @@ namespace DAL
 
         public List<MenuLeft> GetMenuProject()
         {
-            List<MenuLeft> res = ExecuteToList<MenuLeft>("MenuLeftProject_GetAll");
+            var res = ExecuteToList<MenuLeft>("MenuLeftProject_GetAll");
             return res;
         }
 
         public List<MenuLeft> GetMenuConsultant()
         {
-            List<MenuLeft> res = ExecuteToList<MenuLeft>("MenuLeftConsultant_GetAll");
+            var res = ExecuteToList<MenuLeft>("MenuLeftConsultant_GetAll");
             return res;
         }
+
+        public List<MenuLeft> GetMenuContact()
+        {
+            var res = ExecuteToList<MenuLeft>("MenuLeftContact_GetAll");
+            return res;
+        }
+
 
         public List<MenuLeft> GetMenuLefs(int type)
         {

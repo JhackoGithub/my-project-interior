@@ -14,7 +14,7 @@
     <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
     <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
     <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
-    <telerik:RadGrid ID="rgNews" runat="server" AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" PageSize="15" Height="300px"
+    <telerik:RadGrid ID="rgNews" runat="server" AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" PageSize="15"
                      EnableEmbeddedSkins="False" CellSpacing="0" GridLines="None" OnNeedDataSource="rgNews_NeedDataSource" OnItemCommand="rgNews_ItemCommand">
         <HeaderStyle HorizontalAlign="Left" Height="30" Font-Bold="True" />
         <MasterTableView AllowMultiColumnSorting="False" AllowFilteringByColumn="False">

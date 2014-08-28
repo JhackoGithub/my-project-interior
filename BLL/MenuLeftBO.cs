@@ -10,28 +10,35 @@ namespace BLL
         public List<MenuLeft> GetMenuProject()
         {
             var dao = new MenuLeftDAO();
-            List<MenuLeft> res = dao.GetMenuProject();
+            var res = dao.GetMenuProject();
             return res;
         }
 
         public List<MenuLeft> GetMenuConsultant()
         {
             var dao = new MenuLeftDAO();
-            List<MenuLeft> res = dao.GetMenuConsultant();
+            var res = dao.GetMenuConsultant();
+            return res;
+        }
+
+        public List<MenuLeft> GetMenuContact()
+        {
+            var dao = new MenuLeftDAO();
+            var res = dao.GetMenuContact();
             return res;
         }
 
         public List<MenuLeft> GetMenuLeft(int type)
         {
             var dao = new MenuLeftDAO();
-            List<MenuLeft> res = dao.GetMenuLefs(type);
+            var res = dao.GetMenuLefs(type);
             return res;
         }
 
         public MenuLeft GetMenuLeftById(int id, int type)
         {
             var dao = new MenuLeftDAO();
-            MenuLeft res = dao.GetMenuLefById(id, type);
+            var res = dao.GetMenuLefById(id, type);
             return res;
         }
 

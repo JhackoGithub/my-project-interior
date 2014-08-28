@@ -21,7 +21,6 @@ namespace WebSite
         {
             if(IsPostBack)
                 return;
-            //GenerateMenuLeft();
             BindContent();
         }
 

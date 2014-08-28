@@ -10,9 +10,6 @@
                     <div class="tabs">
                         <ucMenuTop:MenuTop ID="menuTop" runat="server" />
                         <div class="tab-wrapper">
-                            <%--<div id='cssmenu' style="float: left; width: 220px;">
-                                <asp:Literal runat="server" ID="ltMenuLeft"></asp:Literal>
-                            </div>--%>
                             <ucMenuLeft:MenuLeft ID="menuLeft" runat="server" />
                             <div id="tab1" class="tab" style="display: block; float: right; width: 700px;">
                                 <div class="Consultant-info">

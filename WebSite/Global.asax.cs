@@ -10,6 +10,9 @@ namespace WebSite
         private void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
+            System.Web.Routing.RouteTable.Routes.Ignore("{*dialogs}", new { dialogs = @".*Telerik\.Web\.UI\.DialogHandler\.aspx.*" });
+            System.Web.Routing.RouteTable.Routes.Ignore("{*allaxd}", new { allaxd = @".*\.axd(/.*)?" });
+
             AuthConfig.RegisterOpenAuth();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

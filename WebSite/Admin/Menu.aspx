@@ -98,10 +98,12 @@
             </div>
             <div id="divlinknews" style="clear: both; padding-left: 10px; padding-top: 10px; display: none;">
                 <label>Liên kết tới bài viết: </label>
-                <img id="linkNews" src="../Images/link.png" title="Tạo liên kết tới bài viết" width="25" style="cursor: pointer;" />
+                <img id="linkadd" src="../Images/link_add.png" title="Tạo liên kết tới bài viết" width="25" style="cursor: pointer;" />
+                <img id="linkdelete" src="../Images/link_delete.png" title="Xóa liên kết tới bài viết" width="25" style="cursor: pointer; display: none;" />
                 <label id="lblNewsId" style="display: none;"></label>
             </div>
             <div style="clear: both; padding-top: 20px; padding-left: 10px;">
+                <label id="lblmsg" style="color: red; display: none;">* Bấm nút Lưu thay đổi để hoàn tất</label><br/>
                 <button type="button" id="btnCreate">Tạo mới</button>
                 <button type="button" id="btnCancel" onclick=" location.reload() ">Hủy</button>
             </div>
@@ -238,8 +240,10 @@
             $rdConsulType.attr('disabled', true);
 
             $('#lblNewsId').text(data.Link == null ? '' : data.Link);
+            $('#linkdelete').css("display", data.Link == null ? 'none' : '');
             $('#tbName').val(data.Name);
             $('#btnCreate').html('Lưu thay đổi');
+            $('#lblmsg').css("display", 'none');
         }
 
         function deleteMenu(id) {
@@ -256,11 +260,17 @@
             }
         }
         
-        $('#linkNews').click(function () {
+        $('#linkadd').click(function () {
             $("#containernews").html("");
             var url = "../Contents/NewsCollection.aspx";
             wnd = ShowPopupIframe(750, 450, "Chọn bài viết", "containernews", url);
             $("#containernews").parent().width(750).height(450);
+        });
+
+        $('#linkdelete').click(function () {
+            $('#lblNewsId').text('');
+            $('#link' + _id).css("display", 'none');
+            $('#lblmsg').css("display", '');
         });
         
         function closeChildPopup() {

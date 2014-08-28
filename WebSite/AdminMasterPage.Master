@@ -32,11 +32,9 @@
                 <div id="topnavTut">
                     <a class="topnav" href="../">Tranh chủ</a>
                     <a class="topnav" href="../Admin/Project.aspx">Quản lý Dự án</a>
-                    <a class="topnav" href="../Admin/Consultant.aspx">Tư vấn</a>
                     <a class="topnav" href="../Admin/News.aspx">Quản lý Tin tức</a>
                     <a class="topnav" href="../Admin/Menu.aspx">Quản lý Menu</a>
                     <a class="topnav" href="../Admin/Images.aspx">Quản lý Hình ảnh</a>
-                    <a class="topnav" href="#">Liên hệ</a>
                 </div>
             </div>
             <div id="admin-body">
@@ -45,7 +43,6 @@
                     <asp:ContentPlaceHolder runat="server" ID="MainContent" />
                 </div>
             </div>
-            <hr style="height:5px;" />
             <div id="admin-footer">
                 <small>Copyright © 2014 Bản quyền thuộc về noithatviet.com.vn.</small>
             </div>

@@ -122,9 +122,9 @@ namespace WebSite.Handler
                     htmlMenu.Append("<ul>");
                     foreach (MenuLeft menuLeft in menuChild)
                     {
-                        var imgLink = (menuLeft.Type == 2 &&  menuLeft.Link > 0)
+                        var imgLink = ((menuLeft.Type == 2 || menuLeft.Type == 3) && menuLeft.Link > 0)
                                           ? string.Format(
-                                              "<img src='../Images/link.png' width='16' title='Xem liên kết' />")
+                                              "<img id='link{0}' src='../Images/link.png' width='16' title='Xem liên kết' />", menuLeft.Id)
                                           : string.Empty;
                         htmlMenu.AppendFormat("<li>" +
                                               "<div>" +

@@ -336,12 +336,6 @@
     <Content Include="App_Themes\BocaTheme\Window\Metro.gif" />
     <Content Include="App_Themes\BocaTheme\Window\rwResize.gif" />
     <Content Include="commingsoon.aspx" />
-    <Content Include="Consultant-1-1.aspx" />
-    <Content Include="Consultant-1-2.aspx" />
-    <Content Include="Consultant-1-3.aspx" />
-    <Content Include="Consultant-1-4.aspx" />
-    <Content Include="Consultant-2-0.aspx" />
-    <Content Include="Consultant-2-1.aspx" />
     <Content Include="Consultant.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Contents\ImageManager.aspx" />
@@ -592,6 +586,8 @@
     <Content Include="Images\iEdit.png" />
     <Content Include="Images\iView.png" />
     <Content Include="Images\link.png" />
+    <Content Include="Images\link_add.png" />
+    <Content Include="Images\link_delete.png" />
     <Content Include="Images\loading-map.gif" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\marker.png" />
@@ -1393,48 +1389,6 @@
     <Compile Include="Common\Extensions.cs" />
     <Compile Include="Common\UIProcess.cs" />
     <Compile Include="Common\Utils.cs" />
-    <Compile Include="Consultant-1-1.aspx.cs">
-      <DependentUpon>Consultant-1-1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Consultant-1-1.aspx.designer.cs">
-      <DependentUpon>Consultant-1-1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Consultant-1-2.aspx.cs">
-      <DependentUpon>Consultant-1-2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Consultant-1-2.aspx.designer.cs">
-      <DependentUpon>Consultant-1-2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Consultant-1-3.aspx.cs">
-      <DependentUpon>Consultant-1-3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Consultant-1-3.aspx.designer.cs">
-      <DependentUpon>Consultant-1-3.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Consultant-1-4.aspx.cs">
-      <DependentUpon>Consultant-1-4.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Consultant-1-4.aspx.designer.cs">
-      <DependentUpon>Consultant-1-4.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Consultant-2-0.aspx.cs">
-      <DependentUpon>Consultant-2-0.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Consultant-2-0.aspx.designer.cs">
-      <DependentUpon>Consultant-2-0.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Consultant-2-1.aspx.cs">
-      <DependentUpon>Consultant-2-1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Consultant-2-1.aspx.designer.cs">
-      <DependentUpon>Consultant-2-1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Consultant.aspx.cs">
       <DependentUpon>Consultant.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

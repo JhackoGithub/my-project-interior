@@ -25,7 +25,7 @@ hr {
 
 #admin-topnav {
     height: 30px;
-    background-color: #d3d3d3;
+    /*background-color: #d3d3d3;*/
 }
 
 #admin-topnav #topnavTut{
@@ -64,6 +64,10 @@ a.topnav:link, a.topnav:visited {
     padding-right: 15px;
     color: #555555;
     text-decoration: none;
+}
+
+a.topnav:hover {
+    text-decoration: underline;
 }
 
 /*Login form*/
@@ -230,6 +234,10 @@ fieldset ol li { padding-bottom: 5px; }
 .admin-project-cate ul ul li.odd { background: #f4f4f4; }
 
 .admin-project-cate ul ul li.even { background: #fff; }
+
+.admin-project-cate ul ul li div:hover { color: #a55835;
+    text-decoration: underline;
+}
 
 .admin-image-gallary {
     float: right;
