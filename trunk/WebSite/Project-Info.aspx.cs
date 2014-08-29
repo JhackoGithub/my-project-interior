@@ -37,7 +37,7 @@ namespace WebSite
             foreach (FileInfo fileInfo in dirInfo.GetFiles())
             {
                 string pathImage = string.Format("{0}\\{1}", path, fileInfo.Name);
-                imageSlide.AppendFormat("<img src='{0}' />", pathImage);
+                imageSlide.AppendFormat("<div data-thumb='{0}' data-src='{1}'></div>", pathImage, pathImage);
             }
             ltImages.Text = imageSlide.ToString();
             ltProjectInfo.Text = res.Information;
