@@ -4,17 +4,25 @@
 <%@ Register Src="~/UserControls/SameProject.ascx" TagPrefix="ucSameProject" TagName="SameProject" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuTopContent" runat="server">
     <ucMenuTop:MenuTop ID="menuTop" runat="server" />
+    <link href="Content/camera.css" rel="stylesheet" />
     <style type="text/css">
         #wrapper {
-            height: 400px;
+            height: 500px;
             width: 900px;
         }
 
-        #carousel img {
-            border: none;
+        #back_to_camera {
+            clear: both;
             display: block;
-            float: left;
-            position: relative;
+            height: 80px;
+            line-height: 40px;
+            padding: 20px;
+        }
+
+        .fluid_container {
+            height: 640px;
+            margin: 0 auto;
+            width: 900px;
         }
 
         #wrapper-tab {
@@ -69,89 +77,32 @@
             text-decoration: none;
         }
 
-        #pager a:hover { color: #666; }
+        #pager a:hover {
+            color: #666;
+        }
 
-        #pager a:first-child { border-left: 1px solid #ccc; }
+        #pager a:first-child {
+            border-left: 1px solid #ccc;
+        }
 
         #pager a.selected {
             background-color: #F4F0EE;
             color: #333;
         }
     </style>
+    <script src="Scripts/jquery.easing.1.3.js"> </script>
+    <script src="Scripts/camera.js" type="text/javascript"> </script>
     <script src="Scripts/jquery.carouFredSel-6.0.4-packed.js"> </script>
     <script type="text/javascript">
-        $(function() {
-            var _center = {
-                width: 600,
-                height: 400,
-                marginLeft: 0,
-                marginTop: 0,
-                marginRight: 0
-            };
-            var _left = {
-                width: 300,
-                height: 200,
-                marginLeft: 0,
-                marginTop: 150,
-                marginRight: -150
-            };
-            var _right = {
-                width: 300,
-                height: 200,
-                marginLeft: -150,
-                marginTop: 150,
-                marginRight: 0
-            };
-            var _outLeft = {
-                width: 150,
-                height: 100,
-                marginLeft: 150,
-                marginTop: 200,
-                marginRight: -200
-            };
-            var _outRight = {
-                width: 150,
-                height: 100,
-                marginLeft: -200,
-                marginTop: 200,
-                marginRight: 50
-            };
-            $('#carousel').carouFredSel({
-                width: 900,
-                height: 400,
-                align: false,
-                items: {
-                    visible: 3,
-                    width: 100
-                },
-                scroll: {
-                    items: 1,
-                    duration: 400,
-                    timeoutDuration: 2500,
-                    easing: 'swing',
-                    pauseOnHover: 'immediate',
-                    onBefore: function(data) {
-                        data.items.old.eq(0).animate(_outLeft);
-                        data.items.visible.eq(0).animate(_left);
-                        data.items.visible.eq(1).animate(_center);
-                        data.items.visible.eq(2).animate(_right).css({ zIndex: 1 });
-                        data.items.visible.eq(2).next().css(_outRight).css({ zIndex: 0 });
-
-                        setTimeout(function() {
-                            data.items.old.eq(0).css({ zIndex: 1 });
-                            data.items.visible.eq(0).css({ zIndex: 2 });
-                            data.items.visible.eq(1).css({ zIndex: 3 });
-                            data.items.visible.eq(2).css({ zIndex: 2 });
-                        }, 300);
-                    }
-                }
+        $(function () {
+            jQuery('#camera_wrap_2').camera({
+                height: '520px',
+                loader: 'bar',
+                pagination: true,
+                thumbnails: true,
+                imagePath: '/Images/'
             });
-            $('#carousel').children().eq(0).css(_left).css({ zIndex: 2 });
-            $('#carousel').children().eq(1).css(_center).css({ zIndex: 3 });
-            $('#carousel').children().eq(2).css(_right).css({ zIndex: 2 });
-            $('#carousel').children().eq(3).css(_outRight).css({ zIndex: 1 });
-
-
+            
             $('#tabs').carouFredSel({
                 circular: false,
                 items: 1,
@@ -159,23 +110,22 @@
                 auto: false,
                 pagination: {
                     container: '#pager',
-                    anchorBuilder: function(nr) {
+                    anchorBuilder: function (nr) {
                         return '<a href="#">' + $(this).find('h3').text() + '</a>';
                     }
                 }
             });
-
-            $("#carousel").mouseover(function() {
-                $("#carousel").trigger('pause', true);
-            });
         });
 
     </script>
+
 </asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="SlideProjectContent">
     <div id="wrapper">
-        <div id="carousel">
-            <asp:Literal runat="server" ID="ltImages"></asp:Literal>
+        <div class="fluid_container">
+            <div class="camera_wrap camera_magenta_skin" id="camera_wrap_2">
+                <asp:Literal runat="server" ID="ltImages"></asp:Literal>
+            </div>
         </div>
     </div>
 </asp:Content>

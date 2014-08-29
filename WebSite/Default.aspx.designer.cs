@@ -10,7 +10,7 @@
 namespace WebSite {
     
     
-    public partial class SiteMaster {
+    public partial class _Default {
         
         /// <summary>
         /// menu control.
@@ -20,15 +20,6 @@ namespace WebSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::WebSite.UserControls.Menu menu;
-        
-        /// <summary>
-        /// MainContainer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContainer;
         
         /// <summary>
         /// footer control.

@@ -907,7 +907,7 @@
                     var wTh = $('.camera_thumb', this).outerWidth(),
                         hTh = $('.camera_thumb', this).outerHeight(),
                         wTt = $(this).outerWidth();
-                    $('.camera_thumb', this).show().css({ 'top': '-' + hTh + 'px', 'left': '-' + (wTh - wTt) / 2 + 'px' }).animate({ 'opacity': 1, 'margin-top': '-3px' }, 200);
+                    $('.camera_thumb', this).show().css({ 'top': '-' + hTh + 'px', 'left': '-' + (wTh - wTt) / 2 + 'px' }).animate({ 'opacity': 1, 'margin-top': '-3px', 'height': '80px' }, 200);
                     $('.thumb_arrow', this).show().animate({ 'opacity': 1, 'margin-top': '-3px' }, 200);
                 }
             }, function() {

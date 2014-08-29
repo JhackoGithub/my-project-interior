@@ -589,6 +589,7 @@
     <Content Include="Images\link_add.png" />
     <Content Include="Images\link_delete.png" />
     <Content Include="Images\loading-map.gif" />
+    <Content Include="Images\loading.gif" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\marker.png" />
     <Content Include="Images\no-image.png" />

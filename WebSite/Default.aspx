@@ -73,7 +73,7 @@
                                             </div>
                                         </div>
                                         <div class="primary">
-                                            <ucMenu:Menu ID="ucMenu" runat="server" />
+                                            <ucMenu:Menu ID="menu" runat="server" />
                                         </div>
                                         <div id="top-search">
                                             <input type="text" name="s" class="input-search" />
