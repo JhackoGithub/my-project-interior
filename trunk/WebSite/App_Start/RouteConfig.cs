@@ -1,5 +1,4 @@
 using System.Web.Routing;
-using Microsoft.AspNet.FriendlyUrls;
 
 namespace WebSite.App_Start
 {
@@ -9,7 +8,8 @@ namespace WebSite.App_Start
         {
             //routes.EnableFriendlyUrls();
             //routes.Ignore("{resource}.axd/{*pathInfo}");
-            routes.MapPageRoute("admin", "admin/{name}", "~/Login.aspx", true, new RouteValueDictionary{{"name", "login"}});
+            routes.MapPageRoute("admin", "admin/{name}", "~/Login.aspx", true,
+                                new RouteValueDictionary {{"name", "login"}});
         }
     }
 }

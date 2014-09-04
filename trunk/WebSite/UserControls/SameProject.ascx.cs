@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 using System.Web.UI;
-using System.Linq;
 using BLL;
 using ProjectBE = Entities.Project;
 
@@ -27,11 +25,11 @@ namespace WebSite.UserControls
 
             GenerateSameProject();
         }
-        
+
         private void GenerateSameProject()
         {
-            var projects = GetProjects();
-            
+            IEnumerable<ProjectBE> projects = GetProjects();
+
             var htmlProject = new StringBuilder();
             htmlProject.Append("<ul class='recent-posts projects'>");
             foreach (ProjectBE project in projects)
@@ -57,7 +55,7 @@ namespace WebSite.UserControls
         private IEnumerable<ProjectBE> GetProjects()
         {
             var bo = new ProjectBO();
-            var res = bo.GetProjectCateId(CategoryId);
+            List<ProjectBE> res = bo.GetProjectCateId(CategoryId);
             return res;
         }
     }

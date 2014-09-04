@@ -1270,6 +1270,7 @@
     <Content Include="Handler\ProjectHandler.ashx" />
     <Content Include="Handler\ImageHandler.ashx" />
     <None Include="Properties\PublishProfiles\Publish.pubxml" />
+    <None Include="Properties\PublishProfiles\Publish_New.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Project-Info.aspx" />
     <Content Include="Project.aspx" />
@@ -1635,7 +1636,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>9652</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:8529/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

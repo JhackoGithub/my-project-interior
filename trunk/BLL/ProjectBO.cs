@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DAL;
 using Entities;
 
@@ -26,7 +24,7 @@ namespace BLL
         public List<Project> GetProjectCateId(int cateId)
         {
             var dao = new ProjectDAO();
-            var res = dao.GetProjectCateId(cateId);
+            List<Project> res = dao.GetProjectCateId(cateId);
             return res;
         }
 

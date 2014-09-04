@@ -15,7 +15,7 @@ namespace WebSite
         {
             if (IsPostBack)
                 return;
-            if(Id == 0)
+            if (Id == 0)
                 return;
             BindContent();
         }
@@ -23,7 +23,7 @@ namespace WebSite
         private void BindContent()
         {
             var bo = new NewsBO();
-            var res = bo.GetNewsById(Id);
+            Entities.News res = bo.GetNewsById(Id);
             ltContents.Text = res.Contents ?? string.Empty;
         }
     }

@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebSite.UserControls
 {
-    public partial class ImageManager : System.Web.UI.UserControl
+    public partial class ImageManager : UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(IsPostBack)
+            if (IsPostBack)
                 return;
             IntinialImageManager();
         }
@@ -19,10 +15,10 @@ namespace WebSite.UserControls
         private void IntinialImageManager()
         {
             RadFileExplorer1.Configuration.EnableAsyncUpload = true;
-            RadFileExplorer1.Configuration.SearchPatterns = new string[] { "*.jpg", "*.jpeg", "*.gif", "*.png" };
-            RadFileExplorer1.Configuration.ViewPaths = new string[] { "~/Images/projects" };
-            RadFileExplorer1.Configuration.UploadPaths = new string[] { "~/Images/projects" };
-            RadFileExplorer1.Configuration.DeletePaths = new string[] { "~/Images/projects" };
+            RadFileExplorer1.Configuration.SearchPatterns = new[] {"*.jpg", "*.jpeg", "*.gif", "*.png"};
+            RadFileExplorer1.Configuration.ViewPaths = new[] {"~/Images/projects"};
+            RadFileExplorer1.Configuration.UploadPaths = new[] {"~/Images/projects"};
+            RadFileExplorer1.Configuration.DeletePaths = new[] {"~/Images/projects"};
             RadFileExplorer1.Configuration.MaxUploadFileSize = 157286400;
         }
     }

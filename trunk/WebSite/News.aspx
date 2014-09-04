@@ -99,7 +99,8 @@
                                                     <img class="img130" src="Images/Uploads/News/<%#                                        Eval("ImageUrl") ?? "no-image.png" %>" alt="">
                                                 </a>
                                                 <div>
-                                                    <h2><a title="" href="News.aspx?type=2&id=<%#Eval("Id") %>">
+                                                    <h2><a title="" href="News.aspx?type=2&id=<%#Eval
+                                                                                                   ("Id") %>">
                                                             <%#Eval("Title") %>
                                                         </a></h2>
                                                     <div><%#Eval("SubContent") %></div>

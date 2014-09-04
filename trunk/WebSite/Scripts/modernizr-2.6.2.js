@@ -78,7 +78,7 @@ window.Modernizr = (function(window, document, undefined) {
 
         /*>>domprefixes*/
         // Following spec is to expose vendor-specific style properties as:
-    //   elem.style.WebkitBorderRadius
+        //   elem.style.WebkitBorderRadius
     // and the following would be incorrect:
     //   elem.style.webkitBorderRadius
 
@@ -162,7 +162,7 @@ window.Modernizr = (function(window, document, undefined) {
 
         /*>>mq*/
         // adapted from matchMedia polyfill
-    // by Scott Jehl and Paul Irish
+        // by Scott Jehl and Paul Irish
     // gist.github.com/786768
         testMediaQuery = function(mq) {
 
@@ -187,8 +187,8 @@ window.Modernizr = (function(window, document, undefined) {
 
         /*>>hasevent*/
         //
-     // isEventSupported determines if a given element supports the given event
-    // kangax.github.com/iseventsupported/
+        // isEventSupported determines if a given element supports the given event
+     // kangax.github.com/iseventsupported/
     //
     // The following results are known incorrects:
     //   Modernizr.hasEvent("webkitTransitionEnd", elem) // false negative

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Web;
-using System.Linq;
 using BLL;
 using WebSite.Common;
 using ProjectBE = Entities.Project;
@@ -19,21 +19,27 @@ namespace WebSite.Handler
         {
             string jsonString = string.Empty;
             context.Response.ContentType = "text/plain";
-            
+
             string action = context.Request.QueryString["funcname"].ToLower();
-            int type = context.Request.QueryString["type"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["type"]);
+            int type = context.Request.QueryString["type"] == null
+                           ? 0
+                           : Convert.ToInt32(context.Request.QueryString["type"]);
             var project = new ProjectBE();
             switch (action)
             {
                 case "getall":
-                    int cateId = context.Request.QueryString["cate"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["cate"]);
+                    int cateId = context.Request.QueryString["cate"] == null
+                                     ? 0
+                                     : Convert.ToInt32(context.Request.QueryString["cate"]);
                     jsonString = GetProjects(type, cateId);
                     break;
                 case "getrefer":
                     jsonString = GenerateHtmlProjectRefer(type);
                     break;
                 case "edit":
-                    int id = context.Request.QueryString["id"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["id"]);
+                    int id = context.Request.QueryString["id"] == null
+                                 ? 0
+                                 : Convert.ToInt32(context.Request.QueryString["id"]);
                     jsonString = GetProjectById(id);
                     break;
                 case "create":
@@ -41,7 +47,9 @@ namespace WebSite.Handler
                     jsonString = CreateProject(project);
                     break;
                 case "update":
-                    int proId = context.Request.QueryString["id"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["id"]);
+                    int proId = context.Request.QueryString["id"] == null
+                                    ? 0
+                                    : Convert.ToInt32(context.Request.QueryString["id"]);
                     project = Utils.ConvertDeserialize<ProjectBE>(context, ref jsonString);
                     project.Id = proId;
                     jsonString = UpdateProject(project);
@@ -55,7 +63,7 @@ namespace WebSite.Handler
             if (id == 0)
                 return string.Empty;
             var bo = new ProjectBO();
-            var res = bo.GetProjectById(id);
+            ProjectBE res = bo.GetProjectById(id);
             var json = new
                            {
                                project = res
@@ -66,7 +74,7 @@ namespace WebSite.Handler
         private string GetProjects(int type, int cateId)
         {
             var bo = new ProjectBO();
-            var res = bo.GetProjects();
+            List<ProjectBE> res = bo.GetProjects();
             res = res.Where(t => t.Type == type).ToList();
             if (cateId > 0)
                 res = res.Where(t => t.CategoryId == cateId).ToList();
@@ -84,7 +92,8 @@ namespace WebSite.Handler
             foreach (ProjectBE project in projects)
             {
                 string projectName = string.Format("Dự án: {0}", project.Name);
-                string pathImage = string.Format("http://noithatviet.net.vn/Images\\projects{0}\\{1}", project.PathImage, project.PrimaryImage);
+                string pathImage = string.Format("http://noithatviet.net.vn/Images\\projects{0}\\{1}", project.PathImage,
+                                                 project.PrimaryImage);
                 htmlProject.AppendFormat("<div class='box-project'>");
                 htmlProject.AppendFormat("<figure>");
                 htmlProject.AppendFormat(
@@ -101,12 +110,13 @@ namespace WebSite.Handler
         private string GenerateHtmlProjectRefer(int type)
         {
             var htmlProject = new StringBuilder();
-            var directory = type == 0 ? "architecture\\thamkhao" : "noi that\\thamkhao";
-            var projects = GetProjects(string.Format(@"\Images\projects\{0}\", directory));
-            foreach (var project in projects)
+            string directory = type == 0 ? "architecture\\thamkhao" : "noi that\\thamkhao";
+            List<ProjectRefer> projects = GetProjects(string.Format(@"\Images\projects\{0}\", directory));
+            foreach (ProjectRefer project in projects)
             {
                 string projectName = string.Format("Dự án: {0}", project.Name);
-                string pathImage = string.Format("Images\\projects\\{0}\\{1}\\{2}", directory, project.Name, project.Image);
+                string pathImage = string.Format("Images\\projects\\{0}\\{1}\\{2}", directory, project.Name,
+                                                 project.Image);
                 htmlProject.AppendFormat("<div class='box-project'>");
                 htmlProject.AppendFormat("<figure>");
                 htmlProject.AppendFormat(
@@ -135,11 +145,11 @@ namespace WebSite.Handler
             foreach (DirectoryInfo directory in dirInfo.GetDirectories())
             {
                 var project = new ProjectRefer
-                {
-                    Image = GetImageName(string.Format("{0}{1}\\", path,directory.Name)),
-                    Name = directory.Name,
-                    Path = string.Format("{0}{1}", path, directory.Name)
-                };
+                                  {
+                                      Image = GetImageName(string.Format("{0}{1}\\", path, directory.Name)),
+                                      Name = directory.Name,
+                                      Path = string.Format("{0}{1}", path, directory.Name)
+                                  };
                 res.Add(project);
             }
             return res;
@@ -160,14 +170,14 @@ namespace WebSite.Handler
         private string CreateProject(ProjectBE project)
         {
             var bo = new ProjectBO();
-            var res = bo.AddProject(project);
+            int res = bo.AddProject(project);
             return Utils.ConvertToJsonString(res);
         }
 
         private string UpdateProject(ProjectBE project)
         {
             var bo = new ProjectBO();
-            var res = bo.UpdateProject(project);
+            int res = bo.UpdateProject(project);
             return Utils.ConvertToJsonString(res);
         }
     }

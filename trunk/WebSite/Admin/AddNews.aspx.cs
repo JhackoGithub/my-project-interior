@@ -8,8 +8,8 @@ namespace WebSite.Admin
 {
     public partial class AddNews : AuthenPage
     {
-        public string ImageUrl = "/Images/no-image.png";
         private const string Path = "/Images/Uploads/News/";
+        public string ImageUrl = "/Images/no-image.png";
 
         private int Id
         {
@@ -18,7 +18,7 @@ namespace WebSite.Admin
 
         private string Filename
         {
-            get { return (string)ViewState["FILE_NAME"]; }
+            get { return (string) ViewState["FILE_NAME"]; }
             set { ViewState["FILE_NAME"] = value; }
         }
 
@@ -36,7 +36,7 @@ namespace WebSite.Admin
         {
             var news = new NewsBE();
             BindControlToEntity(news);
-            if(string.IsNullOrEmpty(news.Contents))
+            if (string.IsNullOrEmpty(news.Contents))
                 return;
             var newBo = new NewsBO();
             news.Id = Id;

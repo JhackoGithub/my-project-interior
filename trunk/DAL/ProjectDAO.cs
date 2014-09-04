@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using DAL.Core;
 using Entities;
 
@@ -10,8 +8,13 @@ namespace DAL
 {
     public class ProjectDAO : BaseDAO
     {
-        public ProjectDAO() { }
-        public ProjectDAO(Transaction transaction) : base(transaction) { }
+        public ProjectDAO()
+        {
+        }
+
+        public ProjectDAO(Transaction transaction) : base(transaction)
+        {
+        }
 
         public List<Project> GetProjects()
         {
@@ -29,7 +32,7 @@ namespace DAL
         public List<Project> GetProjectCateId(int cateId)
         {
             var paramSql = new SqlParameter("@CategoryId", cateId);
-            var res = ExecuteToList<Project>("Project_GetByCategoryId", paramSql);
+            List<Project> res = ExecuteToList<Project>("Project_GetByCategoryId", paramSql);
             return res;
         }
 
@@ -81,5 +84,4 @@ namespace DAL
             return retVal;
         }
     }
-
 }

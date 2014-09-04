@@ -16,7 +16,7 @@
         <fieldset style="padding: 20px;">
             <legend style="display: block !important">Log in Form</legend>
             <div class="admin-project-add">
-                <div class="admin-project-add-label" style="width: 100px; float: left;">
+                <div class="admin-project-add-label" style="float: left; width: 100px;">
                     User name
                 </div>
                 <div class="admin-project-add-control">
@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="admin-project-add">
-                <div class="admin-project-add-label" style="width: 100px; float: left;">
+                <div class="admin-project-add-label" style="float: left; width: 100px;">
                     Password
                 </div>
                 <div class="admin-project-add-control">
@@ -34,14 +34,14 @@
                 </div>
             </div>
             <div class="admin-project-add">
-                <div class="admin-project-add-label" style="width: 100px; float: left;"></div>
+                <div class="admin-project-add-label" style="float: left; width: 100px;"></div>
                 <div class="admin-project-add-control">
                     <asp:CheckBox runat="server" ID="RememberMe" />
                     <asp:Label ID="Label1" runat="server" AssociatedControlID="RememberMe" CssClass="checkbox">Remember me?</asp:Label>
                 </div>
             </div>
             <div class="admin-project-add">
-                <div class="admin-project-add-label" style="width: 100px; float: left;"></div>
+                <div class="admin-project-add-label" style="float: left; width: 100px;"></div>
                 <div class="admin-project-add-control" style="float: right;">
                     <asp:Button runat="server" ID="btnLogin" Text="Log in" OnClick="btnLogin_Click" />
                 </div>
