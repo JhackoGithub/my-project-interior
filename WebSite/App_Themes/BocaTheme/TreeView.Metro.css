@@ -11,37 +11,20 @@
     border-color: #e5e5e5;
 }
 
-.RadTreeView .rtLines .rtLI
-{
-   background:url('TreeView/NodeSpan.png') repeat-y 0 0 !important;
-}
-.RadTreeView .rtLines .rtFirst
-{
-   background:url('TreeView/FirstNodeSpan.png') no-repeat 0 1.273em !important;
-}
+.RadTreeView .rtLines .rtLI { background: url('TreeView/NodeSpan.png') repeat-y 0 0 !important; }
+
+.RadTreeView .rtLines .rtFirst { background: url('TreeView/FirstNodeSpan.png') no-repeat 0 1.273em !important; }
+
 .RadTreeView .rtLines .rtLast,
-.RadTreeView .rtLines .rtLast .rtUL
-{
-   background:none;
-}
+.RadTreeView .rtLines .rtLast .rtUL { background: none; }
 
-.RadTreeView .rtLines .rtBot
-{
-   background:url('TreeView/BottomLine.png') 0 0 no-repeat !important;
-}
+.RadTreeView .rtLines .rtBot { background: url('TreeView/BottomLine.png') 0 0 no-repeat !important; }
 
-.RadTreeView .rtLines .rtTop
-{
-   background:url('TreeView/TopLine.png') 0 0 no-repeat !important;
-}
-.RadTreeView .rtLines .rtLast .rtTop
-{
-   background:url('TreeView/SingleLine.png') 0 0 no-repeat !important;
-}
-.RadTreeView .rtLines .rtMid
-{
-   background:url('TreeView/MiddleLine.png') 0 0 no-repeat !important;
-}
+.RadTreeView .rtLines .rtTop { background: url('TreeView/TopLine.png') 0 0 no-repeat !important; }
+
+.RadTreeView .rtLines .rtLast .rtTop { background: url('TreeView/SingleLine.png') 0 0 no-repeat !important; }
+
+.RadTreeView .rtLines .rtMid { background: url('TreeView/MiddleLine.png') 0 0 no-repeat !important; }
 
 .RadTreeView_Metro .rtSelected .rtIn {
     background-color: #249fd9;

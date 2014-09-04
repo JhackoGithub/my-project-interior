@@ -77,13 +77,9 @@
             text-decoration: none;
         }
 
-        #pager a:hover {
-            color: #666;
-        }
+        #pager a:hover { color: #666; }
 
-        #pager a:first-child {
-            border-left: 1px solid #ccc;
-        }
+        #pager a:first-child { border-left: 1px solid #ccc; }
 
         #pager a.selected {
             background-color: #F4F0EE;
@@ -94,7 +90,7 @@
     <script src="Scripts/camera.js" type="text/javascript"> </script>
     <script src="Scripts/jquery.carouFredSel-6.0.4-packed.js"> </script>
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             jQuery('#camera_wrap_2').camera({
                 height: '520px',
                 loader: 'bar',
@@ -102,7 +98,7 @@
                 thumbnails: true,
                 imagePath: '/Images/'
             });
-            
+
             $('#tabs').carouFredSel({
                 circular: false,
                 items: 1,
@@ -110,7 +106,7 @@
                 auto: false,
                 pagination: {
                     container: '#pager',
-                    anchorBuilder: function (nr) {
+                    anchorBuilder: function(nr) {
                         return '<a href="#">' + $(this).find('h3').text() + '</a>';
                     }
                 }

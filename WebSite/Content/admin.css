@@ -1,74 +1,70 @@
 ﻿body {
-    min-height: 100%;
-    top: 0px;
-    position: relative;
+    background-color: #f1f1f1;
     color: #878786;
     font-family: Sans-Serif;
     font-size: 10pt;
-    background-color: #f1f1f1;
     margin: 0px;
+    min-height: 100%;
+    position: relative;
+    top: 0px;
 }
 
 hr {
     background-color: #d4d4d4;
-    color: #d4d4d4;
-    height: 1px;
     border: 0px;
     clear: both;
+    color: #d4d4d4;
+    height: 1px;
 }
 
 #admin-top {
-    width: 960px;
-    margin: auto;
     height: 40px;
+    margin: auto;
+    width: 960px;
 }
 
-#admin-topnav {
-    height: 30px;
-    /*background-color: #d3d3d3;*/
-}
+#admin-topnav { height: 30px;
+    /*background-color: #d3d3d3;*/ }
 
-#admin-topnav #topnavTut{
-    width: 935px;
+#admin-topnav #topnavTut {
     margin: 10px auto;
     padding-left: 5px;
     padding-top: 7px;
+    width: 935px;
 }
 
 #admin-body {
-    width: 960px;
     margin: auto;
+    width: 960px;
 }
 
 #admin-body #admin-page {
-    width: 940px;
-    min-height: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0px 0px 20px 3px #d3d3d3;
-    border-radius: 4px;
     background-color: #ffffff;
-    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px 3px #d3d3d3;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    min-height: 100%;
     overflow: auto;
+    padding: 10px;
+    width: 940px;
 }
 
 #admin-footer {
-    height: 60px;
-    width: 960px;
-    margin: auto;
     color: #909090;
+    height: 60px;
+    margin: auto;
     text-align: center;
+    width: 960px;
 }
 
 a.topnav:link, a.topnav:visited {
-    padding-right: 15px;
     color: #555555;
+    padding-right: 15px;
     text-decoration: none;
 }
 
-a.topnav:hover {
-    text-decoration: underline;
-}
+a.topnav:hover { text-decoration: underline; }
 
 /*Login form*/
 
@@ -76,6 +72,7 @@ a.topnav:hover {
     margin: 0 0 12px;
     text-align: right;
 }
+
 #login a {
     background: none;
     color: #999;
@@ -86,9 +83,9 @@ a.topnav:hover {
 
 #login a:hover { color: #333; }
 
-#loginForm { 
-    width: 50%;
+#loginForm {
     padding-left: 20px;
+    width: 50%;
 }
 
 #loginForm .validation-error {
@@ -147,12 +144,10 @@ fieldset ol li { padding-bottom: 5px; }
 
 .admin-project-add-control { }
 
-.admin-projet-info {
-    /*overflow: auto;*/
+.admin-projet-info { /*overflow: auto;*/
     /*margin: 0 auto;
     padding-top: 20px;
-    width: 940px;*/
-}
+    width: 940px;*/ }
 
 .admin-project-info-left {
     float: left;
@@ -227,15 +222,16 @@ fieldset ol li { padding-bottom: 5px; }
 
 .admin-project-cate ul ul a {
     color: #4d4d4d;
-    display: block;
-    padding: 10px;
+    /*display: block;
+    padding: 10px;*/
 }
 
 .admin-project-cate ul ul li.odd { background: #f4f4f4; }
 
 .admin-project-cate ul ul li.even { background: #fff; }
 
-.admin-project-cate ul ul li div:hover { color: #a55835;
+.admin-project-cate ul ul li div:hover {
+    color: #a55835;
     text-decoration: underline;
 }
 

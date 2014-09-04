@@ -13,7 +13,7 @@
         <link href="~/Content/Kendo/kendo.default.min.css" rel="stylesheet" />
         <link href="~/Content/admin.css" rel="stylesheet" />
     </head>
-    <body style="min-height: 100%; top: 0px; position: relative;">
+    <body style="min-height: 100%; position: relative; top: 0px;">
         <form id="form1" runat="server">
             <div id="admin-top">
                 <div id="logo">

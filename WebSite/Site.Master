@@ -18,7 +18,7 @@
 
         <script src="Scripts/jquery-1.8.2.min.js"> </script>
         <script src="Scripts/Script.js"> </script>
-        <script src="Scripts/masonry.pkgd.js"></script>
+        <script src="Scripts/masonry.pkgd.js"> </script>
 
     </head>
     <body class="home page">

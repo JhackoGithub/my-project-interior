@@ -224,16 +224,16 @@
             function bindMenuCallback(data) {
                 $('.admin-project-cate').html(data.menu);
             }
-            
+
             function bindControlToEntity(project) {
                 var resType = $('input:radio[name=rdType]:checked').val();
                 var resKind = $('input:radio[name=rdKind]:checked').val();
                 var name = $('#tbName').val();
                 var pathImage = $('#lblFolderSelected').text();
                 var imgName = $('#lblImageSelected').text();
-                
-                var editorDesc = $find("<%=radEditorDesc.ClientID%>");
-                var editorInfo = $find("<%=radEditorInfo.ClientID%>");
+
+                var editorDesc = $find("<%= radEditorDesc.ClientID %>");
+                var editorInfo = $find("<%= radEditorInfo.ClientID %>");
                 var textDesc = editorDesc.get_html();
                 var textInfo = editorInfo.get_html();
 
@@ -251,20 +251,20 @@
                 var strfilterType = project.Type == 0 ? '[value="0"]' : '[value="1"]';
                 $rdType.filter(strfilterType).click();
 
-                var editorDesc = $find("<%=radEditorDesc.ClientID%>");
-                var editorInfo = $find("<%=radEditorInfo.ClientID%>");
+                var editorDesc = $find("<%= radEditorDesc.ClientID %>");
+                var editorInfo = $find("<%= radEditorInfo.ClientID %>");
                 editorDesc.set_html(project.Description);
                 editorInfo.set_html(project.Information);
                 $('#tbName').val(project.Name);
 
                 $('#lblFolderSelected').text(project.PathImage);
                 $('#lblImageSelected').text(project.PrimaryImage);
-                
+
                 $('#btnSave').html('Lưu thay đổi');
                 $rdType.attr('disabled', true);
             }
-            
-            $('#btnSave').click(function () {
+
+            $('#btnSave').click(function() {
                 var project = new Object();
                 bindControlToEntity(project);
                 var data = JSON.stringify(project);

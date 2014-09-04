@@ -21,7 +21,14 @@
             <Columns>
                 <telerik:GridTemplateColumn UniqueName="TemplateColumn" AllowFiltering="False">
                     <ItemTemplate>
-                        <%#Convert.ToInt32(Eval("Type")) == 0 ? "Tin tức" : "Bài viết khác" %>
+                        <%#Convert
+                                                                                                   .
+                                                                                                   ToInt32
+                                                                                                   (Eval
+                                                                                                        ("Type")) ==
+                                                                                               0
+                                                                                                   ? "Tin tức"
+                                                                                                   : "Bài viết khác" %>
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
                 <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Tiêu đề" AndCurrentFilterFunction="Contains" HtmlEncode="True"
@@ -35,7 +42,7 @@
                     <HeaderStyle HorizontalAlign="Right" Width="130px" />
                     <ItemStyle HorizontalAlign="Right" Width="130px" />
                     <ItemTemplate>
-                        <a href="../News.aspx?type=2&id=<%#                                        Eval("Id") %>" target="_blank" class="Grid-View"></a>
+                        <a href="../News.aspx?type=2&id=<%#Eval("Id") %>" target="_blank" class="Grid-View"></a>
                         <a href="AddNews.aspx?id=<%#Eval
                                                                                                    ("Id") %>" class="Grid-Edit"></a>
                         <asp:LinkButton runat="server" ID="lkbDelete" CssClass="Grid-Delete" CommandName="delete" CommandArgument='<%#Eval("Id") %>'></asp:LinkButton>
@@ -52,7 +59,7 @@
     </telerik:RadGrid>
     <asp:Literal runat="server" ID="ltScript"></asp:Literal>
     <script type="text/javascript">
-        $('#btnAdd').click(function () {
+        $('#btnAdd').click(function() {
             location.href = 'AddNews.aspx';
         });
     </script>

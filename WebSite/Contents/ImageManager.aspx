@@ -20,7 +20,7 @@
             <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
             <div style="height: 460px; margin: 0 auto; padding: 10px; width: 730px;">
                 <div style="background-color: lightcyan; float: left; height: 460px; min-width: 330px; overflow: auto;">
-                    <telerik:RadTreeView runat="server" ID="tvFolderImg" ClientIDMode="Static" Skin="Windows7" OnClientNodeClicked=" ClientNodeClicked " OnClientLoad="onLoad">
+                    <telerik:RadTreeView runat="server" ID="tvFolderImg" ClientIDMode="Static" Skin="Windows7" OnClientNodeClicked=" ClientNodeClicked " OnClientLoad=" onLoad ">
                     </telerik:RadTreeView>
                 </div>
                 <telerik:RadAjaxLoadingPanel runat="server" ID="radAjaxLoadGrid"></telerik:RadAjaxLoadingPanel>
@@ -33,74 +33,74 @@
                 <button type="button" id="closepoup" >Hủy chọn</button>
             </div>
             <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
-            <script type="text/javascript">
+                <script type="text/javascript">
 
-                $(document).ready(function () {
+                    $(document).ready(function() {
 
-                });
+                    });
 
-                $('#closepoup').click(function() {
-                    window.parent.closeChildPopup();
-                });
-                
-                $('#save').click(function () {
-                    if ($('.admin-image-gallary').html() == '') {
-                        return;
-                    }
-                    var treeView = $find("<%= tvFolderImg.ClientID %>");
-                    var node = treeView.get_selectedNode();
-                    if (node == null) {
-                        return;
-                    }
-                    var imgselected = $('input:radio[name=projectimage]:checked').val();
-                    var folderelected = node.get_value();
-                    window.parent.getFolder(folderelected, imgselected);
-                });
-                
-                function ClientNodeClicked(sender, eventArgs) {
-                    var node = eventArgs.get_node();
-                    var data = JSON.stringify(node.get_value());
-                    var url = "../Handler/ImageHandler.ashx?funcname=select";
-                    callAjaxHandler(url, data, AjaxConst.PostRequest, bindImageGridCallback);
-                }
+                    $('#closepoup').click(function() {
+                        window.parent.closeChildPopup();
+                    });
 
-                function bindImageGridCallback(data) {
-                    $('.admin-image-gallary').html(data.html);
-                    var imgselected = window.parent.document.getElementById("lblImageSelected").innerHTML;
-                    if (imgselected == null || imgselected == '')
-                        return;
-                    
-                    var $inpuimage = $('input:radio[name=projectimage]');
-                    var strfilterimg = '[value="' + imgselected + '"]';
-                    $inpuimage.filter(strfilterimg).click();
-                }
-                
-                function onLoad(sender, args) {
-                    var tree = $find("<%= tvFolderImg.ClientID %>");
-                    if (tree == null)
-                        return;
-                    var value = window.parent.document.getElementById("lblFolderSelected").innerHTML;
-                    if (value == null || value == '')
-                        return;
-                    var node = tree.findNodeByValue(value);
-                    if (node == null)
-                        return;
-                    node.get_parent().expand();
-                    node.select();
-                    var data = JSON.stringify(node.get_value());
-                    var url = "../Handler/ImageHandler.ashx?funcname=select";
-                    callAjaxHandler(url, data, AjaxConst.PostRequest, bindImageGridCallback);
-                    
-                    node = node.get_parent();
-                    while (node != null) {
-                        if (node.expand) {
-                            node.expand();
+                    $('#save').click(function() {
+                        if ($('.admin-image-gallary').html() == '') {
+                            return;
                         }
-                        node = node.get_parent();
-                    }
-                }
+                        var treeView = $find("<%= tvFolderImg.ClientID %>");
+                        var node = treeView.get_selectedNode();
+                        if (node == null) {
+                            return;
+                        }
+                        var imgselected = $('input:radio[name=projectimage]:checked').val();
+                        var folderelected = node.get_value();
+                        window.parent.getFolder(folderelected, imgselected);
+                    });
 
-            </script>
+                    function ClientNodeClicked(sender, eventArgs) {
+                        var node = eventArgs.get_node();
+                        var data = JSON.stringify(node.get_value());
+                        var url = "../Handler/ImageHandler.ashx?funcname=select";
+                        callAjaxHandler(url, data, AjaxConst.PostRequest, bindImageGridCallback);
+                    }
+
+                    function bindImageGridCallback(data) {
+                        $('.admin-image-gallary').html(data.html);
+                        var imgselected = window.parent.document.getElementById("lblImageSelected").innerHTML;
+                        if (imgselected == null || imgselected == '')
+                            return;
+
+                        var $inpuimage = $('input:radio[name=projectimage]');
+                        var strfilterimg = '[value="' + imgselected + '"]';
+                        $inpuimage.filter(strfilterimg).click();
+                    }
+
+                    function onLoad(sender, args) {
+                        var tree = $find("<%= tvFolderImg.ClientID %>");
+                        if (tree == null)
+                            return;
+                        var value = window.parent.document.getElementById("lblFolderSelected").innerHTML;
+                        if (value == null || value == '')
+                            return;
+                        var node = tree.findNodeByValue(value);
+                        if (node == null)
+                            return;
+                        node.get_parent().expand();
+                        node.select();
+                        var data = JSON.stringify(node.get_value());
+                        var url = "../Handler/ImageHandler.ashx?funcname=select";
+                        callAjaxHandler(url, data, AjaxConst.PostRequest, bindImageGridCallback);
+
+                        node = node.get_parent();
+                        while (node != null) {
+                            if (node.expand) {
+                                node.expand();
+                            }
+                            node = node.get_parent();
+                        }
+                    }
+
+                </script>
             </telerik:RadCodeBlock>
         </form>
     </body>

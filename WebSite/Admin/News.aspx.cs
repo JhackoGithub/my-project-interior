@@ -10,19 +10,19 @@ namespace WebSite.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(IsPostBack)return;
+            if (IsPostBack) return;
         }
 
         protected void rgNews_NeedDataSource(object sender, GridNeedDataSourceEventArgs e)
         {
-            var news = GetNews();
+            List<Entities.News> news = GetNews();
             rgNews.DataSource = news;
         }
 
         private List<Entities.News> GetNews()
         {
             var newsBo = new NewsBO();
-            var res = newsBo.GetNews();
+            List<Entities.News> res = newsBo.GetNews();
             return res;
         }
 

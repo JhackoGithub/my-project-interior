@@ -13,7 +13,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="SubContent" runat="server">
     <div id="container-project" class="isotope"></div>
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             bindProjects();
         });
 

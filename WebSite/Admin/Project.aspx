@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="Project.aspx.cs" Inherits="WebSite.Admin.Project" Theme="Windows7" %>
 <%@ Import Namespace="WebSite.Common" %>
-<%@ Register Src="~/UserControls/ImageManager.ascx" TagPrefix="uc1" TagName="ImageManager" %>
 
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="FeaturedContent" runat="server">
@@ -24,13 +23,13 @@
                                          ShowFilterIcon="false" AllowSorting="False">
                 </telerik:GridBoundColumn>
                 <telerik:GridTemplateColumn HeaderText="Kiểu dự án" DataField="Type" FilterControlWidth="110px" AndCurrentFilterFunction="Contains"
-                     AllowFiltering="False" ShowFilterIcon="false" >
-                        <HeaderStyle Width="120px"></HeaderStyle>
-                        <ItemStyle Width="120px"></ItemStyle>
-                        <ItemTemplate>
-                            <%# ((int) Eval("Type")).ConvertProjectType() %>
-                        </ItemTemplate>
-                    </telerik:GridTemplateColumn>
+                                            AllowFiltering="False" ShowFilterIcon="false" >
+                    <HeaderStyle Width="120px"></HeaderStyle>
+                    <ItemStyle Width="120px"></ItemStyle>
+                    <ItemTemplate>
+                        <%#                                        ((int) Eval("Type")).ConvertProjectType() %>
+                    </ItemTemplate>
+                </telerik:GridTemplateColumn>
                 <telerik:GridBoundColumn DataField="CreatedOn" UniqueName="CreatedOn" HeaderText="Ngày tạo" AutoPostBackOnFilter="true"
                                          AllowSorting="False" SortExpression="CreatedOn" AllowFiltering="False" ShowFilterIcon="False" DataFormatString="{0:g}">
                     <HeaderStyle Width="130px"></HeaderStyle>
@@ -67,6 +66,6 @@
                 wnd = ShowPopupIframe(750, 530, "Quản lý hình ảnh", "containerimages", url);
                 $("#containerimagemanager").parent().width(750).height(530);
             });
-    </script>
+        </script>
     </telerik:RadCodeBlock>
 </asp:Content>

@@ -4,20 +4,16 @@
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContainer" runat="server">
     <script type="text/javascript">
-        jQuery(function () {
+        jQuery(function() {
             $('.sf-menu #menu-item-6').addClass('current_page_item');
 
         });
 
     </script>
     <style type="text/css">
-        .cus-info {
-            padding-bottom: 5px;
-        }
+        .cus-info { padding-bottom: 5px; }
 
-            .cus-info span {
-                color: red;
-            }
+        .cus-info span { color: red; }
     </style>
     <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
     <%--<telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
@@ -36,7 +32,7 @@
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.8736005821547!2d105.82702340000003!3d20.9977033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac8871297549%3A0xb2a892bf045f4851!2zNjQgTmd1eeG7hW4gVmnhur90IFh1w6JuLCBLaMawxqFuZyBNYWksIFRoYW5oIFh1w6JuLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1405071611175" width="670" height="450" frameborder="0" style="border: 0"></iframe>
                         </div>
                     </div>
-                    <div id="divInves" style="width: 710px; display: none;">
+                    <div id="divInves" style="display: none; width: 710px;">
                         <p style="text-align: center;">
                             <strong>PHIẾU ĐIỀU TRA</strong><br />
                             <span style="font-style: italic; text-align: center;">(Quý khách vui lòng điền đầy đủ thông tin vào phiếu điều tra)</span>
@@ -86,7 +82,7 @@
                         <div class="cus-info">
                             <label>
                                 Ngày tháng năm sinh người đứng chủ: (Mong quý vị gửi ngày sinh âm lịch chính xác để chúng tôi
-                        xem xét phương án thiết kế)</label><br />
+                                xem xét phương án thiết kế)</label><br />
                             <asp:TextBox ID="TextBox1" runat="server" Width="200"></asp:TextBox>
                         </div>
                         <div class="cus-info">
@@ -129,7 +125,7 @@
         </div>
     </div>
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             var id = getParameterByName('id');
             var page;
             if (id != '0') {
@@ -138,7 +134,7 @@
                 var name = getParameterByName('name');
                 page = 'Contact.aspx?type=4&name=' + name;
             }
-            $('#cssmenu ul ul li a').each(function () {
+            $('#cssmenu ul ul li a').each(function() {
                 var link = $(this).attr('href');
                 if (link.indexOf(page) >= 0) {
                     $(this).children().addClass('active');

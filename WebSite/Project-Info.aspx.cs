@@ -26,10 +26,10 @@ namespace WebSite
             if (Id == 0)
                 return;
             var bo = new ProjectBO();
-            var res = bo.GetProjectById(Id);
+            ProjectBE res = bo.GetProjectById(Id);
             if (res == null)
                 return;
-            var path = string.Format("Images\\projects{0}", res.PathImage);
+            string path = string.Format("Images\\projects{0}", res.PathImage);
             if (!Directory.Exists(Server.MapPath(path)))
                 return;
             var dirInfo = new DirectoryInfo(Server.MapPath(path));

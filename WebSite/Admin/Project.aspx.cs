@@ -15,12 +15,12 @@ namespace WebSite.Admin
         {
             var imageManagerParameters = new FileManagerDialogParameters
                                              {
-                                                 ViewPaths = new string[] { "~/Images/projects" },
-                                                 UploadPaths = new string[] { "~/Images/projects" },
-                                                 DeletePaths = new string[] { "~/Images/projects" },
+                                                 ViewPaths = new[] {"~/Images/projects"},
+                                                 UploadPaths = new[] {"~/Images/projects"},
+                                                 DeletePaths = new[] {"~/Images/projects"},
                                                  MaxUploadFileSize = 157286400
                                              };
-            var imageManager = new DialogDefinition(typeof(ImageManagerDialog), imageManagerParameters)
+            var imageManager = new DialogDefinition(typeof (ImageManagerDialog), imageManagerParameters)
                                    {
                                        ClientCallbackFunction = "ImageManagerFunction",
                                        Width = Unit.Pixel(694),
@@ -31,14 +31,14 @@ namespace WebSite.Admin
 
         protected void rgProject_NeedDataSource(object sender, GridNeedDataSourceEventArgs e)
         {
-            var projects = GetProjects();
+            List<ProjectBE> projects = GetProjects();
             rgProject.DataSource = projects;
         }
 
         private List<ProjectBE> GetProjects()
         {
             var bo = new ProjectBO();
-            var res = bo.GetProjects();
+            List<ProjectBE> res = bo.GetProjects();
             return res;
         }
 

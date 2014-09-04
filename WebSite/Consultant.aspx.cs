@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using System.Web.UI;
 using BLL;
 
@@ -19,14 +18,14 @@ namespace WebSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(IsPostBack)
+            if (IsPostBack)
                 return;
             BindContent();
         }
 
         private void BindContent()
         {
-            if(Id == 0)
+            if (Id == 0)
             {
                 const string defaultContent = @"<p style='font-size: 13pt;'>Chuyên trang thiết kế nhà ở</p>
                                     <p>
@@ -40,7 +39,7 @@ namespace WebSite
                 return;
             }
             var bo = new NewsBO();
-            var res = bo.GetNewsById(Id);
+            Entities.News res = bo.GetNewsById(Id);
             ltContents.Text = res.Contents ?? string.Empty;
         }
     }

@@ -19,7 +19,9 @@ namespace WebSite.Handler
             string jsonString = string.Empty;
             context.Response.ContentType = "text/plain";
             MenuLeft menuLeft;
-            int projectId = context.Request.QueryString["projectid"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["projectid"]);
+            int projectId = context.Request.QueryString["projectid"] == null
+                                ? 0
+                                : Convert.ToInt32(context.Request.QueryString["projectid"]);
             int id = context.Request.QueryString["id"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["id"]);
             string action = context.Request.QueryString["funcname"].ToLower();
             int type = Convert.ToInt32(context.Request.QueryString["type"]);
@@ -29,7 +31,9 @@ namespace WebSite.Handler
                     string form = context.Request.QueryString["frm"] == null
                                       ? string.Empty
                                       : context.Request.QueryString["frm"].ToLower();
-                    int subType = context.Request.QueryString["subtype"] == null ? 0 : Convert.ToInt32(context.Request.QueryString["subtype"]);
+                    int subType = context.Request.QueryString["subtype"] == null
+                                      ? 0
+                                      : Convert.ToInt32(context.Request.QueryString["subtype"]);
                     jsonString = GetMenus(type, subType, form, projectId);
                     break;
                 case "create":
@@ -60,7 +64,7 @@ namespace WebSite.Handler
             if (string.IsNullOrEmpty(form))
             {
                 menus = bo.GetMenuLeft(type);
-                if(type == 2)
+                if (type == 2)
                 {
                     menus = menus.Where(t => t.Type == 2 && (t.SubType == 0 || t.SubType == subType)).ToList();
                 }
@@ -78,11 +82,11 @@ namespace WebSite.Handler
             }
             else
             {
-                var cateId = -1;
+                int cateId = -1;
                 if (proId > 0)
                 {
                     var proBo = new ProjectBO();
-                    var project = proBo.GetProjectById(proId);
+                    Entities.Project project = proBo.GetProjectById(proId);
                     cateId = project.CategoryId;
                     type = project.Type;
                 }
@@ -122,10 +126,11 @@ namespace WebSite.Handler
                     htmlMenu.Append("<ul>");
                     foreach (MenuLeft menuLeft in menuChild)
                     {
-                        var imgLink = ((menuLeft.Type == 2 || menuLeft.Type == 3) && menuLeft.Link > 0)
-                                          ? string.Format(
-                                              "<img id='link{0}' src='../Images/link.png' width='16' title='Xem liên kết' />", menuLeft.Id)
-                                          : string.Empty;
+                        string imgLink = ((menuLeft.Type == 2 || menuLeft.Type == 3) && menuLeft.Link > 0)
+                                             ? string.Format(
+                                                 "<a href='../Consultant.aspx?type={0}&tab=2&id={1}' ><img id='link{2}' src='../Images/link.png' width='16' title='Xem liên kết' /></a>"
+                                                 ,menuLeft.SubType == 2 ? 1 : menuLeft.SubType, menuLeft.Link, menuLeft.Id)
+                                             : string.Empty;
                         htmlMenu.AppendFormat("<li>" +
                                               "<div>" +
                                               "<span>{0}</span>" +
@@ -170,7 +175,9 @@ namespace WebSite.Handler
                                               "<label for='rd{3}'>{4}</label>" +
                                               "</div>" +
                                               "</li>",
-                                              menuLeft.Id, menuLeft.Id, cateId == menuLeft.Id ? "checked='checked'" : string.Empty, menuLeft.Id, menuLeft.Name);
+                                              menuLeft.Id, menuLeft.Id,
+                                              cateId == menuLeft.Id ? "checked='checked'" : string.Empty, menuLeft.Id,
+                                              menuLeft.Name);
                     }
                     htmlMenu.Append("</ul>");
                 }

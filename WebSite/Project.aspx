@@ -14,7 +14,7 @@
     <div id="container-project" class="isotope"></div>
 
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             bindProjects();
         });
 
@@ -27,7 +27,7 @@
 
         function bindProjectCallback(data) {
             $('#container-project').html(data.html);
-            
+
             window.setTimeout(reloadgrid, 1000);
         }
 
@@ -38,5 +38,3 @@
         }
     </script>
 </asp:Content>
-
-

@@ -12,33 +12,27 @@
         width: 180px;
     }
 
-    .news-top-left {
-        float: left;
-    }
+    .news-top-left { float: left; }
 
     .news-top-right {
         float: left;
         padding-left: 20px;
     }
+
     .news-top {
-        padding-top: 10px;
         padding-bottom: 10px;
+        padding-top: 10px;
     }
-    label {
-        font: inherit !important;
-    }
-    button {
-        font: inherit !important;
-    }
-    a {
-        font: inherit !important;
-    }
-    input {
-        font: inherit !important;
-    }
-    .RadForm a.rfdSkinnedButton * {
-        font: inherit !important;
-    }
+
+    label { font: inherit !important; }
+
+    button { font: inherit !important; }
+
+    a { font: inherit !important; }
+
+    input { font: inherit !important; }
+
+    .RadForm a.rfdSkinnedButton * { font: inherit !important; }
 </style>
 
 <div class="news-top">
@@ -87,23 +81,23 @@
 
 <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             $("#imagePreview").css("background-image", "url(<%= ImageUrl %>)");
 
-            $("#uploadFile").on("change", function () {
+            $("#uploadFile").on("change", function() {
                 var files = !!this.files ? this.files : [];
                 if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
                 if (/^image/.test(files[0].type)) { // only image file
                     var reader = new FileReader(); // instance of the FileReader
                     reader.readAsDataURL(files[0]); // read the local file
-                    reader.onloadend = function () { // set image data as background of div
+                    reader.onloadend = function() { // set image data as background of div
                         $("#imagePreview").css("background-image", "url(" + this.result + ")");
                     };
                 }
             });
         });
-        
-        $("input:radio[name=rdNewsKind]").click(function () {
+
+        $("input:radio[name=rdNewsKind]").click(function() {
             var value = $(this).val();
             if (value == '0') {
                 $("#newstop").css("display", "block");

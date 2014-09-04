@@ -3733,7 +3733,7 @@
             // Prefer arguments not in parens/brackets,
             //   then attribute selectors and non-pseudos (denoted by :),
             //   then anything else
-	// These preferences are here to reduce the number of selectors
+            // These preferences are here to reduce the number of selectors
 	//   needing tokenize in the PSEUDO preFilter
             pseudos = ":(" + characterEncoding + ")(?:\\((?:(['\"])((?:\\\\.|[^\\\\])*?)\\2|([^()[\\]]*|(?:(?:" + attributes + ")|[^:]|\\\\.)*|.*))\\)|)",
             // For matchExpr.POS and matchExpr.needsContext
@@ -5132,7 +5132,7 @@
                     // matchesSelector(:focus) reports false when true (Chrome 21),
                     // matchesSelector(:active) reports false when true (IE9/Opera 11.5)
                     // A support test would require too much code (would include document ready)
-			// just skip matchesSelector for :active
+                    // just skip matchesSelector for :active
                     rbuggyMatches = [":active", ":focus"],
                     matches = docElem.matchesSelector ||
                         docElem.mozMatchesSelector ||
