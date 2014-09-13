@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using DAL.Core;
 using Entities;
@@ -19,6 +20,26 @@ namespace DAL
         public List<Project> GetProjects()
         {
             List<Project> res = ExecuteToList<Project>("Project_GetAll");
+            return res;
+        }
+
+        public ProjectPaging GetProjectByTypeByPageIndex(int type, int pageIndex, int pageSize)
+        {
+            var paramArrs = new[]
+                                {
+                                    new SqlParameter("@Type", type),
+                                    new SqlParameter("@PageIndex", pageIndex),
+                                    new SqlParameter("@PageSize", pageSize)
+                                };
+            int totalRows;
+            List<Project> projects = ExecuteToList<Project>("Project_GetByTypeByPageIndex", out totalRows, paramArrs);
+            var res = new ProjectPaging
+                          {
+                              PageIndex = pageIndex,
+                              PageSize = pageSize,
+                              TotalRows = totalRows,
+                              Projects = projects
+                          };
             return res;
         }
 

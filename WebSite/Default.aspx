@@ -30,15 +30,31 @@
                 margin: 0 auto;
                 width: 960px;
             }
+            .camera_thumbs {
+                margin-top: -50px;
+            }
         </style>
 
+        
 
         <script src="Scripts/jquery-1.8.2.min.js"> </script>
         <script src="Scripts/jquery.easing.1.3.js"> </script>
         <script src="Scripts/camera.js" type="text/javascript"> </script>
         <script src="Scripts/Script.js" type="text/javascript"> </script>
         <script type="text/javascript">
-            jQuery(function() {
+            $(document).ready(function () {
+                $('.grid-block').hover(
+		            function () {
+		                $(this).find('.captions').slideDown(250);
+		            },
+		            function () {
+		                $(this).find('.captions').slideUp(250);
+		            }
+	            );
+            });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
                 jQuery('#camera_wrap_2').camera({
                     height: '520px',
                     loader: 'bar',
@@ -50,12 +66,11 @@
                 $('ul li:first').addClass('current_page_item');
             });
         </script>
-
     </head>
     <body class="home page">
         <form runat="server">
             <div id="main">
-                <header id="header">
+                <header id="header" style="z-index: 100;">
                     <div class="splash">
                         <div class="tail-top">
                             <div class="tail-bottom">
@@ -99,76 +114,48 @@
                         </div>
                     </div>
                 </header>
-                <div class="container_12 primary_content_wrap clearfix" style="padding-top: 50px;">
-                    <div class="clearfix" style="border-bottom: 1px solid #e5e5e5;">
-                    </div>
-                    <div class="clearfix">
-                        <div id="my_requestquotewidget-2" class="grid_3">
-                            <div class="top-box">
-                                <div class="inner-bg">
-                                    <figure class="icon">
-                                        <img src="Images/home_img01.png" />
-                                    </figure>
-                                    <div class="box-button">
-                                        <a href="/Architecture.aspx?type=0&tab=1">thiết kế kiến trúc</a>
-                                    </div>
-                                </div>
-                                <div class="box-shadow"></div>
+                <div class="container_12 clearfix" style="margin-top: 230px; border-top: 1px solid #e5e5e5; padding-top: 30px;">
+                    <div class="clearfix" >
+                        <div class="grid-block">
+        	                <div class="captions">
+            	                <h3>thiết kế kiến trúc</h3>
+                                <p><a href="/Project.aspx?type=0&tab=1" class="learn-more">chi tiêt</a></p>
                             </div>
+        	                <img src="Images/home_img01.png" />
                         </div>
-                        <div id="my_requestquotewidget-3" class="grid_3">
-                            <div class="top-box">
-                                <div class="inner-bg">
-                                    <figure class="icon">
-                                        <img src="Images/home_img02.png" />
-                                    </figure>
-                                    <div class="box-button">
-                                        <a href="/Interior.aspx?type=1&tab=1">thiết kế nội thất</a>
-                                    </div>
-                                </div>
-                                <div class="box-shadow"></div>
+                        <div class="grid-block">
+        	                <div class="captions">
+            	                <h3>thiết kế nội thất</h3>
+                                <p><a href="/Project.aspx?type=1&tab=1" class="learn-more">chi tiêt</a></p>
                             </div>
+        	                <img src="Images/home_img02.png" />
                         </div>
-                        <div id="my_requestquotewidget-4" class="grid_3">
-                            <div class="top-box">
-                                <div class="inner-bg">
-                                    <figure class="icon">
-                                        <img src="Images/home_img03.png" />
-                                    </figure>
-                                    <div class="box-button">
-                                        <a href="commingsoon.aspx">thiết kế nhà hàng</a>
-                                    </div>
-                                </div>
-                                <div class="box-shadow"></div>
+                        <div class="grid-block">
+        	                <div class="captions">
+            	                <h3>thiết kế nhà hàng</h3>
+                                <p><a href="commingsoon.aspx" class="learn-more">chi tiêt</a></p>
                             </div>
+        	                <img src="Images/home_img03.png" />
                         </div>
-                        <div id="Div1" class="grid_3">
-                            <div class="top-box">
-                                <div class="inner-bg">
-                                    <figure class="icon">
-                                        <img src="Images/home_img05.png" />
-                                    </figure>
-                                    <div class="box-button">
-                                        <a href="http://www.xemngay.com/Default.aspx?blog=huongnha2" target="_blank">tư vấn phong thủy</a>
-                                    </div>
-                                </div>
-                                <div class="box-shadow"></div>
+                        <div class="grid-block">
+        	                <div class="captions">
+            	                <h3>tư vấn phong thủy</h3>
+                                <p><a href="http://www.xemngay.com/Default.aspx?blog=huongnha2" class="learn-more">chi tiêt</a></p>
                             </div>
+        	                <img src="Images/home_img05.png" />
                         </div>
                     </div>
                     <div id="second-content-area">
                         <div id="text-3" style="margin-left: auto; margin-right: auto; width: 800px;">
                             <div class="inner">
                                 <h3>Welcome!</h3>
-                                <div>
-                                    <p>
-                                        Công ty CP tư vấn thiết kế và xây dựng A&M là một trong những công ty chuyên nghiệp
-                                        về thiết kế kiến trúc nội ngoại thất và thi công nội thất. Với đội ngũ kiến trúc sư
-                                        giỏi có nhiều năm kinh nghiệm, các sản phẩm của chúng tôi luôn được khách hàng đánh giá
-                                        cao về tính thẩm mỹ cũng như chất lượng thi công. Chúng tôi tự tin và chắc chắn phục vụ tốt
-                                        nhu cầu ngày càng cao của quý khách hàng.
-                                    </p>
-                                </div>
+                                <p>
+                                    Công ty CP tư vấn thiết kế và xây dựng A&M là một trong những công ty chuyên nghiệp
+                                    về thiết kế kiến trúc nội ngoại thất và thi công nội thất. Với đội ngũ kiến trúc sư
+                                    giỏi có nhiều năm kinh nghiệm, các sản phẩm của chúng tôi luôn được khách hàng đánh giá
+                                    cao về tính thẩm mỹ cũng như chất lượng thi công. Chúng tôi tự tin và chắc chắn phục vụ tốt
+                                    nhu cầu ngày càng cao của quý khách hàng.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -187,5 +174,6 @@
             </div>
             <ucFooter:Footer ID="footer" runat="server" />
         </form>
+        
     </body>
 </html>

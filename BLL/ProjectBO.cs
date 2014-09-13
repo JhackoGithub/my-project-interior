@@ -28,6 +28,13 @@ namespace BLL
             return res;
         }
 
+        public ProjectPaging GetProjectByTypeByPageIndex(int type, int pageIndex, int pageSize)
+        {
+            var dao = new ProjectDAO();
+            var res = dao.GetProjectByTypeByPageIndex(type, pageIndex, pageSize);
+            return res;
+        }
+
         public int AddProject(Project project)
         {
             var dao = new ProjectDAO();

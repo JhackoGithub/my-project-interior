@@ -112,6 +112,7 @@
         </div>
     </div>
     <div id="containernews"></div>
+    <div id="divloading" class="loading" />
     <script type="text/javascript">
         var wnd;
         var _id = 0;
@@ -182,7 +183,7 @@
             var data = JSON.stringify(menu);
             var action = _id == 0 ? 'create' : 'update';
             var url = "../Handler/MenuHanlder.ashx?funcname=" + action + "&id=" + _id + "&type=" + menu.type;
-            callAjaxHandler(url, data, AjaxConst.PostRequest, addMenuCallback);
+            callAjaxHandler("divloading", url, data, AjaxConst.PostRequest, addMenuCallback);
         });
 
         function addMenuCallback(data) {
@@ -199,7 +200,7 @@
                 param += "&subtype=" + resSubType;
             }
             var url = "../Handler/MenuHanlder.ashx?funcname=getall" + param;
-            callAjaxHandler(url, null, AjaxConst.GetRequest, bindMenuCallback);
+            callAjaxHandler("divloading", url, null, AjaxConst.GetRequest, bindMenuCallback);
         }
 
         function bindMenuCallback(data) {
@@ -211,7 +212,7 @@
             _id = id;
             var resType = $('input[name=rdType]:checked').val();
             var url = "../Handler/MenuHanlder.ashx?funcname=edit&id=" + id + "&type=" + resType;
-            callAjaxHandler(url, null, AjaxConst.GetRequest, bindEntityToControl);
+            callAjaxHandler("divloading", url, null, AjaxConst.GetRequest, bindEntityToControl);
         }
 
         function bindEntityToControl(data) {
@@ -251,7 +252,7 @@
             if (!res)
                 return;
             var url = "../Handler/MenuHanlder.ashx?funcname=delete&id=" + id;
-            callAjaxHandler(url, null, AjaxConst.PostRequest, deleteMenuCallback);
+            callAjaxHandler("divloading", url, null, AjaxConst.PostRequest, deleteMenuCallback);
         }
 
         function deleteMenuCallback(data) {

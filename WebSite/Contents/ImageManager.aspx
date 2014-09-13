@@ -32,6 +32,7 @@
                 <button type="button" id="save" >Chọn thư mục</button>
                 <button type="button" id="closepoup" >Hủy chọn</button>
             </div>
+            <div id="divloading" class="loading" />
             <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
                 <script type="text/javascript">
 
@@ -61,7 +62,7 @@
                         var node = eventArgs.get_node();
                         var data = JSON.stringify(node.get_value());
                         var url = "../Handler/ImageHandler.ashx?funcname=select";
-                        callAjaxHandler(url, data, AjaxConst.PostRequest, bindImageGridCallback);
+                        callAjaxHandler("divloading", url, data, AjaxConst.PostRequest, bindImageGridCallback);
                     }
 
                     function bindImageGridCallback(data) {
@@ -89,7 +90,7 @@
                         node.select();
                         var data = JSON.stringify(node.get_value());
                         var url = "../Handler/ImageHandler.ashx?funcname=select";
-                        callAjaxHandler(url, data, AjaxConst.PostRequest, bindImageGridCallback);
+                        callAjaxHandler("divloading", url, data, AjaxConst.PostRequest, bindImageGridCallback);
 
                         node = node.get_parent();
                         while (node != null) {

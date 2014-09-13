@@ -2,7 +2,12 @@
 AjaxConst.GetRequest = 'GET';
 AjaxConst.PostRequest = 'POST';
 
-function callAjaxHandler(url, entryData, requestType, successCallBack) {
+function callAjaxHandler(divId, url, entryData, requestType, successCallBack) {
+    var divLoading = $('#' + divId);
+    var isDisplayed = divLoading.css('display') == 'none';
+    if (isDisplayed)
+        divLoading.css('display', 'block');
+    divLoading.html('<div id="loading-center-helper"></div><div id="loading-center" style="display: block"></div>');
     $.ajax({
         url: url,
         contentType: "application/json; charset=utf-8",
@@ -17,25 +22,44 @@ function callAjaxHandler(url, entryData, requestType, successCallBack) {
             if (data == null)
                 return;
             if (data.error != null) {
+                if (isDisplayed) {
+                    divLoading.css('display', 'none');
+                } else {
+                    divLoading.empty();
+                }
+                if (data.error == "error") {
+                    var datetimeNow = new Date();
+                    var formattedDate = datetimeNow.getDate() + "/" + (datetimeNow.getMonth() + 1) + "/" + datetimeNow.getFullYear() + " " + datetimeNow.getHours() + ":" + datetimeNow.getMinutes() + ":" + datetimeNow.getSeconds();
+                    alert("errorMessage: " + formattedDate);
+                    //if (typeof (errorCallBack) === 'function') {
+                    //    errorCallBack(data);
+                    //}
+                } else if (data.error == "timeout") {
+                    alert("Timeout");
+                }
                 return;
             }
+            if (isDisplayed)
+                divLoading.css('display', 'none');
             successCallBack(data);
         },
-        error: function(xhr, status, error) {
+        error: function (xhr, status, error) {
+            if (isDisplayed)
+                divLoading.css('display', 'none');
+            else {
+                divLoading.empty();
+            }
             if (error.length == 0)
                 return;
             if (error === 'timeout')
                 alert("msgAjaxTimeout");
+            else
+                alert("unknownErrorMessage");
         }
     });
 }
 
 $(document).ready(function() {
-    //$('#cssmenu > ul > li ul').each(function(index, e) {
-    //    var count = $(e).find('li').length;
-    //    var content = '<span class="cnt">' + count + '</span>';
-    //    $(e).closest('li').children('a').append(content);
-    //});
     $('#cssmenu ul ul li:odd').addClass('odd');
     $('#cssmenu ul ul li:even').addClass('even');
     $('#cssmenu > ul > li > a').click(function() {

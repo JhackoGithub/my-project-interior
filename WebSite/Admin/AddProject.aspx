@@ -158,7 +158,7 @@
         <button type="button" id="closepoup" >Hủy</button>
     </div>
     <div id="containerimages"></div>
-
+    <div id="divloading" class="loading" />
     <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
         <script type="text/javascript">
             var wnd;
@@ -185,7 +185,7 @@
                 if (_id == "0")
                     return;
                 var url = "../Handler/ProjectHandler.ashx?funcname=edit&id=" + _id;
-                callAjaxHandler(url, null, AjaxConst.GetRequest, bindProjectByIdCallback);
+                callAjaxHandler("divloading", url, null, AjaxConst.GetRequest, bindProjectByIdCallback);
             }
 
             function bindProjectByIdCallback(data) {
@@ -218,7 +218,7 @@
             function bindMenu() {
                 var resType = $('input[name=rdType]:checked').val();
                 var url = "../Handler/MenuHanlder.ashx?funcname=getall&frm=project&type=" + resType + "&projectid=" + _id;
-                callAjaxHandler(url, null, AjaxConst.GetRequest, bindMenuCallback);
+                callAjaxHandler("divloading", url, null, AjaxConst.GetRequest, bindMenuCallback);
             }
 
             function bindMenuCallback(data) {
@@ -270,7 +270,7 @@
                 var data = JSON.stringify(project);
                 var action = _id == 0 ? 'create' : 'update';
                 var url = "../Handler/ProjectHandler.ashx?funcname=" + action + "&id=" + _id;
-                callAjaxHandler(url, data, AjaxConst.PostRequest, createProjectCallback);
+                callAjaxHandler("divloading", url, data, AjaxConst.PostRequest, createProjectCallback);
             });
 
             function createProjectCallback(data) {
