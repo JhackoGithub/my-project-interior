@@ -1,7 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Entities
 {
+
+    public class ProjectPaging
+    {
+        public int PageIndex { get; set; }
+        public int PageSize { get; set; }
+        public int TotalRows { get; set; }
+        public List<Project> Projects { get; set; }
+    }
+
     public class Project
     {
         public int Id { get; set; }

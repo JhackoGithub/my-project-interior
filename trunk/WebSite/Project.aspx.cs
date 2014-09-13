@@ -13,6 +13,7 @@ namespace WebSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Master != null)
                 Master.Page.Title = Type == 0 ? Constant.PROJECT_ARCHITECTURE : Constant.PROJECT_INTERIOR;
         }

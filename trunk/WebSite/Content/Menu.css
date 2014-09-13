@@ -74,7 +74,9 @@
     padding: 5px;
 }
 
-#cssmenu ul ul a:hover { color: #a55835; }
+#cssmenu ul ul a:hover { color:brown; 
+                         text-decoration: underline;
+}
 
 #cssmenu ul ul li.odd { background: #f4f4f4; }
 

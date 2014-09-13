@@ -166,6 +166,44 @@ namespace DAL.Core
             }
         }
 
+        private List<T> ExecuteToList<T>(SqlCommand sqlCommand, out int totalRows)
+        {
+            try
+            {
+                SetConnection(sqlCommand);
+                var returnValue = new SqlParameter { ParameterName = "@TotalRows", SqlDbType = SqlDbType.Int, Direction = ParameterDirection.Output };
+                sqlCommand.Parameters.Add(returnValue);
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
+                if (dataReader.FieldCount == 0)
+                {
+                    totalRows = 0;
+                    return null;
+                }
+                var recordList = new List<T>();
+
+                DynamicBuilder<T> builder = DynamicBuilder<T>.CreateBuilder(dataReader);
+
+                while (dataReader.Read())
+                {
+                    T record = builder.Build(dataReader);
+                    recordList.Add(record);
+                }
+                
+                dataReader.Close();
+                totalRows = (int)sqlCommand.Parameters["@TotalRows"].Value;
+                return recordList;
+            }
+            catch (Exception)
+            {
+                AutoRollbackTransaction();
+                throw;
+            }
+            finally
+            {
+                CloseConnection(sqlCommand.Connection);
+            }
+        }
+
         protected List<T> ExecuteToList<T>(CommandType commandType, string queryString, params SqlParameter[] parameters)
         {
             FixParameterNullValue(parameters);
@@ -185,6 +223,16 @@ namespace DAL.Core
             sqlCommand.Parameters.AddRange(parameters);
 
             return ExecuteToList<T>(sqlCommand);
+        }
+
+        protected List<T> ExecuteToList<T>(string storeProcedureName, out int totalRows, params SqlParameter[] parameters)
+        {
+            FixParameterNullValue(parameters);
+
+            var sqlCommand = new SqlCommand { CommandText = storeProcedureName, CommandType = CommandType.StoredProcedure };
+            sqlCommand.Parameters.AddRange(parameters);
+
+            return ExecuteToList<T>(sqlCommand, out totalRows);
         }
 
         public static object GetData<T>(IDataReader dataReader, bool isGenericType)

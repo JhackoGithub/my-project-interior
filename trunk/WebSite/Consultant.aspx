@@ -2,7 +2,6 @@
 <%@ Register Src="~/UserControls/MenuTop.ascx" TagPrefix="ucMenuTop" TagName="MenuTop" %>
 <%@ Register Src="~/UserControls/MenuLeft.ascx" TagPrefix="ucMenuLeft" TagName="MenuLeft" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContainer" runat="server">
-
     <div class="container_12 primary_content_wrap clearfix">
         <div id="content">
             <div id="post-502" class=" page">
@@ -30,8 +29,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="pagination">
             </div>
         </div>
     </div>

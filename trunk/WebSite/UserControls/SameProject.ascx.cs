@@ -31,24 +31,19 @@ namespace WebSite.UserControls
             IEnumerable<ProjectBE> projects = GetProjects();
 
             var htmlProject = new StringBuilder();
-            htmlProject.Append("<ul class='recent-posts projects'>");
             foreach (ProjectBE project in projects)
             {
-                string projectName = string.Format("Dự án {0}", project.Name);
                 string pathImage = string.Format("Images\\projects{0}\\{1}", project.PathImage, project.PrimaryImage);
-                htmlProject.AppendFormat("<li class='projects'>");
-                htmlProject.AppendFormat("<figure class='featured-thumbnail'>");
-                htmlProject.AppendFormat(
-                    "<a href='Project-Info.aspx?type={0}&tab=1&project={1}&cate={2}' title='{3}'><img src='{4}' style='width: 200px;' /></a>",
-                    Type, project.Id, project.CategoryId, projectName, pathImage);
-                htmlProject.Append("</figure>");
-                htmlProject.AppendFormat(
-                    "<h5><a href='Project-Info.aspx?type={0}&tab=1&project={1}&cate={2}' title='{3}'>{4}</a></h5>", Type,
-                    project.Id, project.CategoryId, projectName, projectName);
-                htmlProject.Append("<div class='clear'></div>");
-                htmlProject.Append("</li>");
+                htmlProject.AppendFormat("<div class='va-slice'>");
+                htmlProject.AppendFormat("<div class='grid-block'>");
+                htmlProject.AppendFormat("<div class='captions'>");
+                htmlProject.AppendFormat("<h3>{0}</h3>", project.Name);
+                htmlProject.AppendFormat("<p><a href='Project-Info.aspx?type={0}&tab=1&project={1}&cate={2}' class='learn-more' >chi tiết</a></p>", Type, project.Id, project.CategoryId);
+                htmlProject.Append("</div>");
+                htmlProject.AppendFormat("<img src='{0}' style='width: 200px;' />", pathImage);
+                htmlProject.Append("</div>");
+                htmlProject.Append("</div>");
             }
-            htmlProject.Append("</ul>");
             ltProjects.Text = htmlProject.ToString();
         }
 
