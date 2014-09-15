@@ -88,7 +88,7 @@
                                             </div>
                                         </div>
                                         <div class="primary">
-                                            <ucMenu:Menu ID="menu" runat="server" />
+                                            <ucMenu:Menu ID="imenu" runat="server" />
                                         </div>
                                         <div id="top-search">
                                             <input type="text" name="s" class="input-search" />
