@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title></title>
+        <meta name="keywords" content="Thiet ke noi that, Thiết kế nội thất, Thiết kế chung cư, Thiet ke chung cu, Thiết kế nội thất chung cư, Thiet ke noi that chung , Noi that biet thu, Nội thất biệt thự, Cai tao noi that, Cải tạo nội thất, Nhà đẹp, Nha dep" />
         <style type="text/css">
             .cus-info { padding-bottom: 5px; }
 

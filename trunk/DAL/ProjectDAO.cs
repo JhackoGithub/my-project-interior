@@ -23,7 +23,7 @@ namespace DAL
             return res;
         }
 
-        public ProjectPaging GetProjectByTypeByPageIndex(int type, int pageIndex, int pageSize)
+        public ProjectPaging GetProjectByPageIndex(int type, int pageIndex, int pageSize)
         {
             var paramArrs = new[]
                                 {
@@ -40,6 +40,27 @@ namespace DAL
                               TotalRows = totalRows,
                               Projects = projects
                           };
+            return res;
+        }
+
+        public ProjectPaging GetProjectByPageIndex(int type, int cateid, int pageIndex, int pageSize)
+        {
+            var paramArrs = new[]
+                                {
+                                    new SqlParameter("@Type", type),
+                                    new SqlParameter("@CateId", cateid),
+                                    new SqlParameter("@PageIndex", pageIndex),
+                                    new SqlParameter("@PageSize", pageSize)
+                                };
+            int totalRows;
+            List<Project> projects = ExecuteToList<Project>("Project_GetByTypeByCatePageIndex", out totalRows, paramArrs);
+            var res = new ProjectPaging
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                TotalRows = totalRows,
+                Projects = projects
+            };
             return res;
         }
 

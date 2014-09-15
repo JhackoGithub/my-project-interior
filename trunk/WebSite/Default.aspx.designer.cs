@@ -13,13 +13,13 @@ namespace WebSite {
     public partial class _Default {
         
         /// <summary>
-        /// menu control.
+        /// imenu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::WebSite.UserControls.Menu menu;
+        protected global::WebSite.UserControls.Menu imenu;
         
         /// <summary>
         /// footer control.

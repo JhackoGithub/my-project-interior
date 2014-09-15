@@ -28,10 +28,17 @@ namespace BLL
             return res;
         }
 
-        public ProjectPaging GetProjectByTypeByPageIndex(int type, int pageIndex, int pageSize)
+        public ProjectPaging GetProjectByPageIndex(int type, int pageIndex, int pageSize)
         {
             var dao = new ProjectDAO();
-            var res = dao.GetProjectByTypeByPageIndex(type, pageIndex, pageSize);
+            var res = dao.GetProjectByPageIndex(type, pageIndex, pageSize);
+            return res;
+        }
+
+        public ProjectPaging GetProjectByPageIndex(int type, int cateId, int pageIndex, int pageSize)
+        {
+            var dao = new ProjectDAO();
+            var res = dao.GetProjectByPageIndex(type, cateId, pageIndex, pageSize);
             return res;
         }
 

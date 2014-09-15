@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
-        <title></title>
+        <title><%: Page.Title %> - noithatviet.net.vn</title>
+        <meta name="keywords" content="Thiet ke noi that, Thiết kế nội thất, Thiết kế chung cư, Thiet ke chung cu, Thiết kế nội thất chung cư, Thiet ke noi that chung , Noi that biet thu, Nội thất biệt thự, Cai tao noi that, Cải tạo nội thất, Nhà đẹp, Nha dep" />
         <script src="../Scripts/jquery-1.8.2.min.js"> </script>
         <script src="../Scripts/kendo.web.min.js"> </script>
         <script src="../Scripts/kendo.core.min.js"> </script>

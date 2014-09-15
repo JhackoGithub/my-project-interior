@@ -39,6 +39,10 @@ namespace WebSite.Handler
                 case "getrefer":
                     jsonString = GenerateHtmlProjectRefer(type);
                     break;
+                case "getreferdetails":
+                    var path = Utils.ConvertDeserialize<string>(context, ref jsonString);
+                    jsonString = GenerateProjectReferDetails(path);
+                    break;
                 case "edit":
                     int id = context.Request.QueryString["id"] == null
                                  ? 0
@@ -93,7 +97,7 @@ namespace WebSite.Handler
         private string GetProjectByPageIndex(int type, int cateId, int pageIndex, int pageSize)
         {
             var bo = new ProjectBO();
-            var res = bo.GetProjectByTypeByPageIndex(type, pageIndex, pageSize);
+            var res = cateId == 0 ? bo.GetProjectByPageIndex(type, pageIndex, pageSize) : bo.GetProjectByPageIndex(type, cateId, pageIndex, pageSize);
             var htmlProject = new StringBuilder();
             GenerateHtmlProjects(res.Projects, htmlProject);
             var json = new
@@ -131,7 +135,6 @@ namespace WebSite.Handler
             var htmlProject = new StringBuilder();
             string directory = type == 0 ? "architecture\\thamkhao" : "noi that\\thamkhao";
             IEnumerable<ProjectRefer> projects = GetProjects(string.Format(@"\Images\projects\{0}\", directory));
-            
             htmlProject.Append("<ul class='grid cs-style-5'>");
             foreach (ProjectRefer project in projects)
             {
@@ -141,7 +144,8 @@ namespace WebSite.Handler
                 htmlProject.AppendFormat("<img src='{0}' style='width: 315px; height: 220px;' />", pathImage);
                 htmlProject.Append("<figcaption>");
                 htmlProject.AppendFormat("<h3>Dự án</h3><span>{0}</span>", project.Name);
-                htmlProject.AppendFormat("<a href='Project-Info.aspx?type={0}&tab=1&cate={1}&project={2}' title='{3}'>chi tiết</a>", type, 0, 0, project.Name);
+                htmlProject.AppendFormat("<a class='detail' href='#' title='{0}'>chi tiết" +
+                                         "<label style='display: none;'>{1}</label></a>", project.Name, string.Format("\\Images\\projects\\{0}\\{1}\\", directory, project.Name));
                 htmlProject.Append("</figcaption>");
                 htmlProject.Append("</figure>");
                 htmlProject.Append("</li>");
@@ -171,6 +175,24 @@ namespace WebSite.Handler
                 res.Add(project);
             }
             return res;
+        }
+
+        private string GenerateProjectReferDetails(string path)
+        {
+            if (!Directory.Exists(HttpContext.Current.Server.MapPath(path)))
+                return string.Empty;
+            var dirInfo = new DirectoryInfo(HttpContext.Current.Server.MapPath(path));
+            var imageSlide = new StringBuilder();
+            foreach (FileInfo fileInfo in dirInfo.GetFiles())
+            {
+                string pathImage = string.Format("{0}\\{1}", path, fileInfo.Name);
+                imageSlide.AppendFormat("<div data-thumb='{0}' data-src='{1}'></div>", pathImage, pathImage);
+            }
+            var json = new
+            {
+                html = imageSlide.ToString()
+            };
+            return Utils.ConvertToJsonString(json);
         }
 
         private string GetImageName(string path)
