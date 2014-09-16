@@ -2,22 +2,22 @@
 
 <ul id="topnav" class="sf-menu">
     <li id="menu-item-1" class="current-menu-item">
-        <a href="../Default.aspx">trang chủ</a>
+        <a href="../">trang chủ</a>
     </li>
     <li id="menu-item-2" class="current-menu-item">
-        <a href="../Project.aspx?type=0&tab=1">kiến trúc</a>
+        <a href="<%:Page.ResolveUrl("architectural-building/0/1") %>">kiến trúc</a>
     </li>
     <li id="menu-item-3" class="current-menu-item">
-        <a href="../Project.aspx?type=1&tab=1">nội thất</a>
+        <a href="<%:Page.ResolveUrl("interior-building/1/1") %>">nội thất</a>
     </li>
     <li id="menu-item-4" class="current-menu-item">
-        <a href="../News.aspx?type=2">tin tức</a>
+        <a href="<%:Page.ResolveUrl("new/2") %>">tin tức</a>
     </li>
     <li id="menu-item-5" class="current-menu-item">
         <a href="http://www.xemngay.com/Default.aspx?blog=huongnha2" target="_blank">phong thủy</a>
     </li>
     <li id="menu-item-6" class="current-menu-item">
-        <a href="../Contact.aspx?type=4&id=0">liên hệ</a>
+        <a href="<%:Page.ResolveUrl("contact/4/0") %>">liên hệ</a>
     </li>
 </ul>
 

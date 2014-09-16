@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SameProject.ascx.cs" Inherits="WebSite.UserControls.ContentRight" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
 
 <style type="text/css">
     .grid-block {
@@ -17,22 +18,24 @@
         </div>
     </div>
 </div>
-<script src="Scripts/jquery.vaccordion.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $('#va-accordion').vaccordion();
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.grid-block').hover(
-            function () {
-                $(this).find('.captions').slideDown(250);
-            },
-            function () {
-                $(this).find('.captions').slideUp(250);
-            }
-        );
-    });
-</script>
+<telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+    <script src="<%: Page.ResolveUrl("~/Scripts/jquery.vaccordion.js") %>" > </script>
+    <script type="text/javascript">
+        $(function () {
+            $('#va-accordion').vaccordion();
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.grid-block').hover(
+                function () {
+                    $(this).find('.captions').slideDown(250);
+                },
+                function () {
+                    $(this).find('.captions').slideUp(250);
+                }
+            );
+        });
+    </script>
+</telerik:RadCodeBlock>
 

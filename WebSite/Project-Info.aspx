@@ -2,9 +2,11 @@
 
 <%@ Register Src="~/UserControls/MenuTop.ascx" TagPrefix="ucMenuTop" TagName="MenuTop" %>
 <%@ Register Src="~/UserControls/SameProject.ascx" TagPrefix="ucSameProject" TagName="SameProject" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuTopContent" runat="server">
     <ucMenuTop:MenuTop ID="menuTop" runat="server" />
-    <link href="Content/camera.css" rel="stylesheet" />
+    <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+    <link href="<%: Page.ResolveUrl("~/Content/camera.css") %>" rel="stylesheet" />
     <style type="text/css">
         #wrapper {
             height: 500px;
@@ -90,9 +92,9 @@
             color: #333;
         }
     </style>
-    <script src="Scripts/jquery.easing.1.3.js"> </script>
-    <script src="Scripts/camera.js" type="text/javascript"> </script>
-    <script src="Scripts/jquery.carouFredSel-6.0.4-packed.js"> </script>
+    <script src="<%: Page.ResolveUrl("~/Scripts/jquery.easing.1.3.js") %>" > </script>
+    <script src="<%: Page.ResolveUrl("~/Scripts/camera.js") %>" > </script>
+    <script src="<%: Page.ResolveUrl("~/Scripts/jquery.carouFredSel-6.0.4-packed.js") %>" > </script>
     <script type="text/javascript">
         $(function () {
             jQuery('#camera_wrap_2').camera({
@@ -100,7 +102,7 @@
                 loader: 'bar',
                 pagination: true,
                 thumbnails: true,
-                imagePath: '/Images/'
+                imagePath: '<%: Page.ResolveUrl("~/Images/")%>'
             });
 
             $('#tabs').carouFredSel({
@@ -118,7 +120,7 @@
         });
 
     </script>
-
+    </telerik:RadCodeBlock>
 </asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="SlideProjectContent">
     <div id="wrapper">
@@ -146,5 +148,5 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentRight" runat="server">
-    <ucSameProject:SameProject runat="server" ID="sameProject" />
+    <%--<ucSameProject:SameProject runat="server" ID="sameProject" />--%>
 </asp:Content>
