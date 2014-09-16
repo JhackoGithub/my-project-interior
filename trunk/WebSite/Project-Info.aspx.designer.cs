@@ -22,6 +22,15 @@ namespace WebSite {
         protected global::WebSite.UserControls.MenuTop menuTop;
         
         /// <summary>
+        /// RadCodeBlock1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadCodeBlock RadCodeBlock1;
+        
+        /// <summary>
         /// ltImages control.
         /// </summary>
         /// <remarks>
@@ -47,14 +56,5 @@ namespace WebSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltProjectDesc;
-        
-        /// <summary>
-        /// sameProject control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::WebSite.UserControls.ContentRight sameProject;
     }
 }

@@ -2,6 +2,7 @@
 
 <%@ Register Src="~/UserControls/MenuTop.ascx" TagPrefix="ucMenuTop" TagName="MenuTop" %>
 <%@ Register Src="~/UserControls/MenuLeft.ascx" TagPrefix="ucMenuLeft" TagName="MenuLeft" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuTopContent" runat="server">
     <ucMenuTop:MenuTop ID="menuTop" runat="server" />
@@ -10,14 +11,14 @@
     <ucMenuLeft:MenuLeft ID="menuLeft" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="SubContent" runat="server">
-    <script type="text/javascript" src="Scripts/ASPSnippets_Pager.min.js"></script>
-    <script type="text/javascript" src="Scripts/modernizr.custom.js"></script>
+    <telerik:RadCodeBlock runat="server">
+    <script src="<%: Page.ResolveUrl("~/Scripts/ASPSnippets_Pager.min.js") %>" > </script>
+    <script src="<%: Page.ResolveUrl("~/Scripts/modernizr.custom.js") %>" > </script>
     <style type="text/css">
         .Pager {
             text-align: center;
             padding-top: 20px;
         }
-
         .Pager span {
             text-align: center;
             color: #999;
@@ -28,7 +29,6 @@
             line-height: 150%;
             border: 1px solid #3AC0F2;
         }
-
         .Pager a {
             text-align: center;
             display: inline-block;
@@ -41,12 +41,12 @@
             text-decoration: none;
         }
     </style>
-
+    </telerik:RadCodeBlock>
     <div id="masonry"></div>
     <div style="clear: both;"></div>
     <div class="Pager"></div>
     <div id="divloading" class="loading" />
-
+    <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -58,11 +58,12 @@
         });
 
         function getProjects(pageIndex) {
-            var type = getParameterByName('type');
-            var cateid = getParameterByName('cate');
-            var url = "../Handler/ProjectHandler.ashx?funcname=getallbypageindex&type=" + type + "&cate=" + (cateid == "" ? "0" : cateid);
+            var type = 0;// getParameterByName('type');
+            var cateid = 0;// getParameterByName('cate');
+            var url = "~/Handler/ProjectHandler.ashx?funcname=getallbypageindex&type=" + type + "&cate=" + (cateid == "" ? "0" : cateid);
+            var path = '<%= Page.ResolveUrl("~/Handler/ProjectHandler.ashx?funcname=getallbypageindex&type=0&cate=0") %>';
             var data = JSON.stringify(pageIndex);
-            callAjaxHandler("divloading", url, data, AjaxConst.PostRequest, OnSuccess);
+            callAjaxHandler("divloading", path, data, AjaxConst.PostRequest, OnSuccess);
         }
 
         function OnSuccess(response) {
@@ -77,4 +78,5 @@
         }
 
     </script>
+        </telerik:RadCodeBlock>
 </asp:Content>

@@ -15,6 +15,7 @@ namespace WebSite
 
             AuthConfig.RegisterOpenAuth();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //RouteTable.Routes.GetRouteData(new HttpContextWrapper(HttpContext.Current));
         }
 
         private void Application_End(object sender, EventArgs e)

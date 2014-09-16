@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Web.Routing;
+using System.Web.UI;
 using BLL;
 using WebSite.Common;
 using ProjectBE = Entities.Project;
@@ -17,6 +19,7 @@ namespace WebSite.Handler
     {
         protected override void ProcessMainRequest(HttpContext context)
         {
+            
             string jsonString = string.Empty;
             context.Response.ContentType = "text/plain";
 
@@ -115,14 +118,14 @@ namespace WebSite.Handler
             htmlProject.Append("<ul class='grid cs-style-5'>");
             foreach (ProjectBE project in projects)
             {
-                string pathImage = string.Format("Images\\projects{0}\\{1}", project.PathImage,
-                                                 project.PrimaryImage);
+                string pathImage = string.Format("\\Images\\projects{0}\\{1}", project.PathImage, project.PrimaryImage);
+                string link = string.Format("/project-info/{0}/1/{1}/{2}", project.Type, project.CategoryId, project.Id);
                 htmlProject.AppendFormat("<li>");
                 htmlProject.AppendFormat("<figure>");
                 htmlProject.AppendFormat("<img src='{0}' style='width: 315px; height: 220px;' />", pathImage);
                 htmlProject.Append("<figcaption>");
                 htmlProject.AppendFormat("<h3>Dự án</h3><span>{0}</span>", project.Name);
-                htmlProject.AppendFormat("<a href='Project-Info.aspx?type={0}&tab=1&cate={1}&project={2}' title='{3}'>chi tiết</a>",project.Type, project.CategoryId, project.Id, project.Name);
+                htmlProject.AppendFormat("<a href='{0}' title='{1}'>chi tiết</a>", link, project.Name);
                 htmlProject.Append("</figcaption>");
                 htmlProject.Append("</figure>");
                 htmlProject.Append("</li>");
