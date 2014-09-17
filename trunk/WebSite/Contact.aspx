@@ -16,8 +16,6 @@
         .cus-info span { color: red; }
     </style>
     <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
-    <%--<telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
-    <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />--%>
     <div class="container_12 primary_content_wrap clearfix">
         <div id="content">
             <div id="post-14" class="page" style="padding-left: 10px;">
@@ -125,18 +123,12 @@
         </div>
     </div>
     <script type="text/javascript">
-        $(function() {
-            var id = getParameterByName('id');
-            var page;
-            if (id != '0') {
-                page = 'Contact.aspx?type=4&id=' + id;
-            } else {
-                var name = getParameterByName('name');
-                page = 'Contact.aspx?type=4&name=' + name;
-            }
+        $(function () {
+            var id = '<%= Page.RouteData.Values["id"] == null ? "0" : Page.RouteData.Values["id"].ToString() %>';
+            var page = '<%= Page.Request.Path%>';
             $('#cssmenu ul ul li a').each(function() {
                 var link = $(this).attr('href');
-                if (link.indexOf(page) >= 0) {
+                if (link == page) {
                     $(this).children().addClass('active');
                     getDirectPage(id);
                 }
@@ -144,20 +136,20 @@
         });
 
         function getDirectPage(id) {
-            if (id == "0") {
-                var name = getParameterByName('name');
+            if (id != "0") {
+                $('#divMap').css('display', 'none');
+                $('#divInves').css('display', 'none');
+                $('#divIframe').css('display', 'block');
+            } else {
+                var name = '<%= Page.RouteData.Values["name"] == null ? string.Empty : Page.RouteData.Values["name"].ToString() %>';
                 $('#divIframe').css('display', 'none');
-                if (name == "map") {
+                if (name == "0") {
                     $('#divInves').css('display', 'none');
                     $('#divMap').css('display', 'block');
                 } else {
                     $('#divMap').css('display', 'none');
                     $('#divInves').css('display', 'block');
                 }
-            } else {
-                $('#divMap').css('display', 'none');
-                $('#divInves').css('display', 'none');
-                $('#divIframe').css('display', 'block');
             }
         }
     </script>

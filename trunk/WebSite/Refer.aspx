@@ -2,6 +2,7 @@
 
 <%@ Register Src="~/UserControls/MenuTop.ascx" TagPrefix="ucMenuTop" TagName="MenuTop" %>
 <%@ Register Src="~/UserControls/MenuLeft.ascx" TagPrefix="ucMenuLeft" TagName="MenuLeft" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MenuTopContent" runat="server">
     <ucMenuTop:MenuTop ID="menuTop" runat="server" />
@@ -11,7 +12,7 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="SubContent" runat="server">
-    <link href="Content/camera.css" rel="stylesheet" />
+    <link href="<%: Page.ResolveUrl("~/Content/camera.css") %>" rel="stylesheet" />
     <style type="text/css">
         #wrapper {
             height: 600px;
@@ -31,35 +32,34 @@
             margin: 0 auto;
             width: 700px;
         }
-
     </style>
 
     <div id="pro-refer-info" style="display: none;">
         <div id="wrapper">
-        <div class="fluid_container">
-            <div class="camera_wrap camera_magenta_skin" id="camera_wrap_2"></div>
+            <div class="fluid_container">
+                <div class="camera_wrap camera_magenta_skin" id="camera_wrap_2"></div>
+            </div>
         </div>
-    </div>
     </div>
     <div id="container-project" style="padding-bottom: 20px;"></div>
     <div id="divloading" class="loading" />
-    
-    <script type="text/javascript" src="Scripts/modernizr.custom.js"></script>
-    <script src="Scripts/camera.js" type="text/javascript"> </script>
-    <script type="text/javascript">
-        $(function() {
-            bindProjects();
-        });
+    <telerik:RadCodeBlock runat="server">
+        <script src="<%: Page.ResolveUrl("~/Scripts/modernizr.custom.js") %>"> </script>
+        <script src="<%: Page.ResolveUrl("~/Scripts/camera.js") %>"> </script>
 
-        function bindProjects() {
-            var type = getParameterByName('type');
-            var url = "../Handler/ProjectHandler.ashx?funcname=getrefer&type=" + type;
-            callAjaxHandler("divloading", url, null, AjaxConst.GetRequest, bindProjectCallback);
+        <script type="text/javascript">
+            $(function () {
+                bindProjects();
+            });
+
+            function bindProjects() {
+                var path = '<%= Page.ResolveUrl(string.Format("~/Handler/ProjectHandler.ashx?funcname=getrefer&type={0}", int.Parse(Page.RouteData.Values["type"].ToString()))) %>';
+            callAjaxHandler("divloading", path, null, AjaxConst.GetRequest, bindProjectCallback);
         }
 
         function bindProjectCallback(data) {
             $('#container-project').html(data.html);
-            
+
             $('#container-project .detail').click(function () {
                 var $lbl = $(this).find("label");
                 var path = $lbl.html();
@@ -83,8 +83,9 @@
                 loader: 'bar',
                 pagination: true,
                 thumbnails: true,
-                imagePath: '/Images/'
+                imagePath: '<%: Page.ResolveUrl("~/Images/")%>'
             });
         }
-    </script>
+        </script>
+    </telerik:RadCodeBlock>
 </asp:Content>

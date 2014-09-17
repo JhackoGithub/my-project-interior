@@ -10,7 +10,7 @@
         <meta charset="utf-8" />
         <meta name="keywords" content="Thiet ke noi that, Thiết kế nội thất, Thiết kế chung cư, Thiet ke chung cu, Thiết kế nội thất chung cư, Thiet ke noi that chung , Noi that biet thu, Nội thất biệt thự, Cai tao noi that, Cải tạo nội thất, Nhà đẹp, Nha dep" />
         
-        <title><%: Page.Title %> - noithatviet.net.vn</title>
+        <title>noithatviet.net.vn - <%: Page.Title %></title>
         <telerik:RadCodeBlock runat="server">
         <link href="<%: Page.ResolveUrl("~/Content/StyleSheet.css") %>" rel="stylesheet" />
         <link href="<%: Page.ResolveUrl("~/Content/Menu.css") %>" rel="stylesheet" />

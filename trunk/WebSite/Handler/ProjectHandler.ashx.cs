@@ -137,18 +137,19 @@ namespace WebSite.Handler
         {
             var htmlProject = new StringBuilder();
             string directory = type == 0 ? "architecture\\thamkhao" : "noi that\\thamkhao";
+            string name = type == 0 ? "cong-trinh-kien-truc" : "cong-trinh-noi-that";
             IEnumerable<ProjectRefer> projects = GetProjects(string.Format(@"\Images\projects\{0}\", directory));
             htmlProject.Append("<ul class='grid cs-style-5'>");
             foreach (ProjectRefer project in projects)
             {
-                string pathImage = string.Format("Images\\projects\\{0}\\{1}\\{2}", directory, project.Name, project.Image);
+                string pathImage = string.Format("\\Images\\projects\\{0}\\{1}\\{2}", directory, project.Name, project.Image);
                 htmlProject.AppendFormat("<li>");
                 htmlProject.AppendFormat("<figure>");
                 htmlProject.AppendFormat("<img src='{0}' style='width: 315px; height: 220px;' />", pathImage);
                 htmlProject.Append("<figcaption>");
                 htmlProject.AppendFormat("<h3>Dự án</h3><span>{0}</span>", project.Name);
-                htmlProject.AppendFormat("<a class='detail' href='#' title='{0}'>chi tiết" +
-                                         "<label style='display: none;'>{1}</label></a>", project.Name, string.Format("\\Images\\projects\\{0}\\{1}\\", directory, project.Name));
+                htmlProject.AppendFormat("<a class='detail' href='/tham-khao/{0}/{1}/3' title='{2}'>chi tiết" +
+                                         "<label style='display: none;'>{3}</label></a>", name, type, project.Name, string.Format("\\Images\\projects\\{0}\\{1}\\", directory, project.Name));
                 htmlProject.Append("</figcaption>");
                 htmlProject.Append("</figure>");
                 htmlProject.Append("</li>");
@@ -188,7 +189,7 @@ namespace WebSite.Handler
             var imageSlide = new StringBuilder();
             foreach (FileInfo fileInfo in dirInfo.GetFiles())
             {
-                string pathImage = string.Format("{0}\\{1}", path, fileInfo.Name);
+                string pathImage = string.Format("\\{0}\\{1}", path, fileInfo.Name);
                 imageSlide.AppendFormat("<div data-thumb='{0}' data-src='{1}'></div>", pathImage, pathImage);
             }
             var json = new
