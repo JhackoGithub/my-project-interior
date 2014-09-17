@@ -5,19 +5,10 @@
 </div>
 <script type="text/javascript">
     $(function() {
-        var cate = getParameterByName('cate');
-        var type = getParameterByName('type');
-        var tab = getParameterByName('tab');
-        var page;
-        if (tab == "1") {
-            page = 'Project.aspx?type=' + type + '&tab=1&cate=' + cate;
-        } else {
-            var id = getParameterByName('id');
-            page = 'Consultant.aspx?type=' + type + '&tab=2&id=' + id;
-        }
+        var page = '<%= Page.Request.Path%>';
         $('#cssmenu ul ul li a').each(function() {
             var link = $(this).attr('href');
-            if (link.indexOf(page) >= 0) {
+            if (link == page) {
                 $(this).children().addClass('active');
             }
         });

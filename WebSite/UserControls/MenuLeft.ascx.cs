@@ -12,12 +12,12 @@ namespace WebSite.UserControls
     {
         private int Type
         {
-            get { return Request.QueryString["type"] == null ? 0 : Convert.ToInt32(Request.QueryString["type"]); }
+            get { return Page.RouteData.Values["type"] == null ? 0 : int.Parse(Page.RouteData.Values["type"].ToString()); }
         }
 
         private int Tab
         {
-            get { return Request.QueryString["tab"] == null ? 0 : Convert.ToInt32(Request.QueryString["tab"]); }
+            get { return Page.RouteData.Values["tab"] == null ? 1 : int.Parse(Page.RouteData.Values["tab"].ToString()); }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -58,6 +58,7 @@ namespace WebSite.UserControls
             List<MenuBE> menus = GetMenuProject();
             var htmlMenu = new StringBuilder();
             htmlMenu.Append("<ul>");
+            string menuType = Type == 0 ? "kien-truc" : "noi-that";
             foreach (MenuBE menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
             {
                 if (menu == null) continue;
@@ -74,33 +75,36 @@ namespace WebSite.UserControls
                 if (Tab == 0)
                 {
                     htmlMenu.AppendFormat(
-                        "<li><a href='Contact.aspx?type={0}&name=map'><span>Địa điểm công ty</span></a></li>", Type);
+                        "<li><a href='/lien-he/dia-diem-cong-ty/{0}/0/0'><span>Địa điểm công ty</span></a></li>", Type);
                 }
                 foreach (MenuBE menuLeft in menuChild)
                 {
-                    if (Tab == 1 || Tab == 3)
+                    string link;
+                    switch (Tab)
                     {
-                        htmlMenu.AppendFormat(
-                            "<li><a href='Project.aspx?type={0}&tab=1&cate={1}'><span>{2}</span></a></li>", Type,
-                            menuLeft.Id, menuLeft.Name);
-                    }
-                    else if (Tab == 2)
-                    {
-                        htmlMenu.AppendFormat(
-                            "<li><a href='Consultant.aspx?type={0}&tab=2&id={1}'><span>{2}</span></a></li>", Type,
-                            menuLeft.Link ?? 0, menuLeft.Name);
-                    }
-                    else
-                    {
-                        htmlMenu.AppendFormat("<li><a href='Contact.aspx?type={0}&id={1}'><span>{2}</span></a></li>",
+                        case 1:
+                            link = string.Format("/{0}/cong-trinh-{1}/{2}/{3}/{4}", menuType, menuType, Type, Tab, menuLeft.Id);
+                            htmlMenu.AppendFormat("<li><a href='{0}'><span>{1}</span></a></li>", link, menuLeft.Name);
+                            break;
+                        case 2:
+                            link = string.Format(Type == 0 ? "/tu-van/tu-van-cong-trinh/{0}/2/{1}" : "/tu-van/tu-van-noi-that/{0}/3/{1}", Type, menuLeft.Link ?? 0);
+                            htmlMenu.AppendFormat("<li><a href='{0}'><span>{1}</span></a></li>", link, menuLeft.Name);
+                            break;
+                        case 3:
+                            link = string.Format("/{0}/cong-trinh-{1}/{2}/{3}/{4}", menuType, menuType, Type, Tab, menuLeft.Id);
+                            htmlMenu.AppendFormat("<li><a href='{0}'><span>{1}</span></a></li>", link, menuLeft.Name);
+                            break;
+                        case 4:
+                            break;
+                        case 0:
+                            htmlMenu.AppendFormat("<li><a href='/lien-he/{0}/0/{1}'><span>{2}</span></a></li>",
                                               Type, menuLeft.Link ?? 0, menuLeft.Name);
+                            break;
                     }
                 }
                 if (Tab == 0)
                 {
-                    htmlMenu.AppendFormat(
-                        "<li><a href='Contact.aspx?type={0}&name=phieu-dieu-tra'><span>Phiếu điều tra</span></a></li>",
-                        Type);
+                    htmlMenu.AppendFormat("<li><a href='/lien-he/phieu-dieu-tra/{0}/0/1'><span>Phiếu điều tra</span></a></li>", Type);
                 }
                 htmlMenu.Append("</ul>");
             }

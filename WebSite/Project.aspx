@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NestedMasterPage.master" AutoEventWireup="true" CodeBehind="Project.aspx.cs" Inherits="WebSite.Project" Theme="Windows7" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/NestedMasterPage.master" AutoEventWireup="true" CodeBehind="Project.aspx.cs" Inherits="WebSite.Project" Theme="Windows7" %>
 
 <%@ Register Src="~/UserControls/MenuTop.ascx" TagPrefix="ucMenuTop" TagName="MenuTop" %>
 <%@ Register Src="~/UserControls/MenuLeft.ascx" TagPrefix="ucMenuLeft" TagName="MenuLeft" %>
@@ -58,10 +58,8 @@
         });
 
         function getProjects(pageIndex) {
-            var type = 0;// getParameterByName('type');
-            var cateid = 0;// getParameterByName('cate');
-            var url = "~/Handler/ProjectHandler.ashx?funcname=getallbypageindex&type=" + type + "&cate=" + (cateid == "" ? "0" : cateid);
-            var path = '<%= Page.ResolveUrl("~/Handler/ProjectHandler.ashx?funcname=getallbypageindex&type=0&cate=0") %>';
+            var path = '<%= Page.ResolveUrl(string.Format("~/Handler/ProjectHandler.ashx?funcname=getallbypageindex&type={0}&cate={1}", int.Parse(Page.RouteData.Values["type"].ToString()), Page.RouteData.Values["cate"] == null ?
+    0 : int.Parse(Page.RouteData.Values["cate"].ToString()))) %>';
             var data = JSON.stringify(pageIndex);
             callAjaxHandler("divloading", path, data, AjaxConst.PostRequest, OnSuccess);
         }

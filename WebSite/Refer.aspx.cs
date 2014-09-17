@@ -8,7 +8,7 @@ namespace WebSite
     {
         private int Type
         {
-            get { return Request.QueryString["type"] == null ? 0 : int.Parse(Request.QueryString["type"]); }
+            get { return Page.RouteData.Values["type"] == null ? 0 : int.Parse(Page.RouteData.Values["type"].ToString()); }
         }
 
         protected void Page_Load(object sender, EventArgs e)

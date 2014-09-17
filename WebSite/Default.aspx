@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebSite._Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebSite._Default" %>
 
 <%@ Register Src="~/UserControls/Menu.ascx" TagPrefix="ucMenu" TagName="Menu" %>
 <%@ Register Src="~/UserControls/Footer.ascx" TagPrefix="ucFooter" TagName="Footer" %>
@@ -7,7 +7,7 @@
 <html lang="en">
     <head runat="server">
         <meta charset="utf-8" />
-        <title><%: Page.Title %> - noithatviet.net.vn</title>
+        <title>noithatviet.net.vn</title>
         <link href="~/Content/camera.css" rel="stylesheet" />
         <link href="~/Content/normalize.css" rel="stylesheet" />
         <link href="~/Content/StyleSheet.css" rel="stylesheet" />
