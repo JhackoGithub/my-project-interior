@@ -571,6 +571,7 @@
     <Content Include="Images\digg.png" />
     <Content Include="Images\direction_nav.png" />
     <Content Include="Images\facebook.png" />
+    <Content Include="Images\fb.png" />
     <Content Include="Images\footer-splash.png" />
     <Content Include="Images\heroAccent.png" />
     <Content Include="Images\home_img01.png" />
@@ -586,6 +587,7 @@
     <Content Include="Images\iEdit.png" />
     <Content Include="Images\iView.png" />
     <Content Include="Images\link.png" />
+    <Content Include="Images\linkhay.gif" />
     <Content Include="Images\link_add.png" />
     <Content Include="Images\link_delete.png" />
     <Content Include="Images\loading-map.gif" />
@@ -1256,10 +1258,13 @@
     <Content Include="Images\tail-top.png" />
     <Content Include="Images\top-search-bg.png" />
     <Content Include="Images\trans-black-50.png" />
+    <Content Include="Images\tw.png" />
+    <Content Include="Images\twitter.png" />
     <Content Include="Images\up-arrow.png" />
     <Content Include="Images\Uploads\News\201407271320021418253-80775645.jpg" />
     <Content Include="Images\Uploads\News\20140727132845xanh2.jpg" />
     <Content Include="Images\Uploads\News\2014072715251801.jpg" />
+    <Content Include="Images\zingme.png" />
     <Content Include="Lesson.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="News.aspx" />
@@ -1296,6 +1301,7 @@
     <Content Include="Scripts\kendo.web.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr.custom.js" />
+    <Content Include="Scripts\portal.js" />
     <Content Include="Scripts\Script.js" />
     <Content Include="UserControls\ImageManager.ascx" />
     <Content Include="UserControls\NewsManagement.ascx" />

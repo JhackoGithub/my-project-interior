@@ -32,7 +32,7 @@ namespace WebSite.App_Start
             routes.MapPageRoute("refer", "tham-khao/{name}/{type}/{tab}", "~/Refer.aspx", true);
             routes.MapPageRoute("question", "hoi-dap/{type}/{tab}", "~/Question.aspx", true);
 
-            routes.MapPageRoute("details", "du-an/{project}/{type}/{tab}/{cate}/{id}", "~/Project-Info.aspx", false, null, new RouteValueDictionary { { "type", "[0-9]*" }, { "tab", "[0-9]*" }, { "cate", "[0-9]*" }, { "id", "[0-9]*" } });
+            routes.MapPageRoute("details", "du-an/{type}/{tab}/{cate}/{id}", "~/Project-Info.aspx", false, null, new RouteValueDictionary { { "type", "[0-9]*" }, { "tab", "[0-9]*" }, { "cate", "[0-9]*" }, { "id", "[0-9]*" } });
             
         }
     }

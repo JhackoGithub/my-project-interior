@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News.aspx.cs" Inherits="WebSite.News" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News.aspx.cs" Inherits="WebSite.News" %>
 
 <%@ Register Src="~/UserControls/SameProject.ascx" TagPrefix="ucSameProject" TagName="SameProject" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContainer" runat="server">
@@ -9,30 +9,24 @@
         }
 
         .tab .news-title {
-            background-color: #ffffff;
-            font-family: arial;
-            font-size: 12px;
             margin: 10px 0px 0px;
-            padding: 0px 0px 10px;
         }
 
-        .tab .news-title h1 {
-            font-size: 28px;
-            font-weight: 400;
-            line-height: 32px;
-            margin-left: 0px;
-            margin-right: 0px;
-            margin-top: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
-        }
+            .tab .news-title h1 {
+                font-size: 20px;
+                line-height: 32px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 0px;
+                padding-left: 0px;
+                padding-right: 0px;
+                padding-top: 0px;
+                color: #005FAC;
+            }
 
         .tab .news-subcontent {
-            background-color: #ffffff;
-            color: #444444;
+            color: #535353;
             float: left;
-            font-family: arial;
             font-size: 14px;
             font-weight: 700;
             line-height: 18px;
@@ -50,7 +44,9 @@
             padding: 0px 0px 10px;
         }
 
-        .tab .news-relative { padding-top: 50px; }
+        .tab .news-relative {
+            padding-top: 50px;
+        }
 
         .tab .news-relateditemtitle {
             color: #666;
@@ -95,16 +91,13 @@
                                     <asp:Repeater ID="rptTopNews" runat="server">
                                         <ItemTemplate>
                                             <div class="mt3 clearfix">
-                                                <a title="" href="News.aspx?type=2&id=<%#                                        Eval("Id") %>">
-                                                    <img class="img130" src="Images/Uploads/News/<%#                                        Eval("ImageUrl") ?? "no-image.png" %>" alt="">
+                                                <a title="" href="<%# Page.ResolveUrl(string.Format("/tin-tuc/2/{0}", Eval("Id"))) %>"><img class="img130" src="<%# Page.ResolveUrl(string.Format("/Images/Uploads/News/{0}", Eval("ImageUrl") ?? "no-image.png")) %>" alt="">
                                                 </a>
                                                 <div>
-                                                    <h2><a title="" href="News.aspx?type=2&id=<%#Eval
-                                                                                                   ("Id") %>">
-                                                            <%#Eval("Title") %>
-                                                        </a></h2>
+                                                    <h2><a title="" href="<%# Page.ResolveUrl(string.Format("/tin-tuc/2/{0}", Eval("Id"))) %>"><%#Eval("Title") %>
+                                                    </a></h2>
                                                     <div><%#Eval("SubContent") %></div>
-                                                    <a class="icon-detail" href="News.aspx?type=2&id=<%#Eval("Id") %>">Xem tiếp</a>
+                                                    <a class="icon-detail" href="<%# Page.ResolveUrl(string.Format("/tin-tuc/2/{0}", Eval("Id"))) %>">Xem tiếp</a>
                                                 </div>
                                             </div>
                                             <div class="line1"></div>
@@ -113,7 +106,26 @@
                                 </asp:Panel>
                                 <asp:Panel runat="server" ID="pnlDetails" Visible="False">
                                     <div class="news-title">
-                                        <h1><asp:Label runat="server" ID="lbTitle"></asp:Label></h1>
+                                        <h1>
+                                            <asp:Label runat="server" ID="lbTitle"></asp:Label></h1>
+                                    </div>
+                                    <div style="float: left; text-align: right;">
+                                        <span style="padding-right: 3px; float: right;">
+                                            <a href="javascript:;" onclick="share_linkhay();" style="padding: 0 2px;">
+                                                <img border="0" src="/Images/linkhay.gif" alt="Share on linkhay" title="Share on linkhay"></a>
+                                        </span>
+                                        <span style="padding-right: 3px; float: right;">
+                                            <a href="javascript:;" onclick="share_zing();" style="padding: 0 2px;">
+                                                <img border="0" src="/Images/zingme.png" alt="Share on zingme" title="Share on zing"></a>
+                                        </span>
+                                        <span style="padding-right: 3px; float: right;">
+                                            <a href="javascript:;" onclick="share_twitter();" style="padding: 0 2px;">
+                                                <img border="0" src="/Images/tw.png" alt="Share on twitter" title="Share on twitter"></a>
+                                        </span>
+                                        <span style="padding-right: 3px; float: right;">
+                                            <a href="javascript:;" onclick="share_facebook();" style="padding: 0 2px;">
+                                                <img border="0" src="/Images/fb.png" alt="Share on Facebook" title="Share on Facebook"></a>
+                                        </span>
                                     </div>
                                     <div class="news-subcontent">
                                         <asp:Literal runat="server" ID="ltSubContent"></asp:Literal>
@@ -136,8 +148,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="pagination">
-                </div>
+            </div>
+            <div class="pagination">
             </div>
         </div>
     </div>

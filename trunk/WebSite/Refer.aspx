@@ -68,7 +68,7 @@
         }
 
         function showDetails(path) {
-            var url = "../Handler/ProjectHandler.ashx?funcname=getreferdetails";
+            var url = '<%= Page.ResolveUrl("~/Handler/ProjectHandler.ashx?funcname=getreferdetails")%>';
             var data = JSON.stringify(path);
             callAjaxHandler("divloading", url, data, AjaxConst.PostRequest, bindDetailsCallback);
         }

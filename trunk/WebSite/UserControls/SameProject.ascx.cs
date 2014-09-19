@@ -11,12 +11,12 @@ namespace WebSite.UserControls
     {
         public int Type
         {
-            get { return Request.QueryString["type"] == null ? 0 : Convert.ToInt32(Request.QueryString["type"]); }
+            get { return Page.RouteData.Values["type"] == null ? 0 : Convert.ToInt32(Page.RouteData.Values["type"]); }
         }
 
         private int CategoryId
         {
-            get { return Request.QueryString["cate"] == null ? 0 : Convert.ToInt32(Request.QueryString["cate"]); }
+            get { return Page.RouteData.Values["cate"] == null ? 0 : Convert.ToInt32(Page.RouteData.Values["cate"]); }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -33,12 +33,13 @@ namespace WebSite.UserControls
             var htmlProject = new StringBuilder();
             foreach (ProjectBE project in projects)
             {
-                string pathImage = string.Format("Images\\projects{0}\\{1}", project.PathImage, project.PrimaryImage);
+                string pathImage = string.Format("\\Images\\projects{0}\\{1}", project.PathImage, project.PrimaryImage);
+                string link = string.Format("/du-an/{0}/1/{1}/{2}", project.Type, project.CategoryId, project.Id);
                 htmlProject.AppendFormat("<div class='va-slice'>");
                 htmlProject.AppendFormat("<div class='grid-block'>");
                 htmlProject.AppendFormat("<div class='captions'>");
                 htmlProject.AppendFormat("<h3>{0}</h3>", project.Name);
-                htmlProject.AppendFormat("<p><a href='Project-Info.aspx?type={0}&tab=1&project={1}&cate={2}' class='learn-more' >chi tiết</a></p>", Type, project.Id, project.CategoryId);
+                htmlProject.AppendFormat("<p><a href='{0}' class='learn-more' >chi tiết</a></p>", link);
                 htmlProject.Append("</div>");
                 htmlProject.AppendFormat("<img src='{0}' style='width: 200px;' />", pathImage);
                 htmlProject.Append("</div>");
