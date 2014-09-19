@@ -10,11 +10,12 @@ namespace WebSite
     {
         private int Id
         {
-            get { return Request.QueryString["id"] == null ? 0 : Convert.ToInt32(Request.QueryString["id"]); }
+            get { return Page.RouteData.Values["id"] == null ? 0 : Convert.ToInt32(Page.RouteData.Values["id"]); }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.Header.Title = "tin-tuc";
             if (IsPostBack)
                 return;
             BindEntityToControl();
@@ -51,7 +52,7 @@ namespace WebSite
             foreach (Entities.News newse in news)
             {
                 htmlNews.Append("<li><span>");
-                htmlNews.AppendFormat("<a href='/News.aspx?type=2&id={0}'>{1}</a>", newse.Id, newse.Title);
+                htmlNews.AppendFormat("<a href='/tin-tuc/2/{0}'>{1}</a>", newse.Id, newse.Title);
                 htmlNews.Append("</li></span>");
             }
             ltNewRelative.Text = htmlNews.ToString();

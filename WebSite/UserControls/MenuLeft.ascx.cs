@@ -91,7 +91,7 @@ namespace WebSite.UserControls
                             htmlMenu.AppendFormat("<li><a href='{0}'><span>{1}</span></a></li>", link, menuLeft.Name);
                             break;
                         case 3:
-                            link = string.Format("/{0}/cong-trinh-{1}/{2}/{3}/{4}", menuType, menuType, Type, Tab, menuLeft.Id);
+                            link = string.Format("/{0}/cong-trinh-{1}/{2}/{3}/{4}", menuType, menuType, Type, 1, menuLeft.Id);
                             htmlMenu.AppendFormat("<li><a href='{0}'><span>{1}</span></a></li>", link, menuLeft.Name);
                             break;
                         case 4:

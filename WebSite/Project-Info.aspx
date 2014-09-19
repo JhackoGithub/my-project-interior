@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DetailMasterPage.master" AutoEventWireup="true" CodeBehind="Project-Info.aspx.cs" Inherits="WebSite.Project_Info" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/DetailMasterPage.master" AutoEventWireup="true" CodeBehind="Project-Info.aspx.cs" Inherits="WebSite.Project_Info" %>
 
 <%@ Register Src="~/UserControls/MenuTop.ascx" TagPrefix="ucMenuTop" TagName="MenuTop" %>
 <%@ Register Src="~/UserControls/SameProject.ascx" TagPrefix="ucSameProject" TagName="SameProject" %>
@@ -130,6 +130,26 @@
             </div>
         </div>
     </div>
+    <%--<div style="float: left; text-align: right;">
+        <span style="padding-right: 3px; float: right;">
+            <a href="javascript:;" onclick="share_linkhay();" style="padding: 0 2px;">
+                <img border="0" src="/Images/linkhay.gif" alt="Share on linkhay" title="Share on linkhay"></a>
+        </span>
+        <span style="padding-right: 3px; float: right;">
+            <a href="javascript:;" onclick="share_zing();" style="padding: 0 2px;">
+                <img border="0" src="/Images/zingme.png" alt="Share on zingme" title="Share on zing"></a>
+        </span>
+        <span style="padding-right: 3px; float: right;">
+            <a href="javascript:;" onclick="share_twitter();" style="padding: 0 2px;">
+                <img border="0" src="/Images/tw.png" alt="Share on twitter" title="Share on twitter"></a>
+        </span>
+        <span style="padding-right: 3px; float: right;">
+            <a href="javascript:;" onclick="share_facebook();" style="padding: 0 2px;">
+                <img border="0" src="/Images/fb.png" alt="Share on Facebook" title="Share on Facebook"></a>
+        </span>
+    </div>--%>
+    <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fnoithatviet.am&amp;width=500&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=30&amp;appId=648914558493847" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:500px; height:30px;" allowTransparency="true"></iframe>
+    <div style="clear: both;"></div>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SubContent" runat="server">
     <div id="wrapper-tab">
@@ -148,5 +168,5 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentRight" runat="server">
-    <%--<ucSameProject:SameProject runat="server" ID="sameProject" />--%>
+    <ucSameProject:SameProject runat="server" ID="sameProject" />
 </asp:Content>

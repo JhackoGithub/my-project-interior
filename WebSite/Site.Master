@@ -6,60 +6,76 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head runat="server">
-        <meta charset="utf-8" />
-        <meta name="keywords" content="Thiet ke noi that, Thiết kế nội thất, Thiết kế chung cư, Thiet ke chung cu, Thiết kế nội thất chung cư, Thiet ke noi that chung , Noi that biet thu, Nội thất biệt thự, Cai tao noi that, Cải tạo nội thất, Nhà đẹp, Nha dep" />
-        
-        <title>noithatviet.net.vn - <%: Page.Title %></title>
-        <telerik:RadCodeBlock runat="server">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Thiet ke noi that, Thiết kế nội thất, Thiết kế chung cư, Thiet ke chung cu, Thiết kế nội thất chung cư, Thiet ke noi that chung , Noi that biet thu, Nội thất biệt thự, Cai tao noi that, Cải tạo nội thất, Nhà đẹp, Nha dep" />
+
+    <title>noithatviet.net.vn - <%: Page.Title %></title>
+    <telerik:RadCodeBlock runat="server">
         <link href="<%: Page.ResolveUrl("~/Content/StyleSheet.css") %>" rel="stylesheet" />
         <link href="<%: Page.ResolveUrl("~/Content/Menu.css") %>" rel="stylesheet" />
         <link href="<%: Page.ResolveUrl("~/Content/grid.css") %>" rel="stylesheet" />
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        
-        <script src="<%: Page.ResolveUrl("~/Scripts/jquery-1.8.2.min.js") %>" > </script>
-        <script src="<%: Page.ResolveUrl("~/Scripts/jquery-ui-1.8.24.min.js") %>" > </script>
-        <script src="<%: Page.ResolveUrl("~/Scripts/Script.js") %>" > </script>
-        </telerik:RadCodeBlock>
-    </head>
-    <body class="home page">
-        <form runat="server">
-            <div id="main">
-                <header id="header-master">
-                    <div class="splash">
-                        <div class="tail-top">
-                            <div class="tail-bottom">
-                                <div class="container_12 clearfix header-master">
-                                    <div class="grid_12">
-                                        <div class="logo">
-                                            <div style="float: left; padding: 5px;">
-                                                <a href="#">
-                                                    <img src="<%: Page.ResolveUrl("~/Images/logo.png") %>" width="100px" />
-                                                </a>
+
+        <script src="<%: Page.ResolveUrl("~/Scripts/jquery-1.8.2.min.js") %>"> </script>
+        <script src="<%: Page.ResolveUrl("~/Scripts/jquery-ui-1.8.24.min.js") %>"> </script>
+        <script src="<%: Page.ResolveUrl("~/Scripts/Script.js") %>"> </script>
+        <script src="<%: Page.ResolveUrl("~/Scripts/portal.js") %>"> </script>
+        <script type="text/javascript">
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".fb-comments").attr("data-href", window.location.href);
+            });
+        </script>
+    </telerik:RadCodeBlock>
+</head>
+<body class="home page">
+    <form runat="server">
+        <div id="main">
+            <header id="header-master">
+                <div class="splash">
+                    <div class="tail-top">
+                        <div class="tail-bottom">
+                            <div class="container_12 clearfix header-master">
+                                <div class="grid_12">
+                                    <div class="logo">
+                                        <div style="float: left; padding: 5px;">
+                                            <a href="#">
+                                                <img src="<%: Page.ResolveUrl("~/Images/logo.png") %>" width="100px" />
+                                            </a>
+                                        </div>
+                                        <div style="float: left; padding-top: 20px; width: 190px;">
+                                            <div style="color: white; font-family: sans-serif; font-size: 10pt; line-height: 1.6em; text-align: left; text-decoration: underline; text-transform: uppercase;">
+                                                công ty cổ phần tư vấn thiết kế và xây dựng a&m
                                             </div>
-                                            <div style="float: left; padding-top: 20px; width: 190px;">
-                                                <div style="color: white; font-family: sans-serif; font-size: 10pt; line-height: 1.6em; text-align: left; text-decoration: underline; text-transform: uppercase;">
-                                                    công ty cổ phần tư vấn thiết kế và xây dựng a&m
-                                                </div>
-                                            </div>
                                         </div>
-                                        <div class="primary">
-                                            <ucMenu:Menu ID="menu" runat="server" />
-                                        </div>
-                                        <div id="top-search">
-                                            <input type="text" name="s" class="input-search" />
-                                            <input type="submit" id="submit" value="" />
-                                        </div>
+                                    </div>
+                                    <div class="primary">
+                                        <ucMenu:Menu ID="menu" runat="server" />
+                                    </div>
+                                    <div id="top-search">
+                                        <input type="text" name="s" class="input-search" />
+                                        <input type="submit" id="submit" value="" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </header>
-                <asp:ContentPlaceHolder runat="server" ID="MainContainer"></asp:ContentPlaceHolder>
-            </div>
-            <ucFooter:Footer ID="footer" runat="server" />
-        </form>
-    </body>
+                </div>
+            </header>
+            <asp:ContentPlaceHolder runat="server" ID="MainContainer"></asp:ContentPlaceHolder>
+        </div>
+        <ucFooter:Footer ID="footer" runat="server" />
+    </form>
+</body>
 </html>

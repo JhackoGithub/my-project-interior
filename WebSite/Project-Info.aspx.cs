@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Routing;
 using System.Web.UI;
 using BLL;
+using WebSite.Common;
 using ProjectBE = Entities.Project;
 
 namespace WebSite
@@ -12,9 +13,13 @@ namespace WebSite
     public partial class Project_Info : Page
     {
         private int Id { get { return Page.RouteData.Values["id"] == null ? 0 : int.Parse(Page.RouteData.Values["id"].ToString()); } }
-
+        private int Type
+        {
+            get { return Page.RouteData.Values["type"] == null ? 0 : int.Parse(Page.RouteData.Values["type"].ToString()); }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.Header.Title = Type == 0 ? Constant.PROJECT_ARCHITECTURE : Constant.PROJECT_INTERIOR;
             if (IsPostBack)
                 return;
             LoadProject();
