@@ -47,7 +47,7 @@
     <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
     <div class="news-top">
         <label>
-            <input type="radio" id="rdNews" name="rdNewsKind" value="0" style="width: 25px;" />Tạo bài viết cho mục Tin tức
+            <input type="radio" id="rdNews" name="rdNewsKind" checked="checked" value="0" style="width: 25px;" />Tạo bài viết cho mục Tin tức
         </label>
         <br/>
         <label>

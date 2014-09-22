@@ -78,8 +78,9 @@
                                     <div class="grid_12">
                                         <div class="logo">
                                             <div style="float: left; padding: 5px;">
-                                                <a href="#">
-                                                    <img src="Images/logo.png" width="100px" /></a>
+                                                <a href="/">
+                                                    <img src="<%: Page.ResolveUrl("~/Images/logo.png") %>" width="100px" />
+                                                </a>
                                             </div>
                                             <div style="float: left; padding-top: 20px; width: 190px;">
                                                 <div style="color: white; font-family: sans-serif; font-size: 10pt; line-height: 1.6em; text-align: left; text-decoration: underline; text-transform: uppercase;">
@@ -119,30 +120,30 @@
                         <div class="grid-block">
         	                <div class="captions">
             	                <h3>thiết kế kiến trúc</h3>
-                                <p><a href="/Project.aspx?type=0&tab=1" class="learn-more">chi tiêt</a></p>
+                                <p><a href="<%:Page.ResolveUrl("/kien-truc/cong-trinh-kien-truc/0/1") %>" class="learn-more">chi tiêt</a></p>
                             </div>
-        	                <img src="Images/home_img01.png" />
+                            <img src="<%: Page.ResolveUrl("~/Images/home_img01.png") %>" />
                         </div>
                         <div class="grid-block">
         	                <div class="captions">
             	                <h3>thiết kế nội thất</h3>
-                                <p><a href="/Project.aspx?type=1&tab=1" class="learn-more">chi tiêt</a></p>
+                                <p><a href="<%:Page.ResolveUrl("/noi-that/cong-trinh-noi-that/1/1") %>" class="learn-more">chi tiêt</a></p>
                             </div>
-        	                <img src="Images/home_img02.png" />
+        	                <img src="<%: Page.ResolveUrl("~/Images/home_img02.png") %>" />
                         </div>
                         <div class="grid-block">
         	                <div class="captions">
             	                <h3>thiết kế nhà hàng</h3>
                                 <p><a href="commingsoon.aspx" class="learn-more">chi tiêt</a></p>
                             </div>
-        	                <img src="Images/home_img03.png" />
+                            <img src="<%: Page.ResolveUrl("~/Images/home_img03.png") %>" />
                         </div>
                         <div class="grid-block">
         	                <div class="captions">
             	                <h3>tư vấn phong thủy</h3>
                                 <p><a href="http://www.xemngay.com/Default.aspx?blog=huongnha2" class="learn-more">chi tiêt</a></p>
                             </div>
-        	                <img src="Images/home_img05.png" />
+                            <img src="<%: Page.ResolveUrl("~/Images/home_img05.png") %>" />
                         </div>
                     </div>
                     <div id="second-content-area">
@@ -161,13 +162,13 @@
                     </div>
                     <div class="menu-bottom">
                         <div>
-                            <a href="/Consultant.aspx?type=0&tab=2" title="Read more" class="button">TƯ VẤN THIẾT KẾ</a>
+                            <a href="<%:Page.ResolveUrl("/tu-van/tu-van-cong-trinh/0/2/0") %>" title="Read more" class="button">TƯ VẤN THIẾT KẾ</a>
                         </div>
                         <div>
-                            <a href="/Lesson.aspx?type=0&id=7&tab=2" title="Read more" class="button">THI CÔNG</a>
+                            <a href="<%: Page.ResolveUrl("/kien-thuc-can-thiet-khi-xay-nha/tien-hanh-thi-cong/0/2/7") %>" title="Read more" class="button">THI CÔNG</a>
                         </div>
                         <div>
-                            <a href="/Lesson.aspx?type=0&id=6&tab=2" title="Read more" class="button">TƯ VẤN GIÁM SÁT</a>
+                            <a href="<%: Page.ResolveUrl("/kien-thuc-can-thiet-khi-xay-nha/tien-hanh-thi-cong/0/2/6") %>" title="Read more" class="button">TƯ VẤN GIÁM SÁT</a>
                         </div>
                     </div>
                 </div>

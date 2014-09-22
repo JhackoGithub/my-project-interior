@@ -1,5 +1,4 @@
 using System.Web.Routing;
-using Microsoft.AspNet.FriendlyUrls;
 
 namespace WebSite.App_Start
 {
@@ -12,7 +11,7 @@ namespace WebSite.App_Start
             routes.Ignore("{resource}.axd/{*pathInfo}");
             routes.Ignore("{resource}.css/{*pathInfo}");
             routes.Ignore("{resource}.js/{*pathInfo}");
-
+            routes.Ignore("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
             routes.Ignore("{file}.png");
             routes.Ignore("{file}.jpg");
             routes.MapPageRoute("admin", "admin-login/", "~/Login.aspx");
@@ -33,7 +32,8 @@ namespace WebSite.App_Start
             routes.MapPageRoute("question", "hoi-dap/{type}/{tab}", "~/Question.aspx", true);
 
             routes.MapPageRoute("details", "du-an/{type}/{tab}/{cate}/{id}", "~/Project-Info.aspx", false, null, new RouteValueDictionary { { "type", "[0-9]*" }, { "tab", "[0-9]*" }, { "cate", "[0-9]*" }, { "id", "[0-9]*" } });
-            
+
+            routes.MapPageRoute("lesson", "kien-thuc-can-thiet-khi-xay-nha/{name}/{type}/{tab}/{id}", "~/Lesson.aspx", false, null, new RouteValueDictionary { { "type", "[0-9]*" }, { "tab", "[0-9]*" }, { "id", "[0-9]*" } });
         }
     }
 }

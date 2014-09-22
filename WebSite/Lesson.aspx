@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Lesson.aspx.cs" Inherits="WebSite.Lesson" %>
 
 <%@ Register Src="~/UserControls/MenuTop.ascx" TagPrefix="ucMenuTop" TagName="MenuTop" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContainer" runat="server">
     <div class="container_12 primary_content_wrap clearfix">
         <div id="content">
@@ -449,14 +450,14 @@
                                 <ul>
                                     <li class='has-sub'><a href='#'><span>Các bài liên quan</span></a>
                                         <ul>
-                                            <li><a href='/Lesson.aspx?type=<%= Level %>&id=1&tab=2'><span>Bài 1 | Kế hoạch tài chính</span></a></li>
-                                            <li><a href='/Lesson.aspx?type=<%= Level %>&id=2&tab=2'><span>Bài 2 | Các bước chuẩn bị đầu tiên</span></a></li>
-                                            <li><a href='/Lesson.aspx?type=<%= Level %>&id=3&tab=2'><span>Bài 3 | Làm việc với kiến trúc sư</span></a></li>
-                                            <li><a href='/Lesson.aspx?type=<%= Level %>&id=4&tab=2'><span>Bài 4 | Chọn nhà thầu thi công</span></a></li>
-                                            <li><a href='/Lesson.aspx?type=<%= Level %>&id=5&tab=2'><span>Bài 5 | Chọn vật liệu xây dựng</span></a></li>
-                                            <li><a href='/Lesson.aspx?type=<%= Level %>&id=6&tab=2'><span>Bài 6 | Công tác giám sát</span></a></li>
-                                            <li><a href='/Lesson.aspx?type=<%= Level %>&id=7&tab=2'><span>Bài 7 | Tiến hành thi công</span></a></li>
-                                            <li class='last'><a href='/Lesson.aspx?type=<%= Level %>&id=8&tab=2'><span>Bài 8 | Kiểm tra, nghiệm thu và hoàn công</span></a></li>
+                                            <li><a href="<%: Page.ResolveUrl(string.Format("/kien-thuc-can-thiet-khi-xay-nha/ke-hoach-tai-chinh/{0}/2/1", Page.RouteData.Values["type"])) %>"><span>Bài 1 | Kế hoạch tài chính</span></a></li>
+                                            <li><a href="<%: Page.ResolveUrl(string.Format("/kien-thuc-can-thiet-khi-xay-nha/cac-buoc-chuan-bi-dau-tien/{0}/2/2", Page.RouteData.Values["type"])) %>"><span>Bài 2 | Các bước chuẩn bị đầu tiên</span></a></li>
+                                            <li><a href="<%: Page.ResolveUrl(string.Format("/kien-thuc-can-thiet-khi-xay-nha/lam-viec-voi-kien-truc-su/{0}/2/3", Page.RouteData.Values["type"])) %>"><span>Bài 3 | Làm việc với kiến trúc sư</span></a></li>
+                                            <li><a href="<%: Page.ResolveUrl(string.Format("/kien-thuc-can-thiet-khi-xay-nha/chon-nha-thau-thi-cong/{0}/2/4", Page.RouteData.Values["type"])) %>"><span>Bài 4 | Chọn nhà thầu thi công</span></a></li>
+                                            <li><a href="<%: Page.ResolveUrl(string.Format("/kien-thuc-can-thiet-khi-xay-nha/chon-vat-lieu-xay-dung/{0}/2/5", Page.RouteData.Values["type"])) %>"><span>Bài 5 | Chọn vật liệu xây dựng</span></a></li>
+                                            <li><a href="<%: Page.ResolveUrl(string.Format("/kien-thuc-can-thiet-khi-xay-nha/cong-tac-giam-sat/{0}/2/6", Page.RouteData.Values["type"])) %>"><span>Bài 6 | Công tác giám sát</span></a></li>
+                                            <li><a href="<%: Page.ResolveUrl(string.Format("/kien-thuc-can-thiet-khi-xay-nha/tien-hanh-thi-cong/{0}/2/7", Page.RouteData.Values["type"])) %>"><span>Bài 7 | Tiến hành thi công</span></a></li>
+                                            <li class='last'><a href="<%: Page.ResolveUrl(string.Format("/kien-thuc-can-thiet-khi-xay-nha/kiem-tra-nghiem-thu-va-hoan-cong/{0}/2/8", Page.RouteData.Values["type"])) %>"><span>Bài 8 | Kiểm tra, nghiệm thu và hoàn công</span></a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -464,14 +465,14 @@
                         </div>
                         <div style="clear: both;"></div>
                         <div class="img-bottom-info">
-                            <img src="Images/products/8.jpg" />
-                            <img src="Images/products/2.jpg" />
-                            <img src="Images/products/3.jpg" />
-                            <img src="Images/products/4.jpg" />
-                            <img src="Images/products/5.jpg" />
-                            <img src="Images/products/6.jpg" />
-                            <img src="Images/products/7.jpg" />
-                            <img src="Images/products/9.jpg" />
+                            <img src="<%: Page.ResolveUrl("~/Images/products/8.jpg") %>" />
+                            <img src="<%: Page.ResolveUrl("~/Images/products/2.jpg") %>" />
+                            <img src="<%: Page.ResolveUrl("~/Images/products/3.jpg") %>" />
+                            <img src="<%: Page.ResolveUrl("~/Images/products/4.jpg") %>" />
+                            <img src="<%: Page.ResolveUrl("~/Images/products/5.jpg") %>" />
+                            <img src="<%: Page.ResolveUrl("~/Images/products/6.jpg") %>" />
+                            <img src="<%: Page.ResolveUrl("~/Images/products/7.jpg") %>" />
+                            <img src="<%: Page.ResolveUrl("~/Images/products/9.jpg") %>" />
                         </div>
                     </div>
                 </div>
@@ -480,19 +481,17 @@
             </div>
         </div>
     </div>
+    <telerik:RadCodeBlock runat="server">
     <script type="text/javascript">
         $(function() {
-            var page = window.location.pathname;
-            var type = getParameterByName('type');
-            var id = getParameterByName('id');
-            var tab = getParameterByName('tab');
-            var url = page + "?type=" + type + "&id=" + id + "&tab=" + tab;
+            var page = '<%= Page.Request.Path%>';
             $('#cssmenu ul li ul li a').each(function() {
                 var link = $(this).attr('href');
-                if (link.indexOf(url) >= 0) {
+                if (link == page) {
                     $(this).children().addClass('active');
                 }
             });
         });
     </script>
+    </telerik:RadCodeBlock>
 </asp:Content>

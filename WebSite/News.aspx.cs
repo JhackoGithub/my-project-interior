@@ -10,7 +10,7 @@ namespace WebSite
     {
         private int Id
         {
-            get { return Page.RouteData.Values["id"] == null ? 0 : Convert.ToInt32(Page.RouteData.Values["id"]); }
+            get { return Page.RouteData.Values["id"] == null ? 0 : int.Parse(Page.RouteData.Values["id"].ToString()); }
         }
 
         protected void Page_Load(object sender, EventArgs e)
