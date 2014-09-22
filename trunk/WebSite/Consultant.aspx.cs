@@ -6,14 +6,9 @@ namespace WebSite
 {
     public partial class Consultant : Page
     {
-        private int Type
-        {
-            get { return Request.QueryString["type"] == null ? 0 : Convert.ToInt32(Request.QueryString["type"]); }
-        }
-
         private int Id
         {
-            get { return Request.QueryString["id"] == null ? 0 : Convert.ToInt32(Request.QueryString["id"]); }
+            get { return Page.RouteData.Values["id"] == null ? 0 : int.Parse(Page.RouteData.Values["id"].ToString()); }
         }
 
         protected void Page_Load(object sender, EventArgs e)

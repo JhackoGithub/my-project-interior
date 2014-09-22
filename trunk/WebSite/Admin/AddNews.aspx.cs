@@ -67,10 +67,10 @@ namespace WebSite.Admin
         private void BindControlToEntity(NewsBE news)
         {
             news.Type = int.Parse(hdfNewKind.Value);
+            news.Title = tbTitle.Text.Trim();
+            news.Contents = radContent.Content;
             if (news.Type != 0)
             {
-                news.Title = tbTitle.Text.Trim();
-                news.Contents = radContent.Content;
                 return;
             }
             news.SubContent = tbSubcontent.Text.Trim();

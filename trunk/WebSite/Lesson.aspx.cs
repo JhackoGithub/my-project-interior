@@ -5,14 +5,9 @@ namespace WebSite
 {
     public partial class Lesson : Page
     {
-        public int Level
-        {
-            get { return Request.QueryString["type"] == null ? 0 : Convert.ToInt32(Request.QueryString["type"]); }
-        }
-
         private int LessonId
         {
-            get { return Request.QueryString["id"] == null ? 0 : Convert.ToInt32(Request.QueryString["id"]); }
+            get { return Page.RouteData.Values["id"] == null ? 0 : Convert.ToInt32(Page.RouteData.Values["id"]); }
         }
 
         protected void Page_Load(object sender, EventArgs e)
