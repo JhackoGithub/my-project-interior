@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Web.UI;
 using WebSite.Core;
 
 namespace WebSite.Admin
 {
-    public partial class Consultant : AuthenPage
+    public partial class Menu_Contact : AuthenPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

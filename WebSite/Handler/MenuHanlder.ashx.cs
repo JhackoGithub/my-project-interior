@@ -111,7 +111,7 @@ namespace WebSite.Handler
                 htmlMenu.AppendFormat("<li>" +
                                       "<div style='height: 20px;'>" +
                                       "<div style='float: left; text-transform: uppercase;padding-top: 5px;'>{0}</div>" +
-                                      "<div style='float: right; padding-right: 15px;'>" +
+                                      "<div style='float: right;'>" +
                                       "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' title='Xóa' />" +
                                       "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' title='Sửa' />" +
                                       "</div>" +

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Web.UI;
 using BLL;
@@ -49,7 +50,7 @@ namespace WebSite
             var newsBo = new NewsBO();
             List<Entities.News> news = newsBo.GetNewsByType(0);
             var htmlNews = new StringBuilder();
-            foreach (Entities.News newse in news)
+            foreach (Entities.News newse in news.OrderByDescending(t => t.CreatedOn))
             {
                 htmlNews.Append("<li><span>");
                 htmlNews.AppendFormat("<a href='/tin-tuc/2/{0}'>{1}</a>", newse.Id, newse.Title);
