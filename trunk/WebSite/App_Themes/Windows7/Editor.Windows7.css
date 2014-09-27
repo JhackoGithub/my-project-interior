@@ -30,6 +30,10 @@
 
 .Windows7.RadEditor, .Windows7.RadEditor .reModule, .Windows7.RadEditor .reEditorModes, .Windows7.RadEditor .reWrapper { background-color: #f1f5fb; }
 
+.Windows7.RadEditor body {
+    background-color: white !important;
+}
+
 .Windows7.reWrapper, .Windows7.RadEditor .reContentCell, .Windows7.reColorPicker, .Windows7.reInsertTable, .Windows7.reCustomLinks a:hover {
     background-color: #f1f5fb;
     border: 1px solid #aabfd6;
@@ -37,7 +41,7 @@
 
 .Windows7 .reEmptyMessage { color: #a7a7a7; }
 
-.Windows7.RadEditor .reContentCell { background-color: white; }
+.Windows7.RadEditor .reContentCell { background-color: white !important; }
 
 .Windows7.reDropDownBody {
     background-color: #f1f5fb;

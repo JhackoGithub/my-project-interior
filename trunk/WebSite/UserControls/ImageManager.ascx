@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ImageManager.ascx.cs" Inherits="WebSite.UserControls.ImageManager" EnableTheming="true" %>
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
 <telerik:RadCodeBlock runat="server">
+    <script src="../Scripts/jquery-1.8.2.min.js"></script>
     <script type="text/javascript">
         function OnClientItemSelected(sender, args) {
             var pvwImage = $get("pvwImage");

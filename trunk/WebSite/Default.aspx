@@ -78,7 +78,7 @@
                                     <div class="grid_12">
                                         <div class="logo">
                                             <div style="float: left; padding: 5px;">
-                                                <a href="/">
+                                                <a href="<%: Page.ResolveUrl("/") %>">
                                                     <img src="<%: Page.ResolveUrl("~/Images/logo.png") %>" width="100px" />
                                                 </a>
                                             </div>

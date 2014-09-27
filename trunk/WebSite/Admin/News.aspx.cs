@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.UI.WebControls;
 using BLL;
 using Telerik.Web.UI;
 using WebSite.Core;
@@ -34,9 +35,21 @@ namespace WebSite.Admin
                     int id = int.Parse(e.CommandArgument.ToString());
                     var newsBo = new NewsBO();
                     int res = newsBo.DeleteNews(id);
-                    string msg = string.Format("Xóa bản tin {0}", res > 0 ? "thành công" : "bị lỗi");
+                    string msg = string.Format("Xóa bài viết {0}", res > 0 ? "thành công" : "bị lỗi");
                     ltScript.Text = string.Format("<script>alert('{0}');</script>", msg);
                     break;
+            }
+        }
+
+        protected void rgNews_ItemDataBound(object sender, GridItemEventArgs e)
+        {
+            if (e.Item.ItemType == GridItemType.Item || e.Item.ItemType == GridItemType.AlternatingItem)
+            {
+                var lkbDelete = (LinkButton)e.Item.FindControl("lkbDelete");
+                if (lkbDelete != null)
+                {
+                    lkbDelete.Attributes.Add("onclick", string.Format("return deleteNews()"));
+                }
             }
         }
     }

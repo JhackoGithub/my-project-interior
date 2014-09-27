@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Web.UI.WebControls;
 using BLL;
 using Telerik.Web.UI;
@@ -38,7 +39,7 @@ namespace WebSite.Admin
         private List<ProjectBE> GetProjects()
         {
             var bo = new ProjectBO();
-            List<ProjectBE> res = bo.GetProjects();
+            var res = bo.GetProjects();
             return res;
         }
 
@@ -48,11 +49,23 @@ namespace WebSite.Admin
             {
                 case "delete":
                     int id = int.Parse(e.CommandArgument.ToString());
-                    var newsBo = new ProjectBO();
-                    int res = newsBo.DeleteProject(id);
-                    string msg = string.Format("Xóa bản tin {0}", res > 0 ? "thành công" : "bị lỗi");
+                    var bo = new ProjectBO();
+                    int res = bo.DeleteProject(id);
+                    string msg = string.Format("Xóa dự án {0}", res > 0 ? "thành công" : "bị lỗi");
                     ltScript.Text = string.Format("<script>alert('{0}');</script>", msg);
                     break;
+            }
+        }
+
+        protected void rgProject_ItemDataBound(object sender, GridItemEventArgs e)
+        {
+            if (e.Item.ItemType == GridItemType.Item || e.Item.ItemType == GridItemType.AlternatingItem)
+            {
+                var lkbDelete = (LinkButton)e.Item.FindControl("lkbDelete");
+                if (lkbDelete != null)
+                {
+                    lkbDelete.Attributes.Add("onclick", string.Format("return deleteProject()"));
+                }
             }
         }
     }

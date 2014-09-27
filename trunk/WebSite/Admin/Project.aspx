@@ -7,7 +7,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="padding-bottom: 10px; padding-top: 10px;">
         <button type="button" id="btnAdd" >Tạo mới dự án</button>
-        <button id="btnImageManager">Quản lý hình ảnh</button> 
     </div>
     
     <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
@@ -15,7 +14,7 @@
     <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
     <telerik:dialogopener runat="server" id="DialogOpener1" HandlerUrl="Telerik.Web.UI.DialogHandler.aspx" style="display: none;"></telerik:dialogopener> 
     <telerik:RadGrid ID="rgProject" runat="server" AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" PageSize="15"
-                     EnableEmbeddedSkins="False" CellSpacing="0" GridLines="None" OnItemCommand="rgProject_ItemCommand" OnNeedDataSource="rgProject_NeedDataSource">
+                     EnableEmbeddedSkins="False" CellSpacing="0" GridLines="None" OnItemCommand="rgProject_ItemCommand" OnNeedDataSource="rgProject_NeedDataSource" OnItemDataBound="rgProject_ItemDataBound">
         <HeaderStyle HorizontalAlign="Left" Height="30" Font-Bold="True" />
         <MasterTableView AllowMultiColumnSorting="False" AllowFilteringByColumn="False">
             <Columns>
@@ -26,8 +25,7 @@
                                             AllowFiltering="False" ShowFilterIcon="false" >
                     <HeaderStyle Width="120px"></HeaderStyle>
                     <ItemStyle Width="120px"></ItemStyle>
-                    <ItemTemplate>
-                        <%#                                        ((int) Eval("Type")).ConvertProjectType() %>
+                    <ItemTemplate><%# ((int) Eval("Type")).ConvertProjectType() %>
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
                 <telerik:GridBoundColumn DataField="CreatedOn" UniqueName="CreatedOn" HeaderText="Ngày tạo" AutoPostBackOnFilter="true"
@@ -56,16 +54,16 @@
     <div id="containerimagemanager"></div>
     <telerik:RadCodeBlock runat="server">
         <script type="text/javascript">
+            var wnd;
+            
             $('#btnAdd').click(function() {
                 location.href = 'AddProject.aspx';
             });
 
-            $('#btnImageManager').click(function() {
-                $("#containerimagemanager").html("");
-                var url = "Image.aspx";
-                wnd = ShowPopupIframe(750, 530, "Quản lý hình ảnh", "containerimages", url);
-                $("#containerimagemanager").parent().width(750).height(530);
-            });
+            function deleteProject() {
+                return confirm("Bạn có muốn xóa dự án này?");
+            }
+
         </script>
     </telerik:RadCodeBlock>
 </asp:Content>

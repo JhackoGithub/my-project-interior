@@ -37,8 +37,9 @@
             <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
                 <script type="text/javascript">
 
-                    $(document).ready(function() {
+                    $(document).ready(function () {
 
+                        
                     });
 
                     $('#closepoup').click(function() {
@@ -87,6 +88,7 @@
                         var node = tree.findNodeByValue(value);
                         if (node == null)
                             return;
+                        
                         node.get_parent().expand();
                         node.select();
                         var data = JSON.stringify(node.get_value());

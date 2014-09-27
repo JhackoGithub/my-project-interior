@@ -10,7 +10,7 @@
 namespace WebSite.Admin {
     
     
-    public partial class Consultant {
+    public partial class Menu_Contact {
         
         /// <summary>
         /// RadScriptManager1 control.

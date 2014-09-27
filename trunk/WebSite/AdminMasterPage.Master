@@ -3,33 +3,47 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head runat="server">
-        <title><%: Page.Title %> - noithatviet.net.vn</title>
-        <meta name="keywords" content="Thiet ke noi that, Thiết kế nội thất, Thiết kế chung cư, Thiet ke chung cu, Thiết kế nội thất chung cư, Thiet ke noi that chung , Noi that biet thu, Nội thất biệt thự, Cai tao noi that, Cải tạo nội thất, Nhà đẹp, Nha dep" />
-        <script src="../Scripts/jquery-1.8.2.min.js"> </script>
-        <script src="../Scripts/kendo.web.min.js"> </script>
-        <script src="../Scripts/kendo.core.min.js"> </script>
-        <script src="../Scripts/Script.js"> </script>
-        <link href="~/Content/Kendo/kendo.common.min.css" rel="stylesheet" />
-        <link href="~/Content/Kendo/kendo.default.min.css" rel="stylesheet" />
-        <link href="~/Content/admin.css" rel="stylesheet" />
-    </head>
-    <body style="min-height: 100%; position: relative; top: 0px;">
-        <form id="form1" runat="server">
-            <div id="admin-top">
-                <div id="logo">
-                    
-                </div>
-                <div id="user">
-                    <section id="login" runat="server">
-                        <p>
-                            <asp:Literal runat="server" ID="ltUserName"></asp:Literal>
-                            <asp:LinkButton runat="server" ID="lbLogout" Text="Log off" OnClick="lbLogout_Click"></asp:LinkButton>
-                        </p>
-                    </section>
-                </div>
+<head runat="server">
+    <title><%: Page.Title %> - noithatviet.net.vn</title>
+    <meta name="keywords" content="Thiet ke noi that, Thiết kế nội thất, Thiết kế chung cư, Thiet ke chung cu, Thiết kế nội thất chung cư, Thiet ke noi that chung , Noi that biet thu, Nội thất biệt thự, Cai tao noi that, Cải tạo nội thất, Nhà đẹp, Nha dep" />
+    <script src="../Scripts/jquery-1.8.2.min.js"> </script>
+    <script src="../Scripts/kendo.web.min.js"> </script>
+    <script src="../Scripts/kendo.core.min.js"> </script>
+    <script src="../Scripts/Script.js"> </script>
+    <link href="~/Content/Kendo/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/Content/Kendo/kendo.default.min.css" rel="stylesheet" />
+    <link href="~/Content/admin.css" rel="stylesheet" />
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#cssmenu').prepend('<div id="menu-button">Menu</div>');
+            $('#cssmenu #menu-button').on('click', function () {
+                var menu = $(this).next('ul');
+                if (menu.hasClass('open')) {
+                    menu.removeClass('open');
+                }
+                else {
+                    menu.addClass('open');
+                }
+            });
+        });
+    </script>
+</head>
+<body id="adminbody" style="min-height: 100%; position: relative; top: 0px;">
+    <form id="form1" runat="server">
+        <div id="admin-top">
+            <div id="logo">
             </div>
-            <div id="admin-topnav">
+            <div id="user">
+                <section id="login" runat="server">
+                    <p>
+                        <asp:Literal runat="server" ID="ltUserName"></asp:Literal>
+                        <asp:LinkButton runat="server" ID="lbLogout" Text="Log off" OnClick="lbLogout_Click"></asp:LinkButton>
+                    </p>
+                </section>
+            </div>
+        </div>
+        <%--<div id="admin-topnav">
                 <div id="topnavTut">
                     <a class="topnav" href="../">Tranh chủ</a>
                     <a class="topnav" href="../Admin/Project.aspx">Quản lý Dự án</a>
@@ -37,16 +51,37 @@
                     <a class="topnav" href="../Admin/Menu.aspx">Quản lý Menu</a>
                     <a class="topnav" href="../Admin/Images.aspx">Quản lý Hình ảnh</a>
                 </div>
+            </div>--%>
+        <div id='cssmenu'>
+            <ul>
+                <li><a href='../'><span>Trang chủ</span></a></li>
+                <li><a href='../Admin/Project.aspx'><span>Q.lý Dự án</span></a></li>
+                <li><a href='../Admin/News.aspx'><span>Q.lý Tin tức</span></a></li>
+                <li class='has-sub'><a href='../Admin/Menu.aspx'><span>Q.lý Menu</span></a>
+                    <ul>
+                        <li><a href='../Admin/Menu.aspx'><span>Menu Công trình</span></a></li>
+                        <li><a href='../Admin/Menu-Contact.aspx'><span>Menu Liên hệ</span></a></li>
+                        <li><a href='../Admin/Consultant.aspx'><span>Menu Tư vấn</span></a></li>
+                    </ul>
+                </li>
+                
+                <li class='last has-sub'><a href='../Admin/Images.aspx'><span>Q.lý Hình ảnh</span></a>
+                    <ul>
+                        <li><a href="../Admin/Images.aspx"><span>Hình ảnh dự án</span></a></li>
+                        <li><a href="#"><span>Hình ảnh trang chủ</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="admin-body">
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+            <div id="admin-page">
+                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
             </div>
-            <div id="admin-body">
-                <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
-                <div id="admin-page">
-                    <asp:ContentPlaceHolder runat="server" ID="MainContent" />
-                </div>
-            </div>
-            <div id="admin-footer">
-                <small>Copyright © 2014 Bản quyền thuộc về noithatviet.com.vn.</small>
-            </div>
-        </form>
-    </body>
+        </div>
+        <div id="admin-footer">
+            <small>Copyright © 2014 Bản quyền thuộc về noithatviet.com.vn.</small>
+        </div>
+    </form>
+</body>
 </html>

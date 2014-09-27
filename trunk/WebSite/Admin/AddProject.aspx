@@ -4,11 +4,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="FeaturedContent" runat="server">
     <style type="text/css">
         #wrapper-tab {
-            background-color: #F4F0EE;
-            border-top: 1px solid #ccc;
-            /*border-bottom: 1px solid #ccc;*/
-            height: 550px;
-            padding: 10px;
+            height: 585px;
+            padding-top: 25px;
         }
 
         #tabs > div {
@@ -36,7 +33,7 @@
         }
 
         #pager {
-            margin: -41px auto 0px auto;
+            margin: 0px auto;
             text-align: left;
         }
 
@@ -68,6 +65,7 @@
         .rbl label { display: block; }
 
         .rbl td { text-align: center; }
+
     </style>
     <script src="../Scripts/jquery.carouFredSel-6.0.4-packed.js"> </script>
 </asp:Content>
@@ -77,7 +75,8 @@
     <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
     <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
     <div class="admin-projet-info">
-        <div style="height: 300px;">
+        <div class="notify-msg">Yêu cầu điền đầy đủ thống tin các trường có dấu *</div>
+        <div style="height: 340px;">
             <div class="admin-project-info-left">
                 <div class="admin-project-add">
                     <div class="admin-project-add-label">Loại dự án</div>
@@ -93,18 +92,23 @@
                 <div class="admin-project-add">
                     <div class="admin-project-add-label">Tên dự án</div>
                     <div class="admin-project-add-control">
-                        <input type="text" id="tbName"/>
+                        <input type="text" id="tbName" maxlength="200" style="width: 400px;"/><span style="color: red;"> *</span>
                     </div>
                 </div>
                 <div class="admin-project-add">
-                    <button type="button" id="showPopupImage" >Chọn thư mục hình ảnh</button>
-                    <label id="lblFolderSelected" style="display: block;"></label>
+                    <button type="button" id="showPopupImage" >Chọn thư mục hình ảnh</button><span style="color: red;"> *</span>
+                    <label id="lblFolderSelected" style="display: block; background-color: lightcyan;"></label>
                     <label id="lblImageSelected" style="display: none;"></label>
+                    <div style="text-align: center; border: 1px solid; margin-top: 5px;">
+                        <img id="imgthumb" src="/Images/no-image.png" height="150"/>
+                        <br/>
+                        <span>(ảnh đại diện)</span>
+                    </div>
                 </div>
             </div>
             <div class="admin-project-info-right">
                 <div class="admin-project-add">
-                    <div class="admin-project-add-label">Kiểu dự án</div>
+                    <div class="admin-project-add-label">Kiểu dự án<span style="color: red;"> *</span></div>
                     <div class="admin-project-add-control" style="height: 235px; overflow: auto; width: 240px;">
                         <div class="admin-project-cate" style="float: left; width: 220px;">
                         </div>
@@ -112,15 +116,14 @@
                 </div>
             </div>
         </div>
-        <div style="clear: both;"></div>
         <div id="wrapper-tab">
             <div id="pager">
             </div>
             <div id="tabs">
                 <div id="project-info">
                     <h3 style="display: none;">Thông tin</h3>
-                    <telerik:RadEditor runat="server" ID="radEditorInfo" ClientIDMode="Static" Width="920" Height="550" Skin="Windows7"
-                                       EditModes="Design">
+                    <telerik:RadEditor runat="server" ID="radEditorInfo" ClientIDMode="Static" Width="940" Height="550" Skin="Windows7"
+                                       EditModes="Design" BackColor="White" ContentAreaMode="Iframe">
                         <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
                         <Modules>
                             <telerik:EditorModule Name="RadEditorHtmlInspector" Enabled="true" Visible="false" />
@@ -130,13 +133,13 @@
                         </Modules>
                         <Content>
                         </Content>
-
                         <TrackChangesSettings CanAcceptTrackChanges="False"></TrackChangesSettings>
                     </telerik:RadEditor>
                 </div>
                 <div id="project-desc">
                     <h3 style="display: none;">Thuyết minh</h3>
-                    <telerik:RadEditor runat="server" ID="radEditorDesc" ClientIDMode="Static" Width="920" Height="550" Skin="Windows7" EditModes="Design">
+                    <telerik:RadEditor runat="server" ID="radEditorDesc" ClientIDMode="Static" Width="940" Height="550" Skin="Windows7" 
+                        EditModes="Design" BackColor="White" ContentAreaMode="Iframe">
                         <ImageManager MaxUploadFileSize="157286400" SearchPatterns="*.gif,*.jpg,*.jpeg,*.png,*.bmp" ViewPaths="~/Images/Uploads/News" UploadPaths="~/Images/Uploads/News" DeletePaths="~/Images/Uploads/News"></ImageManager>
                         <Modules>
                             <telerik:EditorModule Name="RadEditorStatistics" Visible="false" Enabled="false"></telerik:EditorModule>
@@ -146,7 +149,6 @@
                         </Modules>
                         <Content>
                         </Content>
-
                         <TrackChangesSettings CanAcceptTrackChanges="False"></TrackChangesSettings>
                     </telerik:RadEditor>
                 </div>
@@ -194,7 +196,7 @@
                 bindEntityToControl(data.project);
             }
 
-            $('#showPopupImage').click(function() {
+            $('#showPopupImage').click(function () {
                 $("#containerimages").html("");
                 var url = "../Contents/ImageManager.aspx";
                 wnd = ShowPopupIframe(750, 530, "Chọn thư mục ảnh dự án", "containerimages", url);
@@ -204,6 +206,8 @@
             function getFolder(folder, image) {
                 $('#lblFolderSelected').text(folder);
                 $('#lblImageSelected').text(image);
+                var src = "\\Images\\projects\\" + folder + "\\" + image;
+                $('#imgthumb').attr("src", src);
                 closeChildPopup();
             }
 
@@ -264,7 +268,10 @@
                 $rdType.attr('disabled', true);
             }
 
-            $('#btnSave').click(function() {
+            $('#btnSave').click(function () {
+                var res = validation();
+                if (!res)
+                    return;
                 var project = new Object();
                 bindControlToEntity(project);
                 var data = JSON.stringify(project);
@@ -281,6 +288,18 @@
                 }
             }
 
+            function validation() {
+                $(".notify-msg").css("display", "none");
+                var name = $('#tbName').val();
+                var pathImage = $('#lblFolderSelected').text();
+                var resKind = $('input:radio[name=rdKind]:checked').val();
+                if (name == '' || pathImage == '' || !resKind) {
+                    $(".notify-msg").css("display", "block");
+                    return false;
+                }
+                return true;
+            }
+           
         </script>
     </telerik:RadCodeBlock>
 </asp:Content>
