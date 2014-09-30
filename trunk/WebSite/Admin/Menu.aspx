@@ -70,25 +70,7 @@
         $("input:radio[name=rdType]").click(function () {
             bindMenu();
         });
-
-        function bindControlToEntity(menu) {
-            var resType = $('input:radio[name=rdType]:checked').val();
-            menu.type = resType;
-            var resKind = $('input:radio[name=rdKind]:checked').val();
-            if (resKind == "0") {
-                menu.position = 10;
-                menu.parentid = null;
-            } else {
-                menu.position = null;
-                var parentid = $('#parentid').val();
-                menu.parentid = parentid;
-            }
-            menu.subtype = null;
-            menu.link = null;
-            var name = $('#tbName').val();
-            menu.name = name;
-        }
-
+        
         $('#btnCreate').click(function () {
             var menu = new Object();
             bindControlToEntity(menu);
@@ -115,14 +97,25 @@
             $('.admin-project-cate').html(data.menu);
             $('select').html(data.dropdown);
         }
-
-        function editMenu(id) {
-            _id = id;
-            var resType = $('input[name=rdType]:checked').val();
-            var url = "../Handler/MenuHanlder.ashx?funcname=edit&id=" + id + "&type=" + resType;
-            callAjaxHandler("divloading", url, null, AjaxConst.GetRequest, bindEntityToControl);
+        
+        function bindControlToEntity(menu) {
+            var resType = $('input:radio[name=rdType]:checked').val();
+            menu.type = resType;
+            var resKind = $('input:radio[name=rdKind]:checked').val();
+            if (resKind == "0") {
+                menu.position = 10;
+                menu.parentid = null;
+            } else {
+                menu.position = null;
+                var parentid = $('#parentid').val();
+                menu.parentid = parentid;
+            }
+            menu.subtype = null;
+            menu.link = null;
+            var name = $('#tbName').val();
+            menu.name = name;
         }
-
+        
         function bindEntityToControl(data) {
             var $rdType = $('input:radio[name=rdType]');
             var $rdKind = $('input:radio[name=rdKind]');
@@ -148,6 +141,13 @@
             $('#lblmsg').css("display", 'none');
         }
 
+        function editMenu(id) {
+            _id = id;
+            var resType = $('input[name=rdType]:checked').val();
+            var url = "../Handler/MenuHanlder.ashx?funcname=edit&id=" + id + "&type=" + resType;
+            callAjaxHandler("divloading", url, null, AjaxConst.GetRequest, bindEntityToControl);
+        }
+        
         function deleteMenu(id) {
             var res = confirm('Bạn có muốn xóa menu này?');
             if (!res)
