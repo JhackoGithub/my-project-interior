@@ -60,7 +60,13 @@
             </div>
 
         </div>
-        <div class="admin-project-cate" style="border-left: lightgray 1px solid; float: left; margin: 10px; padding-left: 30px; width: 310px;"></div>
+        <div style="border-left: lightgray 1px solid; float: left; margin: 10px; padding-left: 30px; width: 310px;">
+            <label>Menu chung cho Kiến trúc và Nội thất</label>
+            <div id="project-cate-common" class="admin-project-cate" style="padding-top: 5px; padding-bottom: 15px;"></div>    
+            <label>Câu hỏi tư vấn</label>
+            <div id="project-cate-separate" class="admin-project-cate" style="padding-top: 5px;"></div>    
+        </div>
+        
     </div>
     <div id="divloading" class="loading" />
     <telerik:RadCodeBlock runat="server">
@@ -97,7 +103,7 @@
             }
 
             function bindMenuCallback(data) {
-                $('.admin-project-cate').html(data.menu);
+                $('#project-cate-common').html(data.menu);
                 $('select').html(data.dropdown);
             }
         

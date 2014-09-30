@@ -66,7 +66,7 @@ namespace WebSite.Handler
                 menus = bo.GetMenuLeft(type);
                 if (type == 2)
                 {
-                    menus = menus.Where(t => t.Type == 2 && (t.SubType == 0 || t.SubType == subType)).ToList();
+                    menus = menus.Where(t => t.Type == 2 && (t.SubType == 2 || t.SubType == subType)).ToList();
                 }
                 GenerateMenu(menus, htmlMenu);
                 var htmlDropdown = new StringBuilder();
