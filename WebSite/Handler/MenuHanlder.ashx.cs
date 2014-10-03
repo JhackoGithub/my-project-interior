@@ -57,41 +57,41 @@ namespace WebSite.Handler
 
         private string GetMenus(int type, int subType, string form, int proId)
         {
-            var bo = new MenuLeftBO();
-            List<MenuLeft> menus = null;
             var htmlMenu = new StringBuilder();
+            List<MenuLeft> menus = GetByType(type);
             object json;
             if (string.IsNullOrEmpty(form))
             {
-                menus = bo.GetMenuLeft(type);
-                if (type == 2)
+                var htmlMenuDropdown = new StringBuilder();
+                switch (type)
                 {
-                    menus = menus.Where(t => t.Type == 2 && (t.SubType == 2 || t.SubType == subType)).ToList();
+                    case 0:
+                    case 1:
+                        GenerateMenuProject(menus, htmlMenu, htmlMenuDropdown);
+                        break;
+                    case 2:
+                        GenerateMenuConsultant(menus, htmlMenu, htmlMenuDropdown, subType);
+                        break;
+                    case 3:
+                        var menuParents = menus.Where(t => t.ParentId == null).OrderBy(t => t.Position);
+                        GenerateMenuDropdow(menuParents, htmlMenuDropdown);
+                        GenerateMenuConsultant(menus, htmlMenu, string.Empty);
+                        break;
                 }
-                GenerateMenu(menus, htmlMenu);
-                var htmlDropdown = new StringBuilder();
-                foreach (MenuLeft menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
-                {
-                    htmlDropdown.AppendFormat("<option value='{0}'>{1}</option>", menu.Id, menu.Name);
-                }
+
                 json = new
                            {
                                menu = htmlMenu.ToString(),
-                               dropdown = htmlDropdown.ToString()
+                               dropdown = htmlMenuDropdown.ToString()
                            };
             }
             else
             {
-                int cateId = -1;
-                if (proId > 0)
-                {
-                    var proBo = new ProjectBO();
-                    Entities.Project project = proBo.GetProjectById(proId);
-                    cateId = project.CategoryId;
-                    type = project.Type;
-                }
-                menus = bo.GetMenuLeft(type);
-                GenerateMenuProject(menus, htmlMenu, cateId);
+                var proBo = new ProjectBO();
+                var project = proBo.GetProjectById(proId);
+                menus = GetByType(project.Type);
+
+                GenerateMenuProject(menus, htmlMenu, project.CategoryId);
                 json = new
                            {
                                menu = htmlMenu.ToString(),
@@ -101,47 +101,35 @@ namespace WebSite.Handler
             return res;
         }
 
-        private void GenerateMenu(List<MenuLeft> menus, StringBuilder htmlMenu)
+        private void GenerateMenuProject(List<MenuLeft> menus, StringBuilder htmlMenu, StringBuilder htmlMenuDropdown)
         {
             htmlMenu.Append("<ul>");
-            foreach (MenuLeft menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
+            var menuParents = menus.Where(t => t.ParentId == null).OrderBy(t => t.Position);
+            GenerateMenuDropdow(menuParents, htmlMenuDropdown);
+            foreach (var parent in menuParents.Where(parent => parent != null))
             {
-                if (menu == null) continue;
-                List<MenuLeft> menuChild = menus.Where(t => t.ParentId != null && t.ParentId == menu.Id).ToList();
-                htmlMenu.AppendFormat("<li>" +
-                                      "<div style='height: 20px;'>" +
-                                      "<div style='float: left; text-transform: uppercase;padding-top: 5px;'>{0}</div>" +
-                                      "<div style='float: right;'>" +
-                                      "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' title='Xóa' />" +
-                                      "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' title='Sửa' />" +
-                                      "</div>" +
-                                      "</div>",
-                                      menu.Name, menu.Id, menu.Id);
-                if (menuChild.Count == 0)
+                GenerateMenuParent(parent, htmlMenu);
+
+                var menuChilds = menus.Where(t => t.ParentId != null && t.ParentId == parent.Id).ToList();
+                if (menuChilds.Count == 0)
                 {
                     htmlMenu.Append("</li>");
                 }
                 else
                 {
                     htmlMenu.Append("<ul>");
-                    foreach (MenuLeft menuLeft in menuChild)
+                    foreach (var child in menuChilds)
                     {
-                        string imgLink = ((menuLeft.Type == 2 || menuLeft.Type == 3) && menuLeft.Link > 0)
-                                             ? string.Format(
-                                                 "<a href='../Consultant.aspx?type={0}&tab=2&id={1}' ><img id='link{2}' src='../Images/link.png' width='16' title='Xem liên kết' /></a>"
-                                                 ,menuLeft.SubType == 2 ? 1 : menuLeft.SubType, menuLeft.Link, menuLeft.Id)
-                                             : string.Empty;
                         htmlMenu.AppendFormat("<li>" +
                                               "<div>" +
                                               "<span>{0}</span>" +
                                               "<div>" +
-                                              "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' title='Xóa' />" +
-                                              "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' title='Sửa' />" +
-                                              imgLink +
+                                              "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' title='Sửa' />" +
+                                              "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' title='Xóa' />" +
                                               "</div>" +
                                               "</div>" +
                                               "</li>",
-                                              menuLeft.Name, menuLeft.Id, menuLeft.Id);
+                                              child.Name, child.Id, child.Id);
                     }
                     htmlMenu.Append("</ul>");
                 }
@@ -152,22 +140,23 @@ namespace WebSite.Handler
         private void GenerateMenuProject(List<MenuLeft> menus, StringBuilder htmlMenu, int cateId)
         {
             htmlMenu.Append("<ul>");
-            foreach (MenuLeft menu in menus.Where(t => t.ParentId == null).OrderBy(t => t.Position))
+            var menuParents = menus.Where(t => t.ParentId == null).OrderBy(t => t.Position);
+            foreach (MenuLeft parent in menuParents.Where(parent => parent != null))
             {
-                if (menu == null) continue;
-                List<MenuLeft> menuChild = menus.Where(t => t.ParentId != null && t.ParentId == menu.Id).ToList();
+                
                 htmlMenu.AppendFormat("<li>" +
                                       "<div>" +
                                       "<div style='float: left;'>{0}</div>" +
-                                      "</div>", menu.Name);
-                if (menuChild.Count == 0)
+                                      "</div>", parent.Name);
+                List<MenuLeft> menuChilds = menus.Where(t => t.ParentId != null && t.ParentId == parent.Id).ToList();
+                if (menuChilds.Count == 0)
                 {
                     htmlMenu.Append("</li>");
                 }
                 else
                 {
                     htmlMenu.Append("<ul>");
-                    foreach (MenuLeft menuLeft in menuChild)
+                    foreach (MenuLeft child in menuChilds)
                     {
                         htmlMenu.AppendFormat("<li>" +
                                               "<div>" +
@@ -175,9 +164,9 @@ namespace WebSite.Handler
                                               "<label for='rd{3}'>{4}</label>" +
                                               "</div>" +
                                               "</li>",
-                                              menuLeft.Id, menuLeft.Id,
-                                              cateId == menuLeft.Id ? "checked='checked'" : string.Empty, menuLeft.Id,
-                                              menuLeft.Name);
+                                              child.Id, child.Id,
+                                              cateId == child.Id ? "checked='checked'" : string.Empty, child.Id,
+                                              child.Name);
                     }
                     htmlMenu.Append("</ul>");
                 }
@@ -185,10 +174,94 @@ namespace WebSite.Handler
             htmlMenu.Append("</ul>");
         }
 
+        private void GenerateMenuConsultant(List<MenuLeft> menus, StringBuilder htmlMenu, StringBuilder htmlMenuDropdown, int subType)
+        {
+            string caption = "Phần hiển thị chung cho Kiến trúc và Nội thất";
+            var parent = menus.Where(t => t.SubType == 2).ToList();
+            GenerateMenuConsultant(parent, htmlMenu, caption);
+            switch (subType)
+            {
+                case 0:
+                case 1:
+                    parent = menus.Where(t => t.SubType == subType).OrderByDescending(t => t.SubType).ToList();
+                    if(parent.Count == 0)
+                        break;
+                    caption = string.Format("Các câu hỏi tư vấn phần {0}", subType == 0 ? "Kiến trúc" : "Nội thất");
+                    GenerateMenuConsultant(parent, htmlMenu, caption);
+                    break;
+            }
+            parent = menus.Where(t => t.ParentId == null && t.SubType == subType).OrderBy(t => t.Position).ToList();
+            GenerateMenuDropdow(parent, htmlMenuDropdown);
+        }
+        private void GenerateMenuConsultant(List<MenuLeft> menus, StringBuilder htmlMenu, string caption)
+        {
+            htmlMenu.Append(string.Format("<label>{0}</label>", caption));
+            htmlMenu.Append("<ul>");
+            var menuParents = menus.Where(t => t.ParentId == null).OrderBy(t => t.Position);
+            foreach (var parent in menuParents.Where(parent => parent != null))
+            {
+                GenerateMenuParent(parent, htmlMenu);
+
+                var menuChilds = menus.Where(t => t.ParentId != null && t.ParentId == parent.Id).ToList();
+                if (menuChilds.Count == 0)
+                {
+                    htmlMenu.Append("</li>");
+                }
+                else
+                {
+                    htmlMenu.Append("<ul>");
+                    foreach (var child in menuChilds)
+                    {
+                        var imgLink = child.Link > 0 ? string.Format("<a href='/tu-van/tu-van-cong-trinh/{0}/2/{1}' target='_blank' ><img id='link{2}' title='{3}' src='../Images/link.png' width='16' /></a>"
+                                                             , child.SubType == 2 ? 1 : child.SubType, child.Link, child.Id, child.Title) : string.Empty;
+                        htmlMenu.AppendFormat("<li>" +
+                                              "<div>" +
+                                              "<span>{0}</span>" +
+                                              "<div>" +
+                                              "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' title='Sửa' />" +
+                                              "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' title='Xóa' />" +
+                                              imgLink +
+                                              "</div>" +
+                                              "</div>" +
+                                              "</li>",
+                                              child.Name, child.Id, child.Id);
+                    }
+                    htmlMenu.Append("</ul>");
+                }
+            }
+            htmlMenu.Append("</ul>");
+        }
+
+        private void GenerateMenuDropdow(IEnumerable<MenuLeft> parents, StringBuilder htmlMenuDropdown)
+        {
+            foreach (var parent in parents)
+            {
+                htmlMenuDropdown.AppendFormat("<option value='{0}'>{1}</option>", parent.Id, parent.Name);    
+            }
+        }
+
+        private void GenerateMenuParent(MenuLeft parent, StringBuilder htmlMenu)
+        {
+            htmlMenu.AppendFormat("<li>" +
+                                  "<div style='height: 20px;'>" +
+                                  "<div style='float: left; text-transform: uppercase;padding-top: 5px;'>{0}</div>" +
+                                  "<div style='float: right;'>" +
+                                  "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' title='Sửa' />" +
+                                  "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' title='Xóa' />" +
+                                  "</div>" +
+                                  "</div>",
+                                  parent.Name, parent.Id, parent.Id);
+        }
+        private List<MenuLeft> GetByType(int type)
+        {
+            var bo = new MenuLeftBO();
+            var res = bo.GetMenuLeft(type);
+            return res;
+        }
         private string GetMenuById(int id, int type)
         {
             var bo = new MenuLeftBO();
-            MenuLeft res = bo.GetMenuLeftById(id, type);
+            var res = bo.GetMenuLeftById(id, type);
             return Utils.ConvertToJsonString(res);
         }
 
@@ -205,7 +278,6 @@ namespace WebSite.Handler
             int res = bo.UpdateMenuLef(menuLeft);
             return Utils.ConvertToJsonString(res);
         }
-
 
         private string DeleteMenu(int id)
         {

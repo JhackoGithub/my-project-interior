@@ -24,12 +24,11 @@
                 <telerik:RadGrid ID="rgNews" runat="server" AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" PageSize="10" Height="380px"
                                  EnableEmbeddedSkins="False" CellSpacing="0" GridLines="None" OnNeedDataSource="rgNews_NeedDataSource">
                     <HeaderStyle HorizontalAlign="Left" Height="30" Font-Bold="True" />
-                    <MasterTableView AllowMultiColumnSorting="False" AllowFilteringByColumn="False" ClientDataKeyNames="Id">
+                    <MasterTableView AllowMultiColumnSorting="False" AllowFilteringByColumn="False" ClientDataKeyNames="Id, Title">
                         <Columns>
                             <telerik:GridTemplateColumn UniqueName="TemplateColumn" AllowFiltering="False">
                                 <ItemTemplate>
-                                    <input type="radio" name="rdNewsId" value="<%#Eval
-                                                                                                   ("Id") %>" />
+                                    <input type="radio" name="rdNewsId" value="<%# Eval("Id") %>" title="<%# Eval("Title") %>" />
                                 </ItemTemplate>
                             </telerik:GridTemplateColumn>
                             <telerik:GridBoundColumn DataField="Title" UniqueName="Title" HeaderText="Tiêu đề" AndCurrentFilterFunction="Contains" HtmlEncode="True"
@@ -72,10 +71,11 @@
                 $rd.filter(strfilter).click();
             }
 
-            $('#select').click(function() {
+            $('#select').click(function () {
                 var $rd = $('input:radio[name=rdNewsId]:checked');
                 var val = $rd.val();
-                window.parent.getNewsId(val);
+                var title = $rd.attr("title");
+                window.parent.getNewsId(val, title);
             });
 
             $('#closepoup').click(function() {

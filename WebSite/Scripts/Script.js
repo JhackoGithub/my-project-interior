@@ -82,6 +82,34 @@ $(document).ready(function() {
     });
 });
 
+function ShowPopupTemplate(w, h, title, divContainer, divTemplate) {
+    var wnd;
+    var container = "#" + divContainer;
+    var template = "#" + divTemplate;
+    h = h > 0 ? h : "auto";
+    if (wnd) wnd.refresh();
+    wnd = $(container).kendoWindow({
+        modal: true,
+        visible: false,
+        resizable: false,
+        close: function (e) {
+            $(this.element).empty();
+        },
+        actions: ["Close"],
+        width: w,
+        height: h,
+    }).data("kendoWindow");
+    wnd.title(title);
+    var detailsTemplate = kendo.template($(template).html());
+    wnd.content(detailsTemplate);
+    wnd.center().open();
+    $(".k-window-action").removeClass("k-window-action").addClass("k-link-wnd");
+    $("a.k-link-wnd").click(function () {
+        ClosePopup(wnd);
+    });
+    return wnd;
+}
+
 function ShowPopupIframe(w, h, title, divContainer, url) {
     var wnd;
     var container = "#" + divContainer;
