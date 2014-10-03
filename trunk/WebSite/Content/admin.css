@@ -408,12 +408,17 @@ fieldset ol li { padding-bottom: 5px; }
     font-weight: normal;
     line-height: 1;
     list-style: none;
-    margin: 0;
+    /*margin: 0;*/
     padding: 0;
     position: relative;
     text-decoration: none;
 }
 
+.admin-project-cate label {
+    color: rgb(148, 15, 15);
+    font-weight: bold !important;
+    text-decoration: underline;
+}
 .admin-project-cate > ul > li {
     color: #ffffff;
     display: block;

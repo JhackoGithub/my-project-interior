@@ -39,18 +39,17 @@
             </div>
             <div style="clear: both;">
                 <label id="lblTitle">Tiêu đề:</label>
-                <input type="text" id="tbName" style="width: 300px;" />
+                <input type="text" id="tbName" style="width: 300px;" /><span style="color: red;"> *</span>
             </div>
             <div id="divParent">
                 <div class="parentid">
                     <label>Chọn menu đầu mục:</label>
-                    <select id="parentid" style="height: 30px;"></select>    
+                    <select id="parentid" style="height: 30px;"></select><span style="color: red;"> *</span>   
                 </div>
                 <div class="link-news">
                     <label>Liên kết tới bài viết: </label>
-                    <img id="linkadd" src="../Images/link_add.png" title="Tạo liên kết tới bài viết" width="25" style="cursor: pointer;" />
-                    <img id="linkdelete" src="../Images/link_delete.png" title="Xóa liên kết tới bài viết" width="25" style="cursor: pointer; display: none;" />
-                    <label id="lblNewsId" style="display: none;"></label>    
+                    <a id="linkadd" href="javascript:;" style="display: inline-block;">Tạo liên kết</a>
+                    <label id="lblnewid" style="display: none;"></label>    
                 </div>
             </div>
             <div style="clear: both; padding-left: 10px; padding-top: 10px;">
@@ -58,20 +57,44 @@
                 <button type="button" id="btnCreate">Tạo mới</button>
                 <button type="button" id="btnCancel" onclick=" location.reload() ">Hủy</button>
             </div>
-
+            
         </div>
         <div style="border-left: lightgray 1px solid; float: left; margin: 10px; padding-left: 30px; width: 310px;">
-            <label>Menu chung cho Kiến trúc và Nội thất</label>
-            <div id="project-cate-common" class="admin-project-cate" style="padding-top: 5px; padding-bottom: 15px;"></div>    
-            <label>Câu hỏi tư vấn</label>
-            <div id="project-cate-separate" class="admin-project-cate" style="padding-top: 5px;"></div>    
+            <div class="admin-project-cate"></div>    
         </div>
-        
     </div>
+    <script id="kendo-temp" type="text/x-kendo-template">
+        <div id="kendo-temp-edit">
+            <div style="padding-top: 5px;">
+                <label id="lblEditTitle">Tiêu đề:</label>
+                <input type="text" id="tbEditName" style="width: 300px;" /><span style="color: red;"> *</span>
+            </div>
+            <div id="temp-childgroup" style="padding-top: 5px; height: 115px;">
+                <div class="parentid">
+                    <label>Chọn menu đầu mục:</label>
+                    <select id="selection" style="height: 30px;"></select><span style="color: red;"> *</span>   
+                </div>
+                <div class="link-news" style="padding-top: 5px;">
+                    <label>Liên kết tới bài viết: </label>
+                    <a id="temp-addlink" href="javascript:;" style="display: inline-block;">Tạo liên kết</a>
+                    <span id="temp-linktitle" style="cursor: pointer; text-decoration: underline;"></span>
+                    <a id="temp-changelink" href="javascript:;" style="display: inline-block;">Thay đổi liên kết | </a><a id="temp-removelink" href="javascript:;" style="display: inline-block;">Xóa liên kết</a>
+                </div>
+            </div>
+            <div style="border-top: gray solid 1px; padding-top: 5px; text-align: right; width: 430px;">
+                <button type="button" id="savepopup" >Lưu thay đổi</button>
+                <button type="button" id="closepoup" >Hủy</button>
+            </div>
+            
+        </div>
+    </script>
+    <div id="containernews"></div>
+    <div id="containeredit"></div>
     <div id="divloading" class="loading" />
     <telerik:RadCodeBlock runat="server">
         <script type="text/javascript">
             var _id = 0;
+            var wndNews, wndEdit;
             $(document).ready(function () {
                 bindMenu();
             });
@@ -86,25 +109,38 @@
             });
         
             $("input:radio[name=rdConsulType]").click(function () {
+                $("#rdChild").attr('disabled', false);;
                 bindMenu();
+                $('#tbName').val('');
                 var resSubType = $('input:radio[name=rdConsulType]:checked').val();
                 if(resSubType != '2') {
                     $("#lblTitle").html("Câu hỏi: ");
                 } else {
                     $("#lblTitle").html("Tiêu đề: ");
                 }
+                if ($("#addlink").css('display') == 'none') {
+                    $("#addlink").css("display", "inline-block");
+                }
             });
         
             function bindMenu() {
-                var resSubType = $('input:radio[name=rdConsulType]:checked').val();
-                var param = "&type=2&subtype=" + resSubType;
-                var url = "../Handler/MenuHanlder.ashx?funcname=getall" + param;
+                var subType = $('input:radio[name=rdConsulType]:checked').val();
+                var url = "../Handler/MenuHanlder.ashx?funcname=getall&type=2&subtype=" + subType;
                 callAjaxHandler("divloading", url, null, AjaxConst.GetRequest, bindMenuCallback);
             }
 
             function bindMenuCallback(data) {
-                $('#project-cate-common').html(data.menu);
-                $('select').html(data.dropdown);
+                $('.admin-project-cate').html(data.menu);
+                $('#parentid').html(data.dropdown);
+                if(data.dropdown == '') {
+                    var $rdKind = $('input:radio[name=rdKind]');
+                    $rdKind.filter('[value="0"]').click();
+                    $("#rdChild").attr('disabled', true);
+                }else {
+                    if($('#rdChild').is('[disabled=disabled]')) {
+                        $("#rdChild").attr('disabled', false);
+                    }
+                }
             }
         
             function bindControlToEntity(menu) {
@@ -115,8 +151,7 @@
                     menu.parentid = null;
                 } else {
                     menu.position = null;
-                    var parentid = $('#parentid').val();
-                    menu.parentid = parentid;
+                    menu.parentid = $('#parentid').val();
                 }
                 var resSubType = $('input:radio[name=rdConsulType]:checked').val();
                 menu.subtype = resSubType;
@@ -142,6 +177,97 @@
                 }
             }
 
+            function editMenu(id) {
+                _id = id;
+                var url = "../Handler/MenuHanlder.ashx?funcname=edit&id=" + id + "&type=2";
+                callAjaxHandler("divloading", url, null, AjaxConst.GetRequest, bindEntityToControl);
+            }
+            
+            function bindEntityToControl(data) {
+                wndEdit = ShowPopupTemplate(450, 200, "Thay đổ thông tin", "containeredit", "kendo-temp");
+                if (data.ParentId != null) {
+                    var $options = $("#parentid > option").clone();
+                    $('#containeredit #selection').append($options);
+                    $('#containeredit #selection').val(data.ParentId);
+                } else {
+                    $('#containeredit #temp-childgroup').css('visibility', 'hidden');
+                }
+                if (data.Link > 0 && data.Title != '') {
+                    $("#lblnewid").text(data.Link);
+                    $('#containeredit #temp-linktitle').html(data.Title);
+                    $('#containeredit #temp-addlink').css('display', 'none');
+                } else {
+                    $('#containeredit #temp-changelink').css('display', 'none');
+                    $('#containeredit #temp-removelink').css('display', 'none');
+                }
+                $('#containeredit #tbEditName').val(data.Name);
+                // save event
+                $("#containeredit #savepopup").click(function () {
+                    wndEdit.close();
+                });
+                // close event
+                $("#containeredit #closepoup").click(function () {
+                    wndEdit.close();
+                });
+                // add link event
+                $("#containeredit #temp-addlink").click(function () {
+                    showPopupLinkNews("containernews");
+                });
+                // change link event
+                $("#containeredit #temp-changelink").click(function () {
+                    showPopupLinkNews("containernews");
+                });
+                // remove link event
+                $("#containeredit #temp-removelink").click(function () {
+                    $("#lblnewid").text('');
+                    $('#containeredit #temp-linktitle').html('');
+                    $('#containeredit #temp-changelink').css('display', 'none');
+                    $('#containeredit #temp-removelink').css('display', 'none');
+                    $('#containeredit #temp-addlink').css('display', 'inline-block');
+                });
+            }
+            
+            function deleteMenu(id) {
+                var res = confirm('Bạn có muốn xóa menu này?');
+                if (!res)
+                    return;
+                var url = "../Handler/MenuHanlder.ashx?funcname=delete&id=" + id;
+                callAjaxHandler("divloading", url, null, AjaxConst.PostRequest, deleteMenuCallback);
+            }
+
+            function deleteMenuCallback(data) {
+                if (data != "0") {
+                    bindMenu();
+                }
+            }
+            
+            $('#linkadd').click(function () {
+                showPopupLinkNews("containernews");
+            });
+
+            function showPopupLinkNews(container) {
+                $("#" + container).html("");
+                var url = "../Contents/NewsCollection.aspx";
+                wndNews = ShowPopupIframe(750, 450, "Chọn bài viết", container, url);
+                $("#" + container).parent().width(750).height(450);
+            }
+            
+            $('#linkdelete').click(function() {
+                $('#lblNewsId').text('');
+                $('#link' + _id).css("display", 'none');
+                $('#lblmsg').css("display", '');
+            });
+            
+            function getNewsId(val, title) {
+                $('#lblnewid').text(val);
+                $('#containeredit #temp-linktitle').html(title);
+                closeChildPopup();
+            }
+            
+            function closeChildPopup() {
+                wndNews.close();
+            }
+            
         </script>
     </telerik:RadCodeBlock>
 </asp:Content>

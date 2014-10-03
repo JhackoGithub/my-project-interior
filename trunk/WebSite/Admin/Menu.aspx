@@ -47,10 +47,10 @@
         <div class="admin-project-cate" style="border-left: lightgray 1px solid; float: left; margin: 10px; padding-left: 30px; width: 310px;">
         </div>
     </div>
-    <div id="containernews"></div>
+    
     <div id="divloading" class="loading" />
     <script type="text/javascript">
-        var wnd;
+        
         var _id = 0;
 
         $(document).ready(function () {
@@ -107,8 +107,7 @@
                 menu.parentid = null;
             } else {
                 menu.position = null;
-                var parentid = $('#parentid').val();
-                menu.parentid = parentid;
+                menu.parentid = $('#parentid').val();
             }
             menu.subtype = null;
             menu.link = null;
@@ -161,28 +160,6 @@
                 bindMenu();
             }
         }
-
-        //$('#linkadd').click(function() {
-        //    $("#containernews").html("");
-        //    var url = "../Contents/NewsCollection.aspx";
-        //    wnd = ShowPopupIframe(750, 450, "Chọn bài viết", "containernews", url);
-        //    $("#containernews").parent().width(750).height(450);
-        //});
-
-        //$('#linkdelete').click(function() {
-        //    $('#lblNewsId').text('');
-        //    $('#link' + _id).css("display", 'none');
-        //    $('#lblmsg').css("display", '');
-        //});
-        //function getNewsId(val) {
-        //    $('#lblNewsId').text(val);
-        //    closeChildPopup();
-        //}
-        //function closeChildPopup() {
-        //    wnd.close();
-        //}
-
-
 
     </script>
 </asp:Content>
