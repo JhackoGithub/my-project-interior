@@ -48,7 +48,6 @@ namespace WebSite.Handler
                     break;
                 case "update":
                     menuLeft = Utils.ConvertDeserialize<MenuLeft>(context, ref jsonString);
-                    menuLeft.Id = id;
                     jsonString = UpdateMenu(menuLeft);
                     break;
             }
@@ -218,7 +217,7 @@ namespace WebSite.Handler
                                               "<div>" +
                                               "<span>{0}</span>" +
                                               "<div>" +
-                                              "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' title='Sửa' />" +
+                                              "<img onclick='editMenu({1}, false)' src='../Images/iEdit.png' width='16' title='Sửa' />" +
                                               "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' title='Xóa' />" +
                                               imgLink +
                                               "</div>" +
@@ -246,7 +245,7 @@ namespace WebSite.Handler
                                   "<div style='height: 20px;'>" +
                                   "<div style='float: left; text-transform: uppercase;padding-top: 5px;'>{0}</div>" +
                                   "<div style='float: right;'>" +
-                                  "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' title='Sửa' />" +
+                                  "<img onclick='editMenu({1}, true)' src='../Images/iEdit.png' width='16' title='Sửa' />" +
                                   "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' title='Xóa' />" +
                                   "</div>" +
                                   "</div>",

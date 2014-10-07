@@ -53,9 +53,8 @@
                 </div>
             </div>
             <div style="clear: both; padding-left: 10px; padding-top: 10px;">
-                <label id="lblmsg" style="color: red; display: none;">* Bấm nút Lưu thay đổi để hoàn tất</label><br />
-                <button type="button" id="btnCreate">Tạo mới</button>
-                <button type="button" id="btnCancel" onclick=" location.reload() ">Hủy</button>
+                <button type="button" id="create">Tạo mới</button>
+                <button type="button" id="cancel" onclick=" location.reload() ">Hủy</button>
             </div>
             
         </div>
@@ -82,7 +81,7 @@
                 </div>
             </div>
             <div style="border-top: gray solid 1px; padding-top: 5px; text-align: right; width: 430px;">
-                <button type="button" id="savepopup" >Lưu thay đổi</button>
+                <button type="button" id="update" >Lưu thay đổi</button>
                 <button type="button" id="closepoup" >Hủy</button>
             </div>
             
@@ -94,6 +93,8 @@
     <telerik:RadCodeBlock runat="server">
         <script type="text/javascript">
             var _id = 0;
+            var _isParent = true;
+            var menu = new Object();
             var wndNews, wndEdit;
             $(document).ready(function () {
                 bindMenu();
@@ -162,47 +163,49 @@
                 menu.name = name;
             }
         
-            $('#btnCreate').click(function () {
+            $('#create').click(function () {
                 var menu = new Object();
                 bindControlToEntity(menu);
                 var data = JSON.stringify(menu);
-                var action = _id == 0 ? 'create' : 'update';
-                var url = "../Handler/MenuHanlder.ashx?funcname=" + action + "&id=" + _id + "&type=2";
+                var url = "../Handler/MenuHanlder.ashx?funcname=create&type=2";
                 callAjaxHandler("divloading", url, data, AjaxConst.PostRequest, addMenuCallback);
             });
-        
+            
             function addMenuCallback(data) {
                 if (data != "0") {
                     bindMenu();
                 }
             }
 
-            function editMenu(id) {
+            function editMenu(id, isParent) {
                 _id = id;
+                _isParent = isParent;
                 var url = "../Handler/MenuHanlder.ashx?funcname=edit&id=" + id + "&type=2";
                 callAjaxHandler("divloading", url, null, AjaxConst.GetRequest, bindEntityToControl);
             }
-            
+
             function bindEntityToControl(data) {
+                menu = data;
                 wndEdit = ShowPopupTemplate(450, 200, "Thay đổ thông tin", "containeredit", "kendo-temp");
-                if (data.ParentId != null) {
+                if (menu.ParentId != null) {
                     var $options = $("#parentid > option").clone();
                     $('#containeredit #selection').append($options);
-                    $('#containeredit #selection').val(data.ParentId);
+                    $('#containeredit #selection').val(menu.ParentId);
                 } else {
                     $('#containeredit #temp-childgroup').css('visibility', 'hidden');
                 }
-                if (data.Link > 0 && data.Title != '') {
-                    $("#lblnewid").text(data.Link);
-                    $('#containeredit #temp-linktitle').html(data.Title);
+                if (menu.Link > 0 && menu.Title != '') {
+                    $("#lblnewid").text(menu.Link);
+                    $('#containeredit #temp-linktitle').html(menu.Title);
                     $('#containeredit #temp-addlink').css('display', 'none');
                 } else {
                     $('#containeredit #temp-changelink').css('display', 'none');
                     $('#containeredit #temp-removelink').css('display', 'none');
                 }
-                $('#containeredit #tbEditName').val(data.Name);
+                $('#containeredit #tbEditName').val(menu.Name);
                 // save event
-                $("#containeredit #savepopup").click(function () {
+                $("#containeredit #update").click(function () {
+                    update();
                     wndEdit.close();
                 });
                 // close event
@@ -225,6 +228,26 @@
                     $('#containeredit #temp-removelink').css('display', 'none');
                     $('#containeredit #temp-addlink').css('display', 'inline-block');
                 });
+            }
+
+            function update() {
+                var name = $('#containeredit #tbEditName').val();
+                menu.Name = name;
+                if (!_isParent) {
+                    var newsid = $('#lblnewid').text();
+                    menu.Link = newsid == '' ? null : newsid;
+                    menu.ParentId = $('#parentid').val();
+                }
+
+                var data = JSON.stringify(menu);
+                var url = "../Handler/MenuHanlder.ashx?funcname=update&type=2";
+                callAjaxHandler("divloading", url, data, AjaxConst.PostRequest, updateMenuCallback);
+            }
+
+            function updateMenuCallback(data) {
+                if(data!= "0") {
+                    bindMenu();
+                }
             }
             
             function deleteMenu(id) {
@@ -255,7 +278,6 @@
             $('#linkdelete').click(function() {
                 $('#lblNewsId').text('');
                 $('#link' + _id).css("display", 'none');
-                $('#lblmsg').css("display", '');
             });
             
             function getNewsId(val, title) {
