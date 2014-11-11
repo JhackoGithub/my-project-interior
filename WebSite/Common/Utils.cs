@@ -1,4 +1,10 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using Newtonsoft.Json;
 
@@ -38,6 +44,43 @@ namespace WebSite.Common
         public static T ConvertDeserializeEntity<T>(string value)
         {
             return JsonConvert.DeserializeObject<T>(value);
+        }
+
+
+        public static bool SendEmail(string body, bool isBodyHtml, Byte[] bytes, string fileName)
+        {
+            var webConfig = AppConfig.Instance;
+            var smtp = new SmtpClient(AppConfig.Instance.SmtpServer, AppConfig.Instance.SmtpPort);
+            smtp.EnableSsl = true;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential(webConfig.Email, webConfig.Password); ;
+
+            smtp.Port = webConfig.SmtpPort;
+            using (var mm = new MailMessage())
+            {
+                mm.From = new MailAddress(webConfig.Email);
+                mm.Subject = "Phiếu đánh giá ";
+                mm.Body = body == null ? "" : body;
+                mm.IsBodyHtml = isBodyHtml;
+                mm.To.Add(webConfig.Email);
+                if (bytes.Length > 0)
+                {
+                    mm.Attachments.Add(new Attachment(new MemoryStream(bytes), fileName));
+                }
+
+                try
+                {
+                    ServicePointManager.ServerCertificateValidationCallback =
+                        delegate { return true; };
+                    smtp.Send(mm);
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
         }
     }
 
