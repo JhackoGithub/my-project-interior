@@ -85,6 +85,15 @@ namespace WebSite.Contents {
         protected global::System.Web.UI.WebControls.TextBox tbSize;
         
         /// <summary>
+        /// fileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileUpload;
+        
+        /// <summary>
         /// tbDirection control.
         /// </summary>
         /// <remarks>
@@ -103,13 +112,13 @@ namespace WebSite.Contents {
         protected global::System.Web.UI.WebControls.TextBox tbCost;
         
         /// <summary>
-        /// TextBox1 control.
+        /// tbDateOfBirthday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox tbDateOfBirthday;
         
         /// <summary>
         /// tbNumberOfPerson control.

@@ -51,7 +51,9 @@
                 <p><strong>THÔNG TIN CÔNG TRÌNH</strong></p>
                 <div class="cus-info">
                     <label>Kích thước mảnh đất: Đơn vị: mét, chiều rộng X chiều dài...</label><br/>
-                    <asp:TextBox ID="tbSize" runat="server" Width="200"></asp:TextBox>(hoặc gửi bản ảnh hay scan sổ đỏ <a href="#">tại đây</a>)
+                    <asp:TextBox ID="tbSize" runat="server" Width="200"></asp:TextBox> hoặc gửi bản ảnh hay scan sổ đỏ <asp:FileUpload id="fileUpload" runat="server"/>
+                    
+                   
                 </div>
                 <div class="cus-info">
                     <label>Hướng nhà</label><br/>
@@ -64,7 +66,7 @@
                 <div class="cus-info">
                     <label>Ngày tháng năm sinh người đứng chủ: (Mong quý vị gửi ngày sinh âm lịch chính xác để chúng tôi
                         xem xét phương án thiết kế)</label><br/>
-                    <asp:TextBox ID="TextBox1" runat="server" Width="200"></asp:TextBox>
+                    <asp:TextBox ID="tbDateOfBirthday" runat="server" Width="200"></asp:TextBox>
                 </div>
                 <div class="cus-info">
                     <label>Số người trong gia đình: (Nên ghi cụ thể, Ví dụ: 2 người già, 2 người lớn, 1 trẻ em)</label><br/>
@@ -97,9 +99,30 @@
                     <asp:TextBox ID="tbOtherPersonal" runat="server" Width="500" Height="100" TextMode="MultiLine"></asp:TextBox>
                 </div>
                 <div class="cus-info">
-                    <asp:Button runat="server" ID="btnSend" Text="Gửi yêu cầu tư vấn"/>
+                    <asp:Button runat="server" ID="btnSend" Text="Gửi yêu cầu tư vấn" OnClick="btnSend_Click" OnClientClick="return checkValid()"/>
                 </div>
             </div>
         </form>
     </body>
+    <script type="text/javascript">
+       
+        function checkValid() {
+            var name = document.getElementById("<%= tbName.ClientID %>").value.trim();
+            var phone = document.getElementById("<%= tbPhone.ClientID %>").value.trim();
+            var email = document.getElementById("<%= tbEmail.ClientID %>").value.trim();
+            var address = document.getElementById("<%= tbAddress.ClientID %>").value.trim();
+            var city = document.getElementById("<%= tbCity.ClientID %>").value.trim();
+            if (name.length < 1 || phone.length <1 || email.length < 1 || address.length <1 || city.length <1) {
+                alert('* Yêu cầu bắt buộc !');
+                return false;
+            }
+            var reg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,})+$/;
+            if (!reg.test(email)) {
+                alert('Email không đúng định dạng !');
+                return false;
+            }
+            return true;
+        }
+
+    </script>
 </html>
