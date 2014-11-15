@@ -1,21 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="Consultant.aspx.cs" Inherits="WebSite.Admin.Consultant" Theme="Windows7" %>
+
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2013.3.1324.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="FeaturedContent" runat="server">
     <style type="text/css">
-
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
     <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="False" Skin="Windows7" />
     <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="Buttons, RadioButtons, Textbox, Fieldset" EnableRoundedCorners="false" />
-    
+
     <div class="admin-projet-info">
         <div style="float: left; margin: 10px; width: 54%;">
             <div class="divMenuType">
                 <label>
-                    <input type="radio" id="rdConsulGeneral" name="rdConsulType" value="2" checked="checked"/>Tạo bài viết chung
+                    <input type="radio" id="rdConsulGeneral" name="rdConsulType" value="2" checked="checked" />Tạo bài viết chung
                 </label>
             </div>
             <div class="divMenuType">
@@ -28,7 +28,7 @@
                     <input type="radio" id="rdConsulInteri" name="rdConsulType" value="1" />Tạo câu hỏi Tư vấn Nội thất
                 </label>
             </div>
-            
+
             <div id="divType" style="height: 40px;">
                 <label style="float: left; vertical-align: baseline; width: 160px;">
                     <input type="radio" id="rdParent" name="rdKind" value="0" style="width: 25px;" />Tạo menu đầu mục
@@ -44,22 +44,22 @@
             <div id="divParent">
                 <div class="parentid">
                     <label>Chọn menu đầu mục:</label>
-                    <select id="parentid" style="height: 30px;"></select><span style="color: red;"> *</span>   
+                    <select id="parentid" style="height: 30px;"></select><span style="color: red;"> *</span>
                 </div>
                 <div class="link-news">
                     <label>Liên kết tới bài viết: </label>
                     <a id="linkadd" href="javascript:;" style="display: inline-block;">Tạo liên kết</a>
-                    <label id="lblnewid" style="display: none;"></label>    
+                    <label id="lblnewid" style="display: none;"></label>
                 </div>
             </div>
             <div style="clear: both; padding-left: 10px; padding-top: 10px;">
                 <button type="button" id="create">Tạo mới</button>
                 <button type="button" id="cancel" onclick=" location.reload() ">Hủy</button>
             </div>
-            
+
         </div>
         <div style="border-left: lightgray 1px solid; float: left; margin: 10px; padding-left: 30px; width: 310px;">
-            <div class="admin-project-cate"></div>    
+            <div id="adminprojectcate" class="admin-project-cate"></div>
         </div>
     </div>
     <script id="kendo-temp" type="text/x-kendo-template">
@@ -87,6 +87,72 @@
             
         </div>
     </script>
+
+    <script type="text/html" id="tempMenuConsultant">
+        #var commons = data.commons;#        
+        <label>Phần hiển thị chung cho Kiến trúc và Nội thất</label><ul>
+            # for(var i = 0; i < commons; i ++) { #
+                #var common = commons[i];# 
+            <li>
+                <div style="height: 20px;">
+                    <div style="float: left; text-transform: uppercase; padding-top: 5px;">Kiến thức cần thiết khi xây nhà</div>
+                    <div style="float: right;">
+                        <img onclick="editMenu(#: common.Id#, true)" src="../Images/iEdit.png" width="16" title="Sửa">
+                        <img onclick="deleteMenu(#: common.Id#)" src="../Images/iDelete.png" width="16" title="Xóa"></div>
+                </div>
+                #if(common.Childs.length == 0){#
+                 </li>
+                #} else {#
+                <ul>
+                    # var commonChilds = common.Childs; #
+                    # for(var x = 0; x < commonChilds.length; x ++) { #
+                        # var commonChild = commonChilds[x]; #
+                    <li>
+                        <div><span>#: commonChild.Name#</span><div>
+                            <img onclick="editMenu(#: commonChild.Id#, false)" src="../Images/iEdit.png" width="16" title="Sửa">
+                            <img onclick="deleteMenu(#: commonChild.Id#)" src="../Images/iDelete.png" width="16" title="Xóa"><a href="/tu-van/tu-van-cong-trinh/1/2/13" target="_blank">
+                            <img id="link#: commonChild.Id#" title="Nội dung Hồ sơ Bản vẽ" src="../Images/link.png" width="16"></a></div>
+                        </div>
+                    </li>
+                     #}#
+                </ul>
+             #}#
+             #}#
+        </ul>
+
+        #var sperates = data.sperates;#
+        <label>Các câu hỏi tư vấn phần Kiến trúc</label><ul>
+            # for(var i = 0; i < sperates; i ++) { #
+                #var sperate = sperates[i];# 
+            <li>
+                <div style="height: 20px;">
+                    <div style="float: left; text-transform: uppercase; padding-top: 5px;">#: sperate.Name#</div>
+                    <div style="float: right;">
+                        <img onclick="editMenu(#: sperate.Id#, true)" src="../Images/iEdit.png" width="16" title="Sửa">
+                        <img onclick="deleteMenu(#: sperate.Id#)" src="../Images/iDelete.png" width="16" title="Xóa"></div>
+                </div>
+                #if(sperate.Childs.length == 0){#
+                 </li>
+                #} else {#
+                <ul>
+                    # var sperateChilds = sperate.Childs; #
+                    # for(var x = 0; x < sperateChilds.length; x ++) { #
+                        # var sperateChild = sperateChilds[x]; #
+                    <li>
+                        <div><span>#: sperateChild.Name#</span><div>
+                            <img onclick="editMenu(#: sperateChild.Id#, false)" src="../Images/iEdit.png" width="16" title="Sửa">
+                            <img onclick="deleteMenu(#: sperateChild.Id#)" src="../Images/iDelete.png" width="16" title="Xóa"><a href="/tu-van/tu-van-cong-trinh/1/2/13" target="_blank">
+                            <img id="link#: commonChild.Id#" title="#: sperateChild.Name#" src="../Images/link.png" width="16"></a></div>
+                        </div>
+                    </li>
+                     #}#
+                </ul>
+             #}#
+             #}#
+        </ul>
+
+    </script>
+
     <div id="containernews"></div>
     <div id="containeredit"></div>
     <div id="divloading" class="loading" />
@@ -99,7 +165,7 @@
             $(document).ready(function () {
                 bindMenu();
             });
-        
+
             $("input:radio[name=rdKind]").click(function () {
                 var value = $(this).val();
                 if (value == '0') {
@@ -108,13 +174,13 @@
                     $("#divParent").css("display", "block");
                 }
             });
-        
+
             $("input:radio[name=rdConsulType]").click(function () {
                 $("#rdChild").attr('disabled', false);;
                 bindMenu();
                 $('#tbName').val('');
                 var resSubType = $('input:radio[name=rdConsulType]:checked').val();
-                if(resSubType != '2') {
+                if (resSubType != '2') {
                     $("#lblTitle").html("Câu hỏi: ");
                 } else {
                     $("#lblTitle").html("Tiêu đề: ");
@@ -123,7 +189,7 @@
                     $("#addlink").css("display", "inline-block");
                 }
             });
-        
+
             function bindMenu() {
                 var subType = $('input:radio[name=rdConsulType]:checked').val();
                 var url = "../Handler/MenuHanlder.ashx?funcname=getall&type=2&subtype=" + subType;
@@ -131,19 +197,21 @@
             }
 
             function bindMenuCallback(data) {
-                $('.admin-project-cate').html(data.menu);
+                //$('.admin-project-cate').html(data.menu);
+                bindTemplate('adminprojectcate', "tempMenuConsultant", data);
+
                 $('#parentid').html(data.dropdown);
-                if(data.dropdown == '') {
+                if (data.dropdown == '') {
                     var $rdKind = $('input:radio[name=rdKind]');
                     $rdKind.filter('[value="0"]').click();
                     $("#rdChild").attr('disabled', true);
-                }else {
-                    if($('#rdChild').is('[disabled=disabled]')) {
+                } else {
+                    if ($('#rdChild').is('[disabled=disabled]')) {
                         $("#rdChild").attr('disabled', false);
                     }
                 }
             }
-        
+
             function bindControlToEntity(menu) {
                 menu.type = 2;
                 var resKind = $('input:radio[name=rdKind]:checked').val();
@@ -162,7 +230,7 @@
                 var name = $('#tbName').val();
                 menu.name = name;
             }
-        
+
             $('#create').click(function () {
                 var menu = new Object();
                 bindControlToEntity(menu);
@@ -170,7 +238,7 @@
                 var url = "../Handler/MenuHanlder.ashx?funcname=create&type=2";
                 callAjaxHandler("divloading", url, data, AjaxConst.PostRequest, addMenuCallback);
             });
-            
+
             function addMenuCallback(data) {
                 if (data != "0") {
                     bindMenu();
@@ -245,11 +313,11 @@
             }
 
             function updateMenuCallback(data) {
-                if(data!= "0") {
+                if (data != "0") {
                     bindMenu();
                 }
             }
-            
+
             function deleteMenu(id) {
                 var res = confirm('Bạn có muốn xóa menu này?');
                 if (!res)
@@ -263,7 +331,7 @@
                     bindMenu();
                 }
             }
-            
+
             $('#linkadd').click(function () {
                 showPopupLinkNews("containernews");
             });
@@ -274,22 +342,23 @@
                 wndNews = ShowPopupIframe(750, 450, "Chọn bài viết", container, url);
                 $("#" + container).parent().width(750).height(450);
             }
-            
-            $('#linkdelete').click(function() {
+
+            $('#linkdelete').click(function () {
                 $('#lblNewsId').text('');
                 $('#link' + _id).css("display", 'none');
             });
-            
+
             function getNewsId(val, title) {
                 $('#lblnewid').text(val);
                 $('#containeredit #temp-linktitle').html(title);
                 closeChildPopup();
             }
-            
+
             function closeChildPopup() {
                 wndNews.close();
             }
-            
+
+
         </script>
     </telerik:RadCodeBlock>
 </asp:Content>
