@@ -36,7 +36,7 @@
             </div>
             <div id="divParent" style="padding-top: 10px;">
                 <label>Chọn menu đầu mục:</label>
-                <select id="parentid" style="height: 30px;"></select>
+                <input id="parentid"/>
             </div>
             <div style="clear: both; padding-left: 10px;">
                 <label id="lblmsg" style="color: red; display: none;">* Bấm nút Lưu thay đổi để hoàn tất</label><br />
@@ -45,12 +45,40 @@
             </div>
         </div>
         <div class="admin-project-cate" style="border-left: lightgray 1px solid; float: left; margin: 10px; padding-left: 30px; width: 310px;">
+            <ul id="adminprojectcate"></ul>
         </div>
     </div>
-    
+    <script type="text/html" id="tempMenuProject">
+        # for(var i = 0; i < data.length; i ++) { #
+            # var menuParent = data[i]; #
+            <li>
+                <div style="height: 20px;">
+                    <div style="float: left; text-transform: uppercase; padding-top: 5px;">#: menuParent.Name#</div>
+                    <div style="float: right;">
+                        <img onclick="editMenu(#: menuParent.Id#, true)" src="../Images/iEdit.png" width="16" title="Sửa"><img onclick="deleteMenu(#: menuParent.Id#)" src="../Images/iDelete.png" width="16" title="Xóa"></div>
+                </div>
+                #if(menuParent.Childs.length == 0){#
+                 </li>
+                #} else {#
+                <ul>
+                    # var childs = menuParent.Childs; #
+                    # for(var x = 0; x < childs.length; x ++) { #
+                        # var child = childs[x]; #
+                        <li>
+                            <div><span>#: child.Name#</span><div>
+                                <img onclick="editMenu(#: child.Id#)" src="../Images/iEdit.png" width="16" title="Sửa">
+                                <img onclick="deleteMenu(#: child.Id#)" src="../Images/iDelete.png" width="16" title="Xóa"></div>
+                            </div>
+                        </li>
+                    #}#
+                </ul>
+             #}#
+        #}#
+    </script>
+
     <div id="divloading" class="loading" />
     <script type="text/javascript">
-        
+
         var _id = 0;
 
         $(document).ready(function () {
@@ -70,7 +98,7 @@
         $("input:radio[name=rdType]").click(function () {
             bindMenu();
         });
-        
+
         $('#btnCreate').click(function () {
             var menu = new Object();
             bindControlToEntity(menu);
@@ -94,10 +122,11 @@
         }
 
         function bindMenuCallback(data) {
-            $('.admin-project-cate').html(data.menu);
-            $('select').html(data.dropdown);
+            
+            bindTemplate('adminprojectcate', "tempMenuProject", data.parent);
+            dropdownBinding(data.parent, "parentid", "Name", "Id");
         }
-        
+
         function bindControlToEntity(menu) {
             var resType = $('input:radio[name=rdType]:checked').val();
             menu.type = resType;
@@ -114,7 +143,7 @@
             var name = $('#tbName').val();
             menu.name = name;
         }
-        
+
         function bindEntityToControl(data) {
             var $rdType = $('input:radio[name=rdType]');
             var $rdKind = $('input:radio[name=rdKind]');
@@ -129,7 +158,8 @@
             $rdType.filter(filtertype).click();
 
             if (data.ParentId != null) {
-                $('#parentid').val(data.ParentId);
+                dropdownSeletedValue("parentid", data.ParentId);
+                //$('#parentid').val(data.ParentId);
             }
 
             $rdKind.attr('disabled', true);
@@ -146,7 +176,7 @@
             var url = "../Handler/MenuHanlder.ashx?funcname=edit&id=" + id + "&type=" + resType;
             callAjaxHandler("divloading", url, null, AjaxConst.GetRequest, bindEntityToControl);
         }
-        
+
         function deleteMenu(id) {
             var res = confirm('Bạn có muốn xóa menu này?');
             if (!res)
@@ -160,6 +190,7 @@
                 bindMenu();
             }
         }
+
 
     </script>
 </asp:Content>

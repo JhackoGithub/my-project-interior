@@ -66,8 +66,8 @@ namespace WebSite.Handler
                 {
                     case 0:
                     case 1:
-                        GenerateMenuProject(menus, htmlMenu, htmlMenuDropdown);
-                        break;
+                        var jsonData = GetMenuProject(menus);
+                        return jsonData;
                     case 2:
                         GenerateMenuConsultant(menus, htmlMenu, htmlMenuDropdown, subType);
                         break;
@@ -100,42 +100,43 @@ namespace WebSite.Handler
             return res;
         }
 
-        private void GenerateMenuProject(List<MenuLeft> menus, StringBuilder htmlMenu, StringBuilder htmlMenuDropdown)
+        private string GetMenuProject(List<MenuLeft> menus)
         {
-            htmlMenu.Append("<ul>");
-            var menuParents = menus.Where(t => t.ParentId == null).OrderBy(t => t.Position);
-            GenerateMenuDropdow(menuParents, htmlMenuDropdown);
-            foreach (var parent in menuParents.Where(parent => parent != null))
+            var parents = menus.Where(t => t.ParentId == null).OrderBy(t => t.Position);
+            var parentses = new List<Parents>();
+            foreach (var parent in parents.Where(parent => parent != null))
             {
-                GenerateMenuParent(parent, htmlMenu);
-
-                var menuChilds = menus.Where(t => t.ParentId != null && t.ParentId == parent.Id).ToList();
-                if (menuChilds.Count == 0)
+                var menuParent = new Parents
+                                     {
+                                         Id = parent.Id,
+                                         Name = parent.Name
+                                     };
+                var childs = menus.Where(t => t.ParentId != null && t.ParentId == parent.Id).ToList();
+                if(childs.Count == 0)
                 {
-                    htmlMenu.Append("</li>");
+                    menuParent.Childs = new List<Childs>();
                 }
                 else
                 {
-                    htmlMenu.Append("<ul>");
-                    foreach (var child in menuChilds)
+                    foreach (var menuChild in childs.Select(child => new Childs
+                                                                         {
+                                                                             Id = child.Id,
+                                                                             Name = child.Name
+                                                                         }))
                     {
-                        htmlMenu.AppendFormat("<li>" +
-                                              "<div>" +
-                                              "<span>{0}</span>" +
-                                              "<div>" +
-                                              "<img onclick='editMenu({1})' src='../Images/iEdit.png' width='16' title='Sửa' />" +
-                                              "<img onclick='deleteMenu({2})' src='../Images/iDelete.png' width='16' title='Xóa' />" +
-                                              "</div>" +
-                                              "</div>" +
-                                              "</li>",
-                                              child.Name, child.Id, child.Id);
+                        menuParent.Childs.Add(menuChild);
                     }
-                    htmlMenu.Append("</ul>");
                 }
+                parentses.Add(menuParent);
             }
-            htmlMenu.Append("</ul>");
+            object json = new
+                {
+                    parent = parentses
+                };
+            var res = Utils.ConvertToJsonString(json);
+            return res;
         }
-
+        
         private void GenerateMenuProject(List<MenuLeft> menus, StringBuilder htmlMenu, int cateId)
         {
             htmlMenu.Append("<ul>");
@@ -284,5 +285,22 @@ namespace WebSite.Handler
             int res = bo.DeleteMenuLef(id);
             return Utils.ConvertToJsonString(res);
         }
+    }
+
+    public class Parents
+    {
+        public Parents()
+        {
+            Childs = new List<Childs>();
+        }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public List<Childs> Childs { get; set; }
+    }
+
+    public class Childs
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
