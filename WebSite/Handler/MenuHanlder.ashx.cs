@@ -59,6 +59,7 @@ namespace WebSite.Handler
             var htmlMenu = new StringBuilder();
             List<MenuLeft> menus = GetByType(type);
             object json;
+            string jsonData = string.Empty;
             if (string.IsNullOrEmpty(form))
             {
                 var htmlMenuDropdown = new StringBuilder();
@@ -66,11 +67,13 @@ namespace WebSite.Handler
                 {
                     case 0:
                     case 1:
-                        var jsonData = GetMenuProject(menus);
+                        jsonData = GetMenuProject(menus);
                         return jsonData;
                     case 2:
-                        GenerateMenuConsultant(menus, htmlMenu, htmlMenuDropdown, subType);
-                        break;
+                        jsonData = GetMenuConsultant(menus, subType);
+                        return jsonData;
+                        //GenerateMenuConsultant(menus, htmlMenu, htmlMenuDropdown, subType);
+                        //break;
                     case 3:
                         var menuParents = menus.Where(t => t.ParentId == null).OrderBy(t => t.Position);
                         GenerateMenuDropdow(menuParents, htmlMenuDropdown);
@@ -135,6 +138,54 @@ namespace WebSite.Handler
                 };
             var res = Utils.ConvertToJsonString(json);
             return res;
+        }
+
+        private string GetMenuConsultant(List<MenuLeft> menus, int subType)
+        {
+            var parent = menus.Where(t => t.SubType == subType).ToList();
+            var commonParents = parent.Where(t => t.ParentId == null).OrderBy(t => t.Position).ToList();
+            var commons = GetMenuParents(commonParents);
+
+            var sperateParents = parent.OrderByDescending(t => t.SubType).ToList();
+            var sperates = GetMenuParents(sperateParents);
+
+            var dropdown = menus.Where(t => t.ParentId == null && t.SubType == subType).OrderBy(t => t.Position).ToList();
+
+            object json = new
+                              {
+                                  commons,
+                                  sperates,
+                                  dropdown
+                              };
+            var res = Utils.ConvertToJsonString(json);
+            return res;
+        }
+
+        private List<Parents> GetMenuParents(List<MenuLeft> menus)
+        {
+            var parentses = new List<Parents>();
+            foreach (var parent in menus.Where(parent => parent != null))
+            {
+                var menuParent = new Parents
+                                     {
+                                         Id = parent.Id,
+                                         Name = parent.Name
+                                     };
+                var childs = menus.Where(t => t.ParentId != null && t.ParentId == parent.Id).ToList();
+                if (childs.Count == 0)
+                {
+                    menuParent.Childs = new List<Childs>();
+                }
+                else
+                {
+                    foreach (var menuChild in childs.Select(child => new Childs{ Id = child.Id, Name = child.Name}))
+                    {
+                        menuParent.Childs.Add(menuChild);
+                    }
+                }
+                parentses.Add(menuParent);
+            }
+            return parentses;
         }
         
         private void GenerateMenuProject(List<MenuLeft> menus, StringBuilder htmlMenu, int cateId)
