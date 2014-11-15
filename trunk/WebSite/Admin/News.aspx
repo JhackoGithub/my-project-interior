@@ -19,7 +19,7 @@
         <HeaderStyle HorizontalAlign="Left" Height="30" Font-Bold="True" />
         <MasterTableView AllowMultiColumnSorting="False" AllowFilteringByColumn="False">
             <Columns>
-                <telerik:GridTemplateColumn UniqueName="TemplateColumn" AllowFiltering="False">
+                <telerik:GridTemplateColumn UniqueName="TemplateColumn" HeaderText="Thể loại" AllowFiltering="False">
                     <ItemTemplate>
                         <%#Convert.ToInt32(Eval("Type")) == 0 ? "Tin tức" : "Bài viết khác" %>
                     </ItemTemplate>

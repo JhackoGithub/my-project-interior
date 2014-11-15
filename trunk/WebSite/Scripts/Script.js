@@ -156,3 +156,27 @@ function getRouteParameter(index) {
     var result = pathname.split('/')[index];
     return result;
 }
+
+function bindTemplate(elmId, templateId, dataSource) {
+    elmId = '#' + elmId;
+    templateId = '#' + templateId;
+    if ($(elmId) == null || $(templateId) == null)
+        return;
+    var template = kendo.template($(templateId).html());
+    $(elmId).html(template(dataSource));
+}
+
+function dropdownBinding(data, ddl, textfield, valuefield) {
+    var dropdown = "#" + ddl;
+    $(dropdown).kendoDropDownList({
+        dataTextField: textfield,
+        dataValueField: valuefield,
+        dataSource: data
+    });
+}
+
+function dropdownSeletedValue(ddl, value) {
+    var dropdown = "#" + ddl;
+    var dropdownlist = $(dropdown).data("kendoDropDownList");
+    dropdownlist.value(value);
+}
