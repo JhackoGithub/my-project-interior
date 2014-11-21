@@ -14,20 +14,20 @@ namespace WebSite.Common
 
         private AppConfig()
         {
-            ServiceUri = GetAppConfig("ServiceUri");
+            //ServiceUri = GetAppConfig("ServiceUri");
             SmtpServer = GetAppConfig("SmtpServer");
             SmtpPort = Int32.Parse(GetAppConfig("SmtpPort"));
-            Email = GetAppConfig("Email");
-            Password = GetAppConfig("Password");
-            UploadDirectory = GetAppConfig("UploadDirectory");
+            //Email = GetAppConfig("Email");
+            //Password = GetAppConfig("Password");
+            //UploadDirectory = GetAppConfig("UploadDirectory");
         }
 
-        public string ServiceUri { get; private set; }
+        //public string ServiceUri { get; private set; }
         public string SmtpServer { get; private set; }
         public int SmtpPort { get; private set; }
-        public string Email { get; private set; }
-        public string Password { get; private set; }
-        public string UploadDirectory { get; private set; }
+        //public string Email { get; private set; }
+        //public string Password { get; private set; }
+        //public string UploadDirectory { get; private set; }
 
         public static string GetAppConfig(string name)
         {

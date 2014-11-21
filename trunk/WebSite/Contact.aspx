@@ -32,90 +32,90 @@
                     </div>
                     <div id="divInves" style="display: none; width: 710px;">
                         <p style="text-align: center;">
-                            <strong>PHIẾU ĐIỀU TRA</strong><br />
-                            <span style="font-style: italic; text-align: center;">(Quý khách vui lòng điền đầy đủ thông tin vào phiếu điều tra)</span>
-                        </p>
-                        <p><strong>THÔNG TIN KHÁCH HÀNG</strong></p>
-                        <div class="cus-info">
-                            <label>Họ và Tên(<span>*</span>)</label><br />
-                            <asp:DropDownList ID="ddl" runat="server">
-                                <Items>
-                                    <asp:ListItem Text="Ông/Bà" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="Ông" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="Bà" Value="2"></asp:ListItem>
-                                </Items>
-                            </asp:DropDownList>
-                            <asp:TextBox ID="tbName" runat="server" Width="200"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <label>Số điện thoại(<span>*</span>)</label><br />
-                            <asp:TextBox ID="tbPhone" runat="server" Width="200"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <label>Email(<span>*</span>)</label><br />
-                            <asp:TextBox ID="tbEmail" runat="server" Width="200"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <label>Địa chỉ(<span>*</span>)</label><br />
-                            <asp:TextBox ID="tbAddress" runat="server" Width="200"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <label>Thành phố(<span>*</span>)</label><br />
-                            <asp:TextBox ID="tbCity" runat="server" Width="200"></asp:TextBox>
-                        </div>
-
-                        <p><strong>THÔNG TIN CÔNG TRÌNH</strong></p>
-                        <div class="cus-info">
-                            <label>Kích thước mảnh đất: Đơn vị: mét, chiều rộng X chiều dài...</label><br />
-                            <asp:TextBox ID="tbSize" runat="server" Width="200"></asp:TextBox>(hoặc gửi bản ảnh hay scan sổ đỏ <a href="#">tại đây</a>)
-                        </div>
-                        <div class="cus-info">
-                            <label>Hướng nhà</label><br />
-                            <asp:TextBox ID="tbDirection" runat="server" Width="200"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <label>Số tiền dự định đầu tư xây dựng (Triệu VNĐ)</label><br />
-                            <asp:TextBox ID="tbCost" runat="server" Width="200"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <label>
-                                Ngày tháng năm sinh người đứng chủ: (Mong quý vị gửi ngày sinh âm lịch chính xác để chúng tôi
-                                xem xét phương án thiết kế)</label><br />
-                            <asp:TextBox ID="TextBox1" runat="server" Width="200"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <label>Số người trong gia đình: (Nên ghi cụ thể, Ví dụ: 2 người già, 2 người lớn, 1 trẻ em)</label><br />
-                            <asp:TextBox ID="tbNumberOfPerson" runat="server" Width="200"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <label>Số phòng định xây: (Nên ghi cụ thể, Ví dụ: 3 phòng ngủ, 1 phòng khách, 1 phòng ăn)</label><br />
-                            <asp:TextBox ID="tbNumberOfRoom" runat="server" Width="200"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <label>Yêu cầu khác</label><br />
-                            <asp:TextBox ID="tbOther" runat="server" Width="500" Height="100" TextMode="MultiLine"></asp:TextBox>
-                        </div>
-
-                        <p><strong>THÔNG TIN SỞ THÍCH CÁ NHÂN</strong></p>
-                        <div class="cus-info">
-                            <label>Màu sắc cho ngôi nhà (Ví dụ: Hồng đỏ tím vàng)</label><br />
-                            <asp:TextBox ID="tbColor" runat="server" Width="200"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <label>Đường nét yêu thích (Ví dụ: Nét cong, thẳng, kết hợp)</label><br />
-                            <asp:TextBox ID="tbLineStyle" runat="server" Width="200"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <label>Kiểu nhà yêu thích (Ví dụ: Lệch tầng, thẳng tầng, nhà biệt thự cổ, nhà vườn...</label><br />
-                            <asp:TextBox ID="tbStyle" runat="server" Width="200"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <label>Yêu cầu khác (Không gian giải trí, làm việc, thể dục thể thao)</label><br />
-                            <asp:TextBox ID="tbOtherPersonal" runat="server" Width="500" Height="100" TextMode="MultiLine"></asp:TextBox>
-                        </div>
-                        <div class="cus-info">
-                            <asp:Button runat="server" ID="btnSend" Text="Gửi yêu cầu tư vấn" />
-                        </div>
+                    <strong>PHIẾU ĐIỀU TRA</strong><br />
+                    <span style="font-style: italic; text-align: center;">(Quý khách vui lòng điền đầy đủ thông tin vào phiếu điều tra)</span>
+                </p>
+                <p><strong>THÔNG TIN KHÁCH HÀNG</strong></p>
+                <div class="cus-info">
+                    <label>Họ và Tên(<span>*</span>)</label><br />
+                    <asp:DropDownList ID="ddl" runat="server">
+                        <Items>
+                            <asp:ListItem Text="Ông/Bà" Value="0"></asp:ListItem>
+                            <asp:ListItem Text="Ông" Value="1"></asp:ListItem>
+                            <asp:ListItem Text="Bà" Value="2"></asp:ListItem>
+                        </Items>
+                    </asp:DropDownList>
+                    <asp:TextBox ID="tbName" runat="server" Width="200"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <label>Số điện thoại(<span>*</span>)</label><br/>
+                    <asp:TextBox ID="tbPhone" runat="server" Width="200"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <label>Email(<span>*</span>)</label><br/>
+                    <asp:TextBox ID="tbEmail" runat="server" Width="200"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <label>Địa chỉ(<span>*</span>)</label><br/>
+                    <asp:TextBox ID="tbAddress" runat="server" Width="200"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <label>Thành phố(<span>*</span>)</label><br/>
+                    <asp:TextBox ID="tbCity" runat="server" Width="200"></asp:TextBox>
+                </div>
+            
+                <p><strong>THÔNG TIN CÔNG TRÌNH</strong></p>
+                <div class="cus-info">
+                    <label>Kích thước mảnh đất: Đơn vị: mét, chiều rộng X chiều dài...</label><br/>
+                    <asp:TextBox ID="tbSize" runat="server" Width="200"></asp:TextBox> hoặc gửi bản ảnh hay scan sổ đỏ 
+                    <asp:FileUpload id="fileUpload" runat="server"/>
+                </div>
+                <div class="cus-info">
+                    <label>Hướng nhà</label><br/>
+                    <asp:TextBox ID="tbDirection" runat="server" Width="200"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <label>Số tiền dự định đầu tư xây dựng (Triệu VNĐ)</label><br/>
+                    <asp:TextBox ID="tbCost" runat="server" Width="200"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <label>Ngày tháng năm sinh người đứng chủ: (Mong quý vị gửi ngày sinh âm lịch chính xác để chúng tôi
+                        xem xét phương án thiết kế)</label><br/>
+                    <asp:TextBox ID="tbDateOfBirthday" runat="server" Width="200"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <label>Số người trong gia đình: (Nên ghi cụ thể, Ví dụ: 2 người già, 2 người lớn, 1 trẻ em)</label><br/>
+                    <asp:TextBox ID="tbNumberOfPerson" runat="server" Width="200"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <label>Số phòng định xây: (Nên ghi cụ thể, Ví dụ: 3 phòng ngủ, 1 phòng khách, 1 phòng ăn)</label><br/>
+                    <asp:TextBox ID="tbNumberOfRoom" runat="server" Width="200"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <label>Yêu cầu khác</label><br/>
+                    <asp:TextBox ID="tbOther" runat="server" Width="500" Height="100" TextMode="MultiLine"></asp:TextBox>
+                </div>
+            
+                <p><strong>THÔNG TIN SỞ THÍCH CÁ NHÂN</strong></p>
+                <div class="cus-info">
+                    <label>Màu sắc cho ngôi nhà (Ví dụ: Hồng đỏ tím vàng)</label><br/>
+                    <asp:TextBox ID="tbColor" runat="server" Width="200"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <label>Đường nét yêu thích (Ví dụ: Nét cong, thẳng, kết hợp)</label><br/>
+                    <asp:TextBox ID="tbLineStyle" runat="server" Width="200"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <label>Kiểu nhà yêu thích (Ví dụ: Lệch tầng, thẳng tầng, nhà biệt thự cổ, nhà vườn...</label><br/>
+                    <asp:TextBox ID="tbStyle" runat="server" Width="200"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <label>Yêu cầu khác (Không gian giải trí, làm việc, thể dục thể thao)</label><br/>
+                    <asp:TextBox ID="tbOtherPersonal" runat="server" Width="500" Height="100" TextMode="MultiLine"></asp:TextBox>
+                </div>
+                <div class="cus-info">
+                    <asp:Button runat="server" ID="btnSend" Text="Gửi yêu cầu tư vấn" OnClick="btnSend_Click" OnClientClick="return checkValid()"/>
+                </div>
                     </div>
                 </div>
 
@@ -151,6 +151,24 @@
                     $('#divInves').css('display', 'block');
                 }
             }
+        }
+        
+        function checkValid() {
+            var name = document.getElementById("<%= tbName.ClientID %>").value.trim();
+            var phone = document.getElementById("<%= tbPhone.ClientID %>").value.trim();
+            var email = document.getElementById("<%= tbEmail.ClientID %>").value.trim();
+            var address = document.getElementById("<%= tbAddress.ClientID %>").value.trim();
+            var city = document.getElementById("<%= tbCity.ClientID %>").value.trim();
+            if (name.length < 1 || phone.length < 1 || email.length < 1 || address.length < 1 || city.length < 1) {
+                alert('* Yêu cầu bắt buộc !');
+                return false;
+            }
+            var reg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,})+$/;
+            if (!reg.test(email)) {
+                alert('Email không đúng định dạng !');
+                return false;
+            }
+            return true;
         }
     </script>
 </asp:Content>

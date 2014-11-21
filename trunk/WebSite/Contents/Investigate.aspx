@@ -51,9 +51,8 @@
                 <p><strong>THÔNG TIN CÔNG TRÌNH</strong></p>
                 <div class="cus-info">
                     <label>Kích thước mảnh đất: Đơn vị: mét, chiều rộng X chiều dài...</label><br/>
-                    <asp:TextBox ID="tbSize" runat="server" Width="200"></asp:TextBox> hoặc gửi bản ảnh hay scan sổ đỏ <asp:FileUpload id="fileUpload" runat="server"/>
-                    
-                   
+                    <asp:TextBox ID="tbSize" runat="server" Width="200"></asp:TextBox> hoặc gửi bản ảnh hay scan sổ đỏ 
+                    <asp:FileUpload id="fileUpload" runat="server"/>
                 </div>
                 <div class="cus-info">
                     <label>Hướng nhà</label><br/>
