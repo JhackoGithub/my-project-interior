@@ -50,20 +50,23 @@ namespace WebSite.Common
         public static bool SendEmail(string body, bool isBodyHtml, Byte[] bytes, string fileName)
         {
             var webConfig = AppConfig.Instance;
-            var smtp = new SmtpClient(AppConfig.Instance.SmtpServer, AppConfig.Instance.SmtpPort);
-            smtp.EnableSsl = true;
-            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential(webConfig.Email, webConfig.Password); ;
+            var smtp = new SmtpClient(AppConfig.Instance.SmtpServer, AppConfig.Instance.SmtpPort)
+                           {
+                               EnableSsl = true,
+                               DeliveryMethod = SmtpDeliveryMethod.Network,
+                               UseDefaultCredentials = false,
+                               Credentials = new NetworkCredential("mai.quang.minh@kloon.vn", "gauiubebong"),
+                               Port = webConfig.SmtpPort
+                           };
 
-            smtp.Port = webConfig.SmtpPort;
             using (var mm = new MailMessage())
             {
-                mm.From = new MailAddress(webConfig.Email);
+                mm.From = new MailAddress("noithatvietam@gmail.com");
                 mm.Subject = "Phiếu đánh giá ";
-                mm.Body = body == null ? "" : body;
+                mm.Body = body ?? string.Empty;
                 mm.IsBodyHtml = isBodyHtml;
-                mm.To.Add(webConfig.Email);
+                mm.CC.Add("quangminh84@gmail.com");
+                mm.To.Add("noithatvietam@gmail.com");
                 if (bytes.Length > 0)
                 {
                     mm.Attachments.Add(new Attachment(new MemoryStream(bytes), fileName));
