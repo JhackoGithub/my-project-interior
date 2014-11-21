@@ -13,7 +13,7 @@
         </style>
     </head>
     <body>
-        <form id="form1" runat="server">
+        <form id="form1" runat="server">       
             <div style="width: 670px;">
                 <p style="text-align: center;">
                     <strong>PHIẾU ĐIỀU TRA</strong><br />
